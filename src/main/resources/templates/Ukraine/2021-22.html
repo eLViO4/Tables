@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ukraine 2021-22</title>
+    <!--Table-->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!--JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Emblema+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Emblema+One&display=swap" rel="stylesheet">
+    <!--CSS-->
+    <link rel="stylesheet" href="/static/styles.css">
+
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        Countries
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="/Tables/templates/England/2021-22.html">England</a></li>
+                        <li><a class="dropdown-item" href="/Tables/templates/Spain/2021-22.html">Spain</a></li>
+                        <li><a class="dropdown-item" href="/Tables/templates/Italy/2021-22.html">Italy</a></li>
+                        <li><a class="dropdown-item" href="/Tables/templates/Germany/2021-22.html">Germany</a></li>
+                        <li><a class="dropdown-item" href="/Tables/templates/France/2021-22.html">France</a></li>
+                        <li><a class="dropdown-item" href="/Tables/templates/Ukraine/2021-22.html">Ukraine</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        Seasons
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="/Tables/templates/Ukraine/2012-13.html">2012-13</a></li>
+                        <li><a class="dropdown-item" href="/Tables/templates/Ukraine/2013-14.html">2013-14</a></li>
+                        <li><a class="dropdown-item" href="/Tables/templates/Ukraine/2014-15.html">2014-15</a></li>
+                        <li><a class="dropdown-item" href="/Tables/templates/Ukraine/2015-16.html">2015-16</a></li>
+                        <li><a class="dropdown-item" href="/Tables/templates/Ukraine/2016-17.html">2016-17</a></li>
+                        <li><a class="dropdown-item" href="/Tables/templates/Ukraine/2017-18.html">2017-18</a></li>
+                        <li><a class="dropdown-item" href="/Tables/templates/Ukraine/2018-19.html">2018-19</a></li>
+                        <li><a class="dropdown-item" href="/Tables/templates/Ukraine/2019-20.html">2019-20</a></li>
+                        <li><a class="dropdown-item" href="/Tables/templates/Ukraine/2020-21.html">2020-21</a></li>
+                        <li><a class="dropdown-item" href="/Tables/templates/Ukraine/2023-24.html">2022-23</a></li>
+                        <li><a class="dropdown-item" href="/Tables/templates/Ukraine/2023-24.html">2023-24</a></li>
+                        <li><a class="dropdown-item" href="/Tables/templates/Ukraine/2024-25.html">2024-25</a></li>
+                    </ul>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<img src="data:image/png;base64,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"class="leagueLogo">
+<h1 class="seasonNumber">2021-22</h1>
+
+<table class="table table-bordered table-striped" style="width: 30%; ">
+    <thead>
+    <tr>
+        <th></th>
+        <th></th>
+        <th style="text-align: center">Team</th>
+        <th style="text-align: center">Pts</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr>
+        <td>1</td>
+        <td style="background-color: blue"></td>
+        <td><img src="https://images.fotmob.com/image_resources/logo/teamlogo/9728.png" alt="Shakhtar"> Shakhtar</td>
+        <td><b><b>47</b></b></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td style="background-color: blue"></td>
+        <td><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8688.png" alt="Dynamo Kyiv"> Dynamo Kyiv
+        </td>
+        <td><b><b>45</b></b></td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td style="background-color: orange"></td>
+        <td><img src="https://images.fotmob.com/image_resources/logo/teamlogo/883952.png" alt="Dnipro-1"> Dnipro-1</td>
+        <td><b><b>40</b></b></td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td style="background-color: limegreen"></td>
+        <td><img src="https://images.fotmob.com/image_resources/logo/teamlogo/7770.png" alt="Zorya"> Zorya</td>
+        <td><b><b>36</b></b></td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td style="background-color: limegreen"></td>
+        <td><img src="https://images.fotmob.com/image_resources/logo/teamlogo/2373.png" alt="Vorskla"> Vorskla</td>
+        <td><b><b>33</b></b></td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td></td>
+        <td><img src="https://images.fotmob.com/image_resources/logo/teamlogo/6072.png" alt="Oleksandriya"> Oleksandriya
+        </td>
+        <td><b><b>26</b></b></td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td style="background-color: red"></td>
+        <td><img src="https://images.fotmob.com/image_resources/logo/teamlogo/2144.png" alt="Desna"> Desna *</td>
+        <td><b><b>25</b></b></td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td></td>
+        <td><img src="https://images.fotmob.com/image_resources/logo/teamlogo/599924.png" alt="Kolos"> Kolos</td>
+        <td><b><b>24</b></b></td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td></td>
+        <td><img src="https://images.fotmob.com/image_resources/logo/teamlogo/1175395.png"> Veres</td>
+        <td><b><b>23</b></b></td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td></td>
+        <td><img src="https://images.fotmob.com/image_resources/logo/teamlogo/949030.png"> Metalist 1925</td>
+        <td><b><b>19</b></b></td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td></td>
+        <td><img src="https://images.fotmob.com/image_resources/logo/teamlogo/859316.png" alt="Rukh"> Rukh *</td>
+        <td style="color: darkred"><b><b>18</b></b></td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td></td>
+        <td><img src="https://images.fotmob.com/image_resources/logo/teamlogo/5745.png" alt="Lviv"> Lviv</td>
+        <td><b><b>17</b></b></td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td></td>
+        <td><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8666.png"> Chornomorets</td>
+        <td><b><b>14</b></b></td>
+    </tr>
+    <tr>
+        <td>14</td>
+        <td></td>
+        <td><img src="https://images.fotmob.com/image_resources/logo/teamlogo/678761.png" alt="Inhulets"> Inhulets *</td>
+        <td style="color: darkred"><b><b>13</b></b></td>
+    </tr>
+    <tr>
+        <td>15</td>
+        <td></td>
+        <td><img src="https://images.fotmob.com/image_resources/logo/teamlogo/965428.png" alt="Minaj"> Minaj</td>
+        <td><b><b>10</b></b></td>
+    </tr>
+    <tr>
+        <td>16</td>
+        <td style="background-color: red"></td>
+        <td><img src="https://images.fotmob.com/image_resources/logo/teamlogo/6657.png" alt="Mariupol"> Mariupol *</td>
+        <td><b><b>8</b></b></td>
+    </tr>
+
+    </tbody>
+</table>
+<div class="notations">
+    <h3 style="font-size: 20px">* - Desna disbanded</h3>
+    <h3 style="font-size: 20px">* - Mariupol disbanded</h3><br>
+    <h3 style="font-size: 20px">* - Inhulets played 1 match less than the rest</h3>
+    <h3 style="font-size: 20px">* - Rukh played 1 match less than the rest</h3>
+</div>
+
+</body>
+</html>
