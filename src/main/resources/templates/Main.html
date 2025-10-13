@@ -3,85 +3,484 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tables</title>
+    <title>Football Tables</title>
     <!--Table-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <!--JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!--Fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Emblema+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-          rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Emblema+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!--CSS-->
-    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        :root {
+            --bg-light: #f8f9fa;
+            --bg-card: #ffffff;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --accent: #d5780d;
+            --border: #e2e8f0;
+            --shadow: rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            padding: 2.5rem 0;
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .site-title {
+            font-size: 2.75rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: -0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .title-accent {
+            color: var(--accent);
+        }
+
+        .site-subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .sections-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+
+        .section-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px var(--shadow);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .section-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px var(--shadow);
+        }
+
+        .card-header {
+            padding: 2rem 2rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .card-title::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .card-subtitle {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            margin-left: 1.25rem;
+        }
+
+        .card-content {
+            padding: 1.5rem 2rem 2rem;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            transition: all 0.2s ease;
+            background: var(--bg-light);
+        }
+
+        .nav-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .nav-item:hover {
+            border-color: var(--accent);
+            background: white;
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex: 1;
+        }
+
+        .nav-icon {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .nav-text {
+            flex: 1;
+        }
+
+        .nav-name {
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+            font-size: 1rem;
+        }
+
+        .nav-desc {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+
+        .nav-action {
+            background: white;
+            color: var(--accent);
+            padding: 0.6rem 1.25rem;
+            border: 1px solid var(--accent);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .nav-action:hover {
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 1024px) {
+            .sections-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .main-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .site-title {
+                font-size: 2.25rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .nav-action {
+                align-self: stretch;
+                text-align: center;
+            }
+
+            .site-title {
+                font-size: 2rem;
+            }
+
+            .card-header {
+                padding: 1.5rem 1.5rem 1rem;
+            }
+
+            .card-content {
+                padding: 1.25rem 1.5rem 1.5rem;
+            }
+        }
+
+        /* Анимации */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .section-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        /* Улучшенные hover-эффекты */
+        .nav-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--accent);
+            transform: scaleY(0);
+            transition: transform 0.2s ease;
+        }
+
+        .nav-item:hover::before {
+            transform: scaleY(1);
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-    <h1>Football Tables</h1>
-    <table class="main-table">
-        <thead>
-        <tr>
-            <th>World</th>
-            <th>Link</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Leagues</td>
-            <td><a href="/Tables/templates/Categories/Leagues.html">Open</a></td>
-        </tr>
-        <tr>
-            <td>Cups</td>
-            <td><a href="/Tables/templates/Categories/cups.html">Open</a></td>
-        </tr>
-        <tr>
-            <td>Top-4</td>
-            <td><a href="/Tables/templates/Categories/Top4.html">Open</a></td>
-        </tr>
-        <tr>
-            <td>Eurocups</td>
-            <td><a href="/Tables/templates/Categories/Eurocups.html">Open</a></td>
-        </tr>
-        <tr>
-            <td>National Teams</td>
-            <td><a href="/Tables/templates/Categories/NationalTeams.html">Open</a></td>
-        </tr>
-        <tr>
-            <td>Winner Tables</td>
-            <td><a href="/Tables/templates/Categories/WinnerTables.html">Open</a></td>
-        </tr>
-        </tbody>
-    </table>
-    <table class="main-table">
-        <thead>
-        <tr>
-            <th>Ukraine</th>
-            <th>Link</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Ukraine Tables</td>
-            <td><a href="/Tables/templates/Categories/UkraineTables.html">Open</a></td>
-        </tr>
-        <tr>
-            <td>Ukraine Eurocups</td>
-            <td><a href="/Tables/templates/Categories/UkraineEurocups.html">Open</a></td>
-        </tr>
-        <tr>
-            <td>Ukraine National Team</td>
-            <td><a href="/Tables/templates/Categories/UkraineNationalTeam.html">Open</a></td>
-        </tr>
-        <tr>
-            <td>Metalist</td>
-            <td><a href="/Tables/templates/Categories/Metalist.html">Open</a></td>
-        </tr>
-        <tr>
-            <td>Futsal</td>
-            <td><a href="/Tables/templates/Categories/Futsal.html">Open</a></td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+<header class="header">
+    <div class="header-content">
+        <h1 class="site-title">Football<span class="title-accent">Tables</span></h1>
+        <p class="site-subtitle">Tables and statistics of all top tournaments</p>
+    </div>
+</header>
+
+<main class="main-container">
+    <div class="sections-grid">
+        <!-- Global Football -->
+        <div class="section-card">
+            <div class="card-header">
+                <h2 class="card-title">Global Football</h2>
+                <p class="card-subtitle">International competitions and league data</p>
+            </div>
+            <div class="card-content">
+                <div class="nav-item">
+                    <div class="nav-content">
+                        <div class="nav-icon">📊</div>
+                        <div class="nav-text">
+                            <div class="nav-name">Leagues Tables</div>
+                            <div class="nav-desc">Top European leagues tables since 2012-13 season</div>
+                        </div>
+                    </div>
+                    <a href="/Tables/templates/Categories/Leagues.html" class="nav-action">View</a>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-content">
+                        <div class="nav-icon">🏆</div>
+                        <div class="nav-text">
+                            <div class="nav-name">Cups & Supercups</div>
+                            <div class="nav-desc">Top European countries cup and supercup all time winners + 10 last winners </div>
+                        </div>
+                    </div>
+                    <a href="/Tables/templates/Categories/cups.html" class="nav-action">View</a>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-content">
+                        <div class="nav-icon">⭐</div>
+                        <div class="nav-text">
+                            <div class="nav-name">Top-4</div>
+                            <div class="nav-desc">Top European leagues Top-4 places last 10 seasons</div>
+                        </div>
+                    </div>
+                    <a href="/Tables/templates/Categories/Top4.html" class="nav-action">View</a>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-content">
+                        <div class="nav-icon">🌍</div>
+                        <div class="nav-text">
+                            <div class="nav-name">Eurocups</div>
+                            <div class="nav-desc">UCL, UEL, UECL detailed statistics</div>
+                        </div>
+                    </div>
+                    <a href="/Tables/templates/Categories/Eurocups.html" class="nav-action">View</a>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-content">
+                        <div class="nav-icon">🇺🇳</div>
+                        <div class="nav-text">
+                            <div class="nav-name">National Teams</div>
+                            <div class="nav-desc">International fixtures and tournament data</div>
+                        </div>
+                    </div>
+                    <a href="/Tables/templates/Categories/NationalTeams.html" class="nav-action">View</a>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-content">
+                        <div class="nav-icon">📈</div>
+                        <div class="nav-text">
+                            <div class="nav-name">Historical Archives</div>
+                            <div class="nav-desc">Winners tables of all history of top tournaments</div>
+                        </div>
+                    </div>
+                    <a href="/Tables/templates/Categories/WinnerTables.html" class="nav-action">View</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ukrainian Football -->
+        <div class="section-card">
+            <div class="card-header">
+                <h2 class="card-title">Ukrainian Football</h2>
+                <p class="card-subtitle">Domestic league and team performance analytics</p>
+            </div>
+            <div class="card-content">
+                <div class="nav-item">
+                    <div class="nav-content">
+                        <div class="nav-icon">📋</div>
+                        <div class="nav-text">
+                            <div class="nav-name">Ukrainian football tables</div>
+                            <div class="nav-desc">Ukrainian Premier League and national team tables and statistics</div>
+                        </div>
+                    </div>
+                    <a href="/Tables/templates/Categories/UkraineTables.html" class="nav-action">View</a>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-content">
+                        <div class="nav-icon">⚡</div>
+                        <div class="nav-text">
+                            <div class="nav-name">European Campaigns</div>
+                            <div class="nav-desc">Ukrainian clubs performance in Europe</div>
+                        </div>
+                    </div>
+                    <a href="/Tables/templates/Categories/UkraineEurocups.html" class="nav-action">View</a>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-content">
+                        <div class="nav-icon">👥</div>
+                        <div class="nav-text">
+                            <div class="nav-name">National Team</div>
+                            <div class="nav-desc">Ukraine national team matches and statistics</div>
+                        </div>
+                    </div>
+                    <a href="/Tables/templates/Categories/UkraineNationalTeam.html" class="nav-action">View</a>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-content">
+                        <div class="nav-icon"></div>
+                        <div class="nav-text">
+                            <div class="nav-name">FC Metalist Archive</div>
+                            <div class="nav-desc">Historical data for FC Metalist Kharkiv</div>
+                        </div>
+                    </div>
+                    <a href="/Tables/templates/Categories/Metalist.html" class="nav-action">View</a>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-content">
+                        <div class="nav-icon">👟</div>
+                        <div class="nav-text">
+                            <div class="nav-name">Futsal Statistics</div>
+                            <div class="nav-desc">World futsal competitions data</div>
+                        </div>
+                    </div>
+                    <a href="/Tables/templates/Categories/Futsal.html" class="nav-action">View</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-content">
+        <p>© 2024 Football Analytics. Professional football data platform.</p>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Плавное появление карточек при загрузке
+        const cards = document.querySelectorAll('.section-card');
+        cards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+
+            setTimeout(() => {
+                card.style.transition = 'all 0.6s ease-out';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, index * 150);
+        });
+
+        // Интерактивность для навигационных элементов
+        const navItems = document.querySelectorAll('.nav-item');
+        navItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(8px)';
+            });
+
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0)';
+            });
+        });
+    });
+</script>
 </body>
 </html>

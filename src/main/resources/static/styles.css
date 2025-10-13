@@ -41,19 +41,19 @@ th:nth-child(4), td:nth-child(4) {
 
 .dropdown-menu {
     background-color: #f5c978;
-    color: darkblue;
+    color: black;
 }
 
 .dropdown-item {
-    color: darkblue;
+    color: black;
 }
 
 .nav-link {
-    color: darkblue;
+    color: black;
 }
 
 .nav-link:hover {
-    color: darkblue;
+    color: black;
 }
 
 img {
@@ -79,4 +79,11 @@ img {
     display: inline-block;
     font-family: Emblema One, serif;
     font-size: 45px;
+}
+.navbar-custom .nav-link {
+    color: black !important; /* или другой цвет */
+}
+
+.navbar-custom .nav-link:hover {
+    color: #ffffff !important; /* цвет при наведении */
 }

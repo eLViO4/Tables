@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Emblema+One&display=swap" rel="stylesheet">
+    <title>Champions of leagues</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f7f7f7;
+            color: black;
+        }
+
+        .navbar-custom {
+            background-color: #f5c978;
+            height: 68px;
+            margin-bottom: 30px;
+            font-size: 30px;
+        }
+
+        .winners-list {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            flex: 1;
+            min-width: 0;
+        }
+
+        .winners-list h2 {
+            margin-top: 0;
+            font-size: 20px;
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            white-space: nowrap;
+        }
+
+        .winners-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .winners-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 1.1em;
+        }
+
+        .winners-list span {
+            font-weight: bold;
+            color: #1a237e;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #333;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .d-flex {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        @media (max-width: 1200px) {
+            .d-flex {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            .winners-list {
+                width: calc(33.333% - 10px);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .winners-list {
+                width: calc(50% - 7.5px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .d-flex {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .winners-list {
+                width: 100%;
+            }
+        }
+
+        .flag-icon {
+            margin-right: 10px;
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <a href="../Main.html" class="nav-link" style="color: black">HOME</a>
+</nav>
+
+<div class="container-fluid">
+    <section id="champions">
+        <h1>Champions of leagues</h1>
+        <div class="d-flex">
+            <!-- Англия -->
+            <div class="winners-list">
+                <h2><span class="flag-icon">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>England</h2>
+                <ul>
+                    <li>Liverpool <span>20</span></li>
+                    <li>Manchester United <span>20</span></li>
+                    <li>Arsenal <span>13</span></li>
+                    <li>Manchester City <span>10</span></li>
+                    <li>Everton <span>9</span></li>
+                    <li>Aston Villa <span>7</span></li>
+                    <li>Chelsea <span>6</span></li>
+                    <li>Sunderland <span>6</span></li>
+                    <li>Newcastle United <span>4</span></li>
+                    <li>Sheffield Wednesday <span>4</span></li>
+                    <li>Leeds United <span>3</span></li>
+                    <li>Wolverhampton Wanderers <span>3</span></li>
+                    <li>Blackburn Rovers <span>3</span></li>
+                    <li>Huddersfield Town <span>3</span></li>
+                    <li>Tottenham Hotspur <span>2</span></li>
+                    <li>Preston North End <span>2</span></li>
+                    <li>Burnley <span>2</span></li>
+                    <li>Portsmouth <span>2</span></li>
+                    <li>Derby County <span>2</span></li>
+                    <li>Sheffield United <span>1</span></li>
+                    <li>West Bromwich Albion <span>1</span></li>
+                    <li>Ipswich Town <span>1</span></li>
+                    <li>Nottingham Forrest <span>1</span></li>
+                    <li>Leicester City <span>1</span></li>
+                </ul>
+            </div>
+
+            <!-- Испания -->
+            <div class="winners-list">
+                <h2><span class="flag-icon">🇪🇸</span>Spain</h2>
+                <ul>
+                    <li>Real Madrid <span>36</span></li>
+                    <li>Barcelona <span>28</span></li>
+                    <li>Atlético Madrid <span>11</span></li>
+                    <li>Athletic Bilbao <span>8</span></li>
+                    <li>Valencia <span>6</span></li>
+                    <li>Real Sociedad <span>2</span></li>
+                    <li>Deportivo La Coruña <span>1</span></li>
+                    <li>Sevilla <span>1</span></li>
+                    <li>Real Betis <span>1</span></li>
+                </ul>
+            </div>
+
+            <!-- Италия -->
+            <div class="winners-list">
+                <h2><span class="flag-icon">🇮🇹</span>Italy</h2>
+                <ul>
+                    <li>Juventus <span>36</span></li>
+                    <li>Inter <span>20</span></li>
+                    <li>Milan <span>19</span></li>
+                    <li>Genoa <span>9</span></li>
+                    <li>Torino <span>7</span></li>
+                    <li>Bologna <span>7</span></li>
+                    <li>Pro Vercelli <span>7</span></li>
+                    <li>Napoli <span>4</span></li>
+                    <li>Roma <span>3</span></li>
+                    <li>Lazio <span>2</span></li>
+                    <li>Fiorentina <span>2</span></li>
+                    <li>Cagliari <span>1</span></li>
+                    <li>Casale <span>1</span></li>
+                    <li>Novese <span>1</span></li>
+                    <li>Hellas Verona <span>1</span></li>
+                    <li>Sampdoria <span>1</span></li>
+                </ul>
+            </div>
+
+            <!-- Германия -->
+            <div class="winners-list">
+                <h2><span class="flag-icon">🇩🇪</span>Germany</h2>
+                <ul>
+                    <li>Bayern Munich <span>34</span></li>
+                    <li>Nürnberg <span>9</span></li>
+                    <li>Borussia Dortmund <span>8</span></li>
+                    <li>Schalke 04 <span>7</span></li>
+                    <li>Hamburg <span>6</span></li>
+                    <li>VfB Stuttgart <span>5</span></li>
+                    <li>Borussia Mönchengladbach <span>5</span></li>
+                    <li>Werder  <span>4</span></li>
+                    <li>Kaiserslautern <span>4</span></li>
+                    <li>Köln <span>3</span></li>
+                    <li>Lokomotive Leipzig <span>3</span></li>
+                    <li>Greuter Furth <span>3</span></li>
+                    <li>Hertha  <span>2</span></li>
+                    <li>Viktoria Berlin  <span>2</span></li>
+                    <li>Dresdner  <span>2</span></li>
+                    <li>Hannover 96  <span>2</span></li>
+                    <li>Wolfsburg <span>1</span></li>
+                    <li>Eintracht Braunschweig <span>1</span></li>
+                    <li>Munich 1860<span>1</span></li>
+                    <li>Bayer 04<span>1</span></li>
+                    <li>Karlsruher<span>1</span></li>
+                    <li>Holstein Kiel<span>1</span></li>
+                    <li>Blau-Weiß<span>1</span></li>
+                    <li>Fortuna<span>1</span></li>
+                    <li>Eintracht Frankfurt<span>1</span></li>
+                    <li>Rapid Wien<span>1</span></li>
+                    <li>Freiburger FC<span>1</span></li>
+                    <li>Mannheim<span>1</span></li>
+                    <li>Rot-Weiss Essen<span>1</span></li>
+                </ul>
+            </div>
+
+            <!-- Франция -->
+            <div class="winners-list">
+                <h2><span class="flag-icon">🇫🇷</span>France</h2>
+                <ul>
+                    <li>Paris Saint-Germain <span>13</span></li>
+                    <li>Marseille <span>10</span></li>
+                    <li>Saint-Étienne <span>10</span></li>
+                    <li>Monaco <span>8</span></li>
+                    <li>Nantes <span>8</span></li>
+                    <li>Lyon <span>7</span></li>
+                    <li>Bordeaux <span>6</span></li>
+                    <li>Lille <span>6</span></li>
+                    <li>Reims <span>6</span></li>
+                    <li>Roubaix <span>6</span></li>
+                    <li>Standard Athletic <span>5</span></li>
+                    <li>Nice <span>4</span></li>
+                    <li>Stade Helvetique <span>3</span></li>
+                    <li>Le Havre <span>3</span></li>
+                    <li>Sochaux <span>2</span></li>
+                    <li>RC Paris <span>2</span></li>
+                    <li>Sète <span>2</span></li>
+                    <li>Auxerre <span>1</span></li>
+                    <li>Lens <span>1</span></li>
+                    <li>Strasbourg <span>1</span></li>
+                    <li>Montpellier <span>1</span></li>
+                    <li>Club Francais <span>1</span></li>
+                    <li>Tourcoing <span>1</span></li>
+                    <li>Rouen <span>1</span></li>
+                    <li>Gallia Club <span>1</span></li>
+                    <li>Saint-Raphael <span>1</span></li>
+                    <li>Stade Francais <span>1</span></li>
+                </ul>
+            </div>
+
+            <!-- Украина -->
+            <div class="winners-list">
+                <h2><span class="flag-icon">🇺🇦</span>Ukraine</h2>
+                <ul>
+                    <li>Dynamo Kyiv <span>17</span></li>
+                    <li>Shakhtar Donetsk <span>15</span></li>
+                    <li>Tavriya  <span>1</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ballon D'or Winners</title>
+    <style>
+        /* === GOLDEN BALL STYLE === */
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: radial-gradient(circle at top, #fff8dc, #fff1b0, #f0e68c);
+            color: #4b2e00;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d4af37; /* насыщенное золото */
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+        }
+
+        /* Таблица */
+        table {
+            width: 90%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background: linear-gradient(180deg, #fffaf0, #fff3c6);
+            border: 2px solid #d4af37;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        /* Заголовок таблицы */
+        thead {
+            background: linear-gradient(90deg, #d4af37, #ffd700);
+            color: #3a2b00;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Ячейки */
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+            border-bottom: 1px solid #f0e68c;
+        }
+
+        tbody tr:hover {
+            background-color: rgba(255, 239, 184, 0.4);
+        }
+
+        /* Отдельные элементы */
+        .year {
+            color: #b8860b;
+            font-weight: bold;
+        }
+
+        .winner {
+            color: #3a2b00;
+            font-weight: bold;
+        }
+
+        .country {
+            color: #8b7500;
+            font-style: italic;
+        }
+
+        /* Навигация */
+        .navbar-custom {
+            background-color: #fff8dc;
+            height: 68px;
+            margin-bottom: 30px;
+            font-size: 30px;
+            border-bottom: 3px solid #d4af37;
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .nav-link {
+            color: #b8860b;
+            text-decoration: none;
+            padding: 15px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #ffd700;
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+        }
+
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <a href="../Main.html" class="nav-link">HOME</a>
+</nav>
+<h1>Ballon D'or Winners</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Year</th>
+        <th>Player</th>
+        <th>Country</th>
+        <th>Position</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td class="year">2025</td><td class="winner">Ousmane Dembele</td><td class="country">France</td><td>RW</td></tr>
+    <tr><td class="year">2024</td><td class="winner">Rodri</td><td class="country">Spain</td><td>CDM</td></tr>
+    <tr><td class="year">2023</td><td class="winner">Lionel Messi</td><td class="country">Argentina</td><td>RW</td></tr>
+    <tr><td class="year">2022</td><td class="winner">Karim Benzema</td><td class="country">France</td><td>ST</td></tr>
+    <tr><td class="year">2021</td><td class="winner">Lionel Messi</td><td class="country">Argentina</td><td>RW</td></tr>
+    <tr><td class="year">2019</td><td class="winner">Lionel Messi</td><td class="country">Argentina</td><td>RW</td></tr>
+    <tr><td class="year">2018</td><td class="winner">Luka Modrić</td><td class="country">Croatia</td><td>CM</td></tr>
+    <tr><td class="year">2017</td><td class="winner">Cristiano Ronaldo</td><td class="country">Portugal</td><td>ST</td></tr>
+    <tr><td class="year">2016</td><td class="winner">Cristiano Ronaldo</td><td class="country">Portugal</td><td>ST</td></tr>
+    <tr><td class="year">2015</td><td class="winner">Lionel Messi</td><td class="country">Argentina</td><td>RW</td></tr>
+    <tr><td class="year">2014</td><td class="winner">Cristiano Ronaldo</td><td class="country">Portugal</td><td>ST</td></tr>
+    <tr><td class="year">2013</td><td class="winner">Cristiano Ronaldo</td><td class="country">Portugal</td><td>ST</td></tr>
+    <tr><td class="year">2012</td><td class="winner">Lionel Messi</td><td class="country">Argentina</td><td>RW</td></tr>
+    <tr><td class="year">2011</td><td class="winner">Lionel Messi</td><td class="country">Argentina</td><td>RW</td></tr>
+    <tr><td class="year">2010</td><td class="winner">Lionel Messi</td><td class="country">Argentina</td><td>RW</td></tr>
+    <tr><td class="year">2009</td><td class="winner">Lionel Messi</td><td class="country">Argentina</td><td>RW</td></tr>
+    <tr><td class="year">2008</td><td class="winner">Cristiano Ronaldo</td><td class="country">Portugal</td><td>LW</td></tr>
+    <tr><td class="year">2007</td><td class="winner">Kaká</td><td class="country">Brazil</td><td>CAM</td></tr>
+    <tr><td class="year">2006</td><td class="winner">Fabio Cannavaro</td><td class="country">Italy</td><td>CB</td></tr>
+    <tr><td class="year">2005</td><td class="winner">Ronaldinho</td><td class="country">Brazil</td><td>LW</td></tr>
+    <tr><td class="year">2004</td><td class="winner">Andriy Shevchenko</td><td class="country">Ukraine</td><td>ST</td></tr>
+    <tr><td class="year">2003</td><td class="winner">Pavel Nedvěd</td><td class="country">Czech Republic</td><td>LW</td></tr>
+    <tr><td class="year">2002</td><td class="winner">Ronaldo</td><td class="country">Brazil</td><td>ST</td></tr>
+    <tr><td class="year">2001</td><td class="winner">Michael Owen</td><td class="country">England</td><td>ST</td></tr>
+    <tr><td class="year">2000</td><td class="winner">Luís Figo</td><td class="country">Portugal</td><td>RW</td></tr>
+    <tr><td class="year">1999</td><td class="winner">Rivaldo</td><td class="country">Brazil</td><td>LW</td></tr>
+    <tr><td class="year">1998</td><td class="winner">Zinedine Zidane</td><td class="country">France</td><td>CAM</td></tr>
+    <tr><td class="year">1997</td><td class="winner">Ronaldo</td><td class="country">Brazil</td><td>ST</td></tr>
+    <tr><td class="year">1996</td><td class="winner">Matthias Sammer</td><td class="country">Germany</td><td>CB</td></tr>
+    <tr><td class="year">1995</td><td class="winner">George Weah</td><td class="country">Liberia</td><td>ST</td></tr>
+    <tr><td class="year">1994</td><td class="winner">Hristo Stoichkov</td><td class="country">Bulgaria</td><td>ST</td></tr>
+    <tr><td class="year">1993</td><td class="winner">Roberto Baggio</td><td class="country">Italy</td><td>CAM</td></tr>
+    <tr><td class="year">1992</td><td class="winner">Marco van Basten</td><td class="country">Netherlands</td><td>ST</td></tr>
+    <tr><td class="year">1991</td><td class="winner">Jean-Pierre Papin</td><td class="country">France</td><td>ST</td></tr>
+    <tr><td class="year">1990</td><td class="winner">Lothar Matthäus</td><td class="country">Germany</td><td>CM</td></tr>
+    <tr><td class="year">1989</td><td class="winner">Marco van Basten</td><td class="country">Netherlands</td><td>ST</td></tr>
+    <tr><td class="year">1988</td><td class="winner">Marco van Basten</td><td class="country">Netherlands</td><td>ST</td></tr>
+    <tr><td class="year">1987</td><td class="winner">Ruud Gullit</td><td class="country">Netherlands</td><td>CAM</td></tr>
+    <tr><td class="year">1986</td><td class="winner">Igor Belanov</td><td class="country">Soviet Union</td><td>ST</td></tr>
+    <tr><td class="year">1985</td><td class="winner">Michel Platini</td><td class="country">France</td><td>CAM</td></tr>
+    <tr><td class="year">1984</td><td class="winner">Michel Platini</td><td class="country">France</td><td>CAM</td></tr>
+    <tr><td class="year">1983</td><td class="winner">Michel Platini</td><td class="country">France</td><td>CAM</td></tr>
+    <tr><td class="year">1982</td><td class="winner">Paolo Rossi</td><td class="country">Italy</td><td>ST</td></tr>
+    <tr><td class="year">1981</td><td class="winner">Karl-Heinz Rummenigge</td><td class="country">Germany</td><td>ST</td></tr>
+    <tr><td class="year">1980</td><td class="winner">Karl-Heinz Rummenigge</td><td class="country">Germany</td><td>ST</td></tr>
+    <tr><td class="year">1979</td><td class="winner">Kevin Keegan</td><td class="country">England</td><td>ST</td></tr>
+    <tr><td class="year">1978</td><td class="winner">Kevin Keegan</td><td class="country">England</td><td>ST</td></tr>
+    <tr><td class="year">1977</td><td class="winner">Allan Simonsen</td><td class="country">Denmark</td><td>RW</td></tr>
+    <tr><td class="year">1976</td><td class="winner">Franz Beckenbauer</td><td class="country">Germany</td><td>CB</td></tr>
+    <tr><td class="year">1975</td><td class="winner">Oleg Blokhin</td><td class="country">Soviet Union</td><td>LW</td></tr>
+    <tr><td class="year">1974</td><td class="winner">Johan Cruyff</td><td class="country">Netherlands</td><td>CAM</td></tr>
+    <tr><td class="year">1973</td><td class="winner">Johan Cruyff</td><td class="country">Netherlands</td><td>CAM</td></tr>
+    <tr><td class="year">1972</td><td class="winner">Franz Beckenbauer</td><td class="country">Germany</td><td>CB</td></tr>
+    <tr><td class="year">1971</td><td class="winner">Johan Cruyff</td><td class="country">Netherlands</td><td>CAM</td></tr>
+    <tr><td class="year">1970</td><td class="winner">Gerd Müller</td><td class="country">Germany</td><td>ST</td></tr>
+    <tr><td class="year">1969</td><td class="winner">Gianni Rivera</td><td class="country">Italy</td><td>CAM</td></tr>
+    <tr><td class="year">1968</td><td class="winner">George Best</td><td class="country">Northern Ireland</td><td>RW</td></tr>
+    <tr><td class="year">1967</td><td class="winner">Flórián Albert</td><td class="country">Hungary</td><td>ST</td></tr>
+    <tr><td class="year">1966</td><td class="winner">Bobby Charlton</td><td class="country">England</td><td>CAM</td></tr>
+    <tr><td class="year">1965</td><td class="winner">Eusébio</td><td class="country">Portugal</td><td>ST</td></tr>
+    <tr><td class="year">1964</td><td class="winner">Denis Law</td><td class="country">Scotland</td><td>ST</td></tr>
+    <tr><td class="year">1963</td><td class="winner">Lev Yashin</td><td class="country">Soviet Union</td><td>GK</td></tr>
+    <tr><td class="year">1962</td><td class="winner">Josef Masopust</td><td class="country">Czechoslovakia</td><td>CM</td></tr>
+    <tr><td class="year">1961</td><td class="winner">Omar Sívori</td><td class="country">Italy</td><td>CAM</td></tr>
+    <tr><td class="year">1960</td><td class="winner">Luis Suárez Miramontez</td><td class="country">Spain</td><td>CM</td></tr>
+    <tr><td class="year">1959</td><td class="winner">Alfredo Di Stéfano</td><td class="country">Spain</td><td>ST</td></tr>
+    <tr><td class="year">1958</td><td class="winner">Raymond Kopa</td><td class="country">France</td><td>RW</td></tr>
+    <tr><td class="year">1957</td><td class="winner">Alfredo Di Stéfano</td><td class="country">Spain</td><td>ST</td></tr>
+    <tr><td class="year">1956</td><td class="winner">Stanley Matthews</td><td class="country">England</td><td>RW</td></tr>
+    </tbody>
+</table>
+</body>
+</html>

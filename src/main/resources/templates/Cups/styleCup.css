@@ -5,64 +5,130 @@ body {
     background: #f7f7f7;
     color: #111;
 }
-.container {
-    display: flex;
-    gap: 40px;
-    max-width: 1200px;
-    margin: auto;
-}
+
+/* Navbar */
 .navbar-custom {
     background-color: #f5c978;
     height: 68px;
     margin-bottom: 30px;
     font-size: 30px;
 }
+
+/* Контейнер горизонтальной линии */
+.full-line {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px; /* расстояние между блоками */
+    margin: 20px 0;
+    flex-wrap: nowrap; /* все в одну линию */
+}
+
+/* Секции Cups/Supercups */
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Списки победителей */
 .winners-list {
-    width: 250px;
     background: #fff;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    width: 45%;
 }
+
 .winners-list h2 {
     margin-top: 0;
     font-size: 18px;
     text-align: center;
 }
+
 .winners-list ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
+
 .winners-list li {
-    padding: 6px 0;
-    border-bottom: 1px solid #eee;
     display: flex;
     justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.05em;
 }
 
+.winners-list span {
+    font-weight: bold;
+}
+
+/* Таблицы последних победителей */
 .recent-table {
-    flex: 1;
     background: #fff;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    width: 50%;
 }
+
 .recent-table h2 {
     text-align: center;
     margin-top: 0;
 }
-table {
+
+.recent-table table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 12px;
 }
-th, td {
-    border: 1px solid #ddd;
-    padding: 6px 10px;
+
+.recent-table th,
+.recent-table td {
+    padding: 8px 12px;
     text-align: center;
+    border-bottom: 1px solid #ddd;
 }
-th {
+
+.recent-table th {
     background: #f5c978;
-    color: black;
+}
+
+/* Заголовки Cups и Supercups */
+h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}
+
+/* Flex для списков + таблиц */
+.d-flex {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+    .d-flex {
+        flex-direction: column;
+    }
+    .winners-list,
+    .recent-table {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .full-line {
+        flex-wrap: wrap;
+    }
+}
+.navbar-custom .nav-link {
+    color: black !important; /* или другой цвет */
+}
+
+.navbar-custom .nav-link:hover {
+    color: #ffffff !important; /* цвет при наведении */
 }
