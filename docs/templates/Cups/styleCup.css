@@ -1,26 +1,70 @@
 body {
     font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding-bottom: 20px;
     background: #f7f7f7;
     color: #111;
 }
 
 /* Navbar */
 .navbar-custom {
-    background-color: #f5c978;
+    background: linear-gradient(135deg, #ca6e04 0%, #f5f3f1 100%);
+    backdrop-filter: blur(10px);
     height: 68px;
     margin-bottom: 30px;
     font-size: 30px;
+    border-bottom: 3px solid #db7c0e;
+    border-radius: 0;
+    width: 100vw; /* растянуть до краёв экрана */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 100;
+}
+
+/* Navbar links */
+.navbar-custom .nav-link {
+    color: #ffffff !important; /* белый цвет текста */
+    text-decoration: none;
+    font-weight: 700;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover {
+    color: #000000 !important; /* цвет при наведении */
+    border-radius: 6px;
+}
+
+/* Dropdown */
+.dropdown-menu {
+    background: #f5f3f1;
+    border-radius: 8px;
+    padding: 10px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.dropdown-item {
+    padding: 8px 20px;
+    color: #2d3748;
+    text-decoration: none;
+    display: block;
+    transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background: #db7c0e;
+    color: white;
 }
 
 /* Контейнер горизонтальной линии */
 .full-line {
     display: flex;
     align-items: flex-start;
-    gap: 30px; /* расстояние между блоками */
+    gap: 30px;
     margin: 20px 0;
-    flex-wrap: nowrap; /* все в одну линию */
+    flex-wrap: nowrap;
 }
 
 /* Секции Cups/Supercups */
@@ -124,11 +168,4 @@ h1 {
     .full-line {
         flex-wrap: wrap;
     }
-}
-.navbar-custom .nav-link {
-    color: black !important; /* или другой цвет */
-}
-
-.navbar-custom .nav-link:hover {
-    color: #ffffff !important; /* цвет при наведении */
 }

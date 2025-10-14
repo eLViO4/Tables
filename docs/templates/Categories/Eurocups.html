@@ -35,33 +35,40 @@
             color: var(--text-dark);
             min-height: 100vh;
             line-height: 1.6;
-            padding: 10px;
+            padding-bottom: 20px;
             overflow-y: auto;
         }
 
         .navbar-custom {
-            background: linear-gradient(135deg, #ca6e04 0%, var(--accent-light) 100%);
+            background: linear-gradient(135deg, #ca6e04 0%, #f5f3f1 100%);
             backdrop-filter: blur(10px);
-            height: 60px;
-            margin-bottom: 20px;
-            font-size: 24px;
-            border-bottom: 3px solid var(--accent);
-            border-radius: 10px;
+            height: 68px;
+            margin-bottom: 30px;
+            font-size: 30px;
+            border-bottom: 3px solid #db7c0e;
+            border-radius: 0;
+            width: 100vw; /* растянуть до краёв экрана */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 100;
         }
 
-        .nav-link {
-            color: var(--accent-dark);
+        /* Navbar links */
+        .navbar-custom .nav-link {
+            color: #ffffff !important; /* белый цвет текста */
             text-decoration: none;
-            padding: 15px;
-            display: inline-block;
             font-weight: 700;
+            padding: 10px 15px;
             transition: all 0.3s ease;
         }
 
-        .nav-link:hover {
-            color: var(--accent);
-            transform: translateY(-2px);
+        .navbar-custom .nav-link:hover {
+            color: #000000 !important; /* цвет при наведении */
+            border-radius: 6px;
         }
+
 
         .container {
             display: flex;
