@@ -1,0 +1,475 @@
+:root {
+    --ucl-blue: #001f5b;
+    --ucl-light: #0046ad;
+    --ucl-accent: #007aff;
+    --ucl-white: #ffffff;
+    --ucl-black: #111;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: var(--ucl-blue);
+    color: var(--ucl-black);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+header {
+    text-align: center;
+    padding: 30px 0 15px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2em;
+    color: var(--ucl-white);
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--ucl-accent);
+}
+
+/* === MAIN LAYOUT === */
+.main-container {
+    display: flex;
+    gap: 20px;
+    padding: 0 15px 30px;
+    max-width: 100%;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+/* === PLAYOFF STAGE === */
+/* === PLAYOFF STAGE === */
+.playoff-bracket {
+    display: flex;
+    justify-content: flex-start;
+    gap: 18px;
+    padding: 22px 0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    min-width: 0;
+    flex: 1;
+}
+
+.stage {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    flex-shrink: 0;
+}
+
+.stage-title {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--ucl-white);
+    text-align: center;
+    margin-bottom: 6px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.match {
+    background: var(--ucl-white);
+    border-radius: 6px;
+    padding: 9px 12px;
+    width: 240px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    font-size: 0.9em;
+}
+
+.team {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+    min-height: 28px;
+}
+
+.team:last-child {
+    border-bottom: none;
+}
+
+.team-name {
+    font-weight: 600;
+    flex: 1;
+    font-size: 0.95em;
+}
+
+.scores {
+    display: flex;
+    gap: 6px;
+}
+
+.score {
+    width: 22px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+.winner .team-name {
+    color: var(--ucl-accent);
+    font-weight: 700;
+}
+
+.aggregate {
+    text-align: center;
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px dashed #ddd;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: var(--ucl-light);
+    min-height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* === LEAGUE PHASE TABLES === */
+.league-phase {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.league-table {
+    background: var(--ucl-white);
+    border-radius: 6px;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+.league-table h3 {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--ucl-light);
+    margin-bottom: 6px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+.league-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.7em;
+}
+
+.league-table th, .league-table td {
+    border-bottom: 1px solid #ddd;
+    padding: 4px 3px;
+    text-align: center;
+}
+
+.league-table th {
+    background: #e8f0ff;
+    color: #003a8c;
+    font-size: 0.75em;
+    font-weight: 600;
+}
+
+.league-table tr:hover {
+    background: #f5f9ff;
+}
+
+/* Position styling */
+.position-1-8 {
+    background: linear-gradient(90deg, #e8f0ff 0%, #ffffff 100%);
+    font-weight: 600;
+}
+
+.position-9-24 {
+    background: #ffffff;
+}
+
+.position-25-36 {
+    background: linear-gradient(90deg, #fff0f0 0%, #ffffff 100%);
+}
+
+/* === GROUP STAGE === */
+.groups {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    padding: 0 15px 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.group {
+    background: var(--ucl-white);
+    border-radius: 6px;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+.group h3 {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--ucl-light);
+    margin-bottom: 6px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+.group table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.7em;
+}
+
+.group th, .group td {
+    border-bottom: 1px solid #ddd;
+    padding: 4px 3px;
+    text-align: center;
+}
+
+.group th {
+    background: #e8f0ff;
+    color: #003a8c;
+    font-size: 0.75em;
+}
+
+.group tr:hover {
+    background: #f5f9ff;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    color: var(--ucl-white);
+    font-size: 0.8em;
+}
+
+/* === UEFA Champions League Navbar === */
+.ucl-navbar {
+    background: linear-gradient(90deg, #001b5e 0%, #003c8a 100%);
+    border-bottom: 3px solid #007aff;
+    box-shadow: 0 0 12px rgba(0, 0, 80, 0.4);
+    padding: 6px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.ucl-brand {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px #007aff;
+    transition: 0.3s;
+}
+
+.ucl-brand:hover {
+    color: #cddcff;
+    text-shadow: 0 0 12px #66a3ff;
+}
+
+.ucl-link {
+    color: #e0ecff !important;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 8px 15px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.ucl-link:hover {
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+}
+
+.ucl-dropdown {
+    background: #001b5e;
+    border: 1px solid #0046ad;
+    box-shadow: 0 0 10px rgba(0, 0, 80, 0.5);
+}
+
+.ucl-dropdown .dropdown-item {
+    color: #e0ecff;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.ucl-dropdown .dropdown-item:hover {
+    background: #0046ad;
+    color: #ffffff;
+}
+
+.navbar-toggler {
+    border: none;
+    background: none;
+    color: #ffffff;
+    font-size: 1.3em;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Custom scrollbar for playoff bracket */
+.playoff-bracket::-webkit-scrollbar {
+    height: 4px;
+}
+
+.playoff-bracket::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.1);
+    border-radius: 2px;
+}
+
+.playoff-bracket::-webkit-scrollbar-thumb {
+    background: var(--ucl-accent);
+    border-radius: 2px;
+}
+
+.playoff-bracket::-webkit-scrollbar-thumb:hover {
+    background: var(--ucl-light);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1400px) {
+    .main-container {
+        gap: 15px;
+        padding: 0 12px 25px;
+    }
+
+    .match {
+        width: 220px; /* Должно быть 220px, а не 150px */
+    }
+
+    .league-phase {
+        width: 280px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .main-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .league-phase {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .league-table {
+        flex: 1;
+        margin: 0 5px;
+    }
+
+    .playoff-bracket {
+        justify-content: center;
+    }
+
+    header {
+        font-size: 2em;
+        padding: 25px 0 12px;
+    }
+}
+
+@media (max-width: 992px) {
+    .main-container {
+        padding: 0 10px 20px;
+    }
+
+    .match {
+        width: 200px;
+        font-size: 0.85em;
+    }
+
+    .league-phase {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .league-table {
+        margin: 0;
+    }
+
+    .groups {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .ucl-navbar {
+        padding: 5px 15px;
+    }
+
+    .ucl-brand {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .playoff-bracket {
+        gap: 8px;
+        padding: 10px 0;
+    }
+
+    .match {
+        width: 180px;
+        padding: 7px 9px;
+    }
+
+    .stage-title {
+        font-size: 0.8em;
+    }
+
+    .groups {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        padding: 0 10px 15px;
+    }
+
+    header {
+        font-size: 1.6em;
+        padding: 20px 0 10px;
+    }
+
+    .ucl-navbar {
+        padding: 4px 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .playoff-bracket {
+        gap: 6px;
+    }
+
+    .match {
+        width: 160px;
+        font-size: 0.8em;
+    }
+
+    .team-name {
+        font-size: 0.75em;
+    }
+
+    .score {
+        width: 14px;
+        font-size: 0.75em;
+    }
+
+    .groups {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        font-size: 1.4em;
+        padding: 15px 0 8px;
+    }
+}
