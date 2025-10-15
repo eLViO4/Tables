@@ -17,6 +17,18 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="UCL.css">
+    <style>
+        .group tbody tr:nth-child(4) td:first-child::before {
+            content: "";
+            position: absolute;
+            left: 2px;
+            top: 2px;
+            bottom: 2px;
+            width: 0px;
+            pointer-events: none;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -73,380 +85,193 @@
 
 <header>UEFA Champions League 1999-2000</header>
 
-<!-- === PLAYOFF STAGE === -->
-<section class="playoff-bracket">
-    <!-- Second group stage -->
-    <div class="stage">
-        <div class="stage-title">Group Stage 2</div>
+<div class="main-container">
+    <!-- Левая часть - 8 таблиц групп по 2 в ряд -->
+    <section class="groups-container">
+        <div class="group">
+            <h3>Group A</h3>
+            <table>
+                <tr><th>Team</th><th>Pts</th></tr>
+                <tr><td>Barcelona</td><td>16</td></tr>
+                <tr><td>Porto</td><td>10</td></tr>
+                <tr><td>Sparta Praha</td><td>5</td></tr>
+                <tr><td>Hertha</td><td>2</td></tr>
+            </table>
+        </div>
+        <div class="group">
+            <h3>Group B</h3>
+            <table>
+                <tr><th>Team</th><th>Pts</th></tr>
+                <tr><td>Manchester United</td><td>13</td></tr>
+                <tr><td>Valencia</td><td>10</td></tr>
+                <tr><td>Fiorentina</td><td>8</td></tr>
+                <tr><td>Bordeaux</td><td>2</td></tr>
+            </table>
+        </div>
+        <div class="group">
+            <h3>Group C</h3>
+            <table>
+                <tr><th>Team</th><th>Pts</th></tr>
+                <tr><td>Bayern Munich</td><td>13</td></tr>
+                <tr><td>Real Madrid</td><td>10</td></tr>
+                <tr><td>Dynamo Kyiv</td><td>10</td></tr>
+                <tr><td>Rosenborg</td><td>1</td></tr>
+            </table>
+        </div>
+        <div class="group">
+            <h3>Group D</h3>
+            <table>
+                <tr><th>Team</th><th>Pts</th></tr>
+                <tr><td>Lazio</td><td>11</td></tr>
+                <tr><td>Chelsea</td><td>10</td></tr>
+                <tr><td>Feyenoord</td><td>8</td></tr>
+                <tr><td>Marseille</td><td>4</td></tr>
+            </table>
+        </div>
+    </section>
 
-        <div class="match">
-            <div class="team winner">
-                <div class="team-name">Barcelona</div>
-                <div class="scores">
-                    <div class="score">1</div>
-                    <div class="score">5</div>
+    <!-- Правая часть - плей-офф -->
+    <section class="playoff-bracket">
+        <!-- Quarter-finals -->
+        <div class="stage">
+            <div class="stage-title">Quarter-finals</div>
+
+            <div class="match">
+                <div class="team winner">
+                    <div class="team-name">Bayern Munich</div>
+                    <div class="scores">
+                        <div class="score">1</div>
+                        <div class="score">2</div>
+                    </div>
                 </div>
-            </div>
-            <div class="team">
-                <div class="team-name">Porto</div>
-                <div class="scores">
-                    <div class="score">0</div>
-                    <div class="score">0</div>
+                <div class="team">
+                    <div class="team-name">Porto</div>
+                    <div class="scores">
+                        <div class="score">1</div>
+                        <div class="score">1</div>
+                    </div>
                 </div>
+                <div class="aggregate">OVR: 3-2</div>
             </div>
-            <div class="aggregate">Group A: 1st</div>
+
+            <div class="match">
+                <div class="team winner">
+                    <div class="team-name">Real Madrid</div>
+                    <div class="scores">
+                        <div class="score">0</div>
+                        <div class="score">3</div>
+                    </div>
+                </div>
+                <div class="team">
+                    <div class="team-name">Manchester United</div>
+                    <div class="scores">
+                        <div class="score">0</div>
+                        <div class="score">2</div>
+                    </div>
+                </div>
+                <div class="aggregate">OVR: 3-2</div>
+            </div>
+
+            <div class="match">
+                <div class="team winner">
+                    <div class="team-name">Barcelona</div>
+                    <div class="scores">
+                        <div class="score">1</div>
+                        <div class="score">5</div>
+                    </div>
+                </div>
+                <div class="team">
+                    <div class="team-name">Chelsea</div>
+                    <div class="scores">
+                        <div class="score">3</div>
+                        <div class="score">1</div>
+                    </div>
+                </div>
+                <div class="aggregate">OVR: 6-4</div>
+            </div>
+
+            <div class="match">
+                <div class="team winner">
+                    <div class="team-name">Valencia</div>
+                    <div class="scores">
+                        <div class="score">5</div>
+                        <div class="score">0</div>
+                    </div>
+                </div>
+                <div class="team">
+                    <div class="team-name">Lazio</div>
+                    <div class="scores">
+                        <div class="score">2</div>
+                        <div class="score">1</div>
+                    </div>
+                </div>
+                <div class="aggregate">OVR: 5-3</div>
+            </div>
         </div>
 
-        <div class="match">
-            <div class="team winner">
-                <div class="team-name">Chelsea</div>
-                <div class="scores">
-                    <div class="score">3</div>
-                    <div class="score">1</div>
+        <!-- Semi-finals -->
+        <div class="stage">
+            <div class="stage-title">Semi-finals</div>
+
+            <div class="match">
+                <div class="team winner">
+                    <div class="team-name">Valencia</div>
+                    <div class="scores">
+                        <div class="score">4</div>
+                        <div class="score">1</div>
+                    </div>
                 </div>
-            </div>
-            <div class="team">
-                <div class="team-name">Hertha Berlin</div>
-                <div class="scores">
-                    <div class="score">2</div>
-                    <div class="score">0</div>
+                <div class="team">
+                    <div class="team-name">Barcelona</div>
+                    <div class="scores">
+                        <div class="score">1</div>
+                        <div class="score">2</div>
+                    </div>
                 </div>
+                <div class="aggregate">OVR: 5-3</div>
             </div>
-            <div class="aggregate">Group A: 2nd</div>
+
+            <div class="match">
+                <div class="team winner">
+                    <div class="team-name">Real Madrid</div>
+                    <div class="scores">
+                        <div class="score">2</div>
+                        <div class="score">1</div>
+                    </div>
+                </div>
+                <div class="team">
+                    <div class="team-name">Bayern Munich</div>
+                    <div class="scores">
+                        <div class="score">0</div>
+                        <div class="score">2</div>
+                    </div>
+                </div>
+                <div class="aggregate">OVR: 3-2</div>
+            </div>
         </div>
 
-        <div class="match">
-            <div class="team winner">
-                <div class="team-name">Man United</div>
-                <div class="scores">
-                    <div class="score">3</div>
-                    <div class="score">2</div>
+        <!-- Final -->
+        <div class="stage">
+            <div class="stage-title">Final</div>
+
+            <div class="match">
+                <div class="team winner">
+                    <div class="team-name">Bayern Munich</div>
+                    <div class="scores">
+                        <div class="score">1</div>
+                    </div>
                 </div>
-            </div>
-            <div class="team">
-                <div class="team-name">Marseille</div>
-                <div class="scores">
-                    <div class="score">1</div>
-                    <div class="score">1</div>
+                <div class="team">
+                    <div class="team-name">Valencia</div>
+                    <div class="scores">
+                        <div class="score">1</div>
+                    </div>
                 </div>
+                <div class="aggregate">Stade de France (5-4 pen)</div>
             </div>
-            <div class="aggregate">Group B: 1st</div>
         </div>
-
-        <div class="match">
-            <div class="team winner">
-                <div class="team-name">Valencia</div>
-                <div class="scores">
-                    <div class="score">3</div>
-                    <div class="score">0</div>
-                </div>
-            </div>
-            <div class="team">
-                <div class="team-name">Fiorentina</div>
-                <div class="scores">
-                    <div class="score">0</div>
-                    <div class="score">2</div>
-                </div>
-            </div>
-            <div class="aggregate">Group B: 2nd</div>
-        </div>
-
-        <div class="match">
-            <div class="team winner">
-                <div class="team-name">Bayern</div>
-                <div class="scores">
-                    <div class="score">2</div>
-                    <div class="score">4</div>
-                </div>
-            </div>
-            <div class="team">
-                <div class="team-name">Rangers</div>
-                <div class="scores">
-                    <div class="score">1</div>
-                    <div class="score">1</div>
-                </div>
-            </div>
-            <div class="aggregate">Group C: 1st</div>
-        </div>
-
-        <div class="match">
-            <div class="team winner">
-                <div class="team-name">Real Madrid</div>
-                <div class="scores">
-                    <div class="score">3</div>
-                    <div class="score">1</div>
-                </div>
-            </div>
-            <div class="team">
-                <div class="team-name">Dynamo Kyiv</div>
-                <div class="scores">
-                    <div class="score">2</div>
-                    <div class="score">1</div>
-                </div>
-            </div>
-            <div class="aggregate">Group C: 2nd</div>
-        </div>
-
-        <div class="match">
-            <div class="team winner">
-                <div class="team-name">Lazio</div>
-                <div class="scores">
-                    <div class="score">1</div>
-                    <div class="score">0</div>
-                </div>
-            </div>
-            <div class="team">
-                <div class="team-name">Chelsea</div>
-                <div class="scores">
-                    <div class="score">2</div>
-                    <div class="score">0</div>
-                </div>
-            </div>
-            <div class="aggregate">Group D: 1st</div>
-        </div>
-
-        <div class="match">
-            <div class="team winner">
-                <div class="team-name">Bordeaux</div>
-                <div class="scores">
-                    <div class="score">0</div>
-                    <div class="score">2</div>
-                </div>
-            </div>
-            <div class="team">
-                <div class="team-name">Spartak Moscow</div>
-                <div class="scores">
-                    <div class="score">1</div>
-                    <div class="score">1</div>
-                </div>
-            </div>
-            <div class="aggregate">Group D: 2nd</div>
-        </div>
-    </div>
-
-    <!-- Quarter-finals -->
-    <div class="stage">
-        <div class="stage-title">Quarter-finals</div>
-
-        <div class="match">
-            <div class="team winner">
-                <div class="team-name">Real Madrid</div>
-                <div class="scores">
-                    <div class="score">0</div>
-                    <div class="score">3</div>
-                </div>
-            </div>
-            <div class="team">
-                <div class="team-name">Man United</div>
-                <div class="scores">
-                    <div class="score">0</div>
-                    <div class="score">2</div>
-                </div>
-            </div>
-            <div class="aggregate">OVR: 3-2</div>
-        </div>
-
-        <div class="match">
-            <div class="team winner">
-                <div class="team-name">Valencia</div>
-                <div class="scores">
-                    <div class="score">5</div>
-                    <div class="score">0</div>
-                </div>
-            </div>
-            <div class="team">
-                <div class="team-name">Lazio</div>
-                <div class="scores">
-                    <div class="score">2</div>
-                    <div class="score">1</div>
-                </div>
-            </div>
-            <div class="aggregate">OVR: 5-3</div>
-        </div>
-
-        <div class="match">
-            <div class="team winner">
-                <div class="team-name">Bayern</div>
-                <div class="scores">
-                    <div class="score">2</div>
-                    <div class="score">1</div>
-                </div>
-            </div>
-            <div class="team">
-                <div class="team-name">Porto</div>
-                <div class="scores">
-                    <div class="score">1</div>
-                    <div class="score">1</div>
-                </div>
-            </div>
-            <div class="aggregate">OVR: 3-2</div>
-        </div>
-
-        <div class="match">
-            <div class="team winner">
-                <div class="team-name">Barcelona</div>
-                <div class="scores">
-                    <div class="score">1</div>
-                    <div class="score">5</div>
-                </div>
-            </div>
-            <div class="team">
-                <div class="team-name">Chelsea</div>
-                <div class="scores">
-                    <div class="score">3</div>
-                    <div class="score">1</div>
-                </div>
-            </div>
-            <div class="aggregate">OVR: 6-4</div>
-        </div>
-    </div>
-
-    <!-- Semi-finals -->
-    <div class="stage">
-        <div class="stage-title">Semi-finals</div>
-
-        <div class="match">
-            <div class="team winner">
-                <div class="team-name">Real Madrid</div>
-                <div class="scores">
-                    <div class="score">2</div>
-                    <div class="score">1</div>
-                </div>
-            </div>
-            <div class="team">
-                <div class="team-name">Bayern</div>
-                <div class="scores">
-                    <div class="score">0</div>
-                    <div class="score">2</div>
-                </div>
-            </div>
-            <div class="aggregate">OVR: 3-2</div>
-        </div>
-
-        <div class="match">
-            <div class="team winner">
-                <div class="team-name">Valencia</div>
-                <div class="scores">
-                    <div class="score">4</div>
-                    <div class="score">1</div>
-                </div>
-            </div>
-            <div class="team">
-                <div class="team-name">Barcelona</div>
-                <div class="scores">
-                    <div class="score">1</div>
-                    <div class="score">2</div>
-                </div>
-            </div>
-            <div class="aggregate">OVR: 5-3</div>
-        </div>
-    </div>
-
-    <!-- Final -->
-    <div class="stage">
-        <div class="stage-title">Final</div>
-
-        <div class="match">
-            <div class="team winner">
-                <div class="team-name">Real Madrid</div>
-                <div class="scores">
-                    <div class="score">3</div>
-                </div>
-            </div>
-            <div class="team">
-                <div class="team-name">Valencia</div>
-                <div class="scores">
-                    <div class="score">0</div>
-                </div>
-            </div>
-            <div class="aggregate">Stade de France</div>
-        </div>
-    </div>
-</section>
-
-<!-- === GROUP STAGE === -->
-<section class="groups">
-    <div class="group">
-        <h3>Group A</h3>
-        <table>
-            <tr><th>Team</th><th>Pts</th></tr>
-            <tr><td>Lazio</td><td>11</td></tr>
-            <tr><td>Dynamo Kyiv</td><td>8</td></tr>
-            <tr><td>Bayer Leverkusen</td><td>7</td></tr>
-            <tr><td>Maribor</td><td>4</td></tr>
-        </table>
-    </div>
-    <div class="group">
-        <h3>Group B</h3>
-        <table>
-            <tr><th>Team</th><th>Pts</th></tr>
-            <tr><td>Barcelona</td><td>14</td></tr>
-            <tr><td>Fiorentina</td><td>9</td></tr>
-            <tr><td>Arsenal</td><td>8</td></tr>
-            <tr><td>AIK</td><td>2</td></tr>
-        </table>
-    </div>
-    <div class="group">
-        <h3>Group C</h3>
-        <table>
-            <tr><th>Team</th><th>Pts</th></tr>
-            <tr><td>Rosenborg</td><td>11</td></tr>
-            <tr><td>Feyenoord</td><td>8</td></tr>
-            <tr><td>Borussia Dortmund</td><td>6</td></tr>
-            <tr><td>Boavista</td><td>5</td></tr>
-        </table>
-    </div>
-    <div class="group">
-        <h3>Group D</h3>
-        <table>
-            <tr><th>Team</th><th>Pts</th></tr>
-            <tr><td>Man United</td><td>13</td></tr>
-            <tr><td>Marseille</td><td>8</td></tr>
-            <tr><td>Sturm Graz</td><td>7</td></tr>
-            <tr><td>Croatia Zagreb</td><td>2</td></tr>
-        </table>
-    </div>
-    <div class="group">
-        <h3>Group E</h3>
-        <table>
-            <tr><th>Team</th><th>Pts</th></tr>
-            <tr><td>Real Madrid</td><td>13</td></tr>
-            <tr><td>Porto</td><td>11</td></tr>
-            <tr><td>Olympiacos</td><td>6</td></tr>
-            <tr><td>Molde</td><td>1</td></tr>
-        </table>
-    </div>
-    <div class="group">
-        <h3>Group F</h3>
-        <table>
-            <tr><th>Team</th><th>Pts</th></tr>
-            <tr><td>Valencia</td><td>15</td></tr>
-            <tr><td>Bayern</td><td>11</td></tr>
-            <tr><td>Rangers</td><td>7</td></tr>
-            <tr><td>PSV</td><td>1</td></tr>
-        </table>
-    </div>
-    <div class="group">
-        <h3>Group G</h3>
-        <table>
-            <tr><th>Team</th><th>Pts</th></tr>
-            <tr><td>Spartak Moscow</td><td>11</td></tr>
-            <tr><td>Bordeaux</td><td>9</td></tr>
-            <tr><td>Willem II</td><td>6</td></tr>
-            <tr><td>Sparta Prague</td><td>4</td></tr>
-        </table>
-    </div>
-    <div class="group">
-        <h3>Group H</h3>
-        <table>
-            <tr><th>Team</th><th>Pts</th></tr>
-            <tr><td>Chelsea</td><td>14</td></tr>
-            <tr><td>Hertha Berlin</td><td>8</td></tr>
-            <tr><td>Galatasaray</td><td>5</td></tr>
-            <tr><td>Milan</td><td>4</td></tr>
-        </table>
-    </div>
-</section>
+    </section>
+</div>
 
 <footer>© UEFA Champions League 1999-2000</footer>
 </body>

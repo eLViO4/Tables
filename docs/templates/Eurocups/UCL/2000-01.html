@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UEFA Champions League 2023–24</title>
+    <title>UEFA Champions League 2000–01</title>
 
     <!-- Bootstrap 4 (CSS + JS bundle) -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
@@ -17,6 +17,18 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="UCL.css">
+    <style>
+        .group tbody tr:nth-child(4) td:first-child::before {
+            content: "";
+            position: absolute;
+            left: 2px;
+            top: 2px;
+            bottom: 2px;
+            width: 0px;
+            pointer-events: none;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -71,7 +83,7 @@
     </div>
 </nav>
 
-<header>UEFA Champions League 2023–24</header>
+<header>UEFA Champions League 2000–01</header>
 
 <div class="main-container">
     <!-- Левая часть - 8 таблиц групп по 2 в ряд -->
@@ -80,252 +92,81 @@
             <h3>Group A</h3>
             <table>
                 <tr><th>Team</th><th>Pts</th></tr>
-                <tr><td>Bayern Munich</td><td>16</td></tr>
-                <tr><td>Copenhagen</td><td>8</td></tr>
-                <tr><td>Galatasaray</td><td>5</td></tr>
-                <tr><td>Manchester United</td><td>4</td></tr>
+                <tr><td>Valencia</td><td>12</td></tr>
+                <tr><td>Manchester United</td><td>12</td></tr>
+                <tr><td>Sturm Graz</td><td>6</td></tr>
+                <tr><td>Panathinaikos</td><td>2</td></tr>
             </table>
         </div>
         <div class="group">
             <h3>Group B</h3>
             <table>
                 <tr><th>Team</th><th>Pts</th></tr>
-                <tr><td>Arsenal</td><td>13</td></tr>
-                <tr><td>PSV</td><td>9</td></tr>
-                <tr><td>Lens</td><td>8</td></tr>
-                <tr><td>Sevilla</td><td>2</td></tr>
+                <tr><td>Deportivo La Coruna</td><td>10</td></tr>
+                <tr><td>Galatasaray</td><td>10</td></tr>
+                <tr><td>Milan</td><td>7</td></tr>
+                <tr><td>PSG</td><td>5</td></tr>
             </table>
         </div>
         <div class="group">
             <h3>Group C</h3>
             <table>
                 <tr><th>Team</th><th>Pts</th></tr>
-                <tr><td>Real Madrid</td><td>18</td></tr>
-                <tr><td>Napoli</td><td>10</td></tr>
-                <tr><td>Braga</td><td>4</td></tr>
-                <tr><td>Union Berlin</td><td>2</td></tr>
+                <tr><td>Bayern Munich</td><td>13</td></tr>
+                <tr><td>Arsenal</td><td>8</td></tr>
+                <tr><td>Lyon</td><td>8</td></tr>
+                <tr><td>Spartak Moscow</td><td>4</td></tr>
             </table>
         </div>
         <div class="group">
             <h3>Group D</h3>
             <table>
                 <tr><th>Team</th><th>Pts</th></tr>
-                <tr><td>Real Sociedad</td><td>12</td></tr>
-                <tr><td>Inter</td><td>12</td></tr>
-                <tr><td>Benfica</td><td>4</td></tr>
-                <tr><td>RB Salzburg</td><td>4</td></tr>
-            </table>
-        </div>
-        <div class="group">
-            <h3>Group E</h3>
-            <table>
-                <tr><th>Team</th><th>Pts</th></tr>
-                <tr><td>Atletico Madrid</td><td>14</td></tr>
-                <tr><td>Lazio</td><td>10</td></tr>
-                <tr><td>Feyenoord</td><td>6</td></tr>
-                <tr><td>Celtic</td><td>4</td></tr>
-            </table>
-        </div>
-        <div class="group">
-            <h3>Group F</h3>
-            <table>
-                <tr><th>Team</th><th>Pts</th></tr>
-                <tr><td>Borussia Dortmund</td><td>11</td></tr>
-                <tr><td>PSG</td><td>8</td></tr>
-                <tr><td>Milan</td><td>8</td></tr>
-                <tr><td>Newcastle United</td><td>5</td></tr>
-            </table>
-        </div>
-        <div class="group">
-            <h3>Group G</h3>
-            <table>
-                <tr><th>Team</th><th>Pts</th></tr>
-                <tr><td>Manchester City</td><td>18</td></tr>
-                <tr><td>RB Leipzig</td><td>12</td></tr>
-                <tr><td>Young Boys</td><td>4</td></tr>
-                <tr><td>Crvena Zvezda</td><td>1</td></tr>
-            </table>
-        </div>
-        <div class="group">
-            <h3>Group H</h3>
-            <table>
-                <tr><th>Team</th><th>Pts</th></tr>
-                <tr><td>Barcelona</td><td>12</td></tr>
-                <tr><td>Porto</td><td>12</td></tr>
-                <tr><td>Shakhtar Donetsk</td><td>9</td></tr>
-                <tr><td>Antwerpen</td><td>3</td></tr>
+                <tr><td>Real Madrid</td><td>13</td></tr>
+                <tr><td>Leeds United</td><td>10</td></tr>
+                <tr><td>Anderlecht</td><td>6</td></tr>
+                <tr><td>Lazio</td><td>5</td></tr>
             </table>
         </div>
     </section>
 
     <!-- Правая часть - плей-офф -->
     <section class="playoff-bracket">
-        <!-- Round of 16 -->
-        <div class="stage">
-            <div class="stage-title">Round of 16</div>
-
-            <div class="match">
-                <div class="team winner">
-                    <div class="team-name">Arsenal</div>
-                    <div class="scores">
-                        <div class="score">0</div>
-                        <div class="score">1</div>
-                    </div>
-                </div>
-                <div class="team">
-                    <div class="team-name">Porto</div>
-                    <div class="scores">
-                        <div class="score">1</div>
-                        <div class="score">0</div>
-                    </div>
-                </div>
-                <div class="aggregate">OVR: 1-1 (4-2 pen)</div>
-            </div>
-
-            <div class="match">
-                <div class="team winner">
-                    <div class="team-name">Barcelona</div>
-                    <div class="scores">
-                        <div class="score">1</div>
-                        <div class="score">3</div>
-                    </div>
-                </div>
-                <div class="team">
-                    <div class="team-name">Napoli</div>
-                    <div class="scores">
-                        <div class="score">1</div>
-                        <div class="score">1</div>
-                    </div>
-                </div>
-                <div class="aggregate">OVR: 4-2</div>
-            </div>
-
-            <div class="match">
-                <div class="team winner">
-                    <div class="team-name">Atletico Madrid</div>
-                    <div class="scores">
-                        <div class="score">0</div>
-                        <div class="score">2</div>
-                    </div>
-                </div>
-                <div class="team">
-                    <div class="team-name">Inter</div>
-                    <div class="scores">
-                        <div class="score">1</div>
-                        <div class="score">1</div>
-                    </div>
-                </div>
-                <div class="aggregate">OVR: 2-2 (3-2 pen)</div>
-            </div>
-
-            <div class="match">
-                <div class="team winner">
-                    <div class="team-name">Borussia Dortmund</div>
-                    <div class="scores">
-                        <div class="score">1</div>
-                        <div class="score">2</div>
-                    </div>
-                </div>
-                <div class="team">
-                    <div class="team-name">PSV</div>
-                    <div class="scores">
-                        <div class="score">1</div>
-                        <div class="score">0</div>
-                    </div>
-                </div>
-                <div class="aggregate">OVR: 3-1</div>
-            </div>
-
-            <div class="match">
-                <div class="team winner">
-                    <div class="team-name">Bayern Munich</div>
-                    <div class="scores">
-                        <div class="score">0</div>
-                        <div class="score">3</div>
-                    </div>
-                </div>
-                <div class="team">
-                    <div class="team-name">Lazio</div>
-                    <div class="scores">
-                        <div class="score">1</div>
-                        <div class="score">0</div>
-                    </div>
-                </div>
-                <div class="aggregate">OVR: 3-1</div>
-            </div>
-
-            <div class="match">
-                <div class="team winner">
-                    <div class="team-name">PSG</div>
-                    <div class="scores">
-                        <div class="score">2</div>
-                        <div class="score">2</div>
-                    </div>
-                </div>
-                <div class="team">
-                    <div class="team-name">Real Sociedad</div>
-                    <div class="scores">
-                        <div class="score">0</div>
-                        <div class="score">1</div>
-                    </div>
-                </div>
-                <div class="aggregate">OVR: 4-1</div>
-            </div>
-
-            <div class="match">
-                <div class="team winner">
-                    <div class="team-name">Manchester City</div>
-                    <div class="scores">
-                        <div class="score">3</div>
-                        <div class="score">3</div>
-                    </div>
-                </div>
-                <div class="team">
-                    <div class="team-name">Copenhagen</div>
-                    <div class="scores">
-                        <div class="score">1</div>
-                        <div class="score">1</div>
-                    </div>
-                </div>
-                <div class="aggregate">OVR: 6-2</div>
-            </div>
-
-            <div class="match">
-                <div class="team winner">
-                    <div class="team-name">Real Madrid</div>
-                    <div class="scores">
-                        <div class="score">1</div>
-                        <div class="score">1</div>
-                    </div>
-                </div>
-                <div class="team">
-                    <div class="team-name">RB Leipzig</div>
-                    <div class="scores">
-                        <div class="score">0</div>
-                        <div class="score">1</div>
-                    </div>
-                </div>
-                <div class="aggregate">OVR: 2-1</div>
-            </div>
-        </div>
-
         <!-- Quarter-finals -->
         <div class="stage">
             <div class="stage-title">Quarter-finals</div>
 
             <div class="match">
                 <div class="team winner">
-                    <div class="team-name">Bayern Munich</div>
+                    <div class="team-name">Real Madrid</div>
                     <div class="scores">
                         <div class="score">2</div>
-                        <div class="score">1</div>
+                        <div class="score">3</div>
                     </div>
                 </div>
                 <div class="team">
-                    <div class="team-name">Arsenal</div>
+                    <div class="team-name">Galatasaray</div>
                     <div class="scores">
-                        <div class="score">2</div>
+                        <div class="score">3</div>
                         <div class="score">0</div>
+                    </div>
+                </div>
+                <div class="aggregate">OVR: 5-3</div>
+            </div>
+
+            <div class="match">
+                <div class="team winner">
+                    <div class="team-name">Leeds United</div>
+                    <div class="scores">
+                        <div class="score">3</div>
+                        <div class="score">0</div>
+                    </div>
+                </div>
+                <div class="team">
+                    <div class="team-name">Deportivo La Coruna</div>
+                    <div class="scores">
+                        <div class="score">0</div>
+                        <div class="score">2</div>
                     </div>
                 </div>
                 <div class="aggregate">OVR: 3-2</div>
@@ -333,56 +174,38 @@
 
             <div class="match">
                 <div class="team winner">
-                    <div class="team-name">Borussia Dortmund</div>
+                    <div class="team-name">Bayern Munich</div>
                     <div class="scores">
                         <div class="score">1</div>
-                        <div class="score">4</div>
+                        <div class="score">2</div>
                     </div>
                 </div>
                 <div class="team">
-                    <div class="team-name">Atletico Madrid</div>
+                    <div class="team-name">Manchester United</div>
                     <div class="scores">
-                        <div class="score">2</div>
-                        <div class="score">2</div>
+                        <div class="score">0</div>
+                        <div class="score">1</div>
                     </div>
                 </div>
-                <div class="aggregate">OVR: 5-4</div>
+                <div class="aggregate">OVR: 3-1</div>
             </div>
 
             <div class="match">
                 <div class="team winner">
-                    <div class="team-name">PSG</div>
+                    <div class="team-name">Valencia</div>
+                    <div class="scores">
+                        <div class="score">1</div>
+                        <div class="score">1</div>
+                    </div>
+                </div>
+                <div class="team">
+                    <div class="team-name">Arsenal</div>
                     <div class="scores">
                         <div class="score">2</div>
-                        <div class="score">4</div>
+                        <div class="score">0</div>
                     </div>
                 </div>
-                <div class="team">
-                    <div class="team-name">Barcelona</div>
-                    <div class="scores">
-                        <div class="score">3</div>
-                        <div class="score">1</div>
-                    </div>
-                </div>
-                <div class="aggregate">OVR: 6-4</div>
-            </div>
-
-            <div class="match">
-                <div class="team winner">
-                    <div class="team-name">Real Madrid</div>
-                    <div class="scores">
-                        <div class="score">3</div>
-                        <div class="score">1</div>
-                    </div>
-                </div>
-                <div class="team">
-                    <div class="team-name">Manchester City</div>
-                    <div class="scores">
-                        <div class="score">3</div>
-                        <div class="score">1</div>
-                    </div>
-                </div>
-                <div class="aggregate">OVR: 4-4 (4-3 pen)</div>
+                <div class="aggregate">OVR: 2-2 (away)</div>
             </div>
         </div>
 
@@ -392,38 +215,38 @@
 
             <div class="match">
                 <div class="team winner">
-                    <div class="team-name">Real Madrid</div>
+                    <div class="team-name">Valencia</div>
                     <div class="scores">
-                        <div class="score">2</div>
-                        <div class="score">2</div>
+                        <div class="score">0</div>
+                        <div class="score">3</div>
                     </div>
                 </div>
                 <div class="team">
-                    <div class="team-name">Bayern Munich</div>
+                    <div class="team-name">Leeds United</div>
                     <div class="scores">
-                        <div class="score">2</div>
-                        <div class="score">1</div>
+                        <div class="score">0</div>
+                        <div class="score">0</div>
                     </div>
                 </div>
-                <div class="aggregate">OVR: 4-3</div>
+                <div class="aggregate">OVR: 3-0</div>
             </div>
 
             <div class="match">
                 <div class="team winner">
-                    <div class="team-name">Borussia Dortmund</div>
+                    <div class="team-name">Bayern Munich</div>
                     <div class="scores">
                         <div class="score">1</div>
-                        <div class="score">1</div>
+                        <div class="score">2</div>
                     </div>
                 </div>
                 <div class="team">
-                    <div class="team-name">PSG</div>
+                    <div class="team-name">Real Madrid</div>
                     <div class="scores">
                         <div class="score">0</div>
-                        <div class="score">0</div>
+                        <div class="score">1</div>
                     </div>
                 </div>
-                <div class="aggregate">OVR: 2-0</div>
+                <div class="aggregate">OVR: 3-1</div>
             </div>
         </div>
 
@@ -433,23 +256,23 @@
 
             <div class="match">
                 <div class="team winner">
-                    <div class="team-name">Real Madrid</div>
+                    <div class="team-name">Bayern Munich</div>
                     <div class="scores">
-                        <div class="score">2</div>
+                        <div class="score">1</div>
                     </div>
                 </div>
                 <div class="team">
-                    <div class="team-name">Borussia Dortmund</div>
+                    <div class="team-name">Valencia</div>
                     <div class="scores">
-                        <div class="score">0</div>
+                        <div class="score">1</div>
                     </div>
                 </div>
-                <div class="aggregate">Wembley Stadium</div>
+                <div class="aggregate">San Siro (5-4 pen)</div>
             </div>
         </div>
     </section>
 </div>
 
-<footer>© UEFA Champions League 2023–24</footer>
+<footer>© UEFA Champions League 2000–01</footer>
 </body>
 </html>
