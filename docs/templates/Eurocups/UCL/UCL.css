@@ -389,3 +389,50 @@ footer {
         padding: 15px 0 8px;
     }
 }
+
+.group tbody tr:nth-child(2) td:first-child,
+.group tbody tr:nth-child(3) td:first-child,
+.group tbody tr:nth-child(4) td:first-child {
+    position: relative;
+}
+
+/* 1 место */
+.group tbody tr:nth-child(2) td:first-child::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    bottom: 2px;
+    width: 8px;
+    border-radius: 3px;
+    background-color: #32cd32; /* синий */
+    pointer-events: none;
+}
+
+/* 2 место */
+.group tbody tr:nth-child(3) td:first-child::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    bottom: 2px;
+    width: 8px;
+    border-radius: 3px;
+    background-color: #32cd32; /* зелёный */
+    pointer-events: none;
+}
+
+/* 3 место */
+.group tbody tr:nth-child(4) td:first-child::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    bottom: 2px;
+    width: 8px;
+    border-radius: 3px;
+    background-color: #ffd700; /* жёлтый */
+    pointer-events: none;
+}
+
+
