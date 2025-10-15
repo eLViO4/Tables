@@ -9,11 +9,16 @@
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background: var(--ucl-blue);
     color: var(--ucl-black);
     min-height: 100vh;
     overflow-x: hidden;
+
+    /* === ФОН ЛИГИ ЧЕМПИОНОВ === */
+    background:
+            linear-gradient(rgba(0, 10, 40, 0.65), rgba(0, 10, 40, 0.75)), /* лёгкое затемнение для читаемости */
+            url('../images/UCL.jpg') center center / cover no-repeat fixed;
 }
+
 
 header {
     text-align: center;
