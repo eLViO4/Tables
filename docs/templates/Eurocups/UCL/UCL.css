@@ -6,15 +6,21 @@
     --ucl-black: #111;
 }
 
+/* === GLOBAL STYLES === */
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background: var(--ucl-blue);
     color: var(--ucl-black);
     min-height: 100vh;
     overflow-x: auto;
+
+    /* === ФОН ЛИГИ ЧЕМПИОНОВ === */
+    background:
+           /* linear-gradient(rgba(0, 10, 40, 0.65), rgba(0, 10, 40, 0.75)),*/ /* лёгкое затемнение для читаемости */
+            url('../images/UCL.jpg') center center / cover no-repeat fixed;
 }
 
+/* === HEADER === */
 header {
     text-align: center;
     padding: 30px 0 15px;
@@ -177,6 +183,7 @@ header {
     justify-content: center;
 }
 
+/* === FOOTER === */
 footer {
     text-align: center;
     padding: 20px;
@@ -392,6 +399,7 @@ footer {
     }
 }
 
+/* === POSITION COLORS IN GROUPS === */
 .group tbody tr:nth-child(2) td:first-child,
 .group tbody tr:nth-child(3) td:first-child,
 .group tbody tr:nth-child(4) td:first-child {
@@ -407,7 +415,7 @@ footer {
     bottom: 2px;
     width: 8px;
     border-radius: 3px;
-    background-color: #32cd32; /* синий */
+    background-color: #32cd32;
     pointer-events: none;
 }
 
@@ -420,7 +428,7 @@ footer {
     bottom: 2px;
     width: 8px;
     border-radius: 3px;
-    background-color: #32cd32; /* зелёный */
+    background-color: #32cd32;
     pointer-events: none;
 }
 
@@ -433,8 +441,6 @@ footer {
     bottom: 2px;
     width: 8px;
     border-radius: 3px;
-    background-color: #ffd700; /* жёлтый */
+    background-color: #ffd700;
     pointer-events: none;
 }
-
-
