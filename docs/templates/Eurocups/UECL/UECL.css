@@ -1,0 +1,264 @@
+
+:root {
+    --uecl-green: #027143;
+    --uecl-lime: #7affb5;
+    --uecl-dark: #041b10;
+    --uecl-black: #000;
+    --uecl-white: #ffffff;
+    --uecl-gray: #f8f8f8;
+}
+
+/* === GLOBAL STYLES === */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: var(--uecl-black);
+    min-height: 100vh;
+    overflow-x: auto;
+
+    /* === ФОН ЛИГИ КОНФЕРЕНЦИЙ === */
+    background:
+            linear-gradient(rgba(0, 80, 40, 0.5), rgba(0, 30, 10, 0.85)),
+            url('../images/UECL.webp') center center / cover no-repeat fixed;
+}
+
+/* === HEADER === */
+header {
+    text-align: center;
+    padding: 30px 0 15px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2em;
+    color: var(--uecl-white);
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--uecl-lime);
+}
+
+/* === MAIN LAYOUT === */
+.main-container {
+    display: flex;
+    gap: 30px;
+    padding: 0 20px 30px;
+    max-width: 1800px;
+    margin: 0 auto;
+    align-items: flex-start;
+    overflow-x: visible;
+}
+
+/* === PLAYOFF STAGE === */
+.playoff-bracket {
+    display: flex;
+    justify-content: flex-start;
+    gap: 18px;
+    padding: 22px 0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    min-width: 0;
+    flex: 1;
+    -webkit-overflow-scrolling: touch;
+}
+
+.stage {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    flex-shrink: 0;
+}
+
+.stage-title {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--uecl-white);
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.match {
+    background: var(--uecl-white);
+    border-radius: 6px;
+    padding: 9px 12px;
+    width: 240px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    font-size: 0.9em;
+}
+
+.team {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+    min-height: 28px;
+}
+
+.team:last-child {
+    border-bottom: none;
+}
+
+.team-name {
+    font-weight: 600;
+    flex: 1;
+    font-size: 0.95em;
+}
+
+.scores {
+    display: flex;
+    gap: 6px;
+}
+
+.score {
+    width: 22px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+.winner .team-name {
+    color: var(--uecl-green);
+    font-weight: 700;
+}
+
+.aggregate {
+    text-align: center;
+    float: right;
+    margin-top: 1px;
+    padding-top: 1px;
+    border-top: 1px dashed #ddd;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: var(--uecl-green);
+    min-height: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* === FOOTER === */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--uecl-white);
+    font-size: 0.9em;
+}
+
+/* === UEFA Conference League Navbar === */
+.uecl-navbar {
+    background: linear-gradient(90deg, #001a0f 0%, #002e1a 100%);
+    border-bottom: 3px solid var(--uecl-green);
+    box-shadow: 0 0 12px rgba(0, 80, 40, 0.6);
+    padding: 8px 25px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.uecl-brand {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px var(--uecl-lime);
+    transition: 0.3s;
+}
+
+.uecl-brand:hover {
+    color: #e9fff3;
+    text-shadow: 0 0 12px #66ff99;
+}
+
+.uecl-link {
+    color: #e1ffef !important;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.uecl-link:hover {
+    color: #ffffff !important;
+    background: rgba(0, 255, 130, 0.15);
+    border-radius: 6px;
+}
+
+.uecl-dropdown {
+    background: #001a0f;
+    border: 1px solid var(--uecl-green);
+    box-shadow: 0 0 10px rgba(0, 100, 50, 0.6);
+}
+
+.uecl-dropdown .dropdown-item {
+    color: #e1ffef;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.uecl-dropdown .dropdown-item:hover {
+    background: var(--uecl-green);
+    color: #000000;
+}
+
+.navbar-toggler {
+    border: none;
+    background: none;
+    color: #ffffff;
+    font-size: 1.4em;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* === FINAL MATCH STYLE === */
+.match.final {
+    transform: scale(1.4);
+    border: 2px solid rgba(0, 255, 130, 0.75);
+    background-color: #f3fff8;
+    margin-left: 50px;
+    font-weight: bold;
+}
+
+.match.qu {
+    border: 2px solid rgba(0, 255, 130, 0.75);
+    background-color: #e0ffee;
+    font-weight: bold;
+}
+
+.match.six {
+    border: 2px solid rgba(0, 255, 130, 0.75);
+    background-color: #e0ffee;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+/* === SCROLLBAR === */
+.playoff-bracket::-webkit-scrollbar {
+    height: 6px;
+}
+
+.playoff-bracket::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.1);
+    border-radius: 3px;
+}
+
+.playoff-bracket::-webkit-scrollbar-thumb {
+    background: var(--uecl-green);
+    border-radius: 3px;
+}
+
+.playoff-bracket::-webkit-scrollbar-thumb:hover {
+    background: #00ff99;
+}
+
