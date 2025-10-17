@@ -1,0 +1,353 @@
+:root {
+    --nl-red: #b30000;
+    --nl-light: #eb1313;
+    --nl-accent: #ed0c0c;
+    --nl-white: #ffffff;
+    --nl-black: #111;
+}
+
+/* === GLOBAL STYLES === */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: var(--nl-black);
+    min-height: 100vh;
+    overflow-x: auto;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+    linear-gradient(135deg, #a00000 0%, #ff1a1a 100%);
+
+
+}
+
+/* === HEADER === */
+header {
+    text-align: center;
+    padding: 30px 0 15px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2em;
+    color: var(--nl-white);
+    letter-spacing: 2px;
+    text-shadow: 0 0 12px var(--nl-accent);
+}
+
+/* === MAIN LAYOUT === */
+.main-container {
+    display: flex;
+    gap: 30px;
+    padding: 0 20px 30px;
+    max-width: 1800px;
+    margin: 0 auto;
+    align-items: flex-start;
+    overflow-x: visible;
+}
+
+/* === GROUP STAGE === */
+.groups-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    width: 600px;
+    flex-shrink: 0;
+}
+
+.group {
+    background: var(--nl-white);
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.group h3 {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--nl-light);
+    margin-bottom: 8px;
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+.group table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+
+.group th, .group td {
+    border-bottom: 1px solid #ddd;
+    padding: 6px 4px;
+    text-align: center;
+}
+
+.group th {
+    background: #ffe5e5;
+    color: #a00000;
+    font-size: 0.85em;
+}
+
+.group tr:hover {
+    background: #fff5f5;
+}
+.group td {
+    font-weight: 400;
+}
+
+/* === PLAYOFF BRACKET === */
+.playoff-bracket {
+    display: flex;
+    justify-content: flex-start;
+    gap: 18px;
+    padding: 22px 0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    min-width: 0;
+    flex: 1;
+    -webkit-overflow-scrolling: touch;
+}
+
+.stage {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    flex-shrink: 0;
+}
+
+.stage-title {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--nl-white);
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.match {
+    background: var(--nl-white);
+    border-radius: 6px;
+    padding: 9px 12px;
+    width: 240px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    font-size: 0.9em;
+}
+
+.team {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+    min-height: 28px;
+}
+
+.team:last-child {
+    border-bottom: none;
+}
+
+.team-name {
+    font-weight: 600;
+    flex: 1;
+    font-size: 0.95em;
+}
+
+.scores {
+    display: flex;
+    gap: 6px;
+}
+
+.score {
+    width: 22px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+.winner .team-name {
+    color: var(--nl-accent);
+    font-weight: 700;
+}
+
+/* === FINAL & BRONZE ALIGNMENT === */
+.final-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-left: 60px;
+}
+
+.match.final {
+    transform: scale(1.4);
+    border: 2px solid var(--nl-accent);
+    background-color: #fff5f5;
+    font-weight: bold;
+    z-index: 2;
+
+}
+
+.match.bronze {
+    background-color: var(--nl-white);
+    border: 2px solid #e0a0a0;
+    width: 240px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    font-size: 0.9em;
+    transform: scale(1.1);
+}
+
+
+/* === NAVBAR === */
+.ln-navbar {
+    background: linear-gradient(90deg, #a00000 0%, #d40000 100%);
+    border-bottom: 3px solid #ff4d4d;
+    box-shadow: 0 0 12px rgba(100, 0, 0, 0.5);
+    padding: 8px 25px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.ln-brand {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px #ff4d4d;
+    transition: 0.3s;
+}
+
+.ln-brand:hover {
+    color: #ffeaea;
+    text-shadow: 0 0 12px #ff9999;
+}
+
+.ln-link {
+    color: #ffeaea !important;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.ln-link:hover {
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+}
+
+.ln-dropdown {
+    background: #a00000;
+    border: 1px solid #e62e2e;
+    box-shadow: 0 0 10px rgba(100, 0, 0, 0.5);
+}
+
+.ln-dropdown .dropdown-item {
+    color: #ffeaea;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.ln-dropdown .dropdown-item:hover {
+    background: #e62e2e;
+    color: #ffffff;
+}
+
+.navbar-toggler {
+    border: none;
+    background: none;
+    color: #ffffff;
+    font-size: 1.4em;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1200px) {
+    .main-container {
+        flex-direction: column;
+        gap: 25px;
+    }
+    .groups-container {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .match {
+        width: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        font-size: 1.8em;
+    }
+    .match {
+        width: 180px;
+        font-size: 0.85em;
+    }
+}
+/* Полоски слева от команд */
+.group tbody tr:nth-child(2) td:first-child::before,
+.group tbody tr:nth-child(3) td:first-child::before,
+.group tbody tr:nth-child(4) td:first-child::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    bottom: 2px;
+    width: 8px;
+    border-radius: 3px;
+    pointer-events: none;
+}
+
+/* 1 место — зелёная полоска */
+.group tbody tr:nth-child(2) td:first-child::before {
+    background-color: #32cd32; /* зелёный */
+}
+
+
+
+/* 3 место — красная полоска */
+.group tbody tr:nth-child(4) td:first-child::before {
+    background-color: #ff0000;
+}
+
+/* Чтобы полоски были видны — нужно позиционирование */
+.group td:first-child {
+    position: relative;
+    padding-left: 14px; /* чтобы текст не налезал на полоску */
+}
+.groups-container td:first-child {
+    font-size: 1.1em; /* немного крупнее названия команд */
+}
+
+.flag {
+    font-size: 1.4em; /* увеличиваем размер флага */
+    margin-right: 0.4em; /* добавляем визуальный отступ */
+}
+
+/* Флаги слева от команд в группах */
+.group td:first-child {
+    position: relative;
+    padding-left: 32px; /* увеличено, чтобы полоска и флаг помещались */
+    display: flex;
+    align-items: center;
+}
+
+/* Класс для флагов */
+.flag {
+    font-size: 1.6em;       /* размер флага */
+    margin-right: 0.5em;    /* 2 пробела между флагом и названием */
+    line-height: 1;
+}

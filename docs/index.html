@@ -50,6 +50,13 @@
             text-align: center;
         }
 
+        .nav-icon img {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+        }
+
+
         .site-title {
             font-size: 2.75rem;
             font-weight: 700;
@@ -338,14 +345,16 @@
                         <div class="nav-icon">🏆</div>
                         <div class="nav-text">
                             <div class="nav-name">Cups & Supercups</div>
-                            <div class="nav-desc">Top European countries cup and supercup all time winners + 10 last winners </div>
+                            <div class="nav-desc">Top European countries cup and supercup all time winners + 10 last
+                                winners
+                            </div>
                         </div>
                     </div>
                     <a href="templates/Categories/Cups.html" class="nav-action">View</a>
                 </div>
                 <div class="nav-item">
                     <div class="nav-content">
-                        <div class="nav-icon">4️⃣</div>
+                        <div class="nav-icon"><img src="images/Top4.png"></div>
                         <div class="nav-text">
                             <div class="nav-name">Top-4</div>
                             <div class="nav-desc">Top European leagues Top-4 places last 10 seasons</div>
@@ -355,7 +364,7 @@
                 </div>
                 <div class="nav-item">
                     <div class="nav-content">
-                        <div class="nav-icon">🇪🇺</div>
+                        <div class="nav-icon"><img src="images/UCL_logo.png"></div>
                         <div class="nav-text">
                             <div class="nav-name">Eurocups</div>
                             <div class="nav-desc">UCL, UEL, UECL detailed statistics</div>
@@ -365,7 +374,7 @@
                 </div>
                 <div class="nav-item">
                     <div class="nav-content">
-                        <div class="nav-icon">🇺🇳</div>
+                        <div class="nav-icon"><img src="images/Fifa.png"></div>
                         <div class="nav-text">
                             <div class="nav-name">National Teams</div>
                             <div class="nav-desc">International fixtures and tournament data</div>
@@ -395,7 +404,7 @@
             <div class="card-content">
                 <div class="nav-item">
                     <div class="nav-content">
-                        <div class="nav-icon">🇺🇦</div>
+                        <div class="nav-icon"><img src="images/UPL_logo.png"></div>
                         <div class="nav-text">
                             <div class="nav-name">Ukrainian football tables</div>
                             <div class="nav-desc">Ukrainian Premier League and national team tables and statistics</div>
@@ -405,7 +414,7 @@
                 </div>
                 <div class="nav-item">
                     <div class="nav-content">
-                        <div class="nav-icon">🇪🇺</div>
+                        <div class="nav-icon"><img src="images/UCL_logo.png"></div>
                         <div class="nav-text">
                             <div class="nav-name">European Campaigns</div>
                             <div class="nav-desc">Ukrainian clubs performance in Europe</div>
@@ -415,7 +424,7 @@
                 </div>
                 <div class="nav-item">
                     <div class="nav-content">
-                        <div class="nav-icon">🇺🇦</div>
+                        <div class="nav-icon"><img src="images/Ukraine_logo.png"></div>
                         <div class="nav-text">
                             <div class="nav-name">National Team</div>
                             <div class="nav-desc">Ukraine national team matches and statistics</div>
@@ -425,9 +434,9 @@
                 </div>
                 <div class="nav-item">
                     <div class="nav-content">
-                        <div class="nav-icon">🔵🟡</div>
+                        <div class="nav-icon"><img src="images/Metalist.png"></div>
                         <div class="nav-text">
-                            <div class="nav-name">FC Metalist Archive</div>
+                            <div class="nav-name">FC Metalist Kharkiv</div>
                             <div class="nav-desc">Historical data for FC Metalist Kharkiv</div>
                         </div>
                     </div>
@@ -435,7 +444,7 @@
                 </div>
                 <div class="nav-item">
                     <div class="nav-content">
-                        <div class="nav-icon">⚽</div>
+                        <div class="nav-icon"><img src="images/Futsal.png"></div>
                         <div class="nav-text">
                             <div class="nav-name">Futsal Statistics</div>
                             <div class="nav-desc">World futsal competitions data</div>
@@ -455,7 +464,7 @@
 </footer>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         // Плавное появление карточек при загрузке
         const cards = document.querySelectorAll('.section-card');
         cards.forEach((card, index) => {
@@ -472,11 +481,11 @@
         // Интерактивность для навигационных элементов
         const navItems = document.querySelectorAll('.nav-item');
         navItems.forEach(item => {
-            item.addEventListener('mouseenter', function() {
+            item.addEventListener('mouseenter', function () {
                 this.style.transform = 'translateX(8px)';
             });
 
-            item.addEventListener('mouseleave', function() {
+            item.addEventListener('mouseleave', function () {
                 this.style.transform = 'translateX(0)';
             });
         });
