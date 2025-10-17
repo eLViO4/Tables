@@ -13,6 +13,97 @@
     <link href="https://fonts.googleapis.com/css2?family=Emblema+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styleTop4.css">
     <title>Germany Top-4</title>
+    <style>
+        body {
+            background-color: #515050;
+        }
+
+        .tables-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin: 20px auto;
+            max-width: 1600px;
+        }
+
+        .tables-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: nowrap;
+        }
+
+        .mini-table {
+            flex: 1;
+            background: #fff;
+            padding: 12px;
+            border-radius: 10px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+            min-width: 280px;
+        }
+
+        .mini-table h3 {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #222;
+            border-bottom: 2px solid #515050; /* фиолетовая линия */
+            padding-bottom: 4px;
+        }
+
+        .mini-table table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        .mini-table th,
+        .mini-table td {
+            border: 1px solid #ddd;
+            padding: 6px 8px;
+            font-size: 14px;
+        }
+
+        .mini-table th {
+            background-color: #ce0707; /* фиолетовый фон */
+            color: white; /* белый текст */
+            font-weight: bold;
+        }
+
+        /* адаптив */
+        @media (max-width: 1200px) {
+            .tables-row {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .mini-table {
+                width: 45%;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mini-table {
+                width: 100%;
+            }
+        }
+
+        /* NAVBAR */
+        .navbar-custom {
+            background-color: #ce0707; /* фиолетовый фон */
+            height: 68px;
+            margin-bottom: 30px;
+            font-size: 30px;
+        }
+
+        .navbar-custom .nav-link {
+            color: white !important; /* белые буквы */
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: white !important; /* светлее при наведении */
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-custom">
@@ -41,7 +132,7 @@
 
 
 <div class="tables-container">
-    <h1>Germany</h1>
+    <h1 style="color: white">Bundesliga</h1>
 
     <!-- Первая строка -->
     <div class="tables-row">
