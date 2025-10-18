@@ -37,7 +37,9 @@ header {
     width: 100%;
     margin: 0 auto;
     align-items: flex-start;
-    overflow-x: visible;
+
+    overflow-x: auto;      /* прокрутка включена */
+    flex-wrap: nowrap;
 }
 
 /* === GROUP STAGE === */
@@ -95,14 +97,13 @@ header {
     display: flex;
     gap: 18px;
     padding: 22px 0;
-    flex-wrap: nowrap;
-    overflow-x: auto;            /* горизонтальный скролл */
-    -webkit-overflow-scrolling: touch; /* плавный скролл на тачах */
+    flex-wrap: nowrap;           /* карточки в один ряд */
+    min-width: max-content;      /* обязательно, чтобы не сжималось */
+    flex-shrink: 0;              /* не сжимается внутри flex */
+    -webkit-overflow-scrolling: touch;  /* плавная прокрутка на тачах */
     scroll-behavior: smooth;
-    min-width: 100%;             /* важный момент */
-    box-sizing: content-box;
-    width: max-content;  /* чтобы не резал внутреннюю ширину */
 }
+
 
 .stage {
     display: flex;
@@ -307,26 +308,40 @@ header {
         min-width: max-content;
     }
 }
-
 @media (max-width: 768px) {
     .playoff-bracket {
         display: flex;
-        gap: 12px;
-        padding: 15px 0;
-        overflow-x: auto;
-        min-width: 100%;
+        flex-direction: column;  /* колонки сверху вниз */
+        gap: 20px;
+        overflow-x: visible;     /* горизонтальной прокрутки не будет */
     }
 
     .stage {
-        min-width: 160px;  /* меньше на телефоне */
+        display: grid;           /* превращаем колонку в сетку */
+        grid-template-columns: repeat(2, 1fr); /* 2 матча в ряд */
+        gap: 12px;
+        justify-items: center;   /* выравнивание матчей по центру */
+        min-width: auto;         /* снимаем фиксированную ширину */
     }
 
     .match {
+        width: 140px;            /* подгоняем ширину для мобильного */
+    }
+
+    .final-stage {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .match.final, .match.bronze {
+        transform: scale(1.1);   /* слегка увеличиваем важные матчи */
         width: 160px;
-        font-size: 0.8em;
-        flex-shrink: 0;    /* не сжимается */
     }
 }
+
+
 
 /* Полоски слева от команд */
 .group tbody tr:nth-child(2) td:first-child::before,
