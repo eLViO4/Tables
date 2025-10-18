@@ -303,13 +303,35 @@ header {
     }
 }
 
-/*@media (max-width: 768px) {
-    .match {
-        width: 180px;
-        flex-shrink: 0; !* чтобы карточки не сжимались *!
-        font-size: 0.85em;
+@media (max-width: 768px) {
+    header {
+        font-size: 1.6em;
     }
-}*/
+
+    .playoff-bracket {
+        gap: 12px;
+        padding: 15px 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        min-width: max-content;
+    }
+
+    .stage {
+        flex-shrink: 0; /* карточки не сжимаются */
+    }
+
+    .match {
+        width: 160px;      /* ширина под телефон */
+        flex-shrink: 0;    /* обязательно! */
+        font-size: 0.8em;
+    }
+
+    .stage-title {
+        font-size: 0.9em;
+        height: auto;
+    }
+}
+
 
 
 /* Полоски слева от команд */
