@@ -130,9 +130,9 @@ header {
     background: var(--nl-white);
     border-radius: 6px;
     padding: 9px 12px;
-    width: 240px;
+    width: 260px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    font-size: 0.9em;
+    font-size: 1em;
 }
 
 .team {
@@ -273,6 +273,21 @@ header {
     box-shadow: none;
 }
 
+.aggregate {
+    text-align: center;
+    float: right;
+    margin-top: 1px;
+    padding-top: 1px;
+    border-top: 1px dashed #ddd;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: red;
+    min-height: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* === RESPONSIVE === */
 @media (max-width: 1200px) {
     .main-container {
@@ -300,7 +315,8 @@ header {
 /* Полоски слева от команд */
 .group tbody tr:nth-child(2) td:first-child::before,
 .group tbody tr:nth-child(3) td:first-child::before,
-.group tbody tr:nth-child(4) td:first-child::before {
+.group tbody tr:nth-child(4) td:first-child::before,
+.group tbody tr:nth-child(5) td:first-child::before {
     content: "";
     position: absolute;
     left: 2px;
@@ -309,18 +325,6 @@ header {
     width: 8px;
     border-radius: 3px;
     pointer-events: none;
-}
-
-/* 1 место — зелёная полоска */
-.group tbody tr:nth-child(2) td:first-child::before {
-    background-color: #32cd32; /* зелёный */
-}
-
-
-
-/* 3 место — красная полоска */
-.group tbody tr:nth-child(4) td:first-child::before {
-    background-color: #ff0000;
 }
 
 /* Чтобы полоски были видны — нужно позиционирование */

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>League of Nations 2024-25</title>
+
+    <!-- Bootstrap 4 (CSS + JS bundle) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto:wght@400;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="NationsLeague.css">
+    <style>
+        /* 1 место — зелёная полоска */
+        .group tbody tr:nth-child(2) td:first-child::before {
+            background-color: #32cd32; /* зелёный */
+        }
+        .group tbody tr:nth-child(3) td:first-child::before {
+            background-color: #32cd32; /* зелёный */
+        }
+        .group tbody tr:nth-child(4) td:first-child::before {
+            background-color: #ed9fa5; /* зелёный */
+        }
+        /* 3 место — красная полоска */
+        .group tbody tr:nth-child(5) td:first-child::before {
+            background-color: #ff0000;
+        }
+    </style>
+</head>
+
+<body>
+<nav class="ln-navbar navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a href="../../../index.html" class="ln-brand">Home</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#lnNavbar" aria-controls="lnNavbar"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">☰</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="lnNavbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="ln-link dropdown-toggle" href="#" role="button"
+                       data-toggle="dropdown" aria-expanded="false">
+                        Seasons
+                    </a>
+                    <ul class="dropdown-menu ln-dropdown">
+                        <li><a class="dropdown-item" href="2018-19.html">2018-19</a></li>
+                        <li><a class="dropdown-item" href="2020-21.html">2020-21</a></li>
+                        <li><a class="dropdown-item" href="2022-23.html">2022-23</a></li>
+                        <li><a class="dropdown-item" href="2024-25.html">2024-25</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header>League of Nations 2024-25</header>
+
+<div class="main-container">
+    <section class="groups-container">
+        <div class="group">
+            <h3>Group A</h3>
+            <table>
+                <tr><th>Team</th><th>Pts</th></tr>
+                <tr><td><span class="flag">🇵🇹</span>  Portugal</td><td>14</td></tr>
+                <tr><td><span class="flag">🇭🇷</span>  Croatia</td><td>8</td></tr>
+                <tr><td><span class="flag">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span>  Scotland</td><td>7</td></tr>
+                <tr><td><span class="flag">🇵🇱</span>  Poland</td><td>4</td></tr>
+            </table>
+        </div>
+
+        <div class="group">
+            <h3>Group B</h3>
+            <table>
+                <tr><th>Team</th><th>Pts</th></tr>
+                <tr><td><span class="flag">🇫🇷</span>  France</td><td>13</td></tr>
+                <tr><td><span class="flag">🇮🇹</span>  Italy</td><td>13</td></tr>
+                <tr><td><span class="flag">🇧🇪</span>  Belgium</td><td>4</td></tr>
+                <tr><td><span class="flag">🇮🇱</span>  Israel</td><td>4</td></tr>
+            </table>
+        </div>
+
+        <div class="group">
+            <h3>Group C</h3>
+            <table>
+                <tr><th>Team</th><th>Pts</th></tr>
+                <tr><td><span class="flag">🇩🇪</span>  Germany</td><td>14</td></tr>
+                <tr><td><span class="flag">🇳🇱</span>  Netherlands</td><td>9</td></tr>
+                <tr><td><span class="flag">🇭🇺</span>  Hungary</td><td>6</td></tr>
+                <tr><td><span class="flag">🇧🇦</span>  Bosnia</td><td>2</td></tr>
+            </table>
+        </div>
+
+        <div class="group">
+            <h3>Group D</h3>
+            <table>
+                <tr><th>Team</th><th>Pts</th></tr>
+                <tr><td><span class="flag">🇪🇸</span>  Spain</td><td>16</td></tr>
+                <tr><td><span class="flag">🇩🇰</span>  Denmark</td><td>8</td></tr>
+                <tr><td><span class="flag">🇷🇸</span>  Serbia</td><td>6</td></tr>
+                <tr><td><span class="flag">🇨🇭</span>  Switzerland</td><td>2</td></tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- Плей-офф -->
+    <section class="playoff-bracket">
+        <div class="stage">
+            <div class="stage-title">1/4</div>
+
+            <div class="match">
+                <div class="team winner">
+                    <div class="team-name"><span class="flag">🇩🇪</span>  Germany</div>
+                    <div class="scores"><div class="score">5</div></div>
+                </div>
+                <div class="team">
+                    <div class="team-name"><span class="flag">🇮🇹</span>  Italy</div>
+                    <div class="scores"><div class="score">4</div></div>
+                </div>
+                <div class="aggregate">OVR</div>
+            </div>
+
+            <div class="match">
+                <div class="team winner">
+                    <div class="team-name"><span class="flag">🇵🇹</span>  Portugal</div>
+                    <div class="scores"><div class="score">5</div></div>
+                </div>
+                <div class="team">
+                    <div class="team-name"><span class="flag">🇩🇰</span>  Denmark</div>
+                    <div class="scores"><div class="score">3</div></div>
+                </div>
+                <div class="aggregate">OVR</div>
+            </div>
+
+            <div class="match">
+                <div class="team winner">
+                    <div class="team-name"><span class="flag">🇪🇸</span>  Spain</div>
+                    <div class="scores"><div class="score">5&nbsp;(5)</div></div>
+                </div>
+                <div class="team">
+                    <div class="team-name"><span class="flag">🇳🇱</span>  Netherlands</div>
+                    <div class="scores"><div class="score">5&nbsp;(4)</div></div>
+                </div>
+                <div class="aggregate">OVR</div>
+            </div>
+
+            <div class="match">
+                <div class="team winner">
+                    <div class="team-name"><span class="flag">🇫🇷</span>  France</div>
+                    <div class="scores"><div class="score">2&nbsp;(5)</div></div>
+                </div>
+                <div class="team">
+                    <div class="team-name"><span class="flag">🇭🇷</span>  Croatia</div>
+                    <div class="scores"><div class="score">2&nbsp;(4)</div></div>
+                </div>
+                <div class="aggregate">OVR</div>
+            </div>
+        </div>
+
+        <div class="stage">
+            <div class="stage-title">1/2</div>
+
+            <div class="match">
+                <div class="team winner">
+                    <div class="team-name"><span class="flag">🇪🇸</span>  Spain</div>
+                    <div class="scores"><div class="score">5</div></div>
+                </div>
+                <div class="team">
+                    <div class="team-name"><span class="flag">🇫🇷</span>  France</div>
+                    <div class="scores"><div class="score">4</div></div>
+                </div>
+            </div>
+
+            <div class="match">
+                <div class="team winner">
+                    <div class="team-name"><span class="flag">🇵🇹</span>  Portugal</div>
+                    <div class="scores"><div class="score">2</div></div>
+                </div>
+                <div class="team">
+                    <div class="team-name"><span class="flag">🇩🇪</span>  Germany</div>
+                    <div class="scores"><div class="score">1</div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="stage final-stage">
+            <div class="stage-title">Final</div>
+
+            <div class="match final">
+                <div class="team winner">
+                    <div class="team-name"><span class="flag">🇵🇹</span>  PORTUGAL</div>
+                    <div class="scores"><div class="score">2&nbsp;(5)</div></div>
+                </div>
+                <div class="team">
+                    <div class="team-name"><span class="flag">🇪🇸</span>  SPAIN</div>
+                    <div class="scores"><div class="score">2&nbsp;(3)</div></div>
+                </div>
+            </div>
+
+            <div class="stage-title">Third Place</div>
+
+            <div class="match bronze">
+                <div class="team winner">
+                    <div class="team-name"><span class="flag">🇫🇷</span>  France</div>
+                    <div class="scores"><div class="score">2</div></div>
+                </div>
+                <div class="team">
+                    <div class="team-name"><span class="flag">🇩🇪</span>  Germany</div>
+                    <div class="scores"><div class="score">0</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+
+</body>
+</html>

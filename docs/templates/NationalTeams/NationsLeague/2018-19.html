@@ -18,7 +18,15 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="NationsLeague.css">
     <style>
+        /* 1 место — зелёная полоска */
+        .group tbody tr:nth-child(2) td:first-child::before {
+            background-color: #32cd32; /* зелёный */
+        }
 
+        /* 3 место — красная полоска */
+        .group tbody tr:nth-child(4) td:first-child::before {
+            background-color: #ff0000;
+        }
     </style>
 </head>
 
