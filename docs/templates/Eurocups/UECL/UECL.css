@@ -14,7 +14,8 @@ body {
     font-family: 'Roboto', sans-serif;
     color: var(--uecl-black);
     min-height: 100vh;
-    overflow-x: auto;
+    overflow-x: auto; /* ✅ разрешаем горизонтальную прокрутку */
+    overflow-y: auto;
 
     /* === ФОН ЛИГИ КОНФЕРЕНЦИЙ === */
     background:
@@ -261,4 +262,23 @@ footer {
 .playoff-bracket::-webkit-scrollbar-thumb:hover {
     background: #00ff99;
 }
+
+.champion-logo {
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.champion-logo img {
+    width: 200px;          /* одинаковая ширина */
+    height: 200px;         /* одинаковая высота */
+    object-fit: cover;     /* растягивает и обрезает по центру — одинаковый вид */
+    border-radius: 16px;   /* скруглённые края (можно убрать) */
+    transition: transform 0.3s ease;
+}
+
+.champion-logo img:hover {
+    transform: scale(1.1);
+}
+
 

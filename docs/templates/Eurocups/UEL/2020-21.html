@@ -16,6 +16,25 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="UEL.css">
+    <style>
+        .champion-logo {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .champion-logo img {
+            width: 170px;       /* фиксируем ширину */
+            height: auto;       /* высота подстраивается автоматически */
+            margin-top: 40px;
+            filter: drop-shadow(0 0 8px rgba(0,0,0,0.5));
+            transition: transform 0.3s ease;
+        }
+
+        .champion-logo img:hover {
+            transform: scale(1.1);
+        }
+
+    </style>
 </head>
 
 <body>
@@ -562,6 +581,9 @@
                         <div class="score">1&nbsp;(10)</div>
                     </div>
                 </div>
+            </div>
+            <div class="champion-logo">
+                <img src="../badges/Villarreal.png">
             </div>
         </div>
     </section>

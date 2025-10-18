@@ -12,7 +12,8 @@ body {
     font-family: 'Roboto', sans-serif;
     color: var(--nl-black);
     min-height: 100vh;
-    overflow-x: auto;
+    overflow-x: auto; /* ✅ разрешаем горизонтальную прокрутку */
+    overflow-y: auto;
     background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
     linear-gradient(135deg, #a00000 0%, #ff1a1a 100%);
 
