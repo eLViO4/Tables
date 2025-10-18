@@ -16,8 +16,6 @@ body {
     overflow-y: auto;
     background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
     linear-gradient(135deg, #a00000 0%, #ff1a1a 100%);
-
-
 }
 
 /* === HEADER === */
@@ -293,26 +291,26 @@ header {
 /* === RESPONSIVE === */
 @media (max-width: 1200px) {
     .main-container {
-        flex-direction: column; /* чтобы группы были сверху, а плей-офф — ниже */
-        gap: 30px;
+        flex-direction: column;
+        gap: 20px;
     }
+
     .playoff-bracket {
-        justify-content: flex-start; /* чтобы можно было скроллить влево-вправо */
-        overflow-x: auto; /* добавляем снова, если вдруг потерялось */
-        -webkit-overflow-scrolling: touch; /* плавный скролл на телефонах */
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        min-width: max-content;
     }
 }
 
-
-@media (max-width: 768px) {
-    header {
-        font-size: 1.8em;
-    }
+/*@media (max-width: 768px) {
     .match {
         width: 180px;
+        flex-shrink: 0; !* чтобы карточки не сжимались *!
         font-size: 0.85em;
     }
-}
+}*/
+
 
 /* Полоски слева от команд */
 .group tbody tr:nth-child(2) td:first-child::before,
