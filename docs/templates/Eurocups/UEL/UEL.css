@@ -12,7 +12,8 @@ body {
     font-family: 'Roboto', sans-serif;
     color: var(--uel-black);
     min-height: 100vh;
-    overflow-x: auto;
+
+    overflow-x: hidden;
 
     /* === ФОН ЛИГИ ЕВРОПЫ === */
     background:
@@ -53,6 +54,7 @@ header {
     min-width: 0;
     flex: 1;
     -webkit-overflow-scrolling: touch;
+
 }
 
 .stage {
