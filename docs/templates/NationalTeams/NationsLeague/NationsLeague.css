@@ -290,20 +290,19 @@ header {
     justify-content: center;
 }
 
-/*!* === RESPONSIVE === *!
+/* === RESPONSIVE === */
 @media (max-width: 1200px) {
     .main-container {
-        flex-direction: column;
-        gap: 25px;
+        flex-direction: column; /* чтобы группы были сверху, а плей-офф — ниже */
+        gap: 30px;
     }
-    .groups-container {
-        width: 100%;
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .match {
-        width: 220px;
+    .playoff-bracket {
+        justify-content: flex-start; /* чтобы можно было скроллить влево-вправо */
+        overflow-x: auto; /* добавляем снова, если вдруг потерялось */
+        -webkit-overflow-scrolling: touch; /* плавный скролл на телефонах */
     }
 }
+
 
 @media (max-width: 768px) {
     header {
@@ -313,7 +312,7 @@ header {
         width: 180px;
         font-size: 0.85em;
     }
-}*/
+}
 
 /* Полоски слева от команд */
 .group tbody tr:nth-child(2) td:first-child::before,
