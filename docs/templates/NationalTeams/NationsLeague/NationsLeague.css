@@ -12,7 +12,7 @@ body {
     font-family: 'Roboto', sans-serif;
     color: var(--nl-black);
     min-height: 100vh;
-    overflow-x: auto; /* ✅ разрешаем горизонтальную прокрутку */
+    overflow-x: auto;
     overflow-y: auto;
     background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
     linear-gradient(135deg, #a00000 0%, #ff1a1a 100%);
@@ -311,16 +311,16 @@ header {
 @media (max-width: 768px) {
     .playoff-bracket {
         display: flex;
-        flex-direction: column;  /* сверху вниз */
+        flex-direction: column;
         align-items: center;
         gap: 25px;
-        overflow-x: visible;     /* убираем горизонтальную прокрутку */
+        overflow-x: visible;
         padding: 10px;
     }
 
     .stage {
         display: flex;
-        flex-direction: column;  /* заголовок + сетка матчей */
+        flex-direction: column;
         align-items: center;
         gap: 10px;
         min-width: auto;
@@ -335,7 +335,7 @@ header {
 
     .stage-matches {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2 матча в ряд */
+        grid-template-columns: repeat(2, 1fr);
         gap: 10px;
         justify-items: center;
         width: 100%;
@@ -359,9 +359,6 @@ header {
         width: 260px;
     }
 }
-
-
-
 
 /* Полоски слева от команд */
 .group tbody tr:nth-child(2) td:first-child::before,

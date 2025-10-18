@@ -10,17 +10,19 @@
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 
 .mini-table {
-    flex: 1;
+    flex: 0 0 18%; /* ровно 5 таблиц в ряд */
     background: #fff;
     padding: 12px;
     border-radius: 10px;
     box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-    min-width: 280px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
 }
+
 
 .mini-table h3 {
     text-align: center;
@@ -66,11 +68,29 @@
     margin-bottom: 30px;
     font-size: 30px;
 }
-@media (max-width: 768px) {
+/* адаптив */
+/* === ПЛАНШЕТ === */
+@media (max-width: 1200px) {
     .mini-table {
-        width: 100%;
+        flex: 0 0 30%; /* 3 таблицы в ряд */
     }
 }
+
+/* === ТЕЛЕФОН === */
+@media (max-width: 768px) {
+    .mini-table {
+        flex: 0 0 45%; /* 2 таблицы в ряд */
+    }
+}
+
+/* === ОЧЕНЬ УЗКИЕ ЭКРАНЫ === */
+@media (max-width: 480px) {
+    .mini-table {
+        flex: 0 0 90%; /* 1 таблица в ряд */
+    }
+}
+
+
 .navbar-custom .nav-link {
     color: black !important; /* или другой цвет */
 }
