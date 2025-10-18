@@ -93,24 +93,35 @@ header {
 /* === PLAYOFF BRACKET === */
 .playoff-bracket {
     display: flex;
-    justify-content: flex-start;
     gap: 18px;
     padding: 22px 0;
     flex-wrap: nowrap;
-    overflow-x: auto;
-    min-width: max-content;
-    flex: 1;
-    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;            /* горизонтальный скролл */
+    -webkit-overflow-scrolling: touch; /* плавный скролл на тачах */
     scroll-behavior: smooth;
-
+    min-width: 100%;             /* важный момент */
+    box-sizing: content-box;
+    width: max-content;  /* чтобы не резал внутреннюю ширину */
 }
 
 .stage {
     display: flex;
     flex-direction: column;
     gap: 18px;
-    flex-shrink: 0;
+    flex-shrink: 0;              /* не сжимать */
+    min-width: 260px;            /* фиксированная минимальная ширина столбца */
 }
+
+.match {
+    background: var(--nl-white);
+    border-radius: 6px;
+    padding: 9px 12px;
+    width: 260px;                /* фиксированная ширина карточки */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    font-size: 1em;
+    flex-shrink: 0;              /* не сжимается */
+}
+
 
 .stage-title {
     font-family: 'Orbitron', sans-serif;
@@ -127,15 +138,7 @@ header {
     justify-content: center;
 }
 
-.match {
-    background: var(--nl-white);
-    border-radius: 6px;
-    padding: 9px 12px;
-    width: 260px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    font-size: 1em;
-    flex-shrink: 0;
-}
+
 
 .team {
     display: flex;
@@ -306,36 +309,24 @@ header {
 }
 
 @media (max-width: 768px) {
-    header {
-        font-size: 1.6em;
-    }
-
     .playoff-bracket {
-        display: inline-flex; /* чтобы flex не сжимался */
+        display: flex;
         gap: 12px;
         padding: 15px 0;
         overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        min-width: max-content;
+        min-width: 100%;
     }
 
-    .stage, .match {
-        flex-shrink: 0; /* карточки и столбцы не сжимаются */
+    .stage {
+        min-width: 160px;  /* меньше на телефоне */
     }
 
     .match {
         width: 160px;
         font-size: 0.8em;
-    }
-
-    .stage-title {
-        font-size: 0.9em;
-        height: auto;
+        flex-shrink: 0;    /* не сжимается */
     }
 }
-
-
-
 
 /* Полоски слева от команд */
 .group tbody tr:nth-child(2) td:first-child::before,
