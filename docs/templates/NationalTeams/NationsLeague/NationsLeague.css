@@ -98,10 +98,11 @@ header {
     padding: 22px 0;
     flex-wrap: nowrap;
     overflow-x: auto;
-    min-width: 0;
+    min-width: max-content;
     flex: 1;
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
+
 }
 
 .stage {
@@ -133,6 +134,7 @@ header {
     width: 260px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     font-size: 1em;
+    flex-shrink: 0;
 }
 
 .team {
@@ -309,6 +311,7 @@ header {
     }
 
     .playoff-bracket {
+        display: inline-flex; /* чтобы flex не сжимался */
         gap: 12px;
         padding: 15px 0;
         overflow-x: auto;
@@ -316,13 +319,12 @@ header {
         min-width: max-content;
     }
 
-    .stage {
-        flex-shrink: 0; /* карточки не сжимаются */
+    .stage, .match {
+        flex-shrink: 0; /* карточки и столбцы не сжимаются */
     }
 
     .match {
-        width: 160px;      /* ширина под телефон */
-        flex-shrink: 0;    /* обязательно! */
+        width: 160px;
         font-size: 0.8em;
     }
 
@@ -331,6 +333,7 @@ header {
         height: auto;
     }
 }
+
 
 
 
