@@ -81,46 +81,93 @@ body {
     background-color: #f8f8f8;
 }
 
-/* Navbar */
+/* Navbar для LEG */
 .navbar {
     background-color: #4816b5; /* фиолетовый фон */
     padding: 12px 20px;
     font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+/* Home слева */
 .navbar .navbar-brand {
     color: #ffffff;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 29px;
     text-decoration: none;
 }
 
-.navbar .nav-link {
-    color: #ffffff !important; /* белый текст */
-    font-size: 25px;
+/* Список dropdown справа */
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Элементы списка */
+.navbar .nav-item {
+    position: relative; /* для абсолютного dropdown */
     margin-left: 15px;
 }
 
+/* Ссылки dropdown */
+.navbar .nav-link {
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Hover для ссылок */
+.navbar .nav-link:hover {
+    color: #f0f0f0;
+}
+
+/* Меню dropdown */
 .navbar .dropdown-menu {
-    position: absolute; /* поверх navbar */
-    top: 100%;          /* сразу под кнопкой */
-    left: 0;            /* по левому краю кнопки */
-    width: auto;        /* под содержимое */
-    min-width: 150px;   /* минимальная ширина */
+    position: absolute;
+    top: 100%; /* сразу под кнопкой */
+    left: 0;
+    background-color: #ffffff;
+    border-radius: 8px;
+    min-width: 150px;
+    padding: 5px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: none; /* скрыто по умолчанию */
     z-index: 1000;
 }
 
+/* Показать меню при hover */
+.navbar .nav-item:hover .dropdown-menu {
+    display: block;
+}
+
+/* Ссылки внутри dropdown */
 .navbar .dropdown-item {
-    color: #4816b5; /* фиолетовый текст */
+    color: #4816b5;
     font-weight: 500;
+    padding: 8px 15px;
+    text-decoration: none;
+    display: block;
 }
 
+/* Hover для элементов dropdown */
 .navbar .dropdown-item:hover {
-    background-color: #4816b5; /* фиолетовый фон при наведении */
-    color: #ffffff; /* белый текст при наведении */
-}
-.navbar .nav-item {
-    position: relative; /* родитель для абсолютного меню */
+    background-color: #4816b5;
+    color: #ffffff;
 }
 
-
+/* На маленьких экранах оставляем то же отображение */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: row; /* не меняем на колонку, чтобы не было бургера */
+    }
+    .nav-item {
+        margin-left: 10px;
+    }
+}
