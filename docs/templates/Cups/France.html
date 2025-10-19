@@ -11,23 +11,19 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-custom">
-    <div class="container-fluid">
-        <a href="../../index.html" class="nav-link">HOME</a>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button"
-                       data-bs-toggle="dropdown" aria-expanded="false">
-                        Countries
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="England.html">England</a></li>
-                        <li><a class="dropdown-item" href="Spain.html">Spain</a></li>
-                        <li><a class="dropdown-item" href="Italy.html">Italy</a></li>
-                        <li><a class="dropdown-item" href="Germany.html">Germany</a></li>
-                        <li><a class="dropdown-item" href="../Cups/France.html">France</a></li>
-                    </ul>
-                </li>
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        <a href="../../index.html" class="nav-link home-link">HOME</a>
+        <div class="dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="countriesDropdown" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">
+                Countries
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="countriesDropdown">
+                <li><a class="dropdown-item" href="England.html">England</a></li>
+                <li><a class="dropdown-item" href="Spain.html">Spain</a></li>
+                <li><a class="dropdown-item" href="Italy.html">Italy</a></li>
+                <li><a class="dropdown-item" href="Germany.html">Germany</a></li>
+                <li><a class="dropdown-item" href="../Cups/France.html">France</a></li>
             </ul>
         </div>
     </div>
