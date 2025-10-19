@@ -12,8 +12,6 @@ body {
     color: var(--ucl-black);
     min-height: 100vh;
     overflow-x: hidden;
-
-    /* === ФОН ЛИГИ ЧЕМПИОНОВ === */
     background:
             linear-gradient(rgba(0, 10, 40, 0.65), rgba(0, 10, 40, 0.75)), /* лёгкое затемнение для читаемости */
             url('../images/UCL.jpg') center center / cover no-repeat fixed;
@@ -25,7 +23,6 @@ body {
    margin-left: 50px;
     font-weight: bold;
 }
-
 
 header {
     text-align: center;
@@ -47,7 +44,6 @@ header {
     align-items: flex-start;
 }
 
-/* === PLAYOFF STAGE === */
 /* === PLAYOFF STAGE === */
 .playoff-bracket {
     display: flex;
@@ -232,13 +228,17 @@ header {
 .group table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.7em;
+    font-size: 1em;
 }
 
 .group th, .group td {
     border-bottom: 1px solid #ddd;
     padding: 4px 3px;
     text-align: center;
+}
+.group td:first-child {
+    font-size: 1.05em;
+    font-weight: 700;
 }
 
 .group th {
@@ -502,4 +502,22 @@ footer {
 
 .champion-logo img:hover {
     transform: scale(1.1);
+}
+
+
+
+/* Увеличение шрифта команд в таблицах */
+.league-phase .league-table table {
+    font-size: 0.9em;       /* увеличиваем общий размер текста */
+}
+
+.league-phase .league-table th,
+.league-phase .league-table td {
+    padding: 8px 10px;      /* увеличиваем отступы */
+}
+
+.league-phase .league-table td:nth-child(2) {
+    font-weight: 600;
+      /* делаем жирным название команды */
+   /* синий акцент на команды */
 }

@@ -473,3 +473,24 @@ footer {
     transform: scale(1.1);
 }
 
+/* Разделение dropdown на 2 колонки */
+.ucl-dropdown .seasons-columns {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+}
+
+.ucl-dropdown .seasons-column {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Ограничиваем высоту и скролл для маленьких экранов */
+@media (max-width: 768px) {
+    .ucl-dropdown .seasons-columns {
+        flex-direction: column;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+}
