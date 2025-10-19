@@ -169,3 +169,73 @@ h1 {
         flex-wrap: wrap;
     }
 }
+/* HOME цвет */
+.navbar-custom .home-link {
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 30px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar-custom .home-link:hover {
+    color: #000000 !important;
+}
+
+/* Dropdown фиксация — чтобы не сдвигал navbar */
+.navbar-custom .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: auto;
+    z-index: 1000;
+    background: #f5f3f1;
+    border-radius: 8px;
+    padding: 10px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Ссылка "Countries" */
+.navbar-custom .dropdown-toggle {
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 30px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar-custom .dropdown-toggle:hover {
+    color: #000000 !important;
+}
+
+/* Элементы списка стран */
+.dropdown-item {
+    padding: 8px 20px;
+    color: #2d3748;
+    text-decoration: none;
+    display: block;
+    transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background: #db7c0e;
+    color: white;
+}
+/* Контейнер навбара */
+.navbar-custom .container-fluid {
+    display: flex;
+    justify-content: space-between; /* HOME слева, Countries справа */
+    align-items: center; /* по вертикали */
+}
+
+/* HOME слева без центрирования */
+.navbar-custom .home-link {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+/* Dropdown справа */
+.navbar-custom .dropdown {
+    margin: 0;
+}
