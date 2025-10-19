@@ -504,8 +504,6 @@ footer {
     transform: scale(1.1);
 }
 
-
-
 /* Увеличение шрифта команд в таблицах */
 .league-phase .league-table table {
     font-size: 0.9em;       /* увеличиваем общий размер текста */
