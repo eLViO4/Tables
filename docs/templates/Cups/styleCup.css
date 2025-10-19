@@ -6,36 +6,7 @@ body {
     color: #111;
 }
 
-/* Navbar */
-.navbar-custom {
-    background: linear-gradient(135deg, #ca6e04 0%, #f5f3f1 100%);
-    backdrop-filter: blur(10px);
-    height: 68px;
-    margin-bottom: 30px;
-    font-size: 30px;
-    border-bottom: 3px solid #db7c0e;
-    border-radius: 0;
-    width: 100vw; /* растянуть до краёв экрана */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    z-index: 100;
-}
 
-/* Navbar links */
-.navbar-custom .nav-link {
-    color: #ffffff !important; /* белый цвет текста */
-    text-decoration: none;
-    font-weight: 700;
-    padding: 10px 15px;
-    transition: all 0.3s ease;
-}
-
-.navbar-custom .nav-link:hover {
-    color: #000000 !important; /* цвет при наведении */
-    border-radius: 6px;
-}
 
 /* Dropdown */
 .dropdown-menu {
@@ -135,7 +106,7 @@ body {
 }
 
 .recent-table th {
-    background: #f5c978;
+    background: #db7c0e;
 }
 
 /* Заголовки Cups и Supercups */
@@ -153,89 +124,101 @@ h1 {
     align-items: flex-start;
 }
 
-/* Адаптив */
-@media (max-width: 768px) {
-    .d-flex {
-        flex-direction: column;
-    }
-    .winners-list,
-    .recent-table {
-        width: 100%;
-    }
+
+/* ===========================
+   NAVBAR
+=========================== */
+.navbar-custom {
+    background-color: #db7c0e;       /* фон навбара */
+    height: 68px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;  /* HOME слева, Countries справа */
+    align-items: center;             /* вертикальное центрирование */
+    font-size: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    z-index: 100;
 }
 
-@media (max-width: 1200px) {
-    .full-line {
-        flex-wrap: wrap;
-    }
-}
-/* HOME цвет */
+/* HOME слева */
 .navbar-custom .home-link {
     color: #ffffff !important;
     font-weight: 700;
-    font-size: 30px;
     text-decoration: none;
+    font-size: 30px;
+    line-height: 1;
     transition: color 0.3s ease;
 }
 
-.navbar-custom .home-link:hover {
-    color: #000000 !important;
+/* DROPDOWN СПРАВА */
+.navbar-custom .dropdown {
+    position: relative; /* чтобы меню позиционировалось относительно родителя */
 }
 
-/* Dropdown фиксация — чтобы не сдвигал navbar */
-.navbar-custom .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    left: auto;
-    z-index: 1000;
-    background: #f5f3f1;
-    border-radius: 8px;
-    padding: 10px 0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-/* Ссылка "Countries" */
 .navbar-custom .dropdown-toggle {
     color: #ffffff !important;
     font-weight: 700;
     font-size: 30px;
     text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
     transition: color 0.3s ease;
 }
 
-.navbar-custom .dropdown-toggle:hover {
-    color: #000000 !important;
+
+/* Меню dropdown */
+.navbar-custom .dropdown-menu {
+    position: absolute;
+    top: 100%;   /* сразу под кнопкой */
+    right: 0;    /* прижать к правому краю */
+    left: auto;  /* не растягивать влево */
+    z-index: 1000;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 8px 0;
 }
 
-/* Элементы списка стран */
-.dropdown-item {
-    padding: 8px 20px;
+/* Пункты dropdown */
+.navbar-custom .dropdown-item {
     color: #2d3748;
+    padding: 8px 20px;
     text-decoration: none;
     display: block;
     transition: all 0.2s ease;
 }
 
-.dropdown-item:hover {
-    background: #db7c0e;
-    color: white;
-}
-/* Контейнер навбара */
-.navbar-custom .container-fluid {
-    display: flex;
-    justify-content: space-between; /* HOME слева, Countries справа */
-    align-items: center; /* по вертикали */
+.navbar-custom .dropdown-item:hover {
+    background-color: #db7c0e;
+    color: #ffffff;
 }
 
-/* HOME слева без центрирования */
-.navbar-custom .home-link {
-    margin: 0;
-    padding: 0;
-    line-height: 1;
+/* ===========================
+   АДАПТИВ
+=========================== */
+@media (max-width: 1200px) {
+    .navbar-custom .home-link,
+    .navbar-custom .dropdown-toggle {
+        font-size: 26px;
+    }
 }
 
-/* Dropdown справа */
-.navbar-custom .dropdown {
-    margin: 0;
+@media (max-width: 768px) {
+    .navbar-custom {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 20px;
+        gap: 10px;
+    }
+
+    .navbar-custom .home-link,
+    .navbar-custom .dropdown-toggle {
+        font-size: 22px;
+    }
+
+    .navbar-custom .dropdown-menu {
+        right: 0;
+        left: 0;
+    }
 }
