@@ -70,6 +70,12 @@ body {
     font-weight: bold;
 }
 
+.mini-table table tbody tr.int td:first-child {
+    background-color: #9ae20c;
+    color: #fff;
+    font-weight: bold;
+}
+
 .mini-table table tbody tr.relegation td:first-child {
     background-color: #e74c3c;
     color: #fff;
@@ -169,5 +175,20 @@ body {
     }
     .nav-item {
         margin-left: 10px;
+    }
+    .tables-container {
+        transform: scale(0.8); /* уменьшаем таблицу для телефонов */
+        transform-origin: top center; /* центрируем масштабирование */
+        max-width: 100%;
+    }
+
+    .mini-table h3 {
+        font-size: 28px; /* немного меньше заголовок */
+    }
+
+    .mini-table th,
+    .mini-table td {
+        font-size: 13px; /* уменьшаем шрифт */
+        padding: 8px 4px;
     }
 }
