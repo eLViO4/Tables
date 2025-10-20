@@ -76,6 +76,12 @@ body {
     font-weight: bold;
 }
 
+.mini-table table tbody tr.rel td:first-child {
+    background-color: #eb79b4;
+    color: #fff;
+    font-weight: bold;
+}
+
 .mini-table table tbody tr.relegation td:first-child {
     background-color: #e74c3c;
     color: #fff;
