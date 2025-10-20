@@ -3,13 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EPL 1999-00</title>
+    <title>Bundesliga 1999-00 Standings</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../Leagues.css"> <!-- сюда вставь CSS из предыдущего сообщения -->
 </head>
+<style>
+    body {
+        background-color: #515050;
+    }
+    .mini-table h3 {
+        color: white;
+        background-color:#ce0707 ;
+    }
+    .mini-table th {
+        background-color: #ce0707;
+        color: #fff;
+    }
+    .navbar {
+        background-color: #ce0707; /* фиолетовый фон */
+    }
+
+    /* Home слева */
+    .navbar .navbar-brand {
+        color: #ffffff;
+    }
+    /* Ссылки внутри dropdown */
+    .navbar .dropdown-item {
+        color: black;
+    }
+
+    /* Hover для элементов dropdown */
+    .navbar .dropdown-item:hover {
+        background-color: #515050;
+        color: #ffffff;
+    }
+
+</style>
+
 <body>
 
 <nav class="navbar">
@@ -64,49 +97,8 @@
     </ul>
 </nav>
 
-<div class="tables-container">
-    <div class="mini-table">
-        <h3>1999-2000</h3>
-        <table>
-            <thead>
-            <tr>
-                <th>Pos</th>
-                <th>Team</th>
-                <th>Pts</th>
-            </tr>
-            </thead>
-            <tbody>
-            <!-- UCL 1-4 -->
-            <tr class="ucl"><td>1</td><td>Manchester United</td><td>91</td></tr>
-            <tr class="ucl"><td>2</td><td>Arsenal</td><td>73</td></tr>
-            <tr class="ucl"><td>3</td><td>Leeds United</td><td>69</td></tr>
-            <tr class="uel"><td>4</td><td>Liverpool</td><td>67</td></tr>
 
-            <!-- UEL 5-7 -->
-            <tr class="uel"><td>5</td><td>Chelsea</td><td>65</td></tr>
-            <tr class="int"><td>6</td><td>Aston Villa</td><td>58</td></tr>
-            <tr><td>7</td><td>Sunderland</td><td>58</td></tr>
 
-            <!-- Остальные места 8-17 -->
-            <tr class="uel"><td>8</td><td>Leicester City</td><td>55</td></tr>
-            <tr><td>9</td><td>West Ham United</td><td>55</td></tr>
-            <tr><td>10</td><td>Tottenham Hotspur</td><td>53</td></tr>
-            <tr><td>11</td><td>Newcastle United</td><td>52</td></tr>
-            <tr><td>12</td><td>Middlesbrough</td><td>52</td></tr>
-            <tr><td>13</td><td>Everton</td><td>50</td></tr>
-            <tr><td>14</td><td>Coventry City</td><td>44</td></tr>
-            <tr><td>15</td><td>Southampton</td><td>44</td></tr>
-            <tr><td>16</td><td>Derby County</td><td>38</td></tr>
-            <tr class="int"><td>17</td><td>Bradford City</td><td>36</td></tr>
-
-            <!-- Relegation 18-20 -->
-            <tr class="relegation"><td>18</td><td>Wimbledon</td><td>33</td></tr>
-            <tr class="relegation"><td>19</td><td>Sheffield Wednesday</td><td>31</td></tr>
-            <tr class="relegation"><td>20</td><td>Watford</td><td>24</td></tr>
-            </tbody>
-        </table>
-    </div>
-</div>
 
 </body>
 </html>
