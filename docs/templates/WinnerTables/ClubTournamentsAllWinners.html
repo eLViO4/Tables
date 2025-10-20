@@ -12,7 +12,7 @@
             font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
             margin: 0;
             padding-bottom: 20px;
-            background: #f7f7f7;
+            background: #e6f0ff;
             color: black;
         }
 
@@ -23,23 +23,63 @@
             font-size: 30px;
         }
 
-        .winners-list {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-            flex: 1;
-            min-width: 0;
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            display: inline-block;
         }
 
-        .winners-list h2 {
-            margin-top: 0;
-            font-size: 20px;
-            text-align: center;
-            border-bottom: 2px solid #333;
+        h1 {
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #78a1f5;
             padding-bottom: 10px;
-            margin-bottom: 20px;
-            white-space: nowrap;
+            text-align: center;
+        }
+
+        #club-winners {
+            width: 95%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            border: none;
+            margin-bottom: 10px;
+        }
+
+        .accordion-button {
+            background-color: #78a1f5;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 15px 20px;
+            font-size: 1.1em;
+            font-weight: bold;
+            width: 100%; /* Одинаковая ширина */
+            min-height: 60px; /* Одинаковая высота */
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Текст по центру */
+            text-align: center;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #5a8ae6;
+            color: white;
+            box-shadow: none;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            border: none;
+        }
+
+        .accordion-body {
+            background-color: #ffffff;
+            border-radius: 0 0 8px 8px;
+            padding: 20px;
         }
 
         .winners-list ul {
@@ -52,7 +92,6 @@
             display: flex;
             justify-content: space-between;
             padding: 8px 0;
-            border-bottom: 1px solid #eee;
             font-size: 1.1em;
         }
 
@@ -61,213 +100,294 @@
             color: #003399;
         }
 
-        h1 {
-            margin-bottom: 30px;
-            font-size: 2.5em;
-            border-bottom: 3px solid #333;
-            padding-bottom: 10px;
-            text-align: center;
+        .divider {
+            border-bottom: 3px solid #003399;
+            margin: 8px 0;
         }
 
-        .d-flex {
-            display: flex;
-            gap: 10px;
-            align-items: flex-start;
-            justify-content: space-between;
-            width: 100%;
-        }
-
-        @media (max-width: 1200px) {
-            .d-flex {
-                flex-wrap: wrap;
-                gap: 15px;
-            }
-            .winners-list {
-                width: calc(33.333% - 10px);
-            }
-        }
-
-        @media (max-width: 900px) {
-            .winners-list {
-                width: calc(50% - 7.5px);
+        @media (min-width: 768px) {
+            #club-winners {
+                width: 50%;
             }
         }
 
         @media (max-width: 600px) {
-            .d-flex {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .winners-list {
+            #club-winners {
                 width: 100%;
             }
-        }
-
-        .flag-icon {
-            margin-right: 10px;
-            font-size: 1.3em;
+            .accordion-button {
+                min-height: 50px; /* Немного меньше на мобильных */
+                font-size: 1em;
+            }
         }
     </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-custom">
-    <a href="../../index.html" class="nav-link" style="color: white">HOME</a>
+    <a href="../../index.html" class="nav-link">HOME</a>
 </nav>
 
 <div class="container-fluid">
     <section id="club-winners">
         <h1>Club Competition Winners</h1>
-        <div class="d-flex">
 
-            <!-- UEFA Champions League -->
-            <div class="winners-list">
-                <h2>UEFA Champions League</h2>
-                <ul>
-                    <li>Real Madrid <span>15</span></li>
-                    <li>Milan <span>7</span></li>
-                    <li>Liverpool <span>6</span></li>
-                    <li>Bayern Munich <span>6</span></li>
-                    <li>Liverpool <span>6</span></li>
-                    <li>Barcelona <span>5</span></li>
-                    <li>Ajax <span>4</span></li>
-                    <li>Inter <span>3</span></li>
-                    <li>Manchester United <span>3</span></li>
-                    <li>Juventus <span>2</span></li>
-                    <li>Benfica <span>2</span></li>
-                    <li>Chelsea <span>2</span></li>
-                    <li>Porto <span>2</span></li>
-                    <li>Nottingham Forrest <span>2</span></li>
-                    <li>Manchester City <span>1</span></li>
-                    <li>PSG <span>1</span></li>
-                    <li>Aston Villa <span>1</span></li>
-                    <li>Borussia Dortmund <span>1</span></li>
-                    <li>Marseille <span>1</span></li>
-                    <li>Hamburg <span>1</span></li>
-                    <li>Feyenoord <span>1</span></li>
-                    <li>PSV <span>1</span></li>
-                    <li>Celtic <span>1</span></li>
-                    <li>Crvena Zvezda <span>1</span></li>
-                    <li>Steaua <span>1</span></li>
+        <div class="accordion" id="competitionsAccordion">
 
-                </ul>
+            <!-- Champions League -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingCL">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCL" aria-expanded="false" aria-controls="collapseCL">
+                        UEFA Champions League
+                    </button>
+                </h2>
+                <div id="collapseCL" class="accordion-collapse collapse" aria-labelledby="headingCL" data-bs-parent="#competitionsAccordion">
+                    <div class="accordion-body winners-list">
+                        <ul>
+                            <li>Real Madrid <span>15</span></li>
+                            <div class="divider"></div>
+                            <li>Milan <span>7</span></li>
+                            <div class="divider"></div>
+                            <li>Liverpool <span>6</span></li>
+                            <li>Bayern Munich <span>6</span></li>
+                            <div class="divider"></div>
+                            <li>Barcelona <span>5</span></li>
+                            <div class="divider"></div>
+                            <li>Ajax <span>4</span></li>
+                            <div class="divider"></div>
+                            <li>Inter <span>3</span></li>
+                            <li>Manchester United <span>3</span></li>
+                            <div class="divider"></div>
+                            <li>Juventus <span>2</span></li>
+                            <li>Benfica <span>2</span></li>
+                            <li>Chelsea <span>2</span></li>
+                            <li>Porto <span>2</span></li>
+                            <li>Nottingham Forest <span>2</span></li>
+                            <div class="divider"></div>
+                            <li>Manchester City <span>1</span></li>
+                            <li>PSG <span>1</span></li>
+                            <li>Aston Villa <span>1</span></li>
+                            <li>Borussia Dortmund <span>1</span></li>
+                            <li>Marseille <span>1</span></li>
+                            <li>Hamburg <span>1</span></li>
+                            <li>Feyenoord <span>1</span></li>
+                            <li>PSV <span>1</span></li>
+                            <li>Celtic <span>1</span></li>
+                            <li>Crvena Zvezda <span>1</span></li>
+                            <li>Steaua <span>1</span></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
-            <!-- UEFA Europa League -->
-            <div class="winners-list">
-                <h2>UEFA Europa League</h2>
-                <ul>
-                    <li>Sevilla <span>7</span></li>
-                    <li>Inter <span>3</span></li>
-                    <li>Liverpool <span>3</span></li>
-                    <li>Juventus <span>3</span></li>
-                    <li>Atletico Madrid <span>3</span></li>
-                    <li>Tottenham <span>3</span></li>
-                    <li>Borussia M'Gladbach <span>2</span></li>
-                    <li>Chelsea <span>2</span></li>
-                    <li>Porto <span>2</span></li>
-                    <li>Parma <span>2</span></li>
-                    <li>Real Madrid <span>2</span></li>
-                    <li>Goteborg <span>2</span></li>
-                    <li>Eintracht Frankfurt <span>2</span></li>
-                    <li>Feyenoord <span>2</span></li>
-                    <li>Manchester United<span>1</span></li>
-                    <li>Anderlecht<span>1</span></li>
-                    <li>Bayer Leverkusen<span>1</span></li>
-                    <li>Ajax<span>1</span></li>
-                    <li>PSV Eindhoven<span>1</span></li>
-                    <li>Ipswich Town<span>1</span></li>
-                    <li>Napoli<span>1</span></li>
-                    <li>Bayern Munich<span>1</span></li>
-                    <li>Schalke 04<span>1</span></li>
-                    <li>Galatasaray<span>1</span></li>
-                    <li>Valencia<span>1</span></li>
-                    <li>CSKA Moscow<span>1</span></li>
-                    <li>Zenit Saint Petersburg<span>1</span></li>
-                    <li>Shakhtar Donetsk<span>1</span></li>
-                    <li>Villarreal<span>1</span></li>
-                    <li>Atalanta<span>1</span></li>
-                </ul>
+            <!-- Europa League -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingEL">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEL" aria-expanded="false" aria-controls="collapseEL">
+                        UEFA Europa League
+                    </button>
+                </h2>
+                <div id="collapseEL" class="accordion-collapse collapse" aria-labelledby="headingEL" data-bs-parent="#competitionsAccordion">
+                    <div class="accordion-body winners-list">
+                        <ul>
+                            <li>Sevilla <span>7</span></li>
+                            <div class="divider"></div>
+                            <li>Inter <span>3</span></li>
+                            <li>Liverpool <span>3</span></li>
+                            <li>Juventus <span>3</span></li>
+                            <li>Atletico Madrid <span>3</span></li>
+                            <li>Tottenham <span>3</span></li>
+                            <div class="divider"></div>
+                            <li>Borussia M'Gladbach <span>2</span></li>
+                            <li>Chelsea <span>2</span></li>
+                            <li>Porto <span>2</span></li>
+                            <li>Parma <span>2</span></li>
+                            <li>Real Madrid <span>2</span></li>
+                            <li>Goteborg <span>2</span></li>
+                            <li>Eintracht Frankfurt <span>2</span></li>
+                            <li>Feyenoord <span>2</span></li>
+                            <div class="divider"></div>
+                            <li>Manchester United <span>1</span></li>
+                            <li>Anderlecht <span>1</span></li>
+                            <li>Bayer Leverkusen <span>1</span></li>
+                            <li>Ajax <span>1</span></li>
+                            <li>PSV Eindhoven <span>1</span></li>
+                            <li>Ipswich Town <span>1</span></li>
+                            <li>Napoli <span>1</span></li>
+                            <li>Bayern Munich <span>1</span></li>
+                            <li>Schalke 04 <span>1</span></li>
+                            <li>Galatasaray <span>1</span></li>
+                            <li>Valencia <span>1</span></li>
+                            <li>CSKA Moscow <span>1</span></li>
+                            <li>Zenit Saint Petersburg <span>1</span></li>
+                            <li>Shakhtar Donetsk <span>1</span></li>
+                            <li>Villarreal <span>1</span></li>
+                            <li>Atalanta <span>1</span></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
-            <!-- UEFA Europa Conference League -->
-            <div class="winners-list">
-                <h2>UEFA Europa Conference League</h2>
-                <ul>
-                    <li>Chelsea <span>1</span></li>
-                    <li>West Ham <span>1</span></li>
-                    <li>Roma <span>1</span></li>
-                    <li>Feyenoord <span>1</span></li>
-                </ul>
+            <!-- Conference League -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingConf">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseConf" aria-expanded="false" aria-controls="collapseConf">
+                        UEFA Europa Conference League
+                    </button>
+                </h2>
+                <div id="collapseConf" class="accordion-collapse collapse" aria-labelledby="headingConf" data-bs-parent="#competitionsAccordion">
+                    <div class="accordion-body winners-list">
+                        <ul>
+                            <li>Chelsea <span>1</span></li>
+                            <li>West Ham <span>1</span></li>
+                            <li>Olympiacos <span>1</span></li>
+                            <li>Roma <span>1</span></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
-            <!-- UEFA Super Cup -->
-            <div class="winners-list">
-                <h2>UEFA Super Cup</h2>
-                <ul>
-                    <li>Real Madrid <span>6</span></li>
-                    <li>Barcelona <span>5</span></li>
-                    <li>Milan <span>5</span></li>
-                    <li>Liverpool <span>4</span></li>
-                    <li>Atletico Madrid <span>3</span></li>
-                    <li>Bayern Munich <span>2</span></li>
-                    <li>Chelsea <span>2</span></li>
-                    <li>Juventus <span>2</span></li>
-                    <li>Ajax <span>2</span></li>
-                    <li>Anderlecht <span>2</span></li>
-                    <li>Valencia <span>2</span></li>
-                    <li>Sevilla <span>1</span></li>
-                    <li>Porto <span>1</span></li>
-                    <li>Manchester United <span>1</span></li>
-                    <li>Dynamo Kyiv <span>1</span></li>
-                    <li>Nottingham Forrest <span>1</span></li>
-                    <li>PSG <span>1</span></li>
-                    <li>Zenit <span>1</span></li>
-                    <li>Galatasaray <span>1</span></li>
-                    <li>Lazio <span>1</span></li>
-                    <li>Parma <span>1</span></li>
-                    <li>Mechelen <span>1</span></li>
-                    <li>Steaua <span>1</span></li>
-                    <li>Aberdeen <span>1</span></li>
-                    <li>Aston Villa <span>1</span></li>
-                </ul>
+            <!-- Super Cup -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSC">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSC" aria-expanded="false" aria-controls="collapseSC">
+                        UEFA Super Cup
+                    </button>
+                </h2>
+                <div id="collapseSC" class="accordion-collapse collapse" aria-labelledby="headingSC" data-bs-parent="#competitionsAccordion">
+                    <div class="accordion-body winners-list">
+                        <ul>
+                            <li>Real Madrid <span>6</span></li>
+                            <div class="divider"></div>
+                            <li>Barcelona <span>5</span></li>
+                            <li>Milan <span>5</span></li>
+                            <div class="divider"></div>
+                            <li>Liverpool <span>4</span></li>
+                            <div class="divider"></div>
+                            <li>Atletico Madrid <span>3</span></li>
+                            <div class="divider"></div>
+                            <li>Bayern Munich <span>2</span></li>
+                            <li>Chelsea <span>2</span></li>
+                            <li>Juventus <span>2</span></li>
+                            <li>Ajax <span>2</span></li>
+                            <li>Anderlecht <span>2</span></li>
+                            <li>Valencia <span>2</span></li>
+                            <div class="divider"></div>
+                            <li>Sevilla <span>1</span></li>
+                            <li>Porto <span>1</span></li>
+                            <li>Manchester United <span>1</span></li>
+                            <li>Dynamo Kyiv <span>1</span></li>
+                            <li>Nottingham Forest <span>1</span></li>
+                            <li>PSG <span>1</span></li>
+                            <li>Zenit <span>1</span></li>
+                            <li>Galatasaray <span>1</span></li>
+                            <li>Lazio <span>1</span></li>
+                            <li>Parma <span>1</span></li>
+                            <li>Mechelen <span>1</span></li>
+                            <li>Steaua <span>1</span></li>
+                            <li>Aberdeen <span>1</span></li>
+                            <li>Aston Villa <span>1</span></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
-            <!-- FIFA Club World Cup -->
-            <div class="winners-list">
-                <h2>Club World Cup</h2>
-                <ul >
-                    <li>Real Madrid<span>8</span></li>
-                    <li>Milan<span>4</span></li>
-                    <li>Bayern Munich<span>4</span></li>
-                    <li>Barcelona<span>3</span></li>
-                    <li>Boca Juniors<span>2</span></li>
-                    <li>Peñarol<span>2</span></li>
-                    <li>Santos<span>2</span></li>
-                    <li>Ajax<span>2</span></li>
-                    <li>Juventus<span>2</span></li>
-                    <li>Manchester United<span>2</span></li>
-                    <li>Nacional<span>2</span></li>
-                    <li>Porto<span>2</span></li>
-                    <li>São Paulo<span>2</span></li>
-                    <li>Corinthians<span>2</span></li>
-                    <li>Inter<span>2</span></li>
-                    <li>Chelsea<span>2</span></li>
-                    <li>Liverpool<span>1</span></li>
-                    <li>Manchester City<span>1</span></li>
-                    <li>Borussia Dortmund<span>1</span></li>
-                    <li>Internacional<span>1</span></li>
-                    <li>Vélez Sársfield<span>1</span></li>
-                    <li>Crvena Zvezda<span>1</span></li>
-                    <li>River Plate<span>1</span></li>
-                    <li>Flamengo<span>1</span></li>
-                    <li>Grêmio<span>1</span></li>
-                    <li>Independiente<span>1</span></li>
-                    <li>Olimpia<span>1</span></li>
-                    <li>Racing<span>1</span></li>
-                    <li>Estudiantes<span>1</span></li>
-                    <li>Feyenoord<span>1</span></li>
-                    <li>Atlético Madrid<span>1</span></li>
-                </ul>
+            <!-- Club World Cup -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingCWC">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCWC" aria-expanded="false" aria-controls="collapseCWC">
+                        FIFA Club World Cup
+                    </button>
+                </h2>
+                <div id="collapseCWC" class="accordion-collapse collapse" aria-labelledby="headingCWC" data-bs-parent="#competitionsAccordion">
+                    <div class="accordion-body winners-list">
+                        <ul>
+                            <li>Real Madrid <span>8</span></li>
+                            <div class="divider"></div>
+                            <li>Milan <span>4</span></li>
+                            <li>Bayern Munich <span>4</span></li>
+                            <div class="divider"></div>
+                            <li>Barcelona <span>3</span></li>
+                            <div class="divider"></div>
+                            <li>Boca Juniors <span>2</span></li>
+                            <li>Peñarol <span>2</span></li>
+                            <li>Santos <span>2</span></li>
+                            <li>Ajax <span>2</span></li>
+                            <li>Juventus <span>2</span></li>
+                            <li>Manchester United <span>2</span></li>
+                            <li>Nacional <span>2</span></li>
+                            <li>Porto <span>2</span></li>
+                            <li>São Paulo <span>2</span></li>
+                            <li>Corinthians <span>2</span></li>
+                            <li>Inter <span>2</span></li>
+                            <li>Chelsea <span>2</span></li>
+                            <div class="divider"></div>
+                            <li>Liverpool <span>1</span></li>
+                            <li>Manchester City <span>1</span></li>
+                            <li>Borussia Dortmund <span>1</span></li>
+                            <li>Internacional <span>1</span></li>
+                            <li>Vélez Sársfield <span>1</span></li>
+                            <li>Crvena Zvezda <span>1</span></li>
+                            <li>River Plate <span>1</span></li>
+                            <li>Flamengo <span>1</span></li>
+                            <li>Grêmio <span>1</span></li>
+                            <li>Independiente <span>1</span></li>
+                            <li>Olimpia <span>1</span></li>
+                            <li>Racing <span>1</span></li>
+                            <li>Estudiantes <span>1</span></li>
+                            <li>Feyenoord <span>1</span></li>
+                            <li>Atlético Madrid <span>1</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cup Winners' Cup -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingCupWinners">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCupWinners" aria-expanded="false" aria-controls="collapseCupWinners">
+                        UEFA Cup Winners' Cup
+                    </button>
+                </h2>
+                <div id="collapseCupWinners" class="accordion-collapse collapse" aria-labelledby="headingCupWinners" data-bs-parent="#competitionsAccordion">
+                    <div class="accordion-body winners-list">
+                        <ul>
+                            <li>Barcelona <span>4</span></li>
+                            <div class="divider"></div>
+                            <li>Anderlecht <span>2</span></li>
+                            <li>Milan <span>2</span></li>
+                            <li>Chelsea <span>2</span></li>
+                            <li>Dynamo Kyiv <span>2</span></li>
+                            <div class="divider"></div>
+                            <li>Atlético Madrid <span>1</span></li>
+                            <li>Rangers <span>1</span></li>
+                            <li>Arsenal <span>1</span></li>
+                            <li>PSG <span>1</span></li>
+                            <li>Parma <span>1</span></li>
+                            <li>Sampdoria <span>1</span></li>
+                            <li>Ajax <span>1</span></li>
+                            <li>Hamburg <span>1</span></li>
+                            <li>West Ham <span>1</span></li>
+                            <li>Fiorentina <span>1</span></li>
+                            <li>Lazio <span>1</span></li>
+                            <li>Real Zaragoza <span>1</span></li>
+                            <li>Werder <span>1</span></li>
+                            <li>Manchester United <span>1</span></li>
+                            <li>Mechelen <span>1</span></li>
+                            <li>Everton <span>1</span></li>
+                            <li>Juventus <span>1</span></li>
+                            <li>Aberdeen <span>1</span></li>
+                            <li>Dinamo Tbilisi <span>1</span></li>
+                            <li>Valencia <span>1</span></li>
+                            <li>Magdeburg <span>1</span></li>
+                            <li>Manchester City <span>1</span></li>
+                            <li>Slovan Bratislava <span>1</span></li>
+                            <li>Bayern Munich <span>1</span></li>
+                            <li>Borussia Dortmund <span>1</span></li>
+                            <li>Sporting CP <span>1</span></li>
+                            <li>Tottenham Hotspur <span>1</span></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
         </div>
