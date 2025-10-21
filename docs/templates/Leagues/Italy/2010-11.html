@@ -3,13 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EPL 2010-11</title>
+    <title>Serie A 2010-11 Standings</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../Leagues.css"> <!-- сюда вставь CSS из предыдущего сообщения -->
 </head>
+<style>
+    body {
+        background-color: #76c5f7;
+    }
+    .mini-table h3 {
+        color: white;
+        background-color:blue ;
+    }
+    .mini-table th {
+        background-color: blue;
+        color: #fff;
+    }
+    .navbar {
+        background-color: blue; /* фиолетовый фон */
+    }
+
+    /* Home слева */
+    .navbar .navbar-brand {
+        color: #ffffff;
+    }
+    /* Ссылки внутри dropdown */
+    .navbar .dropdown-item {
+        color: black;
+    }
+
+    /* Hover для элементов dropdown */
+    .navbar .dropdown-item:hover {
+        background-color: blue;
+        color: #ffffff;
+    }
+
+</style>
+
 <body>
 
 <nav class="navbar">
@@ -45,7 +78,7 @@
         <!-- 2020–2025 -->
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown2020" role="button">
-                2020–2025
+                2016–2025
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdown2020">
                 <a class="dropdown-item" href="2015-16.html">2015–16</a>
@@ -66,7 +99,7 @@
 
 <div class="tables-container">
     <div class="mini-table">
-        <h3>2010-11</h3>
+        <h3>2010-2011</h3>
         <table>
             <thead>
             <tr>
@@ -76,37 +109,31 @@
             </tr>
             </thead>
             <tbody>
-            <!-- UCL 1-4 -->
-            <tr class="ucl"><td>1</td><td>Manchester United</td><td>80</td></tr>
-            <tr class="ucl"><td>2</td><td>Chelsea</td><td>71</td></tr>
-            <tr class="ucl"><td>3</td><td>Manchester City</td><td>71</td></tr>
-            <tr class="ucl"><td>4</td><td>Arsenal</td><td>68</td></tr>
-
-            <!-- UEL 5-6 -->
-            <tr class="uel"><td>5</td><td>Tottenham Hotspur</td><td>62</td></tr>
-            <tr><td>6</td><td>Liverpool</td><td>58</td></tr>
-
-            <!-- Остальные места 7-17 -->
-            <tr><td>7</td><td>Everton</td><td>54</td></tr>
-            <tr class="uel"><td>8</td><td>Fulham</td><td>49</td></tr>
-            <tr><td>9</td><td>Aston Villa</td><td>48</td></tr>
-            <tr><td>10</td><td>Sunderland</td><td>47</td></tr>
-            <tr><td>11</td><td>West Bromwich Albion</td><td>47</td></tr>
-            <tr><td>12</td><td>Newcastle United</td><td>46</td></tr>
-            <tr class="uel"><td>13</td><td>Stoke City</td><td>46</td></tr>
-            <tr><td>14</td><td>Bolton Wanderers</td><td>46</td></tr>
-            <tr><td>15</td><td>Blackburn Rovers</td><td>43</td></tr>
-            <tr><td>16</td><td>Wigan Athletic</td><td>42</td></tr>
-            <tr><td>17</td><td>Wolverhampton Wanderers</td><td>40</td></tr>
-
-            <!-- Relegation 18-20 -->
-            <tr class="relegation"><td>18</td><td>Birmingham City</td><td>39</td></tr>
-            <tr class="relegation"><td>19</td><td>Blackpool</td><td>39</td></tr>
-            <tr class="relegation"><td>20</td><td>West Ham United</td><td>33</td></tr>
+            <tr class="ucl"><td>1</td><td>Milan</td><td>82</td></tr>
+            <tr class="ucl"><td>2</td><td>Inter</td><td>76</td></tr>
+            <tr class="ucl"><td>3</td><td>Napoli</td><td>70</td></tr>
+            <tr class="ucl"><td>4</td><td>Udinese</td><td>66</td></tr>
+            <tr class="uel"><td>5</td><td>Lazio</td><td>66</td></tr>
+            <tr class="uel"><td>6</td><td>Roma</td><td>63</td></tr>
+            <tr><td>7</td><td>Juventus</td><td>58</td></tr>
+            <tr class="uel"><td>8</td><td>Palermo</td><td>56</td></tr>
+            <tr><td>9</td><td>Fiorentina</td><td>51</td></tr>
+            <tr><td>10</td><td>Genoa</td><td>51</td></tr>
+            <tr><td>11</td><td>Chievo</td><td>46</td></tr>
+            <tr><td>12</td><td>Parma</td><td>46</td></tr>
+            <tr><td>13</td><td>Catania</td><td>46</td></tr>
+            <tr><td>14</td><td>Cagliari</td><td>45</td></tr>
+            <tr><td>15</td><td>Cesena</td><td>43</td></tr>
+            <tr><td>16</td><td>Bologna</td><td>42</td></tr>
+            <tr><td>17</td><td>Lecce</td><td>41</td></tr>
+            <tr class="relegation"><td>18</td><td>Sampdoria</td><td>36</td></tr>
+            <tr class="relegation"><td>19</td><td>Brescia</td><td>32</td></tr>
+            <tr class="relegation"><td>20</td><td>Bari</td><td>24</td></tr>
             </tbody>
         </table>
     </div>
 </div>
+
 
 </body>
 </html>
