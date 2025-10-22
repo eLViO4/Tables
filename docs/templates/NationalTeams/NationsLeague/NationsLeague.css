@@ -295,6 +295,7 @@ header {
 }
 
 /* === RESPONSIVE === */
+/* === RESPONSIVE === */
 @media (max-width: 1200px) {
     .main-container {
         flex-direction: column;
@@ -308,57 +309,179 @@ header {
         min-width: max-content;
     }
 }
+
 @media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 10px 20px;
+    }
+
+    .groups-container {
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
     .playoff-bracket {
-        display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 25px;
+        gap: 20px;
         overflow-x: visible;
         padding: 10px;
+        width: 100%;
     }
 
     .stage {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 10px;
+        gap: 15px;
         min-width: auto;
-    }
-
-    .stage-title {
-        font-size: 1em;
-        text-align: center;
-        color: var(--nl-white);
-        margin-bottom: 5px;
-    }
-
-    .stage-matches {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        justify-items: center;
         width: 100%;
     }
 
+    .stage-title {
+        font-size: 1.2em;
+        text-align: center;
+        color: var(--nl-white);
+        margin-bottom: 5px;
+        height: auto;
+        padding: 8px 0;
+    }
+
     .match {
-        width: 260px;
-        font-size: 0.85em;
+        width: 100%;
+        max-width: 280px;
+        font-size: 0.9em;
         flex-shrink: 0;
     }
 
     .final-stage {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        margin-left: 0;
         gap: 20px;
     }
 
-    .match.final, .match.bronze {
+    .match.final {
         transform: scale(1.1);
-        width: 260px;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .match.bronze {
+        transform: scale(1);
+        width: 100%;
+        max-width: 260px;
     }
 }
+
+/* Еще более компактная версия для очень маленьких экранов */
+@media (max-width: 480px) {
+    .groups-container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .group {
+        padding: 8px;
+    }
+
+    .group h3 {
+        font-size: 0.9em;
+    }
+
+    .group table {
+        font-size: 0.8em;
+    }
+
+    .playoff-bracket {
+        gap: 15px;
+    }
+
+    .stage {
+        gap: 10px;
+    }
+
+    .match {
+        max-width: 250px;
+        font-size: 0.85em;
+        padding: 7px 10px;
+    }
+
+    .team-name {
+        font-size: 0.9em;
+    }
+
+    .flag {
+        font-size: 1.3em;
+        margin-right: 0.3em;
+    }
+
+    .match.final {
+        transform: scale(1.05);
+        max-width: 250px;
+    }
+
+    .match.bronze {
+        max-width: 230px;
+    }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+    .main-container {
+        flex-direction: column;
+        gap: 30px;
+        padding: 0 20px 30px;
+    }
+
+    .groups-container {
+        grid-template-columns: repeat(4, 1fr);
+        width: 100%;
+        max-width: 100%;
+        gap: 15px;
+    }
+
+    .group {
+        min-width: 0; /* позволяет сжиматься */
+    }
+
+    .group h3 {
+        font-size: 0.9em;
+    }
+
+    .group table {
+        font-size: 0.8em;
+    }
+
+    .playoff-bracket {
+        width: 100%;
+        justify-content: center;
+        overflow-x: auto;
+        padding: 20px 0;
+        gap: 25px;
+    }
+
+    .stage {
+        min-width: 240px;
+    }
+
+    .match {
+        width: 240px;
+    }
+
+    .final-stage {
+        margin-left: 40px;
+    }
+
+    .match.final {
+        transform: scale(1.3);
+    }
+
+    .match.bronze {
+        transform: scale(1.1);
+    }
+}
+
 
 /* Полоски слева от команд */
 .group tbody tr:nth-child(2) td:first-child::before,
