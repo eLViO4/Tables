@@ -66,25 +66,34 @@ header {
     text-decoration: none;
 }
 
-.navbar-content {
-    display: flex;
+/* Бургер-меню - скрываем по умолчанию */
+.navbar-toggler {
+    display: none;
+    border: 1px solid var(--euro-gold);
+    background-color: var(--euro-red);
+    padding: 4px 8px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 2px var(--euro-gold);
+}
+
+/* Показываем navbar-collapse по умолчанию */
+.navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+    flex-grow: 1;
     align-items: center;
+    justify-content: flex-end;
 }
 
 .navbar-nav {
     display: flex;
+    flex-direction: row;
     align-items: center;
     margin: 0;
     padding: 0;
     list-style: none;
-}
-
-.navbar-toggler {
-    display: none;
-}
-
-.navbar-collapse {
-    display: block !important;
 }
 
 /* Seasons желтый */
@@ -93,6 +102,13 @@ header {
     font-weight: 600;
     padding: 10px 16px;
     text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav-link.euro-link:hover {
+    color: var(--euro-white) !important;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
 }
 
 /* Выпадающий список */
@@ -469,7 +485,48 @@ footer {
     }
 }
 
+/* Мобильные устройства - ВАЖНО: добавляем стили для бургер-меню */
 @media (max-width: 768px) {
+    .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-collapse {
+        display: none !important;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, var(--euro-gold), var(--euro-dark-red));
+        z-index: 1000;
+        padding: 10px;
+        border-top: 2px solid var(--euro-dark-red);
+    }
+
+    .navbar-collapse.show {
+        display: flex !important;
+        flex-direction: column;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-link.euro-link {
+        padding: 12px 16px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        text-align: center;
+    }
+
+    .dropdown-menu {
+        position: static !important;
+        transform: none !important;
+        border: none;
+        background: rgba(139, 0, 0, 0.9);
+        width: 100%;
+    }
+
     .playoff-bracket {
         gap: 12px;
         padding: 15px 0;
@@ -495,23 +552,13 @@ footer {
     }
 
     .euro-navbar {
-        padding: 0 15px;
-        height: 55px;
+        padding: 8px 15px;
+        flex-wrap: wrap;
     }
 
     .euro-brand {
         font-size: 1.2em;
-        padding: 12px;
-    }
-
-    .euro-dropdown {
-        position: fixed;
-        top: 55px;
-        left: 10px;
-        right: 10px;
-        max-height: 70vh;
-        overflow-y: auto;
-        z-index: 1100;
+        margin-right: 15px;
     }
 }
 
@@ -540,16 +587,168 @@ footer {
     }
 
     .euro-navbar {
-        height: 50px;
+        height: auto;
+        min-height: 50px;
+        padding: 6px 10px;
     }
 
     .euro-brand {
         font-size: 1.1em;
-        padding: 10px;
+        margin-right: 10px;
+    }
+}
+
+/* Обновляем медиа-запросы */
+
+@media (max-width: 1400px) {
+    .main-container {
+        gap: 25px;
+        padding: 0 15px 25px;
     }
 
-    .nav-link.euro-link {
-        padding: 8px 12px;
-        font-size: 0.9em;
+    .groups-container {
+        width: 500px; /* Уменьшаем ширину */
     }
+
+    .match {
+        width: 210px; /* Уменьшаем ширину матчей */
+    }
+
+    .match.final {
+        transform: scale(1.2); /* Уменьшаем масштаб финала */
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .main-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .groups-container {
+        width: 100%;
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 900px; /* Ограничиваем максимальную ширину */
+        margin: 0 auto;
+    }
+
+    .playoff-bracket {
+        justify-content: flex-start; /* Возвращаем горизонтальный скролл */
+        padding: 20px 10px;
+    }
+
+    .match.final {
+        transform: scale(1.1);
+        margin-left: 20px;
+    }
+}
+
+/* ДОБАВЛЯЕМ НОВЫЙ МЕДИА-ЗАПРОС ДЛЯ ПЛАНШЕТОВ */
+@media (max-width: 992px) and (min-width: 769px) {
+    .main-container {
+        flex-direction: row;
+        gap: 20px;
+        padding: 0 15px 25px;
+        flex-wrap: wrap;
+    }
+
+    .groups-container {
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        order: 2;
+    }
+
+    .playoff-bracket {
+        order: 1;
+        width: 100%;
+        justify-content: center;
+        padding: 15px 0;
+    }
+
+    .match {
+        width: 190px;
+    }
+
+    .match.final {
+        transform: scale(1);
+        margin-left: 0;
+        border: 1px solid var(--euro-dark-red);
+    }
+
+    .champion-logo {
+        order: 3;
+        margin: 20px auto 0;
+        text-align: center;
+    }
+
+    .champion-logo img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .groups-container {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+    }
+
+    .playoff-bracket {
+        justify-content: flex-start;
+        gap: 10px;
+        padding: 15px 5px;
+    }
+
+    .match {
+        width: 170px;
+        font-size: 0.85em;
+    }
+
+    .match.final {
+        transform: scale(1);
+        margin-left: 0;
+    }
+
+    .stage-title {
+        font-size: 0.95em;
+    }
+}
+
+/* Дополнительные улучшения для скролла */
+.playoff-bracket {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    padding: 20px 10px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    min-width: 0;
+    flex: 1;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding: 0 50px;
+}
+
+/* Улучшаем видимость скролла */
+.playoff-bracket::-webkit-scrollbar {
+    height: 8px;
+}
+
+.playoff-bracket::-webkit-scrollbar-track {
+    background: rgba(178, 34, 34, 0.15);
+    border-radius: 4px;
+}
+
+.playoff-bracket::-webkit-scrollbar-thumb {
+    background: var(--euro-dark-red);
+    border-radius: 4px;
+}
+
+.playoff-bracket::-webkit-scrollbar-thumb:hover {
+    background: var(--euro-red);
 }

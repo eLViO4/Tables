@@ -31,32 +31,51 @@
 <nav class="navbar navbar-expand-lg euro-navbar">
     <div class="container-fluid">
         <a class="navbar-brand euro-brand" href="../../../index.html">Home</a>
-        <div class="navbar-collapse" id="navbarNav">
+
+        <!-- Бургер-кнопка -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#euroNavbar" aria-controls="euroNavbar"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Меню -->
+        <div class="collapse navbar-collapse" id="euroNavbar">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
-                    <a class="nav-link euro-link dropdown-toggle" href="#" id="seasonsDropdown" role="button" data-bs-toggle="dropdown">
+                    <a class="nav-link euro-link dropdown-toggle"
+                       href="#"
+                       id="seasonsDropdown"
+                       role="button"
+                       data-bs-toggle="dropdown"
+                       aria-expanded="false">
                         Seasons
                     </a>
-                    <ul class="dropdown-menu euro-dropdown">
-                        <div class="seasons-columns">
-                            <div class="seasons-column">
-                                <li><a class="dropdown-item" href="1960.html">1960</a></li>
-                                <li><a class="dropdown-item" href="1964.html">1964</a></li>
-                                <li><a class="dropdown-item" href="1968.html">1968</a></li>
-                                <li><a class="dropdown-item" href="1972.html">1972</a></li>
-                                <li><a class="dropdown-item" href="1976.html">1976</a></li>
-                                <li><a class="dropdown-item" href="1980.html">1980</a></li>
-                                <li><a class="dropdown-item" href="1984.html">1984</a></li>
-                                <li><a class="dropdown-item" href="1988.html">1988</a></li>
-                                <!-- ... остальные годы до 2024 -->
-                            </div>
-                        </div>
+                    <ul class="dropdown-menu euro-dropdown" aria-labelledby="seasonsDropdown">
+                        <li><a class="dropdown-item" href="1960.html">1960</a></li>
+                        <li><a class="dropdown-item" href="1964.html">1964</a></li>
+                        <li><a class="dropdown-item" href="1968.html">1968</a></li>
+                        <li><a class="dropdown-item" href="1972.html">1972</a></li>
+                        <li><a class="dropdown-item" href="1976.html">1976</a></li>
+                        <li><a class="dropdown-item" href="1980.html">1980</a></li>
+                        <li><a class="dropdown-item" href="1984.html">1984</a></li>
+                        <li><a class="dropdown-item" href="1988.html">1988</a></li>
+                        <li><a class="dropdown-item" href="1992.html">1992</a></li>
+                        <li><a class="dropdown-item" href="1996.html">1996</a></li>
+                        <li><a class="dropdown-item" href="2000.html">2000</a></li>
+                        <li><a class="dropdown-item" href="2004.html">2004</a></li>
+                        <li><a class="dropdown-item" href="2008.html">2008</a></li>
+                        <li><a class="dropdown-item" href="2012.html">2012</a></li>
+                        <li><a class="dropdown-item" href="2016.html">2016</a></li>
+                        <li><a class="dropdown-item" href="2020.html">2020</a></li>
+                        <li><a class="dropdown-item" href="2024.html">2024</a></li>
                     </ul>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+
 
 <!-- Header -->
 <header>
@@ -82,7 +101,7 @@
             <table>
                 <tr><th>Team</th><th>Pts</th></tr>
                 <tr><td><span class="flag">🇪🇸</span> Spain</td><td>9</td></tr>
-                <tr><td><span class="flag">🇮🇹</span> Italy</td><td>6</td></tr>
+                <tr><td><span class="flag">🇮🇹</span> Italy</td><td>4</td></tr>
                 <tr><td><span class="flag">🇭🇷</span> Croatia</td><td>2</td></tr>
                 <tr><td><span class="flag">🇦🇱</span> Albania</td><td>1</td></tr>
             </table>
@@ -101,10 +120,10 @@
             <h3>Group D</h3>
             <table>
                 <tr><th>Team</th><th>Pts</th></tr>
-                <tr><td><span class="flag">🇫🇷</span> France</td><td>7</td></tr>
-                <tr><td><span class="flag">🇳🇱</span> Netherlands</td><td>6</td></tr>
-                <tr><td><span class="flag">🇦🇹</span> Austria</td><td>4</td></tr>
-                <tr><td><span class="flag">🇵🇱</span> Poland</td><td>0</td></tr>
+                <tr><td><span class="flag">🇦🇹</span> Austria</td><td>6</td></tr>
+                <tr><td><span class="flag">🇫🇷</span> France</td><td>5</td></tr>
+                <tr><td><span class="flag">🇳🇱</span> Netherlands</td><td>4</td></tr>
+                <tr><td><span class="flag">🇵🇱</span> Poland</td><td>1</td></tr>
             </table>
         </div>
         <div class="group">
@@ -114,7 +133,7 @@
                 <tr><td><span class="flag">🇷🇴</span> Romania</td><td>4</td></tr>
                 <tr><td><span class="flag">🇧🇪</span> Belgium</td><td>4</td></tr>
                 <tr><td><span class="flag">🇸🇰</span> Slovakia</td><td>4</td></tr>
-                <tr><td><span class="flag">🇺🇦</span> Ukraine</td><td>3</td></tr>
+                <tr><td><span class="flag">🇺🇦</span> Ukraine</td><td>4</td></tr>
             </table>
         </div>
         <div class="group">
@@ -124,7 +143,7 @@
                 <tr><td><span class="flag">🇵🇹</span> Portugal</td><td>6</td></tr>
                 <tr><td><span class="flag">🇹🇷</span> Turkey</td><td>6</td></tr>
                 <tr><td><span class="flag">🇬🇪</span> Georgia</td><td>4</td></tr>
-                <tr><td><span class="flag">🇨🇿</span> Czech Republic</td><td>1</td></tr>
+                <tr><td><span class="flag">🇨🇿</span> Czechia</td><td>1</td></tr>
             </table>
         </div>
     </section>
@@ -175,7 +194,7 @@
                 <div class="team">
                     <div class="team-name"><span class="flag">🇸🇰</span> Slovakia</div>
                     <div class="scores">
-                        <div class="score">0</div>
+                        <div class="score">1</div>
                     </div>
                 </div>
             </div>
@@ -199,13 +218,13 @@
                 <div class="team winner">
                     <div class="team-name"><span class="flag">🇵🇹</span> Portugal</div>
                     <div class="scores">
-                        <div class="score">0</div>
+                        <div class="score">0&nbsp;(3)</div>
                     </div>
                 </div>
                 <div class="team">
                     <div class="team-name"><span class="flag">🇸🇮</span> Slovenia</div>
                     <div class="scores">
-                        <div class="score">0</div>
+                        <div class="score">0&nbsp;(0)</div>
                     </div>
                 </div>
             </div>
@@ -227,13 +246,13 @@
 
             <div class="match">
                 <div class="team winner">
-                    <div class="team-name"><span class="flag">🇦🇹</span> Austria</div>
+                    <div class="team-name"><span class="flag">🇹🇷</span> Turkey</div>
                     <div class="scores">
                         <div class="score">2</div>
                     </div>
                 </div>
                 <div class="team">
-                    <div class="team-name"><span class="flag">🇹🇷</span> Turkey</div>
+                    <div class="team-name"><span class="flag">🇦🇹</span> Austria</div>
                     <div class="scores">
                         <div class="score">1</div>
                     </div>
@@ -270,7 +289,7 @@
                 <div class="team">
                     <div class="team-name"><span class="flag">🇩🇪</span> Germany</div>
                     <div class="scores">
-                        <div class="score">0</div>
+                        <div class="score">1</div>
                     </div>
                 </div>
             </div>
@@ -279,13 +298,13 @@
                 <div class="team winner">
                     <div class="team-name"><span class="flag">🇫🇷</span> France</div>
                     <div class="scores">
-                        <div class="score">1</div>
+                        <div class="score">0&nbsp;(5)</div>
                     </div>
                 </div>
                 <div class="team">
                     <div class="team-name"><span class="flag">🇵🇹</span> Portugal</div>
                     <div class="scores">
-                        <div class="score">0</div>
+                        <div class="score">0&nbsp;(3)</div>
                     </div>
                 </div>
             </div>
@@ -294,13 +313,13 @@
                 <div class="team winner">
                     <div class="team-name"><span class="flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span> England</div>
                     <div class="scores">
-                        <div class="score">1</div>
+                        <div class="score">1&nbsp;(5)</div>
                     </div>
                 </div>
                 <div class="team">
                     <div class="team-name"><span class="flag">🇨🇭</span> Switzerland</div>
                     <div class="scores">
-                        <div class="score">0</div>
+                        <div class="score">1&nbsp;(3)</div>
                     </div>
                 </div>
             </div>
@@ -313,7 +332,7 @@
                     </div>
                 </div>
                 <div class="team">
-                    <div class="team-name"><span class="flag">🇦🇹</span> Austria</div>
+                    <div class="team-name"><span class="flag">🇹🇷</span> Turkey</div>
                     <div class="scores">
                         <div class="score">1</div>
                     </div>
@@ -335,7 +354,7 @@
                 <div class="team">
                     <div class="team-name"><span class="flag">🇫🇷</span> France</div>
                     <div class="scores">
-                        <div class="score">0</div>
+                        <div class="score">1</div>
                     </div>
                 </div>
             </div>
