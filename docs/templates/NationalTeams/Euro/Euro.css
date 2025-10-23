@@ -1,0 +1,555 @@
+/* UEFA European Championship 2024 Styles - Red/Gold Theme */
+:root {
+    --euro-red: #8b0000;
+    --euro-dark-red: #b22222;
+    --euro-light-red: #dc143c;
+    --euro-pink: #ffb6c1;
+    --euro-gold: #ffd700;
+    --euro-white: #ffffff;
+    --euro-light-bg: #f8cabf;
+    --euro-green: #32cd32;
+    --euro-silver: #c0c0c0;
+    --euro-black: #000000;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--euro-light-bg);
+    color: var(--euro-red);
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+header {
+    text-align: center;
+    color: var(--euro-dark-red);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px var(--euro-gold);
+    font-size: 3em;
+    padding: 30px 0 15px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+/* Navbar Styles */
+.euro-navbar {
+    background: linear-gradient(135deg, var(--euro-gold), var(--euro-dark-red));
+    height: 68px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--euro-dark-red);
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.container-fluid {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.euro-brand {
+    color: var(--euro-dark-red);
+    text-decoration: none;
+    padding: 15px;
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.4em;
+}
+
+.euro-brand:hover {
+    color: #8b0000;
+    text-decoration: none;
+}
+
+.navbar-content {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navbar-toggler {
+    display: none;
+}
+
+.navbar-collapse {
+    display: block !important;
+}
+
+/* Seasons желтый */
+.nav-link.euro-link {
+    color: var(--euro-gold) !important;
+    font-weight: 600;
+    padding: 10px 16px;
+    text-decoration: none;
+}
+
+/* Выпадающий список */
+.euro-dropdown {
+    background: var(--euro-red);
+    border: 1px solid var(--euro-gold);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    position: absolute;
+    z-index: 1100;
+}
+
+.euro-dropdown .dropdown-item {
+    color: var(--euro-gold);
+    font-weight: 500;
+    transition: all 0.3s;
+    text-decoration: none;
+    padding: 8px 16px;
+    display: block;
+}
+
+/* Hover наоборот */
+.euro-dropdown .dropdown-item:hover {
+    background: var(--euro-gold);
+    color: var(--euro-red);
+}
+
+/* Main Layout */
+.main-container {
+    display: flex;
+    gap: 30px;
+    padding: 0 20px 30px;
+    max-width: 1800px;
+    margin: 0 auto;
+    align-items: flex-start;
+    overflow-x: visible;
+}
+
+/* Groups Section */
+.groups-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    width: 600px;
+    flex-shrink: 0;
+}
+
+.group {
+    background: var(--euro-white);
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 0 15px rgba(178, 34, 34, 0.2);
+    overflow: hidden;
+}
+
+.group h3 {
+    text-align: center;
+    color: var(--euro-dark-red);
+    margin-bottom: 8px;
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.group table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+
+.group th, .group td {
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--euro-pink);
+}
+
+.group th {
+    background: linear-gradient(135deg, var(--euro-gold), var(--euro-dark-red));
+    color: white;
+    font-size: 0.85em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.group td:last-child {
+    text-align: center;
+    font-weight: bold;
+}
+
+.group td {
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+.group td:first-child {
+    position: relative;
+    padding-left: 32px;
+    display: flex;
+    align-items: center;
+}
+
+.group tr:hover {
+    background-color: #ffe4e6;
+}
+
+/* Flags */
+.flag {
+    font-size: 1.6em;
+    margin-right: 0.5em;
+    line-height: 1;
+}
+
+/* Playoff Bracket */
+.playoff-bracket {
+    display: flex;
+    justify-content: flex-start;
+    gap: 18px;
+    padding: 22px 0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    min-width: 0;
+    flex: 1;
+    -webkit-overflow-scrolling: touch;
+}
+
+.stage {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    flex-shrink: 0;
+}
+
+.stage-title {
+    color: var(--euro-dark-red);
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    text-shadow: 0.5px 0.5px 1px var(--euro-gold);
+}
+
+.match {
+    background: var(--euro-white);
+    border-radius: 8px;
+    padding: 9px 12px;
+    width: 240px;
+    box-shadow: 0 0 15px rgba(178, 34, 34, 0.2);
+    font-size: 0.9em;
+    overflow: hidden;
+}
+
+.team {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    min-height: 28px;
+}
+
+.team:last-child {
+    border-bottom: none;
+}
+
+.team-name {
+    font-weight: 600;
+    flex: 1;
+    font-size: 0.95em;
+}
+
+.scores {
+    display: flex;
+    gap: 6px;
+}
+
+.score {
+    width: 22px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95em;
+    color: var(--euro-black);
+}
+
+.winner .team-name {
+    color: var(--euro-red);
+    font-weight: bold;
+}
+
+.team:not(.winner) .team-name {
+    color: var(--euro-black);
+    font-weight: 600;
+}
+
+.match.final {
+    transform: scale(1.4);
+    border: 2px solid var(--euro-dark-red);
+    background-color: #fafafb;
+    margin-left: 50px;
+    font-weight: bold;
+}
+
+.champion-logo {
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.champion-logo img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+}
+
+.champion-logo img:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--euro-dark-red);
+    font-size: 0.9em;
+}
+
+/* Group position indicators */
+.group tbody tr:nth-child(1) td:first-child {
+    position: relative;
+}
+
+.group tbody tr:nth-child(1) td:first-child::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    bottom: 2px;
+    width: 8px;
+    border-radius: 3px;
+    background-color: var(--euro-green);
+    pointer-events: none;
+}
+
+.group tbody tr:nth-child(2) td:first-child {
+    position: relative;
+}
+
+.group tbody tr:nth-child(2) td:first-child::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    bottom: 2px;
+    width: 8px;
+    border-radius: 3px;
+    background-color: var(--euro-green);
+    pointer-events: none;
+}
+
+.group tbody tr:nth-child(3) td:first-child {
+    position: relative;
+}
+
+.group tbody tr:nth-child(3) td:first-child::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    bottom: 2px;
+    width: 8px;
+    border-radius: 3px;
+    background-color: var(--euro-green);
+    pointer-events: none;
+}
+
+.group tbody tr:nth-child(4) td:first-child {
+    position: relative;
+}
+
+.group tbody tr:nth-child(4) td:first-child::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    bottom: 2px;
+    width: 8px;
+    border-radius: 3px;
+    background-color: #e9bb06;
+    pointer-events: none;
+}
+
+/* Scrollbar */
+.playoff-bracket::-webkit-scrollbar {
+    height: 6px;
+}
+
+.playoff-bracket::-webkit-scrollbar-track {
+    background: rgba(178, 34, 34, 0.1);
+    border-radius: 3px;
+}
+
+.playoff-bracket::-webkit-scrollbar-thumb {
+    background: var(--euro-dark-red);
+    border-radius: 3px;
+}
+
+.playoff-bracket::-webkit-scrollbar-thumb:hover {
+    background: var(--euro-red);
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+    .main-container {
+        gap: 25px;
+        padding: 0 15px 25px;
+    }
+
+    .groups-container {
+        width: 550px;
+    }
+
+    .match {
+        width: 220px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .main-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .groups-container {
+        width: 100%;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .playoff-bracket {
+        justify-content: center;
+    }
+
+    header {
+        font-size: 2.5em;
+        padding: 25px 0 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .main-container {
+        padding: 0 12px 20px;
+    }
+
+    .groups-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .match {
+        width: 200px;
+        font-size: 0.85em;
+    }
+
+    .euro-navbar {
+        padding: 0 20px;
+        height: 60px;
+    }
+
+    .euro-brand {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 768px) {
+    .playoff-bracket {
+        gap: 12px;
+        padding: 15px 0;
+    }
+
+    .match {
+        width: 180px;
+        padding: 7px 10px;
+    }
+
+    .stage-title {
+        font-size: 1em;
+    }
+
+    .groups-container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    header {
+        font-size: 2em;
+        padding: 20px 0 10px;
+    }
+
+    .euro-navbar {
+        padding: 0 15px;
+        height: 55px;
+    }
+
+    .euro-brand {
+        font-size: 1.2em;
+        padding: 12px;
+    }
+
+    .euro-dropdown {
+        position: fixed;
+        top: 55px;
+        left: 10px;
+        right: 10px;
+        max-height: 70vh;
+        overflow-y: auto;
+        z-index: 1100;
+    }
+}
+
+@media (max-width: 576px) {
+    .playoff-bracket {
+        gap: 8px;
+    }
+
+    .match {
+        width: 160px;
+        font-size: 0.8em;
+    }
+
+    .team-name {
+        font-size: 0.85em;
+    }
+
+    .score {
+        width: 20px;
+        font-size: 0.85em;
+    }
+
+    header {
+        font-size: 1.8em;
+        padding: 15px 0 8px;
+    }
+
+    .euro-navbar {
+        height: 50px;
+    }
+
+    .euro-brand {
+        font-size: 1.1em;
+        padding: 10px;
+    }
+
+    .nav-link.euro-link {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+}
