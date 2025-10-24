@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Euro 1984</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Euro.css">
+    <style>
+        .group tbody tr:nth-child(4) td:first-child::before {
+            background-color: transparent;
+        }
+        .match {
+            border-radius: 8px;
+            padding: 12px 16px;
+            width: 300px;
+            font-size: 1.2em;
+            margin-right: 20px;
+        }
+        .champion-logo img {
+            width: 250px;       /* фиксируем ширину */
+        }
+    </style>
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg euro-navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand euro-brand" href="../../../index.html">Home</a>
+
+        <!-- Бургер-кнопка -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#euroNavbar" aria-controls="euroNavbar"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Меню -->
+        <div class="collapse navbar-collapse" id="euroNavbar">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link euro-link dropdown-toggle"
+                       href="#"
+                       id="seasonsDropdown"
+                       role="button"
+                       data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Seasons
+                    </a>
+                    <ul class="dropdown-menu euro-dropdown" aria-labelledby="seasonsDropdown">
+                        <li><a class="dropdown-item" href="1960.html">1960</a></li>
+                        <li><a class="dropdown-item" href="1964.html">1964</a></li>
+                        <li><a class="dropdown-item" href="1968.html">1968</a></li>
+                        <li><a class="dropdown-item" href="1972.html">1972</a></li>
+                        <li><a class="dropdown-item" href="1976.html">1976</a></li>
+                        <li><a class="dropdown-item" href="1980.html">1980</a></li>
+                        <li><a class="dropdown-item" href="1984.html">1984</a></li>
+                        <li><a class="dropdown-item" href="1988.html">1988</a></li>
+                        <li><a class="dropdown-item" href="1992.html">1992</a></li>
+                        <li><a class="dropdown-item" href="1996.html">1996</a></li>
+                        <li><a class="dropdown-item" href="2000.html">2000</a></li>
+                        <li><a class="dropdown-item" href="2004.html">2004</a></li>
+                        <li><a class="dropdown-item" href="2008.html">2008</a></li>
+                        <li><a class="dropdown-item" href="2012.html">2012</a></li>
+                        <li><a class="dropdown-item" href="2016.html">2016</a></li>
+                        <li><a class="dropdown-item" href="2020.html">2020</a></li>
+                        <li><a class="dropdown-item" href="2024.html">2024</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Header -->
+<header>
+    EURO 1984
+</header>
+
+<!-- Main Content -->
+<div class="main-container">
+
+    <section class="groups-container">
+        <div class="group">
+            <h3>Group 1</h3>
+            <table>
+                <tr><th>Team</th><th>Pts</th></tr>
+                <tr><td><span class="flag">🇫🇷</span> France</td><td>6</td></tr>
+                <tr><td><span class="flag">🇩🇰</span> Denmark</td><td>4</td></tr>
+                <tr><td><span class="flag">🇧🇪</span> Belgium</td><td>2</td></tr>
+                <tr><td><span><img src="images/yugoslavia_em.png" style="width: 1.5em; height: 1.5em; vertical-align: middle; margin-right: 10px"></span> Yugoslavia</td><td>0</td></tr>
+            </table>
+        </div>
+        <div class="group">
+            <h3>Group 2</h3>
+            <table>
+                <tr><th>Team</th><th>Pts</th></tr>
+                <tr><td><span class="flag">🇪🇸</span> Spain</td><td>4</td></tr>
+                <tr><td><span class="flag">🇵🇹</span> Portugal</td><td>4</td></tr>
+                <tr><td><span class="flag">🇩🇪</span> West Germany</td><td>3</td></tr>
+                <tr><td><span class="flag">🇷🇴</span> Romania</td><td>1</td></tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- Right Side - Playoff Bracket -->
+    <section class="playoff-bracket">
+        <!-- Semi-finals -->
+        <div class="stage">
+            <div class="stage-title">Semi-finals</div>
+
+            <div class="match">
+                <div class="team winner">
+                    <div class="team-name"><span class="flag">🇫🇷</span> France</div>
+                    <div class="scores">
+                        <div class="score">3</div>
+                    </div>
+                </div>
+                <div class="team">
+                    <div class="team-name"><span class="flag">🇵🇹</span> Portugal</div>
+                    <div class="scores">
+                        <div class="score">2</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="match">
+                <div class="team winner">
+                    <div class="team-name"><span class="flag">🇪🇸</span> Spain</div>
+                    <div class="scores">
+                        <div class="score">1&nbsp;(5)</div>
+                    </div>
+                </div>
+                <div class="team">
+                    <div class="team-name"><span class="flag">🇩🇰</span> Denmark</div>
+                    <div class="scores">
+                        <div class="score">1&nbsp;(4)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final -->
+        <div class="stage">
+            <div class="stage-title">Final</div>
+
+            <div class="match final">
+                <div class="team winner">
+                    <div class="team-name"><span class="flag">🇫🇷</span> FRANCE</div>
+                    <div class="scores">
+                        <div class="score">2</div>
+                    </div>
+                </div>
+                <div class="team">
+                    <div class="team-name"><span class="flag">🇪🇸</span> SPAIN</div>
+                    <div class="scores">
+                        <div class="score">0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="champion-logo">
+                <img src="images/France_old.png">
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
