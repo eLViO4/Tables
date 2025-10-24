@@ -18,6 +18,64 @@
             font-size: 1.2em;
             margin-right: 20px;
          }
+        @media (max-width: 768px) {
+            .playoff-bracket {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                overflow-x: visible;
+            }
+
+            .stage {
+                width: 100%;
+                max-width: 320px;
+            }
+
+            .match {
+                width: 100%;
+                margin-right: 0;
+                font-size: 1.1em;
+            }
+
+            .match.final {
+                transform: scale(1);
+                margin-left: 0;
+
+            }
+
+            .champion-logo {
+                margin-top: 20px;
+                text-align: center;
+            }
+
+            .champion-logo img {
+                width: 150px;
+                height: auto;
+                margin-top: 0;
+            }
+
+            /* Упорядочиваем этапы для мобилок */
+            .stage:nth-child(1) { order: 0; } /* Полуфиналы */
+            .stage:nth-child(2) { order: 1; } /* 3 место */
+            .stage:nth-child(3) { order: 2; } /* Финал (будет первым) */
+        }
+
+        @media (max-width: 480px) {
+            .match {
+                font-size: 1em;
+                padding: 10px 12px;
+            }
+
+            .team-name {
+                font-size: 0.95em;
+            }
+
+            .stage-title {
+                font-size: 1.1em;
+                height: auto;
+                padding: 8px 0;
+            }
+        }
     </style>
 </head>
 <body>

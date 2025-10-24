@@ -695,8 +695,9 @@ footer {
     }
 
     .groups-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr; /* Изменено с repeat(2, 1fr) на 1fr */
         width: 100%;
+        gap: 15px; /* Добавлено для отступов между группами */
     }
 
     .playoff-bracket {
