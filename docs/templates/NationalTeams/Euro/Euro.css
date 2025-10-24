@@ -752,3 +752,19 @@ footer {
 .playoff-bracket::-webkit-scrollbar-thumb:hover {
     background: var(--euro-red);
 }
+
+.champion-logo {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.champion-logo img {
+    width: 170px;       /* фиксируем ширину */
+    height: auto;       /* высота подстраивается автоматически */
+    margin-top: 40px;
+    transition: transform 0.3s ease;
+}
+
+.champion-logo img:hover {
+    transform: scale(1.1);
+}
