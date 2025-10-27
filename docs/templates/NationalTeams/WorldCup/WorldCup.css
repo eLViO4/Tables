@@ -1,0 +1,826 @@
+/* FIFA World Cup Styles - Red/Gold Theme */
+:root {
+    --wc-red: #8b0000;
+    --wc-dark-red: #b22222;
+    --wc-light-red: #dc143c;
+    --wc-pink: #ffb6c1;
+    --wc-gold: #ffd700;
+    --wc-white: #ffffff;
+    --wc-light-bg: #f8cabf;
+    --wc-green: #32cd32;
+    --wc-silver: #c0c0c0;
+    --wc-black: #000000;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--wc-light-bg);
+    color: var(--wc-red);
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+header {
+    text-align: center;
+    color: var(--wc-dark-red);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px var(--wc-gold);
+    font-size: 3em;
+    padding: 30px 0 15px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+/* Navbar Styles */
+.wc-navbar {
+    background: linear-gradient(135deg, var(--wc-gold), var(--wc-dark-red));
+    height: 68px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--wc-dark-red);
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.container-fluid {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.wc-brand {
+    color: var(--wc-dark-red);
+    text-decoration: none;
+    padding: 15px;
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.4em;
+}
+
+.wc-brand:hover {
+    color: #8b0000;
+    text-decoration: none;
+}
+
+/* Бургер-меню - скрываем по умолчанию */
+.navbar-toggler {
+    display: none;
+    border: 1px solid var(--wc-gold);
+    background-color: var(--wc-red);
+    padding: 4px 8px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 2px var(--wc-gold);
+}
+
+/* Показываем navbar-collapse по умолчанию */
+.navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Seasons желтый */
+.nav-link.wc-link {
+    color: var(--wc-gold) !important;
+    font-weight: 600;
+    padding: 10px 16px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav-link.wc-link:hover {
+    color: var(--wc-white) !important;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+}
+
+/* Выпадающий список */
+.wc-dropdown {
+    background: var(--wc-red);
+    border: 1px solid var(--wc-gold);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    position: absolute;
+    z-index: 1100;
+}
+
+.wc-dropdown .dropdown-item {
+    color: var(--wc-gold);
+    font-weight: 500;
+    transition: all 0.3s;
+    text-decoration: none;
+    padding: 8px 16px;
+    display: block;
+}
+
+/* Hover наоборот */
+.wc-dropdown .dropdown-item:hover {
+    background: var(--wc-gold);
+    color: var(--wc-red);
+}
+
+/* Main Layout */
+.main-container {
+    display: flex;
+    gap: 30px;
+    padding: 0 20px 30px;
+    max-width: 1800px;
+    margin: 0 auto;
+    align-items: flex-start;
+    overflow-x: visible;
+}
+
+/* Groups Section */
+.groups-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    width: 600px;
+    flex-shrink: 0;
+}
+
+.group {
+    background: var(--wc-white);
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 0 15px rgba(178, 34, 34, 0.2);
+    overflow: hidden;
+}
+
+.group h3 {
+    text-align: center;
+    color: var(--wc-dark-red);
+    margin-bottom: 8px;
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.group table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+
+.group th, .group td {
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--wc-pink);
+}
+
+.group th {
+    background: linear-gradient(135deg, var(--wc-gold), var(--wc-dark-red));
+    color: white;
+    font-size: 0.85em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.group td:last-child {
+    text-align: center;
+    font-weight: bold;
+}
+
+.group td {
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+.group td:first-child {
+    position: relative;
+    padding-left: 32px;
+    display: flex;
+    align-items: center;
+}
+
+.group tr:hover {
+    background-color: #ffe4e6;
+}
+
+/* Flags */
+.flag {
+    font-size: 1.6em;
+    margin-right: 0.5em;
+    line-height: 1;
+}
+
+/* Playoff Bracket */
+/* Playoff Bracket */
+.playoff-bracket {
+    display: flex;
+    justify-content: flex-start;
+    gap: 18px;
+    padding: 22px 0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    min-width: 0;
+    flex: 1;
+    -webkit-overflow-scrolling: touch;
+}
+
+.stage {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    flex-shrink: 0;
+}
+
+.stage-title {
+    color: var(--wc-dark-red);
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    text-shadow: 0.5px 0.5px 1px var(--wc-gold);
+}
+
+.match {
+    background: var(--wc-white);
+    border-radius: 8px;
+    padding: 9px 12px;
+    width: 240px;
+    box-shadow: 0 0 15px rgba(178, 34, 34, 0.2);
+    font-size: 0.9em;
+    overflow: hidden;
+}
+
+.team {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    min-height: 28px;
+}
+
+.team:last-child {
+    border-bottom: none;
+}
+
+.team-name {
+    font-weight: 600;
+    flex: 1;
+    font-size: 0.95em;
+}
+
+.scores {
+    display: flex;
+    gap: 6px;
+}
+
+.score {
+    width: 22px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95em;
+    color: var(--wc-black);
+}
+
+.winner .team-name {
+    color: var(--wc-red);
+    font-weight: bold;
+}
+
+.team:not(.winner) .team-name {
+    color: var(--wc-black);
+    font-weight: 600;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--wc-dark-red);
+    font-size: 0.9em;
+}
+
+/* Group position indicators */
+.group tbody tr:nth-child(1) td:first-child {
+    position: relative;
+}
+
+.group tbody tr:nth-child(1) td:first-child::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    bottom: 2px;
+    width: 8px;
+    border-radius: 3px;
+    background-color: var(--wc-green);
+    pointer-events: none;
+}
+
+.group tbody tr:nth-child(2) td:first-child {
+    position: relative;
+}
+
+.group tbody tr:nth-child(2) td:first-child::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    bottom: 2px;
+    width: 8px;
+    border-radius: 3px;
+    background-color: var(--wc-green);
+    pointer-events: none;
+}
+
+.group tbody tr:nth-child(3) td:first-child {
+    position: relative;
+}
+
+.group tbody tr:nth-child(3) td:first-child::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    bottom: 2px;
+    width: 8px;
+    border-radius: 3px;
+    background-color: var(--wc-green);
+    pointer-events: none;
+}
+
+.group tbody tr:nth-child(4) td:first-child {
+    position: relative;
+}
+
+.group tbody tr:nth-child(4) td:first-child::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    bottom: 2px;
+    width: 8px;
+    border-radius: 3px;
+   /* background-color: #e9bb06;*/
+    pointer-events: none;
+}
+
+.match.bronze {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+/* Scrollbar */
+.playoff-bracket::-webkit-scrollbar {
+    height: 6px;
+}
+
+.playoff-bracket::-webkit-scrollbar-track {
+    background: rgba(178, 34, 34, 0.1);
+    border-radius: 3px;
+}
+
+.playoff-bracket::-webkit-scrollbar-thumb {
+    background: var(--wc-dark-red);
+    border-radius: 3px;
+}
+
+.playoff-bracket::-webkit-scrollbar-thumb:hover {
+    background: var(--wc-red);
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+    .main-container {
+        gap: 25px;
+        padding: 0 15px 25px;
+    }
+
+    .groups-container {
+        width: 550px;
+    }
+
+    .match {
+        width: 220px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .main-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .groups-container {
+        width: 100%;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .playoff-bracket {
+        justify-content: center;
+    }
+
+    header {
+        font-size: 2.5em;
+        padding: 25px 0 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .main-container {
+        padding: 0 12px 20px;
+    }
+
+    .groups-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .match {
+        width: 200px;
+        font-size: 0.85em;
+    }
+
+    .wc-navbar {
+        padding: 0 20px;
+        height: 60px;
+    }
+
+    .wc-brand {
+        font-size: 1.3em;
+    }
+}
+
+/* Мобильные устройства - ВАЖНО: добавляем стили для бургер-меню */
+@media (max-width: 768px) {
+    .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-collapse {
+        display: none !important;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, var(--wc-gold), var(--wc-dark-red));
+        z-index: 1000;
+        padding: 10px;
+        border-top: 2px solid var(--wc-dark-red);
+    }
+
+    .navbar-collapse.show {
+        display: flex !important;
+        flex-direction: column;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-link.wc-link {
+        padding: 12px 16px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        text-align: center;
+    }
+
+    .dropdown-menu {
+        position: static !important;
+        transform: none !important;
+        border: none;
+        background: rgba(139, 0, 0, 0.9);
+        width: 100%;
+    }
+
+    .playoff-bracket {
+        gap: 12px;
+        padding: 15px 0;
+    }
+
+    .match {
+        width: 180px;
+        padding: 7px 10px;
+    }
+
+    .stage-title {
+        font-size: 1em;
+    }
+
+    .groups-container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    header {
+        font-size: 2em;
+        padding: 20px 0 10px;
+    }
+
+    .wc-navbar {
+        padding: 8px 15px;
+        flex-wrap: wrap;
+    }
+
+    .wc-brand {
+        font-size: 1.2em;
+        margin-right: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .playoff-bracket {
+        gap: 8px;
+    }
+
+    .match {
+        width: 160px;
+        font-size: 0.8em;
+    }
+
+    .team-name {
+        font-size: 0.85em;
+    }
+
+    .score {
+        width: 20px;
+        font-size: 0.85em;
+    }
+
+    header {
+        font-size: 1.8em;
+        padding: 15px 0 8px;
+    }
+
+    .wc-navbar {
+        height: auto;
+        min-height: 50px;
+        padding: 6px 10px;
+    }
+
+    .wc-brand {
+        font-size: 1.1em;
+        margin-right: 10px;
+    }
+}
+
+/* Обновляем медиа-запросы */
+
+@media (max-width: 1400px) {
+    .main-container {
+        gap: 25px;
+        padding: 0 15px 25px;
+    }
+
+    .groups-container {
+        width: 500px; /* Уменьшаем ширину */
+    }
+
+    .match {
+        width: 210px; /* Уменьшаем ширину матчей */
+    }
+
+    .match.final {
+        transform: scale(1.2); /* Уменьшаем масштаб финала */
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .main-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .groups-container {
+        width: 100%;
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 900px; /* Ограничиваем максимальную ширину */
+        margin: 0 auto;
+    }
+
+    .playoff-bracket {
+        justify-content: flex-start; /* Возвращаем горизонтальный скролл */
+        padding: 20px 10px;
+    }
+
+    .match.final {
+        transform: scale(1.1);
+        margin-left: 20px;
+    }
+}
+
+/* ДОБАВЛЯЕМ НОВЫЙ МЕДИА-ЗАПРОС ДЛЯ ПЛАНШЕТОВ */
+@media (max-width: 992px) and (min-width: 769px) {
+    .main-container {
+        flex-direction: row;
+        gap: 20px;
+        padding: 0 15px 25px;
+        flex-wrap: wrap;
+    }
+
+    .groups-container {
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        order: 2;
+    }
+
+    .playoff-bracket {
+        order: 1;
+        width: 100%;
+        justify-content: center;
+        padding: 15px 0;
+    }
+
+    .match {
+        width: 190px;
+    }
+
+    .match.final {
+        transform: scale(1);
+        margin-left: 0;
+        border: 1px solid var(--wc-dark-red);
+    }
+
+    .champion-logo {
+        order: 3;
+        margin: 20px auto 0;
+        text-align: center;
+    }
+
+    .champion-logo img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .groups-container {
+        grid-template-columns: 1fr; /* Изменено с repeat(2, 1fr) на 1fr */
+        width: 100%;
+        gap: 15px; /* Добавлено для отступов между группами */
+    }
+
+    .playoff-bracket {
+        justify-content: flex-start;
+        gap: 10px;
+        padding: 15px 5px;
+    }
+
+    .match {
+        width: 170px;
+        font-size: 0.85em;
+    }
+
+    .match.final {
+        transform: scale(1);
+        margin-left: 0;
+    }
+
+    .stage-title {
+        font-size: 0.95em;
+    }
+}
+
+/* Дополнительные улучшения для скролла */
+.playoff-bracket {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    padding: 20px 10px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    min-width: 0;
+    flex: 1;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding: 0 50px;
+}
+
+/* Улучшаем видимость скролла */
+.playoff-bracket::-webkit-scrollbar {
+    height: 8px;
+}
+
+.playoff-bracket::-webkit-scrollbar-track {
+    background: rgba(178, 34, 34, 0.15);
+    border-radius: 4px;
+}
+
+.playoff-bracket::-webkit-scrollbar-thumb {
+    background: var(--wc-dark-red);
+    border-radius: 4px;
+}
+
+.playoff-bracket::-webkit-scrollbar-thumb:hover {
+    background: var(--wc-red);
+}
+
+/* === FINAL & BRONZE ALIGNMENT === */
+.final-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+
+}
+
+.match.final {
+    transform: scale(1.4);
+    border: 2px solid var(--wc-dark-red);
+    background-color: #fafafb;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.match.bronze {
+    background-color: var(--wc-white);
+    border: 2px solid #e0a0a0;
+    width: 240px;
+    box-shadow: 0 0 15px rgba(178, 34, 34, 0.2);
+    font-size: 0.9em;
+    transform: scale(1.1);
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    .final-stage {
+        margin-left: 0;
+        gap: 20px;
+    }
+
+    .match.final {
+        transform: scale(1.1);
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .match.bronze {
+        transform: scale(1);
+        width: 100%;
+        max-width: 260px;
+    }
+}
+
+/* === FINAL STAGE === */
+.final-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-left: 60px;
+    position: relative; /* ✅ для позиционирования логотипа */
+}
+
+/* Финальный матч */
+.match.final {
+    transform: scale(1.4);
+    border: 2px solid var(--wc-dark-red);
+    background-color: #fafafb;
+    font-weight: bold;
+    z-index: 2;
+    /* ✅ фиксированная позиция в потоке */
+}
+
+/* Матч за 3-е место */
+.match.bronze {
+    transform: scale(1.1);
+    /* ✅ фиксированная позиция в потоке */
+}
+
+/* ЛОГОТИП ЧЕМПИОНА - ИЗОЛИРОВАННЫЙ */
+.champion-logo {
+    position: absolute; /* ✅ вынимаем из потока */
+    top: 50%;          /* ✅ позиционируем по вертикали */
+    bottom: 400px;     /* ✅ выносим вправо от final-stage */
+    transform: translateY(-50%); /* ✅ центрируем по вертикали */
+    text-align: center;
+    z-index: 10;       /* ✅ поверх других элементов */
+}
+
+.champion-logo img {
+    width: 170px;      /* ✅ фиксированный размер */
+    height: auto;      /* ✅ пропорции */
+    transition: transform 0.3s ease;
+    display: block;    /* ✅ убираем лишние отступы */
+}
+
+.champion-logo img:hover {
+    transform: scale(1.1);
+}
