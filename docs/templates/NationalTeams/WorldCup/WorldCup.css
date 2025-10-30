@@ -704,14 +704,17 @@ footer {
     display: flex;
     justify-content: flex-start;
     gap: 15px;
-    padding: 20px 10px;
+    padding: 20px 10px 20px 10px; /* равномерные отступы */
     flex-wrap: nowrap;
     overflow-x: auto;
     min-width: 0;
     flex: 1;
     -webkit-overflow-scrolling: touch;
-    scroll-padding: 0 50px;
+    scroll-padding: 0 80px; /* ✅ чуть больше отступа справа */
+    padding-right: 60px;    /* ✅ добавляем место справа для последней стадии */
+    box-sizing: content-box; /* гарантирует, что padding не режет ширину */
 }
+
 
 /* Улучшаем видимость скролла */
 .playoff-bracket::-webkit-scrollbar {
