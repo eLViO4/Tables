@@ -494,3 +494,128 @@ footer {
         overflow-y: auto;
     }
 }
+/* === MOBILE SCROLL FIX — CLEAN + STABLE === */
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden !important;
+        overscroll-behavior-x: none;
+    }
+
+    .main-container {
+        overflow: visible !important;
+        display: block !important; /* снимаем flex, чтобы touch работал */
+    }
+
+    .playoff-bracket {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x !important;
+        scroll-snap-type: x mandatory;
+        gap: 12px; /* компактное расстояние между стадиями */
+        padding: 10px 10px 14px;
+        align-items: flex-start;
+    }
+
+    .stage {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        background: rgba(255,255,255,0.04); /* визуальное разделение */
+        border-radius: 8px;
+        padding: 4px;
+        min-width: 210px;
+        box-sizing: border-box;
+    }
+
+    .stage-title {
+        display: block;
+        text-align: center;
+        color: var(--ucl-white);
+        font-size: 0.9em;
+        margin-bottom: 6px;
+        white-space: nowrap;
+    }
+
+    .match {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .match.final {
+        transform: scale(1.2); /* чуть меньше чем раньше, чтобы влезало */
+        margin-left: 0;
+    }
+
+    .champion-logo {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+/* === MOBILE SCROLL FIX — FINAL STABLE === */
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden !important;
+        overscroll-behavior-x: none;
+    }
+
+    .main-container {
+        overflow: visible !important;
+        display: block !important;
+    }
+
+    .playoff-bracket {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x !important;
+        scroll-snap-type: x mandatory;
+        gap: 12px;
+        padding: 10px 10px 14px;
+        align-items: flex-start;
+        justify-content: flex-start; /* важно! начинаем с левого края */
+        scroll-padding-left: 0;      /* чтобы первый элемент прилипал к самому краю */
+        scroll-behavior: smooth;     /* плавный старт */
+    }
+
+    .stage {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        background: transparent;
+        border-radius: 8px;
+        padding: 4px;
+        min-width: 210px;
+        box-sizing: border-box;
+    }
+
+    .stage:first-child {
+        margin-left: 0 !important;   /* убираем сдвиг первого блока */
+    }
+
+    .stage-title {
+        display: block;
+        text-align: center;
+        color: var(--ucl-white);
+        font-size: 0.9em;
+        margin-bottom: 6px;
+        white-space: nowrap;
+    }
+
+    .match {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .match.final {
+        transform: scale(1.2);
+        margin-left: 20px;
+    }
+
+    .champion-logo {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}

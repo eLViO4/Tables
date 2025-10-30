@@ -1,3 +1,12 @@
+/* ======== ОСНОВА ======== */
+body {
+    background-color: #53cbf9;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* ======== КОНТЕЙНЕРЫ ======== */
 .tables-container {
     display: flex;
     flex-direction: column;
@@ -13,8 +22,9 @@
     flex-wrap: wrap;
 }
 
+/* ======== ТАБЛИЦЫ ======== */
 .mini-table {
-    flex: 0 0 18%; /* ровно 5 таблиц в ряд */
+    flex: 0 0 18%; /* 5 в ряд */
     background: #fff;
     padding: 12px;
     border-radius: 10px;
@@ -23,13 +33,12 @@
     transition: all 0.3s ease;
 }
 
-
 .mini-table h3 {
     text-align: center;
     font-size: 18px;
     margin-bottom: 10px;
     color: #222;
-    border-bottom: 2px solid #f5c978;
+    border-bottom: 2px solid #4816b5;
     padding-bottom: 4px;
 }
 
@@ -47,65 +56,33 @@
 }
 
 .mini-table th {
-    background-color: #f5c978;
+    background-color: #4816b5;
+    color: #ffffff;
     font-weight: bold;
 }
 
-/* адаптив */
-@media (max-width: 1200px) {
-    .tables-row {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+/* ======== ADAPTIVE ======== */
 
+/* Планшеты — 2 в ряд */
+@media (min-width: 601px) and (max-width: 1024px) {
     .mini-table {
-        width: 45%;
-        margin-bottom: 20px;
+        flex: 0 0 48%; /* 2 таблицы в ряд */
     }
 }
 
+/* Телефоны — 1 в ряд */
+@media (max-width: 600px) {
+    .mini-table {
+        flex: 0 0 100%;
+    }
+}
+
+/* ======== NAVBAR ======== */
 .navbar-custom {
-    background-color: #f5c978;
+    background-color: #4010a7;
     height: 68px;
     margin-bottom: 30px;
     font-size: 30px;
-}
-
-/* адаптив */
-/* === ПЛАНШЕТ === */
-@media (max-width: 1200px) {
-    .mini-table {
-        flex: 0 0 30%; /* 3 таблицы в ряд */
-    }
-}
-
-/* === ТЕЛЕФОН === */
-@media (max-width: 768px) {
-    .mini-table {
-        flex: 0 0 45%; /* 2 таблицы в ряд */
-    }
-}
-
-/* === ОЧЕНЬ УЗКИЕ ЭКРАНЫ === */
-@media (max-width: 480px) {
-    .mini-table {
-        flex: 0 0 90%; /* 1 таблица в ряд */
-    }
-}
-
-
-.navbar-custom .nav-link {
-    color: black !important; /* или другой цвет */
-}
-
-.navbar-custom .nav-link:hover {
-    color: #ffffff !important; /* цвет при наведении */
-}
-
-
-.navbar-custom {
-    background-color: #4010a7;
-    padding: 10px 20px;
 }
 
 .navbar-custom .navbar-brand {
@@ -123,7 +100,11 @@
     transition: color 0.3s ease;
 }
 
-/* dropdown */
+.navbar-custom .nav-link:hover {
+    color: #f5c978 !important;
+}
+
+/* DROPDOWN */
 .dropdown-menu {
     background-color: #ffffff;
     border-radius: 8px;
@@ -132,22 +113,23 @@
 }
 
 .dropdown-item:hover {
-    background-color: #020007;
+    background-color: #4010a7;
     color: #fff;
 }
 
-/* адаптив: чуть уменьшаем шрифт */
+/* Чуть меньше шрифт на мобильных */
 @media (max-width: 768px) {
     .navbar-custom .navbar-brand,
     .navbar-custom .nav-link {
         font-size: 18px;
     }
 }
-/* фиксируем dropdown, чтобы не сдвигал navbar */
+
+/* фикс dropdown */
 .navbar-nav .dropdown-menu {
     position: absolute;
-    top: 100%;     /* сразу под кнопкой Countries */
-    right: 0;      /* прижать к правому краю */
-    left: auto;    /* не тянуться влево */
-    z-index: 1000; /* поверх других элементов */
+    top: 100%;
+    right: 0;
+    left: auto;
+    z-index: 1000;
 }

@@ -30,16 +30,16 @@
             display: flex;
             justify-content: space-between;
             gap: 20px;
-            flex-wrap: nowrap;
+            flex-wrap: wrap; /* было nowrap */
         }
 
         .mini-table {
-            flex: 1;
+            flex: 0 0 18%; /* 5 таблиц в ряд на десктопе */
             background: #fff;
             padding: 12px;
             border-radius: 10px;
             box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-            min-width: 280px;
+            box-sizing: border-box;
         }
 
         .mini-table h3 {
@@ -71,20 +71,17 @@
         }
 
         /* адаптив */
+        /* === ПЛАНШЕТ === */
         @media (max-width: 1200px) {
-            .tables-row {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
             .mini-table {
-                width: 45%;
-                margin-bottom: 20px;
+                flex: 0 0 48%; /* 2 таблицы в ряд */
             }
         }
 
+        /* === ТЕЛЕФОН === */
         @media (max-width: 768px) {
             .mini-table {
-                width: 100%;
+                flex: 0 0 100%; /* 1 таблица в ряд */
             }
         }
 
