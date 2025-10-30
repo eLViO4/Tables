@@ -11,6 +11,24 @@
         .champion-logo img {
             width: 500px;       /* фиксируем ширину */
         }
+        /* === Fix horizontal scroll on small screens === */
+        @media (max-width: 992px) {
+            .main-container {
+                display: block;
+                overflow-x: auto;      /* ✅ даём возможность прокрутки */
+                -webkit-overflow-scrolling: touch;
+                width: 100%;
+            }
+
+            .playoff-bracket {
+                min-width: 850px;      /* ✅ ширина больше экрана, чтобы появлялся скролл */
+            }
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+
+
     </style>
 </head>
 <body>
