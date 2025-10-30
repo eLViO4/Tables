@@ -34,7 +34,7 @@ header {
 
 /* Navbar Styles */
 .wc-navbar {
-    background: linear-gradient(135deg, var(--wc-gold), var(--wc-dark-red));
+    background:  var(--wc-gold);
     height: 68px;
     margin-bottom: 30px;
     border-bottom: 2px solid var(--wc-dark-red);

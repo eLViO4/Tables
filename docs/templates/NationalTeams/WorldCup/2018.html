@@ -8,7 +8,200 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="WorldCup.css">
     <style>
-        .champion-logo img {
+            /* === WORLD CUP 2018 THEME === */
+            /* Красно-сине-золотая палитра (Russia 2018 style) */
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #7f0202; /* основной красный фон */
+            color: #ffd700; /* золотой текст */
+        }
+
+        /* === HEADER === */
+        header {
+            color: #ffd700; /* золотой */
+            text-align: center;
+            text-shadow: 0 0 8px rgba(255,215,0,0.6);
+        }
+
+        /* === NAVBAR === */
+        .wc-navbar {
+            background-color: #003399 !important; /* насыщенный синий */
+            border-bottom: 2px solid #ffd700;
+        }
+
+        .wc-brand {
+            color: #ffd700 !important;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .wc-brand:hover {
+            color: #fffacd !important; /* светло-золотистый */
+        }
+
+        .navbar-toggler {
+            border: 1px solid #ffd700;
+            background-color: transparent;
+        }
+
+        .navbar-toggler-icon {
+            filter: invert(0.9) sepia(1) saturate(5) hue-rotate(10deg); /* делает иконку золотой */
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 2px #ffd700;
+        }
+
+        .nav-link.wc-link {
+            color: #ffd700 !important;
+            font-weight: 500;
+        }
+
+        .nav-link.wc-link:hover {
+            color: #003399 !important;
+            background: #ffd700;
+            border-radius: 8px;
+        }
+
+        /* === DROPDOWN === */
+        .wc-dropdown {
+            background-color: #003399;
+            border: 1px solid #ffd700;
+            box-shadow: 0 0 10px rgba(255,215,0,0.3);
+        }
+
+        .wc-dropdown .dropdown-item {
+            color: #ffd700;
+        }
+
+        .wc-dropdown .dropdown-item:hover {
+            background-color: #ffd700;
+            color: #003399;
+        }
+
+        /* === GROUP STAGES === */
+        .group {
+            background-color: #ffffff;
+            color: #003399;
+            box-shadow: 0 0 15px rgba(255,215,0,0.15);
+            border-radius: 10px;
+        }
+
+        .group h3 {
+            color: #b30000;
+            border-bottom: 2px solid #003399;
+        }
+
+        .group th {
+            background: #003399;
+            color: #ffd700;
+        }
+
+        .group td {
+            border-bottom: 1px solid #eee;
+        }
+
+        .group tr:hover {
+            background-color: #ffe6b3;
+        }
+
+        /* === TEAMS & SCORES === */
+        .winner .team-name {
+            color: #b30000;
+            font-weight: bold;
+        }
+
+        .team:not(.winner) .team-name {
+            color: #222;
+        }
+
+        .score {
+            color: #003399;
+        }
+
+        /* === PLAYOFF BRACKET === */
+        .playoff-bracket {
+            background-color: transparent;
+            color: #ffd700;
+        }
+
+        .match {
+            background-color: #ffffff;
+            color: #003399;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255,215,0,0.2);
+        }
+
+        .match.final {
+            border: 2px solid #b30000;
+            background-color: #fff;
+            color: #003399;
+        }
+
+        .match.bronze {
+            border: 2px solid #ffd700;
+            background-color: #ffffff;
+        }
+
+        /* === SCROLLBAR === */
+        .playoff-bracket::-webkit-scrollbar-track {
+            background: rgba(255,215,0,0.1);
+        }
+
+        .playoff-bracket::-webkit-scrollbar-thumb {
+            background: #003399;
+        }
+
+        .playoff-bracket::-webkit-scrollbar-thumb:hover {
+            background: #002266;
+        }
+
+        /* === STAGE TITLES === */
+        .stage-title {
+            color: #ffd700;
+            text-shadow: 1px 1px 2px #003399;
+        }
+
+        /* === FOOTER === */
+        footer {
+            color: #ffd700;
+            border-top: 1px solid #ffd700;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* === MOBILE === */
+        @media (max-width: 768px) {
+            .navbar-collapse {
+                background-color: #003399;
+                border-top: 1px solid #ffd700;
+            }
+
+            .dropdown-menu {
+                background-color: #003399;
+            }
+        }
+
+        /* === Fix horizontal scroll on small screens === */
+        @media (max-width: 992px) {
+            .main-container {
+                display: block;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                width: 100%;
+            }
+
+            .playoff-bracket {
+                min-width: 850px;
+            }
+        }
+
+
+
+
+    .champion-logo img {
             width: 160px;       /* фиксируем ширину */
         }
         /* === Fix horizontal scroll on small screens === */

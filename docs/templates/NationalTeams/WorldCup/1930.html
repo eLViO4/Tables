@@ -8,6 +8,121 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="WorldCup.css">
     <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #add8e6; /* светло-голубой фон */
+            color: #003366; /* тёмно-синий текст */
+        }
+
+        /* === HEADER === */
+        header {
+            color: #ffffff; /* белый заголовок */
+            text-align: center;
+            text-shadow: 0 0 6px rgba(0, 51, 102, 0.4);
+        }
+
+        /* === NAVBAR === */
+        .wc-navbar {
+            background-color: #0285d9 !important; /* тёмно-голубой navbar */
+            border-bottom: 3px solid #ffffff; /* белая линия */
+        }
+
+        .wc-brand {
+            color: #ffffff !important;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .wc-brand:hover {
+            color: #ffcc00 !important; /* лёгкий золотистый акцент при наведении */
+        }
+
+        .navbar-toggler {
+            border: 1px solid #ffffff;
+            background-color: transparent;
+        }
+
+        .navbar-toggler-icon {
+            filter: invert(1);
+        }
+
+        .nav-link.wc-link {
+            color: #ffffff !important;
+            font-weight: 500;
+        }
+
+        .nav-link.wc-link:hover {
+            color: #0285d9 !important;
+            background: #ffffff;
+            border-radius: 8px;
+        }
+
+        /* === DROPDOWN === */
+        .wc-dropdown {
+            background-color: #0285d9;
+            border: 1px solid #ffffff;
+            box-shadow: 0 0 10px rgba(0, 51, 102, 0.3);
+        }
+
+        .wc-dropdown .dropdown-item {
+            color: #ffffff;
+        }
+
+        .wc-dropdown .dropdown-item:hover {
+            background-color: #ffffff;
+            color: #0285d9;
+        }
+
+        /* === GROUP STAGES === */
+        .group {
+            background-color: #ffffff;
+            color: #003366;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 91, 150, 0.3);
+        }
+
+        .group h3 {
+            color: #0285d9;
+            border-bottom: 2px solid #003366;
+        }
+
+        .group th {
+            background: #0285d9;
+            color: #ffffff;
+        }
+
+        .group tr:hover {
+            background-color: #e6f4ff;
+        }
+
+        /* === MATCHES === */
+        .match {
+            background-color: #ffffff;
+            color: #003366;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 91, 150, 0.3);
+        }
+
+        .match.final {
+            border: 2px solid #005b96;
+        }
+
+        .match.bronze {
+            border: 2px solid #ffffff;
+        }
+
+        /* === STAGE TITLES === */
+        .stage-title {
+            color: #ffffff;
+            text-shadow: 1px 1px 3px #003366;
+        }
+        .stage-header {
+            color: #005b96;
+            background: #005b96;
+        }
+
+
         .champion-logo img {
             width: 120px;
         }
@@ -219,7 +334,7 @@
 
 
             <!-- ###################################-->
-            <div class="match " style="background-color: #F8CABFFF; box-shadow: none" >
+            <div class="match " style="background-color: #add8e6; box-shadow: none" >
                 <div class="team winner">
                     <div class="team-name"><span class="flag"></span> </div>
                     <div class="scores">
@@ -233,7 +348,7 @@
                     </div>
                 </div>
             </div>
-            <div class="match " style="background-color: #F8CABFFF; box-shadow: none" >
+            <div class="match " style="background-color: #add8e6; box-shadow: none" >
                 <div class="team winner">
                     <div class="team-name"><span class="flag"></span> </div>
                     <div class="scores">

@@ -8,6 +8,162 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="WorldCup.css">
     <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #c30d0d; /* насыщенный красный фон */
+            color: #ffffff; /* основной белый текст */
+        }
+
+        /* === HEADER === */
+        header {
+            color: #ffffff; /* белый */
+            text-align: center;
+            text-shadow: 0 0 8px rgba(255,255,255,0.5);
+        }
+
+        /* === NAVBAR === */
+        .wc-navbar {
+            background-color: #003399 !important; /* насыщенный синий */
+            border-bottom: 2px solid #ffffff;
+        }
+
+        .wc-brand {
+            color: #ffffff !important;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .wc-brand:hover {
+            color: #cce0ff !important; /* светло-синий при hover */
+        }
+
+        .navbar-toggler {
+            border: 1px solid #ffffff;
+            background-color: transparent;
+        }
+
+        .navbar-toggler-icon {
+            filter: invert(1); /* иконка белая */
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 2px #ffffff;
+        }
+
+        .nav-link.wc-link {
+            color: #ffffff !important;
+            font-weight: 500;
+        }
+
+        .nav-link.wc-link:hover {
+            color: #003399 !important;
+            background: #ffffff;
+            border-radius: 8px;
+        }
+
+        /* === DROPDOWN === */
+        .wc-dropdown {
+            background-color: #003399;
+            border: 1px solid #ffffff;
+            box-shadow: 0 0 10px rgba(255,255,255,0.3);
+        }
+
+        .wc-dropdown .dropdown-item {
+            color: #ffffff;
+        }
+
+        .wc-dropdown .dropdown-item:hover {
+            background-color: #ffffff;
+            color: #003399;
+        }
+
+        /* === GROUP STAGES === */
+        .group {
+            background-color: #ffffff;
+            color: #003399;
+            box-shadow: 0 0 15px rgba(0,51,153,0.2);
+            border-radius: 10px;
+        }
+
+        .group h3 {
+            color: #b30000;
+            border-bottom: 2px solid #003399;
+        }
+
+        .group th {
+            background: #003399;
+            color: #ffffff;
+        }
+
+        .group td {
+            border-bottom: 1px solid #eee;
+        }
+
+        .group tr:hover {
+            background-color: #e6f0ff;
+        }
+
+        /* === TEAMS & SCORES === */
+        .winner .team-name {
+            color: #b30000;
+            font-weight: bold;
+        }
+
+        .team:not(.winner) .team-name {
+            color: #333;
+        }
+
+        .score {
+            color: #003399;
+        }
+
+        /* === PLAYOFF BRACKET === */
+        .playoff-bracket {
+            background-color: transparent;
+            color: #003399;
+        }
+
+        .match {
+            background-color: #ffffff;
+            color: #003399;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,51,153,0.2);
+        }
+
+        .match.final {
+            border: 2px solid #b30000;
+            background-color: #fff;
+            color: #003399;
+        }
+
+        .match.bronze {
+            border: 2px solid #ffffff;
+            background-color: #ffffff;
+        }
+
+        /* === SCROLLBAR === */
+        .playoff-bracket::-webkit-scrollbar-track {
+            background: rgba(0,51,153,0.1);
+        }
+
+        .playoff-bracket::-webkit-scrollbar-thumb {
+            background: #003399;
+        }
+
+        .playoff-bracket::-webkit-scrollbar-thumb:hover {
+            background: #001f33;
+        }
+
+        /* === STAGE TITLES === */
+        .stage-title {
+            color: #003399;
+            text-shadow: 1px 1px 2px #ffffff;
+        }
+
+
+
+
         .champion-logo img {
             width: 400px;
         }
@@ -217,7 +373,7 @@
 
 
             <!-- ###################################-->
-            <div class="match " style="background-color: #F8CABFFF; box-shadow: none" >
+            <div class="match " style="background-color: #c30d0d; box-shadow: none" >
                 <div class="team winner">
                     <div class="team-name"><span class="flag"></span> </div>
                     <div class="scores">
@@ -231,7 +387,7 @@
                     </div>
                 </div>
             </div>
-            <div class="match " style="background-color: #F8CABFFF; box-shadow: none" >
+            <div class="match " style="background-color: #c30d0d; box-shadow: none" >
                 <div class="team winner">
                     <div class="team-name"><span class="flag"></span> </div>
                     <div class="scores">
@@ -245,7 +401,7 @@
                     </div>
                 </div>
             </div>
-            <div class="match " style="background-color: #F8CABFFF; box-shadow: none" >
+            <div class="match " style="background-color: #c30d0d; box-shadow: none" >
                 <div class="team winner">
                     <div class="team-name"><span class="flag"></span> </div>
                     <div class="scores">
@@ -259,7 +415,7 @@
                     </div>
                 </div>
             </div>
-            <div class="match " style="background-color: #F8CABFFF; box-shadow: none" >
+            <div class="match " style="background-color: #c30d0d; box-shadow: none" >
                 <div class="team winner">
                     <div class="team-name"><span class="flag"></span> </div>
                     <div class="scores">

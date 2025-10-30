@@ -8,6 +8,123 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="WorldCup.css">
     <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffde00; /* жёлтый фон */
+            color: #005293; /* синий текст */
+        }
+
+        /* === HEADER === */
+        header {
+            color: #005293; /* синий */
+            text-align: center;
+            text-shadow: 0 0 8px rgba(0, 82, 147, 0.6);
+        }
+
+        /* === NAVBAR === */
+        .wc-navbar {
+            background-color: #005293 !important; /* синий */
+            border-bottom: 2px solid #ffde00;
+        }
+
+        .wc-brand {
+            color: #ffde00 !important;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .wc-brand:hover {
+            color: #fff9c4 !important; /* светло-жёлтый */
+        }
+
+        .navbar-toggler {
+            border: 1px solid #ffde00;
+            background-color: transparent;
+        }
+
+        .navbar-toggler-icon {
+            filter: invert(0.9) sepia(1) saturate(8) hue-rotate(0deg); /* делает иконку жёлтой */
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 2px #ffde00;
+        }
+
+        .nav-link.wc-link {
+            color: #ffde00 !important;
+            font-weight: 500;
+        }
+
+        .nav-link.wc-link:hover {
+            color: #005293 !important;
+            background: #ffde00;
+            border-radius: 8px;
+        }
+
+        /* === DROPDOWN === */
+        .wc-dropdown {
+            background-color: #005293;
+            border: 1px solid #ffde00;
+            box-shadow: 0 0 10px rgba(255, 222, 0, 0.3);
+        }
+
+        .wc-dropdown .dropdown-item {
+            color: #ffde00;
+        }
+
+        .wc-dropdown .dropdown-item:hover {
+            background-color: #ffde00;
+            color: #005293;
+        }
+
+        /* === GROUP STAGES === */
+        .group {
+            background-color: #ffffff;
+            color: #002b5c;
+            box-shadow: 0 0 15px rgba(0, 82, 147, 0.2);
+            border-radius: 10px;
+        }
+
+        .group h3 {
+            color: #005293;
+            border-bottom: 2px solid #ffde00;
+        }
+
+        .group th {
+            background: #005293;
+            color: #ffde00;
+        }
+
+        .group td {
+            border-bottom: 1px solid #eee;
+        }
+
+        .group tr:hover {
+            background-color: #fffde7;
+        }
+
+        /* === TEAMS & SCORES === */
+        .winner .team-name {
+            color: #005293;
+            font-weight: bold;
+        }
+
+        .team:not(.winner) .team-name {
+            color: #333;
+        }
+
+        .stage-title {
+            color: #005293;
+            text-shadow: 0.5px 0.5px 1px #ffde00;
+        }
+
+        .score {
+            color: #002b5c;
+        }
+
+
+
         .champion-logo img {
             width: 400px;
         }
@@ -217,7 +334,7 @@
 
 
             <!-- ###################################-->
-            <div class="match " style="background-color: #F8CABFFF; box-shadow: none" >
+            <div class="match " style="background-color: #ffde00; box-shadow: none" >
                 <div class="team winner">
                     <div class="team-name"><span class="flag"></span> </div>
                     <div class="scores">
@@ -231,7 +348,7 @@
                     </div>
                 </div>
             </div>
-            <div class="match " style="background-color: #F8CABFFF; box-shadow: none" >
+            <div class="match " style="background-color: #ffde00; box-shadow: none" >
                 <div class="team winner">
                     <div class="team-name"><span class="flag"></span> </div>
                     <div class="scores">
@@ -245,7 +362,7 @@
                     </div>
                 </div>
             </div>
-            <div class="match " style="background-color: #F8CABFFF; box-shadow: none" >
+            <div class="match " style="background-color: #ffde00; box-shadow: none" >
                 <div class="team winner">
                     <div class="team-name"><span class="flag"></span> </div>
                     <div class="scores">

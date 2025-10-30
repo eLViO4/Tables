@@ -8,8 +8,162 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="WorldCup.css">
     <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #07234f; /* светло-синий фон */
+            color: #003366; /* основной тёмно-синий текст */
+        }
+
+        /* === HEADER === */
+        header {
+            color: #ffffff; /* тёмно-синий */
+            text-align: center;
+            text-shadow: 0 0 8px rgba(0, 51, 102, 0.5);
+        }
+
+        /* === NAVBAR === */
+        .wc-navbar {
+            background-color: #003366 !important; /* насыщенный синий */
+            border-bottom: 2px solid #ffffff;
+        }
+
+        .wc-brand {
+            color: #ffffff !important;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .wc-brand:hover {
+            color: #cce0ff !important; /* светло-синий при hover */
+        }
+
+        .navbar-toggler {
+            border: 1px solid #ffffff;
+            background-color: transparent;
+        }
+
+        .navbar-toggler-icon {
+            filter: invert(1); /* иконка белая */
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 2px #ffffff;
+        }
+
+        .nav-link.wc-link {
+            color: #ffffff !important;
+            font-weight: 500;
+        }
+
+        .nav-link.wc-link:hover {
+            color: #003366 !important;
+            background: #ffffff;
+            border-radius: 8px;
+        }
+
+        /* === DROPDOWN === */
+        .wc-dropdown {
+            background-color: #003366;
+            border: 1px solid #ffffff;
+            box-shadow: 0 0 10px rgba(255,255,255,0.3);
+        }
+
+        .wc-dropdown .dropdown-item {
+            color: #ffffff;
+        }
+
+        .wc-dropdown .dropdown-item:hover {
+            background-color: #ffffff;
+            color: #003366;
+        }
+
+        /* === GROUP STAGES === */
+        .group {
+            background-color: #ffffff;
+            color: #003366;
+            box-shadow: 0 0 15px rgba(0,51,102,0.2);
+            border-radius: 10px;
+        }
+
+        .group h3 {
+            color: #003366;
+            border-bottom: 2px solid #003366;
+        }
+
+        .group th {
+            background: #003366;
+            color: #ffffff;
+        }
+
+        .group td {
+            border-bottom: 1px solid #eee;
+        }
+
+        .group tr:hover {
+            background-color: #e6f0ff;
+        }
+
+        /* === TEAMS & SCORES === */
+        .winner .team-name {
+            color: #003366;
+            font-weight: bold;
+        }
+
+        .team:not(.winner) .team-name {
+            color: #333;
+        }
+
+        .score {
+            color: #003366;
+        }
+
+        /* === PLAYOFF BRACKET === */
+        .playoff-bracket {
+            background-color: transparent;
+            color: #003366;
+        }
+
+        .match {
+            background-color: #ffffff;
+            color: #003366;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,51,102,0.2);
+        }
+
+        .match.final {
+            border: 2px solid #003366;
+            background-color: #fff;
+            color: #003366;
+        }
+
+        .match.bronze {
+            border: 2px solid #ffffff;
+            background-color: #ffffff;
+        }
+
+        /* === SCROLLBAR === */
+        .playoff-bracket::-webkit-scrollbar-track {
+            background: rgba(0,51,102,0.1);
+        }
+
+        .playoff-bracket::-webkit-scrollbar-thumb {
+            background: #003366;
+        }
+
+        .playoff-bracket::-webkit-scrollbar-thumb:hover {
+            background: #001f33;
+        }
+
+        /* === STAGE TITLES === */
+        .stage-title {
+            color: #ffffff;
+            text-shadow: 1px 1px 2px #ffffff;
+        }
+
+
         .champion-logo img {
-            width: 500px;       /* фиксируем ширину */
+            width: 120px;       /* фиксируем ширину */
         }
         /* === Fix horizontal scroll on small screens === */
         @media (max-width: 992px) {

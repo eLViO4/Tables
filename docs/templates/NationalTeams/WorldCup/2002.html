@@ -8,6 +8,170 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="WorldCup.css">
     <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5dc; /* светлый бежевый фон */
+            color: #003366; /* основной тёмно-синий текст */
+        }
+
+        /* === HEADER === */
+        header {
+            color: #c00000; /* красный */
+            text-align: center;
+            text-shadow: 0 0 8px rgba(192,0,0,0.5);
+        }
+
+        /* === NAVBAR === */
+        .wc-navbar {
+            background-color: #c00000 !important; /* насыщенный красный */
+            border-bottom: 2px solid #003366;
+        }
+
+        .wc-brand {
+            color: #ffffff !important;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .wc-brand:hover {
+            color: #ff6666 !important; /* светлый красный при hover */
+        }
+
+        .navbar-toggler {
+            border: 1px solid #ffffff;
+            background-color: transparent;
+        }
+
+        .navbar-toggler-icon {
+            filter: invert(0.1) sepia(1) saturate(8) hue-rotate(0deg); /* иконка белая */
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 2px #ffffff;
+        }
+
+        .nav-link.wc-link {
+            color: #ffffff !important;
+            font-weight: 500;
+        }
+
+        .nav-link.wc-link:hover {
+            color: #c00000 !important;
+            background: #ffffff;
+            border-radius: 8px;
+        }
+
+        /* === DROPDOWN === */
+        .wc-dropdown {
+            background-color: #003366;
+            border: 1px solid #c00000;
+            box-shadow: 0 0 10px rgba(192,0,0,0.3);
+        }
+
+        .wc-dropdown .dropdown-item {
+            color: #ffffff;
+        }
+
+        .wc-dropdown .dropdown-item:hover {
+            background-color: #c00000;
+            color: #ffffff;
+        }
+
+        /* === GROUP STAGES === */
+        .group {
+            background-color: #ffffff;
+            color: #003366;
+            box-shadow: 0 0 15px rgba(192,0,0,0.2);
+            border-radius: 10px;
+        }
+
+        .group h3 {
+            color: #c00000;
+            border-bottom: 2px solid #003366;
+        }
+
+        .group th {
+            background: #003366;
+            color: #ffffff;
+        }
+
+        .group td {
+            border-bottom: 1px solid #eee;
+        }
+
+        .group tr:hover {
+            background-color: #f0f0f5;
+        }
+
+        /* === TEAMS & SCORES === */
+        .winner .team-name {
+            color: #c00000;
+            font-weight: bold;
+        }
+
+        .team:not(.winner) .team-name {
+            color: #333;
+        }
+
+        .score {
+            color: #003366;
+        }
+
+        /* === PLAYOFF BRACKET === */
+        .playoff-bracket {
+            background-color: transparent;
+            color: #003366;
+        }
+
+        .match {
+            background-color: #ffffff;
+            color: #003366;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(192,0,0,0.2);
+        }
+
+        .match.final {
+            border: 2px solid #c00000;
+            background-color: #fff;
+            color: #003366;
+        }
+
+        .match.bronze {
+            border: 2px solid #003366;
+            background-color: #ffffff;
+        }
+
+        /* === SCROLLBAR === */
+        .playoff-bracket::-webkit-scrollbar-track {
+            background: rgba(192,0,0,0.1);
+        }
+
+        .playoff-bracket::-webkit-scrollbar-thumb {
+            background: #003366;
+        }
+
+        .playoff-bracket::-webkit-scrollbar-thumb:hover {
+            background: #001f33;
+        }
+
+        /* === STAGE TITLES === */
+        .stage-title {
+            color: #c00000;
+
+        }
+
+        /* === FOOTER === */
+        footer {
+            color: #003366;
+            border-top: 1px solid #003366;
+            text-align: center;
+            padding: 10px;
+        }
+
+
+
+
         .champion-logo img {
             width: 250px;       /* фиксируем ширину */
         }

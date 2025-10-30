@@ -8,7 +8,177 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="WorldCup.css">
     <style>
-        /* === Fix horizontal scroll on small screens === */
+
+            /* === WORLD CUP 2010 THEME === */
+            /* Красно-зелёно-жёлтая палитра (South Africa 2010 style) */
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #b30000; /* насыщенный красный фон */
+            color: #ffdd00; /* основной жёлтый текст */
+        }
+
+        /* === HEADER === */
+        header {
+            color: #ffdd00; /* жёлтый */
+            text-align: center;
+            text-shadow: 0 0 8px rgba(255, 221, 0, 0.6);
+        }
+
+        /* === NAVBAR === */
+        .wc-navbar {
+            background-color: #007f2d !important; /* насыщенный зелёный */
+            border-bottom: 2px solid #ffdd00;
+        }
+
+        .wc-brand {
+            color: #ffdd00 !important;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .wc-brand:hover {
+            color: #ffff66 !important; /* светло-жёлтый */
+        }
+
+        .navbar-toggler {
+            border: 1px solid #ffdd00;
+            background-color: transparent;
+        }
+
+        .navbar-toggler-icon {
+            filter: invert(0.9) sepia(1) saturate(8) hue-rotate(45deg); /* делает иконку жёлтой */
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 2px #ffdd00;
+        }
+
+        .nav-link.wc-link {
+            color: #ffdd00 !important;
+            font-weight: 500;
+        }
+
+        .nav-link.wc-link:hover {
+            color: #007f2d !important;
+            background: #ffdd00;
+            border-radius: 8px;
+        }
+
+        /* === DROPDOWN === */
+        .wc-dropdown {
+            background-color: #007f2d;
+            border: 1px solid #ffdd00;
+            box-shadow: 0 0 10px rgba(255, 221, 0, 0.3);
+        }
+
+        .wc-dropdown .dropdown-item {
+            color: #ffdd00;
+        }
+
+        .wc-dropdown .dropdown-item:hover {
+            background-color: #ffdd00;
+            color: #007f2d;
+        }
+
+        /* === GROUP STAGES === */
+        .group {
+            background-color: #ffffff;
+            color: #043d0c;
+            box-shadow: 0 0 15px rgba(255, 221, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .group h3 {
+            color: #b30000;
+            border-bottom: 2px solid #007f2d;
+        }
+
+        .group th {
+            background: #007f2d;
+            color: #ffdd00;
+        }
+
+        .group td {
+            border-bottom: 1px solid #eee;
+        }
+
+        .group tr:hover {
+            background-color: #fff8b3;
+        }
+
+        /* === TEAMS & SCORES === */
+        .winner .team-name {
+            color: #b30000;
+            font-weight: bold;
+        }
+
+        .team:not(.winner) .team-name {
+            color: #333;
+        }
+
+        .score {
+            color: #043d0c;
+        }
+
+        /* === PLAYOFF BRACKET === */
+        .playoff-bracket {
+            background-color: transparent;
+            color: #ffdd00;
+        }
+
+        .match {
+            background-color: #ffffff;
+            color: #007f2d;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 221, 0, 0.2);
+        }
+
+        .match.final {
+            border: 2px solid #b30000;
+            background-color: #fff;
+            color: #007f2d;
+        }
+
+        .match.bronze {
+            border: 2px solid #ffdd00;
+            background-color: #ffffff;
+        }
+
+        /* === SCROLLBAR === */
+        .playoff-bracket::-webkit-scrollbar-track {
+            background: rgba(255, 221, 0, 0.1);
+        }
+
+        .playoff-bracket::-webkit-scrollbar-thumb {
+            background: #007f2d;
+        }
+
+        .playoff-bracket::-webkit-scrollbar-thumb:hover {
+            background: #005f20;
+        }
+
+        /* === STAGE TITLES === */
+        .stage-title {
+            color: #ffdd00;
+            text-shadow: 1px 1px 2px #007f2d;
+        }
+
+        /* === FOOTER === */
+        footer {
+            color: #ffdd00;
+            border-top: 1px solid #ffdd00;
+            text-align: center;
+            padding: 10px;
+        }
+
+
+
+
+
+
+    /* === Fix horizontal scroll on small screens === */
         @media (max-width: 992px) {
             .main-container {
                 display: block;
