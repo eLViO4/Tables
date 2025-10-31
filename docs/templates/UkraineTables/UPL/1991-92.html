@@ -3,12 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPL 2024-25</title>
+    <title>UPL 1991-92</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="UPL.css"> <!-- сюда вставь CSS из предыдущего сообщения -->
+    <link rel="stylesheet" href="UPL.css">
+    <style>
+        .tables-container {
+            transform: scale(0.75);
+        }
+        .tables-container h3 {
+            text-align: center;
+            background-color: #0057b7;
+            color: #eec003;
+            padding: 15px;
+            margin: 0 0 15px 0;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .tables-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Уменьшите это значение */
+            margin: 10px auto; /* Уменьшите отступы */
+            max-width: 500px;
+
+            transform-origin: top left;
+        }
+        .championship-match {
+            background: #fff;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .championship-match h4 {
+            color: #0057b7;
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .match-result {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            font-size: 16px;
+        }
+
+        .match-result .team {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .match-result .score {
+            background: #0057b7;
+            color: #eec003;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
 
@@ -60,9 +122,22 @@
     </ul>
 </nav>
 
+
+
+
 <div class="tables-container">
+    <h3>1991-92</h3>
+    <div class="championship-match">
+        <h4>Championship Match</h4>
+        <div class="match-result">
+            <span class="team">Tavriya</span>
+            <span class="score">1 - 0</span>
+            <span class="team">Dynamo Kyiv</span>
+        </div>
+    </div>
+
     <div class="mini-table">
-        <h3>Украинская лига</h3>
+        <h3>Group A</h3>
         <table>
             <thead>
             <tr>
@@ -73,20 +148,50 @@
             </thead>
             <tbody>
             <!-- Лидеры -->
-            <tr class="ucl"><td>1</td><td>Tavriya Simferopol</td><td>28</td></tr>
-            <tr class="ucl"><td>2</td><td>Shakhtar Donetsk</td><td>26</td></tr>
-            <tr class="ucl"><td>3</td><td>Chornomorets Odesa</td><td>25</td></tr>
+            <tr><td>1</td><td>Tavriya</td><td>28</td></tr>
+            <tr><td>2</td><td>Shakhtar</td><td>26</td></tr>
+            <tr class="int"><td>3</td><td>Chornomorets</td><td>25</td></tr>
 
             <!-- Середина таблицы -->
             <tr><td>4</td><td>Torpedo Zaporizhzhia</td><td>19</td></tr>
             <tr><td>5</td><td>Metalurh Zaporizhzhia</td><td>18</td></tr>
-            <tr><td>6</td><td>Karpaty Lviv</td><td>16</td></tr>
-            <tr><td>7</td><td>Kremin Kremenchuk</td><td>16</td></tr>
+            <tr><td>6</td><td>Karpaty</td><td>16</td></tr>
+            <tr><td>7</td><td>Kremin</td><td>16</td></tr>
 
             <!-- Вылет -->
             <tr class="relegation"><td>8</td><td>Nyva Vinnytsia</td><td>14</td></tr>
-            <tr class="relegation"><td>9</td><td>Evis Mykolaiv</td><td>10</td></tr>
+            <tr class="relegation"><td>9</td><td>Evis</td><td>10</td></tr>
             <tr class="relegation"><td>10</td><td>Temp Shepetivka</td><td>8</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mini-table">
+        <h3>Group B</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>Pos</th>
+                <th>Team</th>
+                <th>Pts</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Лидеры -->
+            <tr><td>1</td><td>Dynamo Kyiv</td><td>30</td></tr>
+            <tr><td>2</td><td>Dnipro</td><td>23</td></tr>
+            <tr><td>3</td><td>Metalist</td><td>21</td></tr>
+
+            <!-- Середина таблицы -->
+            <tr><td>4</td><td>Nyva Ternopil</td><td>21</td></tr>
+            <tr><td>5</td><td>Volyn</td><td>18</td></tr>
+            <tr><td>6</td><td>Bukovyna</td><td>18</td></tr>
+            <tr><td>7</td><td>Zorya-MALS</td><td>17</td></tr>
+
+            <!-- Вылет -->
+            <tr class="relegation"><td>8</td><td>Naftovyk Okhtyrka</td><td>13</td></tr>
+            <tr class="relegation"><td>9</td><td>Prykarpattya</td><td>12</td></tr>
+            <tr class="relegation"><td>10</td><td>Odesa</td><td>7</td></tr>
             </tbody>
         </table>
     </div>
