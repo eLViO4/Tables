@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eec003; /* yellow background */
+    color: #001a66; /* dark blue text */
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #001a66;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.navbar-custom {
+    background-color: #001a66;
+    height: 68px;
+    margin-bottom: 30px;
+    font-size: 30px;
+    border-bottom: 2px solid #000;
+}
+
+.nav-link {
+    color: #eec003;
+    text-decoration: none;
+    padding: 15px;
+    display: inline-block;
+}
+
+/* === TABLE === */
+.table-container {
+    width: 95%;
+    overflow-x: auto;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1600px;
+}
+
+thead th {
+    background-color: #001a66;
+    color: #eec003;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    padding: 10px;
+    font-size: 14px;
+}
+
+th.team-header {
+    position: sticky;
+    left: 0;
+    z-index: 3;
+    background-color: #001a66;
+    color: #eec003;
+    font-size: 16px;
+}
+
+th.team {
+    position: sticky;
+    left: 0;
+    background-color: #fbf1df;
+    color: #001a66;
+    font-weight: bold;
+    text-align: left;
+    padding: 8px 10px;
+    white-space: nowrap;
+}
+
+td {
+    text-align: center;
+    padding: 6px 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+/* === COMPETITION COLORS === */
+.ucl {
+    background-color: #003399;
+    color: white;
+    font-weight: bold;
+}
+
+.uel {
+    background-color: #ff8c00;
+    color: white;
+    font-weight: bold;
+}
+
+.uecl {
+    background-color: #228b22;
+    color: white;
+    font-weight: bold;
+}
+
+/* Qualification mark */
+.stage-q {
+    font-weight: normal;
+}
+
+/* Scroll behaviour */
+.table-container::-webkit-scrollbar {
+    height: 10px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background: #001a66;
+    border-radius: 5px;
+}
