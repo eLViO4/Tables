@@ -1,0 +1,281 @@
+:root {
+    --cup-blue: #0056b3;
+    --cup-yellow: #eec003;
+    --cup-dark: #003580;
+    --cup-black: #000;
+    --cup-white: #ffffff;
+    --cup-gray: #f8f8f8;
+}
+
+/* === GLOBAL STYLES === */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: var(--cup-black);
+    min-height: 100vh;
+    overflow-x: auto;
+    overflow-y: auto;
+    /* === ФОН КУБКА УКРАИНЫ === */
+    background:
+            #eec003;
+}
+
+/* === HEADER === */
+header {
+    text-align: center;
+    padding: 30px 0 15px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2em;
+    color: var(--cup-dark);
+    letter-spacing: 2px;
+}
+
+/* === MAIN LAYOUT === */
+.main-container {
+    display: flex;
+    gap: 30px;
+    padding: 0 20px 30px;
+    width: 100%;
+    margin: 0 auto;
+    align-items: flex-start;
+    overflow-x: visible;
+}
+
+/* === PLAYOFF STAGE === */
+.playoff-bracket {
+    display: flex;
+    justify-content: flex-start;
+    gap: 18px;
+    padding: 22px 0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    min-width: 0;
+    flex: 1;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+.stage {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    flex-shrink: 0;
+}
+
+.stage-title {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--cup-blue);
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.match {
+    background: var(--cup-white);
+    border-radius: 6px;
+    padding: 9px 12px;
+    width: 240px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    font-size: 0.9em;
+}
+
+.team {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+    min-height: 28px;
+}
+
+.team:last-child {
+    border-bottom: none;
+}
+
+.team-name {
+    font-weight: 600;
+    flex: 1;
+    font-size: 0.95em;
+}
+
+.scores {
+    display: flex;
+    gap: 6px;
+}
+
+.score {
+    width: 22px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+.winner .team-name {
+    color: var(--cup-blue);
+    font-weight: 700;
+}
+
+.aggregate {
+    text-align: center;
+    float: right;
+    margin-top: 1px;
+    padding-top: 1px;
+    border-top: 1px dashed #ddd;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: var(--cup-blue);
+    min-height: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* === FOOTER === */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--cup-white);
+    font-size: 0.9em;
+}
+
+/* Navbar для LEG */
+.navbar {
+    background-color: #0057b7; /* синий фон */
+    padding: 12px 20px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Home слева */
+.navbar .navbar-brand {
+    color: #eec003;
+    font-weight: bold;
+    font-size: 29px;
+    text-decoration: none;
+}
+
+/* Список dropdown справа */
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Элементы списка */
+.navbar .nav-item {
+    position: relative; /* для абсолютного dropdown */
+    margin-left: 15px;
+}
+
+/* Ссылки dropdown */
+.navbar .nav-link {
+    color: #eec003;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Hover для ссылок */
+.navbar .nav-link:hover {
+    color: #eec003; /* жёлтый при наведении */
+}
+
+/* Меню dropdown */
+.navbar .dropdown-menu {
+    position: absolute;
+    top: 100%; /* сразу под кнопкой */
+    left: 0;
+    background-color: #0057b7;
+    border-radius: 8px;
+    min-width: 150px;
+    padding: 5px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: none; /* скрыто по умолчанию */
+    z-index: 1000;
+}
+
+/* Показать меню при hover */
+.navbar .nav-item:hover .dropdown-menu {
+    display: block;
+}
+
+/* Ссылки внутри dropdown */
+.navbar .dropdown-item {
+    color: #eec003; /* синий текст */
+    font-weight: 500;
+    padding: 8px 15px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Hover для элементов dropdown */
+.navbar .dropdown-item:hover {
+    background-color: #eec003; /* синий фон */
+    color: #0057b7; /* белый текст */
+}
+
+/* На маленьких экранах оставляем то же отображение */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: row; /* не меняем на колонку, чтобы не было бургера */
+    }
+    .nav-item {
+        margin-left: 10px;
+    }
+    .tables-container {
+        transform: scale(0.8); /* уменьшаем таблицу для телефонов */
+        transform-origin: top center; /* центрируем масштабирование */
+        max-width: 100%;
+    }
+
+    .mini-table h3 {
+        font-size: 28px; /* немного меньше заголовок */
+    }
+
+    .mini-table th,
+    .mini-table td {
+        font-size: 13px; /* уменьшаем шрифт */
+        padding: 8px 4px;
+    }
+}
+
+/* === FINAL MATCH STYLE === */
+.match.final {
+    transform: scale(1.4);
+    border: 2px solid blue;
+    background-color: #fffdf0;
+    margin-left: 50px;
+    font-weight: bold;
+}
+
+/* === SCROLLBAR === */
+.playoff-bracket::-webkit-scrollbar {
+    height: 6px;
+}
+
+.playoff-bracket::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.1);
+    border-radius: 3px;
+}
+
+.playoff-bracket::-webkit-scrollbar-thumb {
+    background: var(--cup-yellow);
+    border-radius: 3px;
+}
+
+.playoff-bracket::-webkit-scrollbar-thumb:hover {
+    background: #ffea80;
+}
