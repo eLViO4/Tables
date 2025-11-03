@@ -29,6 +29,7 @@
             padding: 15px;
             display: inline-block;
         }
+
         .nav-link:hover {
             color: #eec003;
         }
@@ -91,17 +92,26 @@
             margin: 0;
         }
 
+        /* 💡 Главное изменение */
         .winners-list li {
-            display: flex;
-            justify-content: space-between;
-            padding: 6px 0;
+            position: relative;
+            text-align: center;
             font-size: 1.05em;
+            padding: 6px 0;
         }
 
-        .winners-list span {
+        .winners-list span:first-child {
+            position: absolute;
+            left: 0;
             font-weight: bold;
             color: #003399;
-            margin-right: 8px;
+            text-align: left;
+        }
+
+        .goals {
+            position: absolute;
+            right: 0;
+            display: inline-block;
         }
 
         .divider {
@@ -147,7 +157,7 @@
                             <li><span>GK</span>Andriy Pyatov<span></span></li>
                             <li><span>GK</span>Bohdan Shust<span></span></li>
                             <div class="divider"></div>
-                            <li><span>DF</span>Andriy Rusol<span></span></li>
+                            <li><span>DF</span>Andriy Rusol<span class="goals">⚽</span></li>
                             <li><span>DF</span>Vyacheslav Sviderskiy<span></span></li>
                             <li><span>DF</span>Andriy Nesmachniy<span></span></li>
                             <li><span>DF</span>Oleksandr Yatsenko<span></span></li>
@@ -156,15 +166,15 @@
                             <li><span>DF</span>Vladyslav Vashchuk<span></span></li>
                             <div class="divider"></div>
                             <li><span>MF</span>Anatoliy Tymoshchuk<span></span></li>
-                            <li><span>MF</span>Oleh Husiev<span></span></li>
-                            <li><span>MF</span>Serhiy Rebrov<span></span></li>
+                            <li><span>MF</span>Oleh Gusev<span></span></li>
+                            <li><span>MF</span>Serhiy Rebrov<span class="goals">⚽</span></li>
                             <li><span>MF</span>Oleh Shelayev<span></span></li>
-                            <li><span>MF</span>Andriy Husin<span></span></li>
+                            <li><span>MF</span>Andriy Gusin<span></span></li>
                             <li><span>MF</span>Serhiy Nazarenko<span></span></li>
-                            <li><span>MF</span>Maksym Kalinichenko<span></span></li>
+                            <li><span>MF</span>Maksym Kalinichenko<span class="goals">⚽</span></li>
                             <li><span>MF</span>Ruslan Rotan<span></span></li>
                             <div class="divider"></div>
-                            <li><span>FW</span>Andriy Shevchenko<span></span></li>
+                            <li><span>FW</span>Andriy Shevchenko<span class="goals">⚽⚽</span></li>
                             <li><span>FW</span>Andriy Vorobey<span></span></li>
                             <li><span>FW</span>Andriy Voronin<span></span></li>
                             <li><span>FW</span>Oleksiy Byelik<span></span></li>
@@ -188,20 +198,32 @@
                         <ul>
                             <li><span>GK</span>Andriy Pyatov<span></span></li>
                             <li><span>GK</span>Maksym Koval<span></span></li>
+                            <li><span>GK</span>Oleksandr Goryainov<span></span></li>
                             <div class="divider"></div>
                             <li><span>DF</span>Yevhen Khacheridi<span></span></li>
                             <li><span>DF</span>Yaroslav Rakitskiy<span></span></li>
-                            <li><span>DF</span>Oleh Husiev<span></span></li>
+                            <li><span>DF</span>Bohdan Butko<span></span></li>
+                            <li><span>DF</span>Oleksandr Kucher<span></span></li>
                             <li><span>DF</span>Vyacheslav Shevchuk<span></span></li>
+                            <li><span>DF</span>Yevhen Selin<span></span></li>
+                            <li><span>DF</span>Taras Mikhalik<span></span></li>
                             <div class="divider"></div>
                             <li><span>MF</span>Anatoliy Tymoshchuk<span></span></li>
+                            <li><span>MF</span>Oleksandr Aliev<span></span></li>
                             <li><span>MF</span>Ruslan Rotan<span></span></li>
+                            <li><span>MF</span>Oleh Gusev<span></span></li>
                             <li><span>MF</span>Andriy Yarmolenko<span></span></li>
-                            <li><span>MF</span>Denys Harmash<span></span></li>
+                            <li><span>MF</span>Yevhen Konoplyanka<span></span></li>
+                            <li><span>MF</span>Denys Garmash<span></span></li>
+                            <li><span>MF</span>Serhiy Nazarenko<span></span></li>
                             <div class="divider"></div>
-                            <li><span>FW</span>Andriy Shevchenko<span></span></li>
+                            <li><span>FW</span>Andriy Shevchenko<span class="goals">⚽⚽</span></li>
+                            <li><span>FW</span>Andriy Voronin<span></span></li>
                             <li><span>FW</span>Marko Dević<span></span></li>
                             <li><span>FW</span>Artem Milevskiy<span></span></li>
+                            <li><span>FW</span>Yevhen Seleznyov<span></span></li>
+                            <div class="divider"></div>
+                            <li><span>Coach</span>Oleh Blokhin<span></span></li>
                         </ul>
                     </div>
                 </div>
@@ -217,19 +239,34 @@
                 <div id="collapse2016" class="accordion-collapse collapse" aria-labelledby="heading2016" data-bs-parent="#tournamentAccordion">
                     <div class="accordion-body winners-list">
                         <ul>
-                            <li><span>GK</span>Andriy Pyatov<span></span></li>
-                            <li><span>GK</span>Denys Boyko<span></span></li>
+                            <li><span>GK</span>Denis Boyko</li>
+                            <li><span>GK</span>Andriy Pyatov</li>
+                            <li><span>GK</span>Mykyta Shevchenko</li>
                             <div class="divider"></div>
-                            <li><span>DF</span>Yaroslav Rakitskiy<span></span></li>
-                            <li><span>DF</span>Yevhen Khacheridi<span></span></li>
-                            <li><span>DF</span>Bohdan Butko<span></span></li>
+                            <li><span>DF</span>Bogdan Butko</li>
+                            <li><span>DF</span>Artem Fedetskiy</li>
+                            <li><span>DF</span>Yevhen Khacheridi</li>
+                            <li><span>DF</span>Oleksandr Kucher</li>
+                            <li><span>DF</span>Yaroslav Rakitskiy</li>
+                            <li><span>DF</span>Vyacheslav Shevchuk</li>
+                            <li><span>DF</span>Oleksandr Karavaiev</li>
                             <div class="divider"></div>
-                            <li><span>MF</span>Andriy Yarmolenko<span></span></li>
-                            <li><span>MF</span>Ruslan Rotan<span></span></li>
-                            <li><span>MF</span>Serhiy Sydorchuk<span></span></li>
+                            <li><span>MF</span>Denys Garmash</li>
+                            <li><span>MF</span>Viktor Kovalenko</li>
+                            <li><span>MF</span>Ruslan Rotan</li>
+                            <li><span>MF</span>Serhiy Rybalka</li>
+                            <li><span>MF</span>Taras Stepanenko</li>
+                            <li><span>MF</span>Sergiy Sydorchuk</li>
+                            <li><span>MF</span>Anatoliy Tymoshchuk</li>
+                            <li><span>MF</span>Oleksandr Zinchenko</li>
+                            <li><span>MF</span>Yevgen Konoplyanka</li>
+                            <li><span>MF</span>Andrey Yarmolenko</li>
                             <div class="divider"></div>
-                            <li><span>FW</span>Roman Zozulya<span></span></li>
-                            <li><span>FW</span>Yevhen Seleznyov<span></span></li>
+                            <li><span>FW</span>Pylyp Budkivskyi</li>
+                            <li><span>FW</span>Yevhen Seleznyov</li>
+                            <li><span>FW</span>Roman Zozulya</li>
+                            <div class="divider"></div>
+                            <li><span>Coach</span>Mykhaylo Fomenko<span></span></li>
                         </ul>
                     </div>
                 </div>
@@ -245,19 +282,37 @@
                 <div id="collapse2020" class="accordion-collapse collapse" aria-labelledby="heading2020" data-bs-parent="#tournamentAccordion">
                     <div class="accordion-body winners-list">
                         <ul>
-                            <li><span>GK</span>Heorhiy Bushchan<span></span></li>
-                            <li><span>GK</span>Andriy Pyatov<span></span></li>
+                            <li><span>GK</span>Georgiy Bushchan</li>
+                            <li><span>GK</span>Andriy Pyatov</li>
+                            <li><span>GK</span>Anatoliy Trubin</li>
                             <div class="divider"></div>
-                            <li><span>DF</span>Mykola Matviyenko<span></span></li>
-                            <li><span>DF</span>Oleksandr Karavaev<span></span></li>
-                            <li><span>DF</span>Serhiy Kryvtsov<span></span></li>
+                            <li><span>DF</span>Serhiy Kryvtsov</li>
+                            <li><span>DF</span>Mykola Matvienko</li>
+                            <li><span>DF</span>Vitaliy Mykolenko</li>
+                            <li><span>DF</span>Denys Popov</li>
+                            <li><span>DF</span>Eduard Sobol</li>
+                            <li><span>DF</span>Oleksandr Tymchyk</li>
+                            <li><span>DF</span>Illya Zabarnyi</li>
+                            <li><span>DF</span>Oleksandr Karavaiev</li>
                             <div class="divider"></div>
-                            <li><span>MF</span>Ruslan Malinovskyi<span></span></li>
-                            <li><span>MF</span>Mykola Shaparenko<span></span></li>
-                            <li><span>MF</span>Oleksandr Zinchenko<span></span></li>
+                            <li><span>MF</span>Roman Bezus</li>
+                            <li><span>MF</span>Evgeniy Makarenko</li>
+                            <li><span>MF</span>Ruslan Malinovskiy</li>
+                            <li><span>MF</span>Marlos</li>
+                            <li><span>MF</span>Mykola Shaparenko</li>
+                            <li><span>MF</span>Taras Stepanenko</li>
+                            <li><span>MF</span>Georgiy Sudakov</li>
+                            <li><span>MF</span>Sergiy Sydorchuk</li>
+                            <li><span>MF</span>Viktor Tsygankov</li>
+                            <li><span>MF</span>Oleksandr Zinchenko<span class="goals">⚽</span></li>
+                            <li><span>MF</span>Oleksandr Zubkov</li>
+                            <li><span>MF</span>Andrey Yarmolenko<span class="goals">⚽⚽</span></li>
                             <div class="divider"></div>
-                            <li><span>FW</span>Roman Yaremchuk<span></span></li>
-                            <li><span>FW</span>Andriy Yarmolenko<span></span></li>
+                            <li><span>FW</span>Artem Besedin</li>
+                            <li><span>FW</span>Artem Dovbyk<span class="goals">⚽</span></li>
+                            <li><span>FW</span>Roman Yaremchuk<span class="goals">⚽⚽</span></li>
+                            <div class="divider"></div>
+                            <li><span>Coach</span>Andriy Shevchenko<span></span></li>
                         </ul>
                     </div>
                 </div>
@@ -273,20 +328,37 @@
                 <div id="collapse2024" class="accordion-collapse collapse" aria-labelledby="heading2024" data-bs-parent="#tournamentAccordion">
                     <div class="accordion-body winners-list">
                         <ul>
-                            <li><span>GK</span>Andriy Lunin<span></span></li>
-                            <li><span>GK</span>Anatoliy Trubin<span></span></li>
+                            <li><span>GK</span>Georgiy Bushchan</li>
+                            <li><span>GK</span>Andriy Lunin</li>
+                            <li><span>GK</span>Anatoliy Trubin</li>
                             <div class="divider"></div>
-                            <li><span>DF</span>Mykola Matviyenko<span></span></li>
-                            <li><span>DF</span>Illia Zabarnyi<span></span></li>
-                            <li><span>DF</span>Oleksandr Tymchyk<span></span></li>
+                            <li><span>DF</span>Valeriy Bondar</li>
+                            <li><span>DF</span>Yukhym Konoplya</li>
+                            <li><span>DF</span>Mykola Matvienko</li>
+                            <li><span>DF</span>Bogdan Mykhaylychenko</li>
+                            <li><span>DF</span>Vitaliy Mykolenko</li>
+                            <li><span>DF</span>Oleksandr Svatok</li>
+                            <li><span>DF</span>Maksym Taloverov</li>
+                            <li><span>DF</span>Oleksandr Tymchyk</li>
+                            <li><span>DF</span>Illya Zabarnyi</li>
                             <div class="divider"></div>
-                            <li><span>MF</span>Mykhailo Mudryk<span></span></li>
-                            <li><span>MF</span>Oleksandr Zinchenko<span></span></li>
-                            <li><span>MF</span>Heorhiy Sudakov<span></span></li>
-                            <li><span>MF</span>Ruslan Malinovskyi<span></span></li>
+                            <li><span>MF</span>Volodymyr Brazhko</li>
+                            <li><span>MF</span>Ruslan Malinovskiy</li>
+                            <li><span>MF</span>Mykhaylo Mudryk</li>
+                            <li><span>MF</span>Mykola Shaparenko<span class="goals">⚽</span></li>
+                            <li><span>MF</span>Taras Stepanenko</li>
+                            <li><span>MF</span>Georgiy Sudakov</li>
+                            <li><span>MF</span>Sergiy Sydorchuk</li>
+                            <li><span>MF</span>Oleksandr Zubkov</li>
+                            <li><span>MF</span>Viktor Tsygankov</li>
+                            <li><span>MF</span>Oleksandr Zinchenko</li>
+                            <li><span>MF</span>Andrey Yarmolenko</li>
                             <div class="divider"></div>
-                            <li><span>FW</span>Roman Yaremchuk<span></span></li>
-                            <li><span>FW</span>Artem Dovbyk<span></span></li>
+                            <li><span>FW</span>Artem Dovbyk</li>
+                            <li><span>FW</span>Vladystav Vanat</li>
+                            <li><span>FW</span>Roman Yaremchuk<span class="goals">⚽</span></li>
+                            <div class="divider"></div>
+                            <li><span>Coach</span>Serhiy Rebrov<span></span></li>
                         </ul>
                     </div>
                 </div>
