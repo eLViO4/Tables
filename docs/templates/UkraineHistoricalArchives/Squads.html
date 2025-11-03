@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Emblema+One&display=swap" rel="stylesheet">
+    <title>Squads</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            margin: 0;
+            padding-bottom: 20px;
+            background: #eec003;
+            color: #001a66;
+        }
+
+        .navbar-custom {
+            background-color: #0057b7;
+            height: 68px;
+            margin-bottom: 30px;
+            font-size: 30px;
+        }
+
+        .nav-link {
+            color: #eec003;
+            text-decoration: none;
+            padding: 15px;
+            display: inline-block;
+        }
+        .nav-link:hover {
+            color: #eec003;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #0057b7;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        #champions {
+            width: 95%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            border: none;
+            margin-bottom: 10px;
+        }
+
+        .accordion-button {
+            background-color: #0057b7;
+            color: #eec003;
+            border: none;
+            border-radius: 8px;
+            padding: 15px 20px;
+            font-size: 1.1em;
+            font-weight: bold;
+            width: 100%;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #0057b7;
+            color: #eec003;
+            box-shadow: none;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            border: none;
+        }
+
+        .accordion-body {
+            background-color: #ffffff;
+            border-radius: 0 0 8px 8px;
+            padding: 20px;
+        }
+
+        .winners-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .winners-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            font-size: 1.05em;
+        }
+
+        .winners-list span {
+            font-weight: bold;
+            color: #003399;
+            margin-right: 8px;
+        }
+
+        .divider {
+            border-bottom: 3px solid #003399;
+            margin: 10px 0;
+        }
+
+        @media (min-width: 768px) {
+            #champions { width: 50%; }
+        }
+
+        @media (max-width: 600px) {
+            #champions { width: 100%; }
+            .accordion-button {
+                min-height: 50px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <a href="../../index.html" class="nav-link">HOME</a>
+</nav>
+
+<div class="container-fluid">
+    <section id="champions">
+        <h1>National Team Squads in Tournaments</h1>
+
+        <div class="accordion" id="tournamentAccordion">
+
+            <!-- World Cup 2006 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading2006">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2006" aria-expanded="false" aria-controls="collapse2006">
+                        World Cup 2006
+                    </button>
+                </h2>
+                <div id="collapse2006" class="accordion-collapse collapse" aria-labelledby="heading2006" data-bs-parent="#tournamentAccordion">
+                    <div class="accordion-body winners-list">
+                        <ul>
+                            <li><span>GK</span>Oleksandr Shovkovskyi<span></span></li>
+                            <li><span>GK</span>Andriy Pyatov<span></span></li>
+                            <li><span>GK</span>Bohdan Shust<span></span></li>
+                            <div class="divider"></div>
+                            <li><span>DF</span>Andriy Rusol<span></span></li>
+                            <li><span>DF</span>Vyacheslav Sviderskiy<span></span></li>
+                            <li><span>DF</span>Andriy Nesmachniy<span></span></li>
+                            <li><span>DF</span>Oleksandr Yatsenko<span></span></li>
+                            <li><span>DF</span>Volodymyr Yezerskiy<span></span></li>
+                            <li><span>DF</span>Dmytro Chigrynskiy<span></span></li>
+                            <li><span>DF</span>Vladyslav Vashchuk<span></span></li>
+                            <div class="divider"></div>
+                            <li><span>MF</span>Anatoliy Tymoshchuk<span></span></li>
+                            <li><span>MF</span>Oleh Husiev<span></span></li>
+                            <li><span>MF</span>Serhiy Rebrov<span></span></li>
+                            <li><span>MF</span>Oleh Shelayev<span></span></li>
+                            <li><span>MF</span>Andriy Husin<span></span></li>
+                            <li><span>MF</span>Serhiy Nazarenko<span></span></li>
+                            <li><span>MF</span>Maksym Kalinichenko<span></span></li>
+                            <li><span>MF</span>Ruslan Rotan<span></span></li>
+                            <div class="divider"></div>
+                            <li><span>FW</span>Andriy Shevchenko<span></span></li>
+                            <li><span>FW</span>Andriy Vorobey<span></span></li>
+                            <li><span>FW</span>Andriy Voronin<span></span></li>
+                            <li><span>FW</span>Oleksiy Byelik<span></span></li>
+                            <li><span>FW</span>Artem Milevskiy<span></span></li>
+                            <div class="divider"></div>
+                            <li><span>Coach</span>Oleh Blokhin<span></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Euro 2012 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading2012">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2012" aria-expanded="false" aria-controls="collapse2012">
+                        Euro 2012
+                    </button>
+                </h2>
+                <div id="collapse2012" class="accordion-collapse collapse" aria-labelledby="heading2012" data-bs-parent="#tournamentAccordion">
+                    <div class="accordion-body winners-list">
+                        <ul>
+                            <li><span>GK</span>Andriy Pyatov<span></span></li>
+                            <li><span>GK</span>Maksym Koval<span></span></li>
+                            <div class="divider"></div>
+                            <li><span>DF</span>Yevhen Khacheridi<span></span></li>
+                            <li><span>DF</span>Yaroslav Rakitskiy<span></span></li>
+                            <li><span>DF</span>Oleh Husiev<span></span></li>
+                            <li><span>DF</span>Vyacheslav Shevchuk<span></span></li>
+                            <div class="divider"></div>
+                            <li><span>MF</span>Anatoliy Tymoshchuk<span></span></li>
+                            <li><span>MF</span>Ruslan Rotan<span></span></li>
+                            <li><span>MF</span>Andriy Yarmolenko<span></span></li>
+                            <li><span>MF</span>Denys Harmash<span></span></li>
+                            <div class="divider"></div>
+                            <li><span>FW</span>Andriy Shevchenko<span></span></li>
+                            <li><span>FW</span>Marko Dević<span></span></li>
+                            <li><span>FW</span>Artem Milevskiy<span></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Euro 2016 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading2016">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2016" aria-expanded="false" aria-controls="collapse2016">
+                        Euro 2016
+                    </button>
+                </h2>
+                <div id="collapse2016" class="accordion-collapse collapse" aria-labelledby="heading2016" data-bs-parent="#tournamentAccordion">
+                    <div class="accordion-body winners-list">
+                        <ul>
+                            <li><span>GK</span>Andriy Pyatov<span></span></li>
+                            <li><span>GK</span>Denys Boyko<span></span></li>
+                            <div class="divider"></div>
+                            <li><span>DF</span>Yaroslav Rakitskiy<span></span></li>
+                            <li><span>DF</span>Yevhen Khacheridi<span></span></li>
+                            <li><span>DF</span>Bohdan Butko<span></span></li>
+                            <div class="divider"></div>
+                            <li><span>MF</span>Andriy Yarmolenko<span></span></li>
+                            <li><span>MF</span>Ruslan Rotan<span></span></li>
+                            <li><span>MF</span>Serhiy Sydorchuk<span></span></li>
+                            <div class="divider"></div>
+                            <li><span>FW</span>Roman Zozulya<span></span></li>
+                            <li><span>FW</span>Yevhen Seleznyov<span></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Euro 2020 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading2020">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2020" aria-expanded="false" aria-controls="collapse2020">
+                        Euro 2020
+                    </button>
+                </h2>
+                <div id="collapse2020" class="accordion-collapse collapse" aria-labelledby="heading2020" data-bs-parent="#tournamentAccordion">
+                    <div class="accordion-body winners-list">
+                        <ul>
+                            <li><span>GK</span>Heorhiy Bushchan<span></span></li>
+                            <li><span>GK</span>Andriy Pyatov<span></span></li>
+                            <div class="divider"></div>
+                            <li><span>DF</span>Mykola Matviyenko<span></span></li>
+                            <li><span>DF</span>Oleksandr Karavaev<span></span></li>
+                            <li><span>DF</span>Serhiy Kryvtsov<span></span></li>
+                            <div class="divider"></div>
+                            <li><span>MF</span>Ruslan Malinovskyi<span></span></li>
+                            <li><span>MF</span>Mykola Shaparenko<span></span></li>
+                            <li><span>MF</span>Oleksandr Zinchenko<span></span></li>
+                            <div class="divider"></div>
+                            <li><span>FW</span>Roman Yaremchuk<span></span></li>
+                            <li><span>FW</span>Andriy Yarmolenko<span></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Euro 2024 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading2024">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2024" aria-expanded="false" aria-controls="collapse2024">
+                        Euro 2024
+                    </button>
+                </h2>
+                <div id="collapse2024" class="accordion-collapse collapse" aria-labelledby="heading2024" data-bs-parent="#tournamentAccordion">
+                    <div class="accordion-body winners-list">
+                        <ul>
+                            <li><span>GK</span>Andriy Lunin<span></span></li>
+                            <li><span>GK</span>Anatoliy Trubin<span></span></li>
+                            <div class="divider"></div>
+                            <li><span>DF</span>Mykola Matviyenko<span></span></li>
+                            <li><span>DF</span>Illia Zabarnyi<span></span></li>
+                            <li><span>DF</span>Oleksandr Tymchyk<span></span></li>
+                            <div class="divider"></div>
+                            <li><span>MF</span>Mykhailo Mudryk<span></span></li>
+                            <li><span>MF</span>Oleksandr Zinchenko<span></span></li>
+                            <li><span>MF</span>Heorhiy Sudakov<span></span></li>
+                            <li><span>MF</span>Ruslan Malinovskyi<span></span></li>
+                            <div class="divider"></div>
+                            <li><span>FW</span>Roman Yaremchuk<span></span></li>
+                            <li><span>FW</span>Artem Dovbyk<span></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</div>
+</body>
+</html>
