@@ -61,14 +61,23 @@ header {
 .nl-dropdown {
     background: #fff;
     border: 2px solid #ff4d4d;
-    border-radius: 6px;
+    text-align: center;
+    border-radius: 19px;
     font-family: 'Roboto', sans-serif;
+    width: 120px !important;
+    min-width: unset !important; /* <-- вот эта строка решает проблему */
+    margin: 0 auto;
 }
+
 
 .nl-dropdown .dropdown-item {
     color: #a00000;
     font-weight: 500;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
+
 
 .nl-dropdown .dropdown-item:hover {
     background: #a00000;
@@ -152,6 +161,7 @@ header {
 .flag {
     font-size: 1.4em;
     margin-right: 6px;
+    margin-left: 6px;
 }
 
 /* ====== МАТЧИ ====== */
@@ -219,7 +229,7 @@ header {
 }
 
 .highlight {
-    background-color: rgba(255, 235, 130, 0.4); /* м’який жовтий */
+    background-color: rgba(255, 235, 130, 0.4);
 
 }
 
