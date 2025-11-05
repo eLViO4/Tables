@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Cup 2006</title>
+
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="UkrWorldCup.css">
+    <style>
+        :root {
+            --nl-red: #000000;      /* заменяем красный на чёрный */
+            --nl-green: #0fa80f;    /* оставляем зелёный */
+            --nl-black: #000000;
+            --nl-white: #ffffff;
+            --nl-accent: #ffffff;   /* белый акцент */
+        }
+
+        body {
+            background-color: #d3d3d3 !important; /* светло-серый фон */
+            color: var(--nl-black);
+        }
+
+        /* HEADER */
+        header {
+            color: black;
+            text-shadow: 0 0 6px rgba(0,0,0,0.5);
+        }
+
+        /* NAVBAR */
+        .nl-navbar {
+            background-color: #000000 !important;
+            border-bottom: 2px solid #ffffff;
+        }
+
+        .nl-brand {
+            color: #ffffff !important;
+        }
+
+        .nl-brand:hover {
+            color: #cccccc !important;
+        }
+
+        .navbar-toggler {
+            border: 1px solid #ffffff;
+            background-color: transparent;
+        }
+
+        .navbar-toggler-icon {
+            filter: invert(1);
+        }
+
+        .nl-dropdown {
+            background-color: #000000;
+            border: 1px solid #ffffff;
+        }
+
+        .nl-dropdown .dropdown-item {
+            color: #ffffff;
+        }
+
+        .nl-dropdown .dropdown-item:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        /* GROUP */
+        .group {
+            background-color: #ffffff;
+            color: #000000;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .group h3 {
+            color: #000000;
+            border-bottom: 2px solid #000000;
+        }
+
+        .group th {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .group td {
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .group tr:hover {
+            background-color: #e6e6e6;
+        }
+
+        /* MATCHES */
+        .matches {
+            background-color: #ffffff;
+            color: #000000;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .matches h3 {
+            color: #000000;
+            border-bottom: 2px solid #000000;
+        }
+
+        .score {
+            color: #000000;
+        }
+
+        .win {
+            color: #0fa80f;
+        }
+
+        .lose {
+            color: #b30000;
+        }
+
+        .draw {
+            color: #333333;
+        }
+
+        /* PLAYOFF */
+        .playoff-section {
+            background: transparent;
+            color: #000000;
+        }
+
+        .matches.playoff h3 {
+            border-bottom: 2px solid #000000;
+            color: #000000;
+        }
+        .group tr:nth-child(3) td:first-child::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 6px;
+            background: #0fa80f;
+            border-radius: 2px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg nl-navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand nl-brand" href="../../../index.html">Home</a>
+
+        <!-- Бургер-кнопка -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#nlNavbar" aria-controls="nlNavbar"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Меню -->
+        <!--<div class="collapse navbar-collapse" id="nlNavbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link nl-link dropdown-toggle"
+                       href="#"
+                       id="seasonsDropdown"
+                       role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true"
+                       aria-expanded="false">
+                        Seasons
+                    </a>
+                    <div class="dropdown-menu nl-dropdown" aria-labelledby="seasonsDropdown">
+                        <a class="dropdown-item" href="1996.html">1996</a>
+                        <a class="dropdown-item" href="1998.html">1998</a>
+                        <a class="dropdown-item" href="2000.html">2000</a>
+                        <a class="dropdown-item" href="2002.html">2002</a>
+                        <a class="dropdown-item" href="2004.html">2004</a>
+                        <a class="dropdown-item" href="2006.html">2006</a>
+                        <a class="dropdown-item" href="2008.html">2008</a>
+                        <a class="dropdown-item" href="2010.html">2010</a>
+                        <a class="dropdown-item" href="2012.html">2012</a>
+                        <a class="dropdown-item" href="2014.html">2014</a>
+                        <a class="dropdown-item" href="2016.html">2016</a>
+                        <a class="dropdown-item" href="2018.html">2018</a>
+                        <a class="dropdown-item" href="2020.html">2020</a>
+                        <a class="dropdown-item" href="2022.html">2022</a>
+                        <a class="dropdown-item" href="2024.html">2024</a>
+                    </div>
+                </li>
+            </ul>
+        </div>-->
+    </div>
+</nav>
+
+
+
+
+<header>World Cup 2006</header>
+
+<div class="main">
+    <!-- Существующая группа -->
+    <div class="group">
+        <h3>Group</h3>
+        <table>
+            <tr><th>Team</th><th>Pts</th></tr>
+            <tr><td><span class="flag">🇪🇸</span> Spain</td><td>9</td></tr>
+            <tr class="highlight"><td><span class="flag">🇺🇦</span> Ukraine</td><td>6</td></tr>
+            <tr><td><span class="flag">🇹🇳</span> Tunisia</td><td>1</td></tr>
+            <tr><td><span class="flag">🇸🇦</span> Saudi Arabia</td><td>1</td></tr>
+        </table>
+    </div>
+
+    <!-- Матчи группы -->
+    <div class="matches">
+
+        <div class="match">
+            <div class="team left"><span class="flag">🇺🇦</span>Ukraine</div>
+            <div class="score lose">0-4</div>
+            <div class="team right">Spain<span class="flag">🇪🇸</span></div>
+        </div>
+
+        <div class="match">
+            <div class="team left"><span class="flag">🇺🇦</span>Ukraine</div>
+            <div class="score win">4-0</div>
+            <div class="team right">Saudi Arabia<span class="flag">🇸🇦</span></div>
+        </div>
+
+        <div class="match">
+            <div class="team left"><span class="flag">🇺🇦</span>Ukraine</div>
+            <div class="score win">1-0</div>
+            <div class="team right">Tunisia<span class="flag">🇹🇳</span></div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+    <div class="playoff-section">
+        <div class="matches playoff">
+            <h3>1/8</h3>
+
+            <div class="match">
+                <div class="team left"><span class="flag">🇺🇦</span> Ukraine</div>
+                <div class="score win">0-0 (3-0)</div>
+                <div class="team right">Switzerland<span class="flag">🇨🇭</span></div>
+            </div>
+        </div>
+        <br><br>
+        <div class="matches playoff">
+            <h3>1/4</h3>
+
+            <div class="match">
+                <div class="team left"><span class="flag">🇺🇦</span> Ukraine</div>
+                <div class="score lose">0-3</div>
+                <div class="team right">Italy<span class="flag">🇮🇹</span></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+
+</body>
+</html>

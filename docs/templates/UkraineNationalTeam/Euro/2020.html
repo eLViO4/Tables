@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Euro 2020</title>
+
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="UkrEuro.css">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg nl-navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand nl-brand" href="../../../index.html">Home</a>
+
+        <!-- Бургер-кнопка -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#nlNavbar" aria-controls="nlNavbar"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Меню -->
+        <div class="collapse navbar-collapse" id="nlNavbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link nl-link dropdown-toggle"
+                       href="#"
+                       id="seasonsDropdown"
+                       role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true"
+                       aria-expanded="false">
+                        Seasons
+                    </a>
+                    <div class="dropdown-menu nl-dropdown" aria-labelledby="seasonsDropdown">
+                        <a class="dropdown-item" href="2012.html">2012</a>
+                        <a class="dropdown-item" href="2016.html">2016</a>
+                        <a class="dropdown-item" href="2020.html">2020</a>
+                        <a class="dropdown-item" href="2024.html">2024</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<header><img src="../../NationalTeams/Euro/EuroLogos/2020.png" width="60" >Euro 2020</header>
+
+<div class="main">
+    <!-- Существующая группа -->
+    <div class="group">
+        <h3>Group</h3>
+        <table>
+            <tr><td><span class="flag">🇳🇱</span> Netherlands</td><td>9</td></tr>
+            <tr><td><span class="flag">🇦🇹</span> Austria</td><td>6</td></tr>
+            <tr class="highlight"><td><span class="flag">🇺🇦</span> Ukraine</td><td>3</td></tr>
+            <tr><td><span class="flag">🇲🇰</span> Macedonia</td><td>0</td></tr>
+
+
+        </table>
+    </div>
+
+    <!-- Матчи группы -->
+    <div class="matches">
+
+        <div class="match">
+            <div class="team left"><span class="flag">🇺🇦</span>Ukraine</div>
+            <div class="score lose">2-3</div>
+            <div class="team right">Netherlands<span class="flag">🇳🇱</span></div>
+        </div>
+
+        <div class="match">
+            <div class="team left"><span class="flag">🇺🇦</span>Ukraine</div>
+            <div class="score win">2-1</div>
+            <div class="team right">Macedonia<span class="flag">🇲🇰</span></div>
+        </div>
+
+        <div class="match">
+            <div class="team left"><span class="flag">🇺🇦</span>Ukraine</div>
+            <div class="score lose">0-1</div>
+            <div class="team right">Austria<span class="flag">🇦🇹</span></div>
+        </div>
+    </div>
+
+    <div class="playoff-section">
+        <div class="matches playoff">
+            <h3>1/8</h3>
+
+            <div class="match">
+                <div class="team left"><span class="flag">🇺🇦</span> Ukraine</div>
+                <div class="score win">2-1</div>
+                <div class="team right">Sweden<span class="flag">🇸🇪</span></div>
+            </div>
+        </div>
+        <br><br>
+        <div class="matches playoff">
+            <h3>1/4</h3>
+
+            <div class="match">
+                <div class="team left"><span class="flag">🇺🇦</span> Ukraine</div>
+                <div class="score lose">0-4</div>
+                <div class="team right">England<span class="flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div>
+
+
+</body>
+</html>

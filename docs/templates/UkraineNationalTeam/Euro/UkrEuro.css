@@ -1,0 +1,284 @@
+:root {
+    --nl-red: #8b0000;
+    --nl-dark-red: #b22222;
+    --nl-light-red: #dc143c;
+    --nl-gold: #ffd700;
+    --nl-white: #ffffff;
+    --nl-light-bg: #f8cabf;
+    --nl-green: #32cd32;
+    --nl-silver: #c0c0c0;
+    --nl-black: #000000;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--nl-light-bg);
+    color: var(--nl-dark-red);
+}
+
+/* ===== HEADER ===== */
+header {
+    text-align: center;
+    padding: 30px 0 15px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2em;
+    color: var(--nl-dark-red);
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px var(--nl-gold);
+}
+
+/* ===== NAVBAR ===== */
+.nl-navbar {
+    background: linear-gradient(135deg, var(--nl-gold), var(--nl-dark-red));
+    border-bottom: 2px solid var(--nl-dark-red);
+    padding: 10px 25px;
+}
+
+.nl-brand {
+    color: darkred;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+.nl-brand:hover{
+    color: darkred;
+}
+
+.nl-link {
+    color: var(--nl-gold);
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.nl-link:hover {
+    color: var(--nl-white);
+}
+
+/* ===== DROPDOWN ===== */
+.nl-dropdown {
+    background: var(--nl-red);
+    border: 1px solid var(--nl-gold);
+    text-align: center;
+    border-radius: 19px;
+    font-family: 'Roboto', sans-serif;
+    width: 120px !important;
+    min-width: unset !important;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.nl-dropdown .dropdown-item {
+    color: var(--nl-gold);
+    font-weight: 500;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.nl-dropdown .dropdown-item:hover {
+    background: var(--nl-gold);
+    color: var(--nl-red);
+}
+
+/* ===== BURGER ICON ===== */
+.navbar-toggler {
+    border: 1px solid var(--nl-gold);
+    background-color: var(--nl-red);
+    padding: 4px 8px;
+}
+
+/* ===== MAIN CONTENT ===== */
+.main {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* ===== GROUP ===== */
+.group {
+    background: var(--nl-white);
+    border-radius: 8px;
+    padding: 15px;
+    width: 320px;
+    flex-shrink: 0;
+    box-shadow: 0 0 10px rgba(178, 34, 34, 0.2);
+}
+
+.group h3 {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--nl-dark-red);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.group table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.group th {
+    background: linear-gradient(135deg, var(--nl-gold), var(--nl-dark-red));
+    color: var(--nl-white);
+    font-size: 0.85em;
+    text-align: left;
+    padding-left: 18px;
+}
+
+.group td, .group th {
+    padding: 6px 4px;
+    border-bottom: 0.3px solid #b4afaf;
+}
+.group td {
+    color: black; /* чёрный текст для ячеек */
+}
+
+/* Цветные полоски как в оригинале */
+.group td:first-child {
+    position: relative;
+    padding-left: 40px;
+    text-align: left;
+}
+
+/* 1–2 места — зелёные */
+.group tr:nth-child(1) td:first-child::before,
+.group tr:nth-child(2) td:first-child::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 6px;
+    background: var(--nl-green);
+    border-radius: 2px;
+}
+.group tr:nth-child(3) td:first-child::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 6px;
+    background: var(--nl-gold);
+    border-radius: 2px;
+}
+
+
+.flag {
+    font-size: 1.4em;
+    margin-right: 6px;
+    margin-left: 6px;
+}
+
+/* ===== MATCHES ===== */
+.matches {
+    background: var(--nl-white);
+    border-radius: 8px;
+    padding: 15px;
+    width: 400px;
+    box-shadow: 0 2px 8px rgba(178, 34, 34, 0.2);
+}
+
+.matches h3 {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--nl-dark-red);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.match {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--nl-silver);
+}
+
+.match:last-child {
+    border-bottom: none;
+}
+
+.team {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+.team.left {
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.team.right {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.score {
+    font-weight: bold;
+    font-size: 1.1em;
+    min-width: 45px;
+    text-align: center;
+
+}
+
+.win {
+    color: #04c304;
+}
+
+.lose {
+    color: #d90505;
+}
+
+.draw {
+    color: black;
+}
+
+.highlight {
+    background-color: rgba(255, 235, 130, 0.4);
+}
+
+/* ===== PLAYOFF ===== */
+.playoff-section {
+    width: 400px;
+}
+
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .matches, .group, .playoff-section {
+        width: 95%;
+    }
+}
+
+/* На мобильных сразу показываем dropdown */
+@media (max-width: 768px) {
+    .navbar-collapse .dropdown-menu {
+        display: block !important;
+        position: static;
+        float: none;
+        width: 100%;
+        margin-top: 0;
+        border: none;
+        box-shadow: none;
+        background: rgba(139, 0, 0, 0.9);
+    }
+
+    .navbar-collapse .dropdown-toggle::after {
+        display: none;
+    }
+}

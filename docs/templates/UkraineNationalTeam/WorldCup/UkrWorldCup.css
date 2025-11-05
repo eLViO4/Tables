@@ -1,0 +1,257 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+header {
+    text-align: center;
+    padding: 30px 0 15px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2em;
+
+    letter-spacing: 2px;
+}
+
+/* NAVBAR */
+.nl-navbar {
+
+    padding: 10px 25px;
+}
+
+.nl-brand {
+
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.nl-brand:hover {
+
+}
+
+.nl-link {
+
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.nl-link:hover {
+
+}
+
+.nl-dropdown {
+
+    text-align: center;
+    border-radius: 19px;
+    font-family: 'Roboto', sans-serif;
+    width: 120px !important;
+    min-width: unset !important; /* <-- вот эта строка решает проблему */
+    margin: 0 auto;
+}
+
+
+.nl-dropdown .dropdown-item {
+
+    font-weight: 500;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
+.nl-dropdown .dropdown-item:hover {
+
+}
+
+/* Иконка бургера (Bootstrap 5) */
+.navbar-toggler {
+
+}
+
+
+.main {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* ====== ГРУППА ====== */
+.group {
+
+    border-radius: 8px;
+    padding: 15px;
+
+    width: 320px;
+    flex-shrink: 0;
+}
+
+.group h3 {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.group table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.group th {
+
+    font-size: 0.85em;
+    text-align: left;
+    padding-left: 18px;
+}
+
+.group td, .group th {
+
+    padding: 6px 4px;
+}
+
+
+/* Цветные полоски как в оригинале */
+.group td:first-child {
+    position: relative;
+    padding-left: 40px;
+    text-align: left;
+}
+
+/* Зелёная полоска (выход) — 1-2 место */
+.group tr:nth-child(2) td:first-child::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 6px;
+    background: var(--nl-green);
+    border-radius: 2px;
+}
+
+
+
+
+.flag {
+    font-size: 1.4em;
+    margin-right: 6px;
+    margin-left: 6px;
+}
+
+/* ====== МАТЧИ ====== */
+.matches {
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    width: 400px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.matches h3 {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.match {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.match:last-child {
+    border-bottom: none;
+}
+
+.team {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.team.left {
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.team.right {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.score {
+    font-weight: bold;
+    font-size: 1.1em;
+    min-width: 45px;
+    text-align: center;
+}
+
+.win {
+    color: #0fa80f;
+}
+
+.lose {
+    color: #b30000;
+}
+
+.draw {
+    color: #333333;
+}
+
+.highlight {
+    background-color: rgba(255, 235, 130, 0.4);
+
+}
+
+
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .matches, .group {
+        width: 95%;
+    }
+}
+
+/* На мобильных сразу показываем dropdown */
+@media (max-width: 768px) {
+    .navbar-collapse .dropdown-menu {
+        display: block !important; /* Показываем меню */
+        position: static; /* Убираем абсолютное позиционирование */
+        float: none;
+        width: 100%;
+        margin-top: 0;
+        border: none;
+        box-shadow: none;
+    }
+
+    .navbar-collapse .dropdown-toggle::after {
+        display: none; /* Убираем стрелку ▼ */
+    }
+
+
+}
+.playoff-section {
+    width: 400px; /* как у matches */
+}
+
+@media (max-width: 768px) {
+    .playoff-section {
+        width: 95%;
+    }
+}
