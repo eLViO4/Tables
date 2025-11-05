@@ -10,7 +10,24 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="1Liga.css">
     <style>
+        @media (max-width: 768px) {
+            .tables-container {
+                transform: scale(0.85); /* немного больше для читаемости */
+                transform-origin: top center; /* теперь центрируется */
+                max-width: 100%;
+                margin-top: 20px;
+            }
 
+            .mini-table h3 {
+                font-size: 20px;
+            }
+
+            .mini-table th,
+            .mini-table td {
+                font-size: 13px;
+                padding: 8px 4px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -62,9 +79,9 @@
 
 
 <div class="tables-container">
-
     <div class="mini-table">
         <h3>1 Liga 2024-25</h3>
+        <h3>Champions Group</h3>
         <table>
             <thead>
             <tr>
@@ -74,30 +91,52 @@
             </tr>
             </thead>
             <tbody>
-            <!-- Чемпион -->
-            <tr class="ucl"><td>1</td><td>Dynamo Kyiv</td><td>70</td></tr>
-            <tr class="uecl"><td>2</td><td>Oleksandriya</td><td>67</td></tr>
-            <tr class="uel"><td>3</td><td>Shakhtar</td><td>62</td></tr>
-            <tr class="uecl"><td>4</td><td>Polissya</td><td>48</td></tr>
-            <tr><td>5</td><td>Kryvbas</td><td>47</td></tr>
+            <!-- Лидеры -->
+            <tr class="uecl"><td>1</td><td>Epicentr Kamianets-Podilskyi</td><td>53</td></tr>
+            <tr class="uecl"><td>2</td><td>SC Poltava</td><td>41</td></tr>
+            <tr class="int"><td>3</td><td>Metalist 1925</td><td>36</td></tr>
 
             <!-- Середина таблицы -->
-            <tr><td>6</td><td>Karpaty</td><td>46</td></tr>
-            <tr><td>7</td><td>Zorya</td><td>40</td></tr>
-            <tr><td>8</td><td>Rukh</td><td>38</td></tr>
-            <tr><td>9</td><td>Veres</td><td>36</td></tr>
-            <tr><td>10</td><td>Kolos</td><td>36</td></tr>
-            <tr><td>11</td><td>Obolon</td><td>32</td></tr>
-            <tr><td>12</td><td>LNZ</td><td>31</td></tr>
-            <tr class="rel"><td>13</td><td>Vorskla</td><td>27</td></tr>
-            <tr class="rel"><td>14</td><td>Livyi Bereh</td><td>26</td></tr>
+            <tr class="int"><td>4</td><td>Kudrivka</td><td>35</td></tr>
+            <tr><td>5</td><td>Agrobiznes</td><td>33</td></tr>
+            <tr><td>6</td><td class="highlight">Metalist</td><td>31</td></tr>
+            <tr><td>7</td><td>Bukovyna</td><td>30</td></tr>
 
             <!-- Вылет -->
-            <tr class="relegation"><td>15</td><td>Inhulets</td><td>24</td></tr>
-            <tr class="relegation"><td>16</td><td>Chornomorets</td><td>23</td></tr>
+            <tr><td>8</td><td>UCSA</td><td>27</td></tr>
+
             </tbody>
         </table>
     </div>
+
+    <div class="mini-table">
+        <h3>Relegation Group</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>Pos</th>
+                <th>Team</th>
+                <th>Pts</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Лидеры -->
+            <tr><td>9</td><td>Victoria Sumy</td><td>36</td></tr>
+            <tr><td>10</td><td>Prykarpattya</td><td>32</td></tr>
+            <tr><td>11</td><td>Nyva Ternopil</td><td>32</td></tr>
+            <tr><td>12</td><td>Minaj</td><td>30</td></tr>
+            <tr><td>13</td><td>Feniks-Mariupol</td><td>28</td></tr>
+
+            <!-- Середина таблицы -->
+            <tr class="rel"><td>14</td><td>Metalurh Zaporizhia</td><td>26</td></tr>
+            <tr class="rel"><td>15</td><td>Podillya</td><td>24</td></tr>
+            <tr class="relegation"><td>16</td><td>Dinaz</td><td>17</td></tr>
+            <tr class="relegation"><td>17</td><td>Kremin</td><td>14</td></tr>
+
+            </tbody>
+        </table>
+    </div>
+
 </div>
 
 </body>

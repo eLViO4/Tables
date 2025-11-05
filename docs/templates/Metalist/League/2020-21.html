@@ -182,6 +182,24 @@
             font-weight: bold;
         }
 
+        @media (max-width: 768px) {
+            .tables-container {
+                transform: scale(0.85); /* немного больше для читаемости */
+                transform-origin: top center; /* теперь центрируется */
+                max-width: 100%;
+                margin-top: 20px;
+            }
+
+            .mini-table h3 {
+                font-size: 20px;
+            }
+
+            .mini-table th,
+            .mini-table td {
+                font-size: 13px;
+                padding: 8px 4px;
+            }
+        }
 
 
 
@@ -240,7 +258,7 @@
     <div class="championship-match">
         <h4>Championship Match</h4>
         <div class="match-result">
-            <span class="team">Metalist</span>
+            <span class="team">Metal</span>
             <span class="score">1 - 0</span>
             <span class="team">Podillya</span>
         </div>
@@ -258,23 +276,23 @@
             </thead>
             <tbody>
             <!-- Лидеры -->
-            <tr class="uecl"><td>1</td><td>Tavriya</td><td>28</td></tr>
-            <tr class="uecl"><td>2</td><td>Shakhtar</td><td>26</td></tr>
-            <tr><td>3</td><td>Chornomorets</td><td>25</td></tr>
+            <tr class="uecl"><td>1</td><td>Podillya</td><td>57</td></tr>
+            <tr class="uecl"><td>2</td><td>Uzhgorod</td><td>55</td></tr>
+            <tr><td>3</td><td>Dinaz</td><td>51</td></tr>
 
             <!-- Середина таблицы -->
-            <tr><td>4</td><td>Torpedo Zaporizhzhia</td><td>19</td></tr>
-            <tr><td>5</td><td>Metalurh Zaporizhzhia</td><td>18</td></tr>
-            <tr><td>6</td><td>Karpaty</td><td>16</td></tr>
-            <tr><td>7</td><td>Kremin</td><td>16</td></tr>
+            <tr><td>4</td><td>Epicentr Kamianets-Podilskyi</td><td>48</td></tr>
+            <tr><td>5</td><td>Karpaty Halych</td><td>46</td></tr>
+            <tr><td>6</td><td>Nyva Vinnytsia</td><td>33</td></tr>
+            <tr><td>7</td><td>Bukovyna</td><td>32</td></tr>
 
             <!-- Вылет -->
-            <tr><td>8</td><td>Nyva Vinnytsia</td><td>14</td></tr>
-            <tr class="relegation"><td>9</td><td>Evis</td><td>10</td></tr>
-            <tr><td>10</td><td>Temp Shepetivka</td><td>8</td></tr>
-            <tr><td>11</td><td>Temp Shepetivka</td><td>8</td></tr>
-            <tr class="relegation"><td>12</td><td>Temp Shepetivka</td><td>8</td></tr>
-            <tr class="relegation"><td>13</td><td>Temp Shepetivka</td><td>8</td></tr>
+            <tr><td>8</td><td>Chayka</td><td>25</td></tr>
+            <tr class="relegation"><td>9</td><td>Obolon - 2</td><td>24</td></tr>
+            <tr><td>10</td><td>FC Chernihiv</td><td>21</td></tr>
+            <tr><td>11</td><td>Rubicon</td><td>17</td></tr>
+            <tr class="relegation"><td>12</td><td>Volyn - 2</td><td>13</td></tr>
+            <tr class="relegation"><td>13</td><td>Karpaty</td><td>13</td></tr>
             </tbody>
         </table>
     </div>
@@ -291,22 +309,22 @@
             </thead>
             <tbody>
             <!-- Лидеры -->
-            <tr class="uecl"><td>1</td><td class="highlight">Metal</td><td>30</td></tr>
-            <tr class="uecl"><td>2</td><td>Dnipro</td><td>23</td></tr>
-            <tr><td>3</td><td>Metalist</td><td>21</td></tr>
+            <tr class="uecl"><td>1</td><td class="highlight">Metal</td><td>62</td></tr>
+            <tr class="uecl"><td>2</td><td>Kryvbas</td><td>50</td></tr>
+            <tr><td>3</td><td>Metalurh Zaporizhia</td><td>43</td></tr>
 
             <!-- Середина таблицы -->
-            <tr><td>4</td><td>Nyva Ternopil</td><td>21</td></tr>
-            <tr><td>5</td><td>Volyn</td><td>18</td></tr>
-            <tr><td>6</td><td>Bukovyna</td><td>18</td></tr>
-            <tr><td>7</td><td>Zorya-MALS</td><td>17</td></tr>
+            <tr><td>4</td><td>Tavriya</td><td>42</td></tr>
+            <tr><td>5</td><td>Energia Nova Kakhovka</td><td>30</td></tr>
+            <tr><td>6</td><td>Yarud</td><td>28</td></tr>
+            <tr><td>7</td><td>Dnipro</td><td>27</td></tr>
 
             <!-- Вылет -->
-            <tr><td>8</td><td>Naftovyk Okhtyrka</td><td>13</td></tr>
-            <tr><td>9</td><td>Prykarpattya</td><td>12</td></tr>
-            <tr><td>10</td><td>Odesa</td><td>7</td></tr>
-            <tr><td>11</td><td>Odesa</td><td>7</td></tr>
-            <tr class="relegation"><td>12</td><td>Odesa</td><td>7</td></tr>
+            <tr><td>8</td><td>Balkany</td><td>23</td></tr>
+            <tr><td>9</td><td>Peremoha</td><td>23</td></tr>
+            <tr><td>10</td><td>Real Farma</td><td>18</td></tr>
+            <tr><td>11</td><td>FC Nikopol</td><td>14</td></tr>
+            <tr class="relegation"><td>12</td><td>MFC Mykovaiv - 2</td><td>8</td></tr>
             </tbody>
         </table>
     </div>
