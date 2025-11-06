@@ -48,12 +48,52 @@ header {
     text-shadow: 0 0 8px var(--nl-yellow);
 }
 
+/* ---------------------------
+   Dropdown: оранжевые пункты на белом,
+   hover: чёрные на оранжевом
+   --------------------------- */
+
 .nl-dropdown {
-    background: #fff;
-    border: 2px solid var(--nl-orange);
-    border-radius: 6px;
-    font-family: 'Roboto', sans-serif;
+    background: #fff !important;                /* белый фон */
+    border: 2px solid var(--nl-orange) !important;
+    color: var(--nl-orange) !important;        /* цвет текста по умолчанию (не для .dropdown-item) */
+    min-width: 180px;                          /* при необходимости поменяй ширину */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
+
+/* сами элементы меню */
+.nl-dropdown .dropdown-item {
+    background: transparent !important;
+    color: var(--nl-orange) !important;        /* оранжевый текст */
+    font-weight: 600;
+}
+
+/* ховер / фокус — оранжевый фон, чёрный текст */
+.nl-dropdown .dropdown-item:hover,
+.nl-dropdown .dropdown-item:focus {
+    background: var(--nl-orange) !important;
+    color: var(--nl-black) !important;
+}
+
+/* если у тебя есть active state (выбранный пункт) */
+.nl-dropdown .dropdown-item.active,
+.nl-dropdown .dropdown-item:active {
+    background: var(--nl-orange) !important;
+    color: var(--nl-black) !important;
+}
+
+/* убираем стандартную тень/границу bootstrap'а, если мешает */
+.nl-dropdown {
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* маленькая визуальная корректировка стрелки в toggler (опционально) */
+.navbar .dropdown-toggle::after {
+    margin-left: 8px;
+    color: var(--nl-white);
+}
+
 
 /* ====== MAIN ====== */
 .main {
@@ -303,3 +343,49 @@ header {
         width: 95%;
     }
 }
+/* ====== BURGER (navbar-toggler) ====== */
+
+/* сам бургер */
+.navbar-toggler {
+    border: none; /* убираем стандартную рамку */
+    outline: none;
+}
+
+/* белый "бургер" (три полоски) */
+.navbar-toggler-icon {
+    background-image: none; /* отключаем стандартную иконку Bootstrap */
+    position: relative;
+    width: 24px;
+    height: 2px;
+    background-color: var(--nl-white); /* верхняя полоска */
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+/* создаём среднюю и нижнюю полоски */
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background-color: var(--nl-white);
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before {
+    top: -7px; /* отступ вверх */
+}
+
+.navbar-toggler-icon::after {
+    top: 7px; /* отступ вниз */
+}
+
+/* при наведении — лёгкий эффект подсветки */
+.navbar-toggler:hover .navbar-toggler-icon,
+.navbar-toggler:hover .navbar-toggler-icon::before,
+.navbar-toggler:hover .navbar-toggler-icon::after {
+    background-color: var(--nl-yellow);
+}
+
