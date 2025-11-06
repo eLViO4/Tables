@@ -1,0 +1,305 @@
+:root {
+    --nl-orange: #ff8400;
+    --nl-yellow: #ffd84d;
+    --nl-black: #111;
+    --nl-white: #fff;
+    --nl-border: #e0a000;
+    --nl-green: #0fa80f;
+    --nl-red: #c20d0d;
+    --shadow: rgba(0, 0, 0, 0.15);
+}
+
+/* ====== BODY ====== */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, var(--nl-orange) 0%, var(--nl-yellow) 100%);
+    color: var(--nl-black);
+}
+
+/* ====== HEADER ====== */
+header {
+    text-align: center;
+    padding: 30px 0 15px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2em;
+    color: var(--nl-black);
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    letter-spacing: 2px;
+}
+
+/* ====== NAVBAR ====== */
+.nl-navbar {
+    background: #000;
+    border-bottom: 3px solid var(--nl-orange);
+    padding: 10px 25px;
+}
+
+.nl-brand, .nl-link {
+    color: #fff !important;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.nl-brand:hover, .nl-link:hover {
+    color: var(--nl-yellow) !important;
+    text-shadow: 0 0 8px var(--nl-yellow);
+}
+
+.nl-dropdown {
+    background: #fff;
+    border: 2px solid var(--nl-orange);
+    border-radius: 6px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ====== MAIN ====== */
+.main {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+    padding: 25px;
+    align-items: flex-start;
+}
+
+/* ====== GROUP TABLE ====== */
+.group {
+    background: var(--nl-white);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 8px var(--shadow);
+    width: 320px;
+    flex-shrink: 0;
+    border: 2px solid var(--nl-border);
+}
+
+.group h3 {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--nl-black);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.group table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.group th {
+    background: var(--nl-yellow);
+    color: var(--nl-black);
+    font-size: 0.85em;
+    text-align: center;
+    padding: 6px 4px;
+}
+
+.group td, .group th {
+    border-bottom: 1px solid #ddd;
+    padding: 6px 4px;
+    text-align: center;
+}
+
+.group td:first-child {
+    position: relative;
+    padding-left: 35px; /* ← чуть больше отступ от левого края */
+    text-align: left;
+}
+
+/* зелёные полоски — проход */
+.group tr:nth-child(2) td:first-child::before,
+.group tr:nth-child(3) td:first-child::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 6px;
+    background: var(--nl-green);
+    border-radius: 2px;
+}
+
+/* ====== MATCHES ====== */
+.matches {
+    background: var(--nl-white);
+    border-radius: 10px;
+    padding: 18px;
+    width: 400px;
+    box-shadow: 0 3px 10px var(--shadow);
+    border: 2px solid var(--nl-border);
+}
+
+.matches h3 {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--nl-black);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* Обычные матчи */
+.match {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.match:last-child {
+    border-bottom: none;
+}
+
+.team {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+}
+
+.team.left {
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.team.right {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.score {
+    font-weight: bold;
+    font-size: 1.1em;
+    min-width: 50px;
+    text-align: center;
+}
+
+.score.win { color: var(--nl-green); }
+.score.lose { color: var(--nl-red); }
+.score.draw { color: var(--nl-black); }
+
+/* ====== PLAYOFF ====== */
+.matches.playoff {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    width: 400px;
+}
+
+/* Заголовки стадий */
+.matches.playoff h3 {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--nl-black);
+    margin: 10px 0;
+    text-transform: uppercase;
+}
+
+/* Матчи play-off */
+.match.double-score {
+    display: grid;
+    grid-template-columns: 150px 80px 150px; /* ← фикс ширины: команды + центр */
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: rgba(255,255,255,0.25);
+    border: 1px solid var(--nl-border);
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.match.double-score .team1 {
+    text-align: right;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.match.double-score .team2 {
+    text-align: left;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.score-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    min-width: 80px; /* ← фиксированная ширина счёта */
+    text-align: center;
+}
+
+.score-box .score {
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.05em;
+}
+
+.highlight {
+    background-color: rgba(255, 235, 130, 0.4);
+}
+.match.double-score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border: 2px solid var(--border);
+    box-shadow: 0 4px 10px var(--shadow);
+    padding: 12px 15px;
+    border-radius: 12px;
+    font-size: 1.1em;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 12px;
+    position: relative;
+}
+
+/* Левая и правая команды фиксированы по ширине */
+.match.double-score .team1,
+.match.double-score .team2 {
+    width: 150px;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+.match.double-score .team1 {
+    text-align: right;
+}
+
+.match.double-score .team2 {
+    text-align: left;
+}
+
+/* Счёт строго по центру */
+.match.double-score .score-box {
+    min-width: 70px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ====== ADAPTIVE ====== */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .matches, .group, .matches.playoff {
+        width: 95%;
+    }
+}
