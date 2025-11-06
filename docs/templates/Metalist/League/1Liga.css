@@ -22,7 +22,7 @@ body {
     text-align: center;
     font-size: 40px; /* больше шрифт */
     color: white;
-    background-color: #022f09; /* синий */
+    background-color: #098b1d; /* синий */
 }
 
 .mini-table table {
@@ -46,7 +46,7 @@ body {
 
 /* Заголовки */
 .mini-table th {
-    background-color: #022f09; /* синий */
+    background-color: #098b1d; /* синий */
     color: white;
     font-weight: bold;
 }
@@ -95,7 +95,8 @@ body {
 
 /* Navbar для LEG */
 .navbar {
-    background-color: #022f09; /* синий фон */
+    background-color: #098b1d;
+   /* background-color: #022f09;*/ /* синий фон */
     padding: 12px 20px;
     font-family: Arial, sans-serif;
     display: flex;
@@ -145,7 +146,7 @@ body {
     position: absolute;
     top: 100%; /* сразу под кнопкой */
     left: 0;
-    background-color: #022f09;
+    background-color: #098b1d;
     border-radius: 8px;
     min-width: 150px;
     padding: 5px 0;
@@ -171,7 +172,7 @@ body {
 /* Hover для элементов dropdown */
 .navbar .dropdown-item:hover {
     background-color: white; /* синий фон */
-    color: #022f09; /* белый текст */
+    color: #098b1d; /* белый текст */
 }
 
 .highlight {
