@@ -128,6 +128,17 @@
         .score.lose { color: red; }
         .score.draw { color: black; }
 
+        .page-title {
+            text-align: center;
+            font-size: 2.8em;
+            font-weight: 900;
+            color: var(--blue-dark);
+            text-shadow: 2px 2px 0 var(--yellow-primary);
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+
         /* двойной матч в одном блоке */
         .match.double-score {
             display: flex;
@@ -151,6 +162,7 @@
             justify-content: center;
             line-height: 1.2;
             gap: 2px;
+            text-align: center;
         }
 
         .score-box .score {
@@ -163,6 +175,63 @@
             background: rgba(6, 36, 153, 0.56);
             margin: 20px 0;
         }
+
+
+        /* Мобильные устройства */
+        @media (max-width: 768px) {
+            .container {
+                width: 70% !important;
+                margin: 0 auto;
+            }
+
+            .season-year {
+                font-size: 1.8em;
+            }
+
+            .stage {
+                font-size: 1.1em;
+                width: 70px;
+            }
+
+            .match {
+                font-size: 0.95em;
+                padding: 8px 12px;
+            }
+
+            .page-title {
+                font-size: 2.2em;
+            }
+
+            .navbar-custom {
+                height: 60px;
+                font-size: 24px;
+            }
+        }
+
+        /* Очень маленькие экраны */
+        @media (max-width: 480px) {
+            .container {
+                width: 85% !important;
+            }
+
+            .season-year {
+                font-size: 1.6em;
+            }
+
+            .stage {
+                font-size: 1em;
+                width: 60px;
+            }
+
+            .match {
+                font-size: 0.9em;
+                padding: 6px 10px;
+            }
+
+            .page-title {
+                font-size: 1.8em;
+            }
+        }
     </style>
 
 </head>
@@ -171,9 +240,819 @@
     <a href="../../../index.html" class="nav-link">HOME</a>
 </nav>
 
+<h1 class="page-title">Ukrainian Cup</h1>
 <div class="container">
+    <div class="season-separator"></div>
+
+    <div class="season">
+        <div class="season-year">2024-25</div>
+        <div class="stage-block">
+            <div class="stage">1/32</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score lose">1-3</div>
+                    <div class="team2">MFC Mykolaiv</div>
+                </div>
+            </div>
+        </div>
+        <div class="stage-block">
+            <div class="stage">1/64</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score win">1-0</div>
+                    <div class="team2">Vilkhivtsi</div>
+                </div>
+            </div>
+        </div>
 
 
+    </div> <!--2025-->
+    <div class="season-separator"></div>
+
+    <div class="season">
+        <div class="season-year">2023-24</div>
+        <div class="stage-block">
+            <div class="stage">1/64</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score lose">1-2</div>
+                    <div class="team2">Epicentr K-P</div>
+                </div>
+            </div>
+        </div>
+
+
+    </div> <!--2024-->
+    <div class="season-separator"></div>
+
+    <div class="season">
+        <div class="season-year">2021-22</div>
+        <div class="stage-block">
+            <div class="stage">1/4</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score draw">– - –</div>
+                    <div class="team2">Zorya</div>
+                </div>
+            </div>
+        </div>
+        <div class="stage-block">
+            <div class="stage">1/8</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score win">1-0</div>
+                    <div class="team2">Kolos</div>
+                </div>
+            </div>
+        </div>
+        <div class="stage-block">
+            <div class="stage">1/16</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score win">2-1</div>
+                    <div class="team2">Desna</div>
+                </div>
+            </div>
+        </div>
+        <div class="stage-block">
+            <div class="stage">1/32</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score win">3-0</div>
+                    <div class="team2">Skoruk</div>
+                </div>
+            </div>
+        </div>
+        <div class="stage-block">
+            <div class="stage">1/64</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score win">3-1</div>
+                    <div class="team2">Yarud</div>
+                </div>
+            </div>
+        </div>
+
+
+    </div> <!--2022-->
+    <div class="season-separator"></div>
+
+    <div class="season">
+        <div class="season-year">2020-21</div>
+        <div class="stage-block">
+            <div class="stage">1/16</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score lose">1-3</div>
+                    <div class="team2">VPK-Agro</div>
+                </div>
+            </div>
+        </div>
+
+
+    </div> <!--2021-->
+    <div class="season-separator"></div>
+
+    <div class="season">
+        <div class="season-year">2015-16</div>
+        <div class="stage-block">
+            <div class="stage">1/16</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score lose">1-2</div>
+                    <div class="team2">MFC Mykolaiv</div>
+                </div>
+            </div>
+        </div>
+
+
+    </div> <!--2016-->
+    <div class="season-separator"></div>
+
+    <div class="season">
+        <div class="season-year">2014-15</div>
+
+        <div class="stage-block">
+            <div class="stage">1/4</div>
+            <div class="match double-score">
+                <div class="team1">Metalist</div>
+
+                <div class="score-box">
+                    <div class="score lose">0-2</div>
+                    <div class="score lose">0-1</div>
+                </div>
+                <div class="team2">Shakhtar</div>
+            </div>
+        </div>
+
+        <div class="stage-block">
+            <div class="stage">1/8</div>
+            <div class="match double-score">
+                <div class="team1">Metalist</div>
+
+                <div class="score-box">
+                    <div class="score draw">2-2</div>
+                    <div class="score draw">1-1</div>
+                </div>
+
+                <div class="team2">Hoverla</div>
+            </div>
+        </div>
+
+        <div class="stage-block">
+            <div class="stage">1/4</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score win">1-0</div>
+                    <div class="team2">FC Sumy</div>
+                </div>
+            </div>
+        </div>
+    </div> <!--2015-->
+    <div class="season-separator"></div>
+
+    <div class="season">
+        <div class="season-year">2013-14</div>
+        <div class="stage-block">
+            <div class="stage">1/4</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score lose">2-3</div>
+                    <div class="team2">Dynamo Kyiv</div>
+                </div>
+            </div>
+        </div>
+        <div class="stage-block">
+            <div class="stage">1/8</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score win">2-0</div>
+                    <div class="team2">Karpaty</div>
+                </div>
+            </div>
+        </div>
+        <div class="stage-block">
+            <div class="stage">1/16</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score win">4-1</div>
+                    <div class="team2">Oleksandriya</div>
+                </div>
+            </div>
+        </div>
+
+
+    </div> <!--2014-->
+    <div class="season-separator"></div>
+
+    <div class="season">
+        <div class="season-year">2012-13</div>
+        <div class="stage-block">
+            <div class="stage">1/8</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score lose">1-2</div>
+                    <div class="team2">Karpaty</div>
+                </div>
+            </div>
+        </div>
+        <div class="stage-block">
+            <div class="stage">1/16</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score win">4-1</div>
+                    <div class="team2">Obolon</div>
+                </div>
+            </div>
+        </div>
+
+
+    </div> <!--2013-->
+    <div class="season-separator"></div>
+
+    <div class="season">
+        <div class="season-year">2011-12</div>
+        <div class="stage-block">
+            <div class="stage">1/8</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score lose">0-1</div>
+                    <div class="team2">Karpaty</div>
+                </div>
+            </div>
+        </div>
+        <div class="stage-block">
+            <div class="stage">1/16</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score win">3-0</div>
+                    <div class="team2">Berehvydeyk</div>
+                </div>
+            </div>
+        </div>
+
+
+    </div> <!--2012-->
+    <div class="season-separator"></div>
+
+    <div class="season">
+        <div class="season-year">2010-11</div>
+        <div class="stage-block">
+            <div class="stage">1/16</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score lose">1-2</div>
+                    <div class="team2">Arsenal Kyiv</div>
+                </div>
+            </div>
+        </div>
+
+
+    </div> <!--2011-->
+    <div class="season-separator"></div>
+
+    <div class="season">
+        <div class="season-year">2009-10</div>
+        <div class="stage-block">
+            <div class="stage">1/8</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score lose">0-1</div>
+                    <div class="team2">Dynamo Kyiv</div>
+                </div>
+            </div>
+        </div>
+        <div class="stage-block">
+            <div class="stage">1/16</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score win">1-0</div>
+                    <div class="team2">Enerhetyk Burshtyn</div>
+                </div>
+            </div>
+        </div>
+
+
+    </div> <!--2010-->
+    <div class="season-separator"></div>
+
+    <div class="season">
+        <div class="season-year">2008-09</div>
+        <div class="stage-block">
+            <div class="stage">1/2</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score lose">0-2</div>
+                    <div class="team2">Vorskla</div>
+                </div>
+            </div>
+        </div>
+        <div class="stage-block">
+            <div class="stage">1/4</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score win">2-1</div>
+                    <div class="team2">Tavriya</div>
+                </div>
+            </div>
+        </div>
+        <div class="stage-block">
+            <div class="stage">1/8</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score win">3-1</div>
+                    <div class="team2">Arsenal Kyiv</div>
+                </div>
+            </div>
+        </div>
+        <div class="stage-block">
+            <div class="stage">1/16</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score win">4-1</div>
+                    <div class="team2">Dnister Ovidiopol</div>
+                </div>
+            </div>
+        </div>
+
+
+    </div> <!--2009-->
+    <div class="season-separator"></div>
+
+    <div class="season">
+        <div class="season-year">2007–08</div>
+
+        <div class="stage-block">
+            <div class="stage">1/8</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score lose">2-2&nbsp;(1-3)</div>
+                    <div class="team2">Chornomorets</div>
+                </div>
+            </div>
+        </div>
+        <div class="stage-block">
+            <div class="stage">1/16</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score win">3-2</div>
+                    <div class="team2">Dnister Ovidiopol</div>
+                </div>
+            </div>
+        </div>
+
+
+    </div> <!--2008-->
+    <div class="season-separator"></div>
+
+    <div class="season">
+        <div class="season-year">2006-07</div>
+        <div class="stage-block">
+            <div class="stage">1/2</div>
+            <div class="match double-score">
+                <div class="team1">Metalist</div>
+
+                <div class="score-box">
+                    <div class="score lose">0-1</div>
+                    <div class="score lose">2-4</div>
+                </div>
+                <div class="team2">Dynamo Kyiv</div>
+            </div>
+        </div>
+        <div class="stage-block">
+            <div class="stage">1/4</div>
+            <div class="match double-score">
+                <div class="team1">Metalist</div>
+
+                <div class="score-box">
+                    <div class="score draw">0-0</div>
+                    <div class="score win">2-0</div>
+                </div>
+                <div class="team2">Illichivets</div>
+            </div>
+        </div>
+        <div class="stage-block">
+            <div class="stage">1/8</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score win">2-2&nbsp;(7-6)</div>
+                    <div class="team2">FC Lviv</div>
+                </div>
+            </div>
+        </div>
+        <div class="stage-block">
+            <div class="stage">1/16</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score win">2-0</div>
+                    <div class="team2">Enerhetyk Burshtyn</div>
+                </div>
+            </div>
+        </div>
+        <div class="stage-block">
+            <div class="stage">1/32</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score win">2-1</div>
+                    <div class="team2">Hirnyk-Sport</div>
+                </div>
+            </div>
+        </div>
+
+
+    </div> <!--2007-->
+    <div class="season-separator"></div>
+
+    <div class="season">
+        <div class="season-year">2005-06</div>
+        <div class="stage-block">
+            <div class="stage">1/8</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score lose">0-1</div>
+                    <div class="team2">Dynamo Kyiv</div>
+                </div>
+            </div>
+        </div>
+        <div class="stage-block">
+            <div class="stage">1/16</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score win">2-1</div>
+                    <div class="team2">Dnipro Cherkasy</div>
+                </div>
+            </div>
+        </div>
+        <div class="stage-block">
+            <div class="stage">1/32</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score win">3-2</div>
+                    <div class="team2">Dnister Ovidiopol</div>
+                </div>
+            </div>
+        </div>
+
+
+    </div> <!--2006-->
+    <div class="season-separator"></div>
+
+    <div class="season">
+        <div class="season-year">2004-05</div>
+
+        <div class="stage-block">
+            <div class="stage">1/16</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score lose">0-2</div>
+                    <div class="team2">Stal Alchevsk</div>
+                </div>
+            </div>
+        </div>
+        <div class="stage-block">
+            <div class="stage">1/32</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score win">1-0</div>
+                    <div class="team2">Nyva Ternopil</div>
+                </div>
+            </div>
+        </div>
+
+
+    </div> <!--2005-->
+    <div class="season-separator"></div>
+
+    <div class="season">
+        <div class="season-year">2003-04</div>
+
+        <div class="stage-block">
+            <div class="stage">1/16</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score lose">3-5</div>
+                    <div class="team2">Spartak I-F</div>
+                </div>
+            </div>
+        </div>
+        <div class="stage-block">
+            <div class="stage">1/32</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score win">2-0</div>
+                    <div class="team2">Gelios</div>
+                </div>
+            </div>
+        </div>
+
+
+    </div> <!--2004-->
+    <div class="season-separator"></div>
+
+    <div class="season">
+        <div class="season-year">2002-03</div>
+
+        <div class="stage-block">
+            <div class="stage">1/16</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score lose">1-1&nbsp;(2-3)</div>
+                    <div class="team2">Krasyliv</div>
+                </div>
+            </div>
+        </div>
+        <div class="stage-block">
+            <div class="stage">1/32</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score win">3-0</div>
+                    <div class="team2">Avanhard Rovenki</div>
+                </div>
+            </div>
+        </div>
+
+
+    </div> <!--2003-->
+    <div class="season-separator"></div>
+
+    <div class="season">
+        <div class="season-year">2001-02</div>
+
+        <div class="stage-block">
+            <div class="stage">1/4</div>
+            <div class="match double-score">
+                <div class="team1">Metalist</div>
+
+                <div class="score-box">
+                    <div class="score draw">1-1</div>
+                    <div class="score lose">0-5</div>
+                </div>
+                <div class="team2">Dynamo Kyiv</div>
+            </div>
+        </div>
+
+        <div class="stage-block">
+            <div class="stage">1/8</div>
+            <div class="match double-score">
+                <div class="team1">Metalist</div>
+
+                <div class="score-box">
+                    <div class="score lose">0-1</div>
+                    <div class="score win">3-1</div>
+                </div>
+
+                <div class="team2">Metalurh Zaporizhia</div>
+            </div>
+        </div>
+
+        <div class="stage-block">
+            <div class="stage">1/16</div>
+            <div class="match double-score">
+                <div class="team1">Metalist</div>
+
+                <div class="score-box">
+                    <div class="score draw">0-0</div>
+                    <div class="score win">2-0</div>
+                </div>
+                <div class="team2">Prykarpattya</div>
+            </div>
+        </div>
+    </div> <!--2002-->
+    <div class="season-separator"></div>
+
+    <div class="season">
+        <div class="season-year">2000-01</div>
+
+        <div class="stage-block">
+            <div class="stage">1/8</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score lose">0-2</div>
+                    <div class="team2">Kryvbas</div>
+                </div>
+            </div>
+        </div>
+        <div class="stage-block">
+            <div class="stage">1/16</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score win">1-0</div>
+                    <div class="team2">Bukovyna</div>
+                </div>
+            </div>
+        </div>
+
+
+    </div> <!--2001-->
+    <div class="season-separator"></div>
+
+    <div class="season">
+        <div class="season-year">1999–2000</div>
+
+        <div class="stage-block">
+            <div class="stage">1/16</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score lose">2-2&nbsp;(2-4)</div>
+                    <div class="team2">FC Vinnytsia</div>
+                </div>
+            </div>
+        </div>
+
+
+    </div> <!--2000-->
+    <div class="season-separator"></div>
+
+    <div class="season">
+        <div class="season-year">1998–99</div>
+
+        <div class="stage-block">
+            <div class="stage">1/4</div>
+            <div class="match double-score">
+                <div class="team1">Metalist</div>
+
+                <div class="score-box">
+                    <div class="score lose">1-2</div>
+                    <div class="score lose">0-3</div>
+                </div>
+                <div class="team2">Dynamo Kyiv</div>
+            </div>
+        </div>
+        <div class="stage-block">
+            <div class="stage">1/8</div>
+            <div class="match double-score">
+                <div class="team1">Metalist</div>
+
+                <div class="score-box">
+                    <div class="score win">1-0</div>
+                    <div class="score win">3-2</div>
+                </div>
+                <div class="team2">Metalurh Donetsk</div>
+            </div>
+        </div>
+        <div class="stage-block">
+            <div class="stage">1/8</div>
+            <div class="match double-score">
+                <div class="team1">Metalist</div>
+
+                <div class="score-box">
+                    <div class="score lose">1-2</div>
+                    <div class="score win">+:-</div>
+                </div>
+                <div class="team2">FC Lviv</div>
+            </div>
+        </div>
+
+
+    </div> <!--1999-->
+    <div class="season-separator"></div>
+
+    <div class="season">
+        <div class="season-year">1997–98</div>
+
+        <div class="stage-block">
+            <div class="stage">1/16</div>
+            <div class="match double-score">
+                <div class="team1">Metalist</div>
+
+                <div class="score-box">
+                    <div class="score draw">2-2</div>
+                    <div class="score lose">0-4</div>
+                </div>
+                <div class="team2">Chornomorets</div>
+            </div>
+        </div>
+        <div class="stage-block">
+            <div class="stage">1/32</div>
+            <div class="match double-score">
+                <div class="team1">Metalist</div>
+
+                <div class="score-box">
+                    <div class="score win">2-1</div>
+                    <div class="score draw">0-0</div>
+                </div>
+                <div class="team2">Zorya</div>
+            </div>
+        </div>
+
+
+    </div> <!--1998-->
+    <div class="season-separator"></div>
+
+    <div class="season">
+        <div class="season-year">1996–97</div>
+
+        <div class="stage-block">
+            <div class="stage">1/64</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score lose">0-1</div>
+                    <div class="team2">Oskil Kupiansk</div>
+                </div>
+            </div>
+        </div>
+
+
+    </div> <!--1997-->
+    <div class="season-separator"></div>
+
+    <div class="season">
+        <div class="season-year">1995–96</div>
+
+        <div class="stage-block">
+            <div class="stage">1/64</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score lose">2-3</div>
+                    <div class="team2">Matalurh Novomoskovsk</div>
+                </div>
+            </div>
+        </div>
+
+
+    </div> <!--1996-->
+    <div class="season-separator"></div>
+
+    <div class="season">
+        <div class="season-year">1994–95</div>
+
+        <div class="stage-block">
+            <div class="stage">1/64</div>
+            <div class="matches">
+                <div class="match">
+                    <div class="team1">Metalist</div>
+                    <div class="score lose">2-4</div>
+                    <div class="team2">Naftokhimik</div>
+                </div>
+            </div>
+        </div>
+
+
+    </div> <!--1995-->
+    <div class="season-separator"></div>
+
+    <div class="season">
+        <div class="season-year">1993–94</div>
+
+        <div class="stage-block">
+            <div class="stage">1/16</div>
+            <div class="match double-score">
+                <div class="team1">Metalist</div>
+
+                <div class="score-box">
+                    <div class="score lose">0-3</div>
+                    <div class="score win">1-0</div>
+                </div>
+                <div class="team2">Veres</div>
+            </div>
+        </div>
+
+
+    </div> <!--1994-->
     <div class="season-separator"></div>
 
     <div class="season">
@@ -232,7 +1111,6 @@
             </div>
         </div>
     </div> <!--1993-->
-
     <div class="season-separator"></div>
 
     <div class="season">
