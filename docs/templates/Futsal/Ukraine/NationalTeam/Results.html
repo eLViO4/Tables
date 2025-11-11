@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ukraine National Team</title>
+    <style>
+        :root {
+            --blue-primary: #0057b7;
+            --yellow-primary: #eec003;
+            --blue-dark: #003d82;
+            --text-dark: #2d3748;
+            --light-bg: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #eec003;
+            color: var(--text-dark);
+            min-height: 100vh;
+
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .title {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: var(--blue-dark);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: var(--blue-primary);
+        }
+
+        .tables-container {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            align-items: flex-start;
+        }
+
+        .table-wrapper {
+            flex: 1;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .table-header {
+            background: var(--blue-primary);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        .table-content {
+            padding: 0;
+        }
+
+        .row {
+            display: flex;
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .row:last-child {
+            border-bottom: none;
+        }
+
+        .year {
+            width: 80px;
+            font-weight: bold;
+            color: var(--blue-dark);
+        }
+
+        .result {
+            flex: 1;
+            color: darkblue;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .buttons-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .button {
+            display: block;
+            text-decoration: none;
+            background: var(--blue-primary);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s;
+        }
+
+        .button:hover {
+            background: var(--blue-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .navbar-custom {
+            background: linear-gradient(135deg, var(--blue-primary) 0%, var(--blue-dark) 100%);
+            backdrop-filter: blur(10px);
+            height: 68px;
+            margin-bottom: 30px;
+            font-size: 30px;
+            border-bottom: 3px solid var(--yellow-primary);
+            border-radius: 0;
+            width: 100vw;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 100;
+        }
+
+        /* Navbar links */
+        .navbar-custom .nav-link {
+            color: #eec003 !important;
+            text-decoration: none;
+            font-weight: 700;
+            padding: 10px 15px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: var(--yellow-primary) !important;
+            border-radius: 6px;
+        }
+
+
+        /* Мобильная версия */
+        @media (max-width: 768px) {
+            .tables-container {
+                flex-direction: column;
+                align-items: center; /* центрируем таблицы по горизонтали */
+                gap: 20px;
+            }
+
+            .table-wrapper {
+                width: 95%; /* чтобы занимали почти всю ширину экрана */
+                max-width: 420px; /* чтобы не были слишком широкими */
+            }
+
+            .mobile-layout {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .mobile-top {
+                order: -1;
+            }
+
+            .title {
+                font-size: 2em;
+            }
+
+            .table-header {
+                font-size: 1.2em;
+            }
+
+            .buttons-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title {
+                font-size: 1.7em;
+            }
+
+            .row {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <a href="../../../../index.html" class="nav-link">HOME</a>
+</nav>
+<div class="container">
+
+
+    <div class="tables-container">
+        <!-- Таблица World Cup -->
+        <div class="table-wrapper mobile-top">
+            <div class="table-header">WORLD CUP</div>
+            <div class="table-content">
+                <div class="row">
+                    <div class="year">1992</div>
+                    <div class="result">-</div>
+                </div>
+                <div class="row">
+                    <div class="year">1996</div>
+                    <div class="result">1/2</div>
+                </div>
+                <div class="row">
+                    <div class="year">2000</div>
+                    <div class="result">-</div>
+                </div>
+                <div class="row">
+                    <div class="year">2004</div>
+                    <div class="result">2 Group Stage</div>
+                </div>
+                <div class="row">
+                    <div class="year">2008</div>
+                    <div class="result">2 Group Stage</div>
+                </div>
+                <div class="row">
+                    <div class="year">2012</div>
+                    <div class="result">1/4</div>
+                </div>
+                <div class="row">
+                    <div class="year">2016</div>
+                    <div class="result">1/8</div>
+                </div>
+                <div class="row">
+                    <div class="year">2021</div>
+                    <div class="result">-</div>
+                </div>
+                <div class="row">
+                    <div class="year">2024</div>
+                    <div class="result">🥉 3 place </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Таблица Euro -->
+        <div class="table-wrapper">
+            <div class="table-header">EURO</div>
+            <div class="table-content">
+                <div class="row">
+                    <div class="year">1996</div>
+                    <div class="result">5 place</div>
+                </div>
+                <div class="row">
+                    <div class="year">1999</div>
+                    <div class="result">-</div>
+                </div>
+                <div class="row">
+                    <div class="year">2001</div>
+                    <div class="result">2 place 🥈</div>
+                </div>
+                <div class="row">
+                    <div class="year">2003</div>
+                    <div class="result">2 place 🥈</div>
+                </div>
+                <div class="row">
+                    <div class="year">2005</div>
+                    <div class="result">4 place</div>
+                </div>
+                <div class="row">
+                    <div class="year">2007</div>
+                    <div class="result">Group Stage</div>
+                </div>
+                <div class="row">
+                    <div class="year">2010</div>
+                    <div class="result">1/4</div>
+                </div>
+                <div class="row">
+                    <div class="year">2012</div>
+                    <div class="result">1/4</div>
+                </div>
+                <div class="row">
+                    <div class="year">2014</div>
+                    <div class="result">1/4</div>
+                </div>
+                <div class="row">
+                    <div class="year">2016</div>
+                    <div class="result">1/4</div>
+                </div>
+                <div class="row">
+                    <div class="year">2018</div>
+                    <div class="result">1/4</div>
+                </div>
+                <div class="row">
+                    <div class="year">2022</div>
+                    <div class="result">4 place</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Cup 2008</title>
+
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="FutsalUkrWorldCup.css">
+    <style>
+        .group tr:nth-child(3) td:first-child::before {
+            background: transparent;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg nl-navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand nl-brand" href="../../../../../index.html">Home</a>
+
+        <!-- Бургер-кнопка -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#nlNavbar" aria-controls="nlNavbar"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Меню -->
+        <div class="collapse navbar-collapse" id="nlNavbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link nl-link dropdown-toggle"
+                       href="#"
+                       id="seasonsDropdown"
+                       role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true"
+                       aria-expanded="false">
+                        Seasons
+                    </a>
+                    <div class="dropdown-menu nl-dropdown" aria-labelledby="seasonsDropdown">
+                        <a class="dropdown-item" href="1996.html">1996</a>
+                        <a class="dropdown-item" href="2004.html">2004</a>
+                        <a class="dropdown-item" href="2008.html">2008</a>
+                        <a class="dropdown-item" href="2012.html">2012</a>
+                        <a class="dropdown-item" href="2016.html">2016</a>
+                        <a class="dropdown-item" href="2024.html">2024</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<header>Word Cup 2008</header>
+
+<div class="main">
+    <!-- Существующая группа -->
+    <div class="group">
+        <h3>Group 1</h3>
+        <table>
+            <tr class="highlight"><td><span class="flag">🇺🇦</span> Ukraine</td><td>10</td></tr>
+            <tr><td><span class="flag">🇦🇷</span> Argentina</td><td>10</td></tr>
+            <tr><td><span class="flag">🇬🇹</span> Guatemala</td><td>6</td></tr>
+            <tr><td><span class="flag">🇪🇬</span> Egypt</td><td>3</td></tr>
+            <tr><td><span class="flag">🇨🇳</span> China</td><td>0</td></tr>
+        </table>
+    </div>
+
+    <!-- Матчи группы -->
+    <div class="matches">
+
+        <div class="match">
+            <div class="team left"><span class="flag">🇺🇦</span>Ukraine</div>
+            <div class="score win">6-2</div>
+            <div class="team right">Guatemala<span class="flag">🇬🇹</span></div>
+        </div>
+
+        <div class="match">
+            <div class="team left"><span class="flag">🇺🇦</span>Ukraine</div>
+            <div class="score draw">2-2</div>
+            <div class="team right">Argentina<span class="flag">🇦🇷</span></div>
+        </div>
+
+        <div class="match">
+            <div class="team left"><span class="flag">🇺🇦</span>Ukraine</div>
+            <div class="score win">5-1</div>
+            <div class="team right">Egypt<span class="flag">🇪🇬</span></div>
+        </div>
+
+        <div class="match">
+            <div class="team left"><span class="flag">🇺🇦</span>Ukraine</div>
+            <div class="score win">4-2</div>
+            <div class="team right">China<span class="flag">🇨🇳</span></div>
+        </div>
+    </div>
+
+    <div class="group">
+        <h3>Group 2</h3>
+        <table>
+            <tr><td><span class="flag">🇧🇷</span> Brazil</td><td>9</td></tr>
+            <tr><td><span class="flag">🇮🇹</span> Italy</td><td>4</td></tr>
+            <tr><td><span class="flag">🇮🇷</span> Iran</td><td>4</td></tr>
+            <tr class="highlight"><td><span class="flag">🇺🇦</span> Ukraine</td><td>0</td></tr>
+        </table>
+    </div>
+
+    <!-- Матчи группы -->
+    <div class="matches">
+
+        <div class="match">
+            <div class="team left"><span class="flag">🇺🇦</span>Ukraine</div>
+            <div class="score lose">0-4</div>
+            <div class="team right">Italy<span class="flag">🇮🇹</span></div>
+        </div>
+
+        <div class="match">
+            <div class="team left"><span class="flag">🇺🇦</span>Ukraine</div>
+            <div class="score lose">4-5</div>
+            <div class="team right">Iran<span class="flag">🇮🇷</span></div>
+        </div>
+
+        <div class="match">
+            <div class="team left"><span class="flag">🇺🇦</span>Ukraine</div>
+            <div class="score lose">3-5</div>
+            <div class="team right">Brazil<span class="flag">🇧🇷</span></div>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>
