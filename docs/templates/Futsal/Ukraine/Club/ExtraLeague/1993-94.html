@@ -3,29 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPL 1993-94</title>
+    <title>Extra Liga 1993-94</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="ExtraLeague.css">
     <style>
-        .tables-container {
-            transform: scale(0.8);
+        .mini-table {
+            flex: 0.5;
         }
+        .tables-container {
+            display: flex;
+            flex-direction: column; /* меняем строку на колонку */
+            gap: 20px; /* расстояние между таблицами */
+            margin: 20px auto;
+            max-width: 600px; /* можно подгонять */
+        }
+
     </style>
 </head>
 <body>
 
 <nav class="navbar">
-    <a href="../../../index.html" class="navbar-brand">Home</a>
-
+    <a href="../../../../../index.html" class="navbar-brand">Home</a>
     <ul class="navbar-nav">
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown" role="button">
-                1991-2025
+                1993–2025
             </a>
-            <div class="dropdown-menu" aria-labelledby="dropdown2012">
+            <div class="dropdown-menu" aria-labelledby="dropdown">
                 <a class="dropdown-item" href="2024-25.html">2024–25</a>
                 <a class="dropdown-item" href="2023-24.html">2023–24</a>
                 <a class="dropdown-item" href="2022-23.html">2022–23</a>
@@ -58,8 +62,6 @@
                 <a class="dropdown-item" href="1995-96.html">1995–96</a>
                 <a class="dropdown-item" href="1994-95.html">1994–95</a>
                 <a class="dropdown-item" href="1993-94.html">1993–94</a>
-                <a class="dropdown-item" href="1992-93.html">1992–93</a>
-                <a class="dropdown-item" href="1991-92.html">1991–92</a>
             </div>
         </li>
     </ul>
@@ -67,12 +69,11 @@
 
 
 
-
 <div class="tables-container">
-
 
     <div class="mini-table">
         <h3>1993-94</h3>
+        <h3>Champions Group</h3>
         <table>
             <thead>
             <tr>
@@ -83,32 +84,47 @@
             </thead>
             <tbody>
             <!-- Чемпион -->
-            <tr class="ucl"><td>1</td><td>Dynamo Kyiv</td><td>56</td></tr>
-            <tr class="uel"><td>2</td><td>Shakhtar</td><td>49</td></tr>
-            <tr class="int"><td>3</td><td>Chornomorets</td><td>48</td></tr>
-            <tr><td>4</td><td>Dnipro</td><td>41</td></tr>
-            <tr><td>5</td><td>Karpaty</td><td>40</td></tr>
-
-            <!-- Середина таблицы -->
-            <tr><td>6</td><td>Kryvbas</td><td>36</td></tr>
-            <tr><td>7</td><td>Nyva Ternopil</td><td>36</td></tr>
-            <tr><td>8</td><td>Tavriya</td><td>34</td></tr>
-            <tr><td>9</td><td>Temp Shepetivka</td><td>32</td></tr>
-            <tr><td>10</td><td>Nyva Vinnytsia</td><td>32</td></tr>
-            <tr><td>11</td><td>Volyn</td><td>32</td></tr>
-            <tr><td>12</td><td>Veres</td><td>32</td></tr>
-            <tr><td>13</td><td>Torpedo Zaporizhzhia</td><td>28</td></tr>
-            <tr><td>14</td><td>Zorya-MALS</td><td>26</td></tr>
-            <tr><td>15</td><td>Kremin</td><td>26</td></tr>
-            <tr><td>16</td><td>Metalurh Zaporizhzhia</td><td>24</td></tr>
-
-            <!-- Вылет -->
-            <tr class="relegation"><td>17</td><td>Bukovyna</td><td>20</td></tr>
-            <tr class="relegation"><td>18</td><td>Metalist</td><td>20</td></tr>
+            <tr class="uecl"><td>1</td><td>Slid</td><td>47</td></tr>
+            <tr><td>2</td><td>Nadiya</td><td>44</td></tr>
+            <tr><td>3</td><td>Nike</td><td>43</td></tr>
+            <tr><td>4</td><td>Rita</td><td>36</td></tr>
+            <tr><td>5</td><td>Mekhanizator</td><td>32</td></tr>
+            <tr><td>6</td><td>Vodeyar</td><td>29</td></tr>
+            <tr><td>7</td><td>Avanhard Zhovti Vody</td><td>28</td></tr>
+            <tr><td>8</td><td>Donbas</td><td>21</td></tr>
             </tbody>
         </table>
     </div>
+    <br><br>
+    <div class="mini-table">
+        <h3>Relegation Group</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>Pos</th>
+                <th>Team</th>
+                <th>Pts</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Середина таблицы -->
+            <tr class="relegation"><td>9</td><td>Inga</td><td>35</td></tr>
+            <tr class="relegation"><td>10</td><td>Capital</td><td>35</td></tr>
+            <tr><td>11</td><td>KRaZ</td><td>29</td></tr>
+            <tr class="relegation"><td>12</td><td>Ometa</td><td>29</td></tr>
+            <tr><td>13</td><td>Slavutych</td><td>24</td></tr>
+            <tr class="relegation"><td>14</td><td>Vulkan</td><td>10</td></tr>
+            <tr class="relegation"><td>15</td><td>Fotopribor</td><td>7</td></tr>
+            <tr class="relegation"><td>16</td><td>Inturist</td><td>7</td></tr>
+            </tbody>
+        </table>
+        <div class="champion-banner">
+            🏆 SLID KYIV
+        </div>
+    </div>
+
 </div>
+
 
 </body>
 </html>

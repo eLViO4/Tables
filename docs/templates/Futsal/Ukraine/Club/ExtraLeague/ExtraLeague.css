@@ -1,109 +1,130 @@
 body {
-    background-color: #eec003; /* жёлтый фон */
+    background-color: #eec003;
     font-family: Arial, sans-serif;
 }
 
 .tables-container {
     display: flex;
-    flex-direction: column;
-    gap: 30px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
     margin: 20px auto;
-    max-width: 500px;
-    transform: scale(0.9); /* уменьшение до 75% */
-    transform-origin: top left; /* масштаб от левого верхнего угла */
+    max-width: 1200px;
+    transform: scale(0.9);
+    transform-origin: top left;
 }
 
+/* Мини-таблица */
 .mini-table {
     background: #fff;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    width: 100%;
 }
 
 .mini-table h3 {
     text-align: center;
-    font-size: 40px; /* больше шрифт */
+    font-size: 40px;
     color: #eec003;
-    background-color: #0057b7; /* синий */
+    background-color: #0057b7;
 }
 
 .mini-table table {
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
+    border-collapse: collapse;
     text-align: center;
 }
 
-.mini-table th,
-.mini-table td {
-    padding: 12px 6px; /* меньше по горизонтали, чтобы столбцы были уже */
-    font-size: 16px;   /* увеличенный шрифт */
+.mini-table th, .mini-table td {
+    padding: 12px 6px;
+    font-size: 16px;
 }
 
-/* Убираем все линии */
-.mini-table th,
-.mini-table td {
-    border: none;
-}
-
-/* Заголовки */
 .mini-table th {
-    background-color: #0057b7; /* синий */
+    background-color: #0057b7;
     color: #eec003;
-    font-weight: bold;
 }
 
-/* Цветные ячейки позиции */
-.mini-table table tbody tr.ucl td:first-child {
-    background-color: #001f5b;
-    color: #fff;
-    font-weight: bold;
+.mini-table tbody tr:nth-child(even) {
+    background: #f8f8f8;
 }
 
-.mini-table table tbody tr.uel td:first-child {
-    background-color: #ff7f00;
-    color: #fff;
-    font-weight: bold;
+/* Цвета по позициям */
+.ucl td:first-child { background:#001f5b; color:#fff; font-weight:bold; }
+.uel td:first-child { background:#ff7f00; color:#fff; font-weight:bold; }
+.uecl td:first-child{ background:#2ecc71; color:#fff; font-weight:bold; }
+.rel td:first-child  { background:#eb79b4; color:#fff; font-weight:bold; }
+.relegation td:first-child { background:#e74c3c; color:#fff; font-weight:bold; }
+
+/* Play-off блок */
+.playoff {
+    background: #fff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    border-radius: 10px;
+    min-width: 450px;
+    flex: 1;
 }
 
-.mini-table table tbody tr.uecl td:first-child {
-    background-color: #2ecc71;
-    color: #fff;
-    font-weight: bold;
+.playoff h3 {
+    text-align: center;
+    background: #0057b7;
+    color: #eec003;
+    font-size: 32px;
+    margin: 0 0 15px 0;
 }
 
-.mini-table table tbody tr.int td:first-child {
-    background-color: #9ae20c;
-    color: #fff;
-    font-weight: bold;
+.playoff h4 {
+    margin-top: 20px;
+    color: #0057b7;
+    border-bottom: 2px solid #eec003;
+    padding-bottom: 5px;
 }
 
-.mini-table table tbody tr.rel td:first-child {
-    background-color: #eb79b4;
-    color: #fff;
-    font-weight: bold;
+.playoff table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    text-align: center;
+    table-layout: fixed;
 }
 
-.mini-table table tbody tr.relegation td:first-child {
-    background-color: #e74c3c;
-    color: #fff;
-    font-weight: bold;
+.playoff th {
+    background-color: #0057b7;
+    color: #eec003;
+    padding: 6px;
 }
 
-/* Чередование строк (опционально) */
-.mini-table table tbody tr:nth-child(even) td {
-    background-color: #f8f8f8;
+.playoff td {
+    border: 1px solid #ccc;
+    padding: 6px 8px;
+}
+.playoff th, .playoff td {
+    padding: 6px 8px;
+    overflow: hidden;       /* обрезаем лишнее, если длинный текст */
+    white-space: nowrap;    /* чтобы не переносился */
 }
 
-/* Navbar для LEG */
+.playoff td.score, .playoff th.score {
+    width: 60px; /* например, 60px — подгоняй под цифры */
+}
+
+
+/* Победы */
+.win1 { background-color: #b9ffb9; font-weight: bold; }
+.win2 { background-color: #ffb9b9; font-weight: bold; }
+.draw { background-color: #f0f0f0; }
+
 .navbar {
-    background-color: #0057b7; /* синий фон */
+    background-color: #0057b7;
     padding: 12px 20px;
-    font-family: Arial, sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: Arial, sans-serif;
 }
 
-/* Home слева */
 .navbar .navbar-brand {
     color: #eec003;
     font-weight: bold;
@@ -111,7 +132,6 @@ body {
     text-decoration: none;
 }
 
-/* Список dropdown справа */
 .navbar-nav {
     display: flex;
     flex-direction: row;
@@ -121,13 +141,11 @@ body {
     padding: 0;
 }
 
-/* Элементы списка */
 .navbar .nav-item {
-    position: relative; /* для абсолютного dropdown */
+    position: relative;
     margin-left: 15px;
 }
 
-/* Ссылки dropdown */
 .navbar .nav-link {
     color: #eec003;
     font-size: 20px;
@@ -135,66 +153,79 @@ body {
     cursor: pointer;
 }
 
-/* Hover для ссылок */
 .navbar .nav-link:hover {
-    color: #eec003; /* жёлтый при наведении */
+    color: #eec003;
 }
 
-/* Меню dropdown */
 .navbar .dropdown-menu {
     position: absolute;
-    top: 100%; /* сразу под кнопкой */
+    top: 100%;
     left: 0;
     background-color: #0057b7;
     border-radius: 8px;
     min-width: 150px;
     padding: 5px 0;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    display: none; /* скрыто по умолчанию */
+    display: none;
     z-index: 1000;
+    white-space: nowrap;
 }
 
-/* Показать меню при hover */
 .navbar .nav-item:hover .dropdown-menu {
     display: block;
 }
 
-/* Ссылки внутри dropdown */
 .navbar .dropdown-item {
-    color: #eec003; /* синий текст */
+    color: #eec003;
     font-weight: 500;
     padding: 8px 15px;
     text-decoration: none;
     display: block;
 }
 
-/* Hover для элементов dropdown */
 .navbar .dropdown-item:hover {
-    background-color: #eec003; /* синий фон */
-    color: #0057b7; /* белый текст */
+    background-color: #eec003;
+    color: #0057b7;
 }
 
-/* На маленьких экранах оставляем то же отображение */
+.champion-banner {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #0057b7; /* синий фон */
+    color: #ffffff; /* белые буквы */
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    border-radius: 6px;
+}
+
+
+/* Адаптивность */
 @media (max-width: 768px) {
     .navbar-nav {
-        flex-direction: row; /* не меняем на колонку, чтобы не было бургера */
+        flex-direction: row; /* оставляем строку */
     }
     .nav-item {
         margin-left: 10px;
     }
+}
+
+
+/* Адаптивность */
+@media (max-width: 768px) {
     .tables-container {
-        transform: scale(0.8); /* уменьшаем таблицу для телефонов */
-        transform-origin: top center; /* центрируем масштабирование */
-        max-width: 100%;
+        flex-direction: column;
+        align-items: center;
+        transform: scale(0.85);
+        margin-left: 0; /* убираем лишний сдвиг */
     }
-
-    .mini-table h3 {
-        font-size: 28px; /* немного меньше заголовок */
+    .playoff {
+        width: calc(100% - 24px); /* ширина = экран минус отступы */
+        max-width: 100%;           /* не выходим за экран */
+        margin-left: 12px;         /* зазор слева */
+        margin-right: 12px;        /* зазор справа */
     }
-
-    .mini-table th,
-    .mini-table td {
-        font-size: 13px; /* уменьшаем шрифт */
-        padding: 8px 4px;
+    .mini-table{
+        margin-left: 30px;
     }
 }
