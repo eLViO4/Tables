@@ -222,7 +222,7 @@ body {
         box-sizing: border-box;
     }
 
-    .playoff, .mini-table {
+    .playoff {
         flex-direction: column;
         align-items: center;
         transform: none; /* Убираем масштабирование */
