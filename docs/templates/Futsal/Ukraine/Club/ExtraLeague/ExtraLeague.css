@@ -223,14 +223,25 @@ body {
     }
 
     .playoff, .mini-table {
+        flex-direction: column;
+        align-items: center;
+        transform: none; /* Убираем масштабирование */
+        margin: 10px auto;
+        padding: 0 15px;
+        gap: 20px;
         width: 100%;
-        margin: 0;
         box-sizing: border-box;
     }
 
     .playoff {
-        min-width: unset;
-        padding: 15px;
+        flex-direction: column;
+        align-items: center;
+        transform: none; /* Убираем масштабирование */
+        margin: 10px auto;
+        padding: 0 15px;
+        gap: 20px;
+        width: 100%;
+        box-sizing: border-box;
     }
 }
 
