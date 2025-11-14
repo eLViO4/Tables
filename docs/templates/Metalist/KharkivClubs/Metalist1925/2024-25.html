@@ -10,6 +10,70 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../../../Metalist/League/1Liga.css">
     <style>
+        .match-container {
+            text-align: center;
+            margin: 30px auto;
+            max-width: 500px;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        .match-title {
+            color: #ffffff;
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .match {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            padding: 15px;
+
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+            gap: 15px;
+        }
+
+        .team {
+            font-size: 18px;
+            font-weight: bold;
+            color: #022f09;
+            flex: 1;
+            text-align: center;
+        }
+
+        .score {
+            font-size: 20px;
+            font-weight: bold;
+            color: #f9f9f9;
+            background: #01950b;
+            padding: 8px 16px;
+            border-radius: 6px;
+            min-width: 60px;
+        }
+
+        /* Для мобильных */
+        @media (max-width: 768px) {
+            .match-container {
+                margin: 20px auto;
+                padding: 0 15px;
+            }
+
+            .match-title {
+                font-size: 20px;
+            }
+
+            .team {
+                font-size: 16px;
+            }
+
+            .score {
+                font-size: 18px;
+                padding: 6px 12px;
+            }
+        }
         @media (max-width: 768px) {
             .tables-container {
                 transform: scale(0.85); /* немного больше для читаемости */
@@ -114,6 +178,19 @@
 
             </tbody>
         </table>
+    </div>
+    <div class="match-container">
+        <h4 class="match-title">Relegation Play-off</h4>
+        <div class="match">
+            <span class="team team1">Metalist 1925</span>
+            <span class="score">1-0</span>
+            <span class="team team2">Livyi Bereh</span>
+        </div>
+        <div class="match">
+            <span class="team team1">Metalist 1925</span>
+            <span class="score">1-0</span>
+            <span class="team team2">Livyi Bereh</span>
+        </div>
     </div>
 
 </div>
