@@ -230,9 +230,17 @@ body {
     }
 }
 /* Планшеты */
-/* Для планшетов */
-@media (max-width: 1024px) {
-    body {
-        margin-left: 20px;
+/* Для iPad и подобных планшетов */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .tables-container {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}
+/* Для iPad 11 и подобных */
+@media (min-width: 820px) and (max-width: 1180px) {
+    .tables-container {
+        margin-left: 30px;
+        margin-right: 30px;
     }
 }
