@@ -201,6 +201,9 @@ body {
 
 
 /* Адаптивность */
+
+
+/* Адаптивность */
 @media (max-width: 768px) {
     .navbar-nav {
         flex-direction: row; /* оставляем строку */
@@ -208,25 +211,26 @@ body {
     .nav-item {
         margin-left: 10px;
     }
-}
-
-
-/* Адаптивность */
-@media (max-width: 768px) {
     .tables-container {
         flex-direction: column;
         align-items: center;
         transform: scale(0.85);
-        margin-left: 0; /* убираем лишний сдвиг */
+        margin-left: 15px; /* ← ДОБАВЬ ЭТУ СТРОКУ */
+        margin-right: 15px; /* ← И ЭТУ */
+        gap: 20px;
     }
+
     .playoff {
-        width: calc(100% - 24px); /* ширина = экран минус отступы */
-        max-width: 100%;           /* не выходим за экран */
-        margin-left: 12px;         /* зазор слева */
-        margin-right: 12px;        /* зазор справа */
+        width: calc(100% - 30px); /* ← УВЕЛИЧЬ ОТСТУПЫ */
+        max-width: 100%;
+        margin-left: 15px; /* ← УВЕЛИЧЬ */
+        margin-right: 15px; /* ← УВЕЛИЧЬ */
     }
-    .mini-table{
-        margin-left: 30px;
+
+    .mini-table {
+        margin-left: 15px; /* ← ДОБАВЬ ОТСТУП СЛЕВА */
+        margin-right: 15px; /* ← И СПРАВА */
+        width: calc(100% - 30px);
     }
 }
 /* Планшеты */
