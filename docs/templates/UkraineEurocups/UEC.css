@@ -1,0 +1,405 @@
+:root {
+    --nl-orange: #ff8400;
+    --nl-yellow: #ffd84d;
+    --nl-black: #111;
+    --nl-white: #fff;
+    --nl-border: #e0a000;
+    --nl-green: #0fa80f;
+    --nl-red: #c20d0d;
+    --shadow: rgba(0, 0, 0, 0.15);
+
+    /* Украинские цвета для сезона */
+    --ua-blue: #0057b7;
+    --ua-yellow: #eec003;
+}
+
+/* ====== BODY ====== */
+body {
+    margin: 0;
+    padding-bottom: 20px;
+    background: var(--ua-yellow);
+    color: var(--ua-blue);
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* ====== NAVBAR ====== */
+.navbar-custom {
+    background-color: var(--ua-blue);
+    height: 68px;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.nav-link {
+    color: var(--ua-yellow);
+    text-decoration: none;
+    padding: 15px;
+    display: inline-block;
+}
+
+.nav-link:hover {
+    color: var(--ua-yellow);
+}
+
+/* ====== HEADER ====== */
+header {
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--ua-blue);
+    margin: 15px 0;
+}
+
+/* Стили для сезона */
+h1 {
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    border-bottom: 3px solid var(--ua-blue);
+    padding-bottom: 10px;
+    text-align: center;
+    color: var(--ua-blue);
+}
+h2{
+    text-align: center;
+    color: darkblue;
+}
+#season-teams {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-accordion .accordion-item {
+    border: none;
+    margin-bottom: 15px;
+}
+
+.team-accordion .accordion-button {
+    background-color: var(--ua-blue);
+    color: var(--ua-yellow);
+    border: none;
+    border-radius: 8px;
+    padding: 15px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 100%;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.team-accordion .accordion-button:not(.collapsed) {
+    background-color: var(--ua-blue);
+    color: var(--ua-yellow);
+    box-shadow: none;
+}
+
+.team-accordion .accordion-button:focus {
+    box-shadow: none;
+    border: none;
+}
+
+.team-accordion .accordion-body {
+    background-color: var(--nl-white);
+    border-radius: 0 0 8px 8px;
+    padding: 25px;
+}
+
+/* ====== MAIN (результаты) ====== */
+.main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ====== GROUP TABLE ====== */
+.group {
+    background: var(--nl-white);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 8px var(--shadow);
+    width: 320px;
+    flex-shrink: 0;
+    border: 2px solid var(--ua-blue);
+    margin: 25px auto;
+}
+
+.group h3 {
+    text-align: center;
+    color: var(--ua-blue);
+    border-bottom: 2px solid var(--ua-yellow);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.group table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.group th {
+    background-color: var(--ua-blue);
+    color: var(--ua-yellow);
+    padding: 10px;
+    text-align: left;
+}
+
+.group td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.group td:first-child {
+    position: relative;
+    padding-left: 35px;
+    text-align: left;
+}
+
+/* зелёные полоски — проход */
+.group tr:nth-child(2) td:first-child::before,
+.group tr:nth-child(3) td:first-child::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 6px;
+    background: var(--nl-green);
+    border-radius: 2px;
+}
+
+.highlight {
+    background-color: rgba(255, 235, 130, 0.4);
+}
+
+/* ====== MATCHES ====== */
+.matches {
+    background: var(--nl-white);
+    border-radius: 10px;
+    padding: 18px;
+    width: 100%;
+    box-shadow: 0 3px 10px var(--shadow);
+    border: 2px solid var(--ua-blue);
+    margin-bottom: 30px;
+}
+
+.matches h3 {
+    color: var(--ua-blue);
+    border-bottom: 2px solid var(--ua-yellow);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* Обычные матчи */
+.match {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.match:last-child {
+    border-bottom: none;
+}
+
+.team {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+}
+
+.team.left {
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.team.right {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.team1, .team2 {
+    font-weight: bold;
+    color: var(--ua-blue);
+    width: 40%;
+}
+
+.team1 {
+    text-align: right;
+}
+
+.team2 {
+    text-align: left;
+}
+
+.score {
+    font-weight: bold;
+    font-size: 1.1em;
+    min-width: 70px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.score.win { color: var(--nl-green); }
+.score.lose { color: var(--nl-red); }
+.score.draw { color: var(--nl-black); }
+
+/* ====== PLAYOFF ====== */
+.matches.playoff {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    width: 100%;
+}
+
+/* Заголовки стадий */
+.matches.playoff h3 {
+    color: var(--ua-blue);
+    border-bottom: 2px solid var(--ua-yellow);
+    padding-bottom: 5px;
+    margin: 10px 0;
+}
+
+/* Матчи play-off */
+.match.double-score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--nl-white);
+    border: 2px solid var(--ua-blue);
+    box-shadow: 0 3px 10px var(--shadow);
+    padding: 12px 15px;
+    border-radius: 12px;
+    font-size: 1.1em;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+/* Левая и правая команды фиксированы по ширине */
+.match.double-score .team1,
+.match.double-score .team2 {
+    width: 150px;
+    font-weight: bold;
+    color: var(--ua-blue);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.match.double-score .team1 {
+    text-align: right;
+}
+
+.match.double-score .team2 {
+    text-align: left;
+}
+
+/* Счёт строго по центру */
+.match.double-score .score-box {
+    min-width: 70px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    flex-shrink: 0;
+}
+
+.score-box .score {
+    width: 70px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.05em;
+    padding: 5px 10px;
+    border-radius: 4px;
+    min-width: 60px;
+}
+
+.score-box .score.win {
+    color: var(--nl-green);
+}
+
+.score-box .score.lose {
+    color: var(--nl-red);
+}
+
+.score-box .score.draw {
+    color: var(--nl-black);
+}
+
+/* ====== ADAPTIVE ====== */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .matches, .group, .matches.playoff {
+        width: 100%;
+    }
+
+    .team-accordion .accordion-button {
+        min-height: 50px;
+        font-size: 1em;
+        padding: 12px 15px;
+    }
+
+    .match.double-score {
+        flex-direction: column;
+        gap: 8px;
+        padding: 15px;
+    }
+
+    .match.double-score .team1,
+    .match.double-score .team2 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .match.double-score .team1 {
+        order: 1;
+    }
+
+    .match.double-score .score-box {
+        order: 2;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .match.double-score .team2 {
+        order: 3;
+    }
+
+    .score-box .score {
+        width: 60px;
+    }
+
+    .group {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 2em;
+        padding: 0 10px 10px;
+    }
+
+    #season-teams {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .team1, .team2 {
+        width: 35%;
+        font-size: 0.9em;
+    }
+}
