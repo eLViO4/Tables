@@ -4,33 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="UEC.css">
     <title>Eurocups 2015-16</title>
     <style></style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-custom">
-    <a href="../../index.html" class="nav-link">HOME</a>
+<nav class="navbar navbar-expand-lg uec-navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand uec-brand" href="../../index.html">Home</a>
+
+        <!-- Бургер-кнопка -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#uecNavbar" aria-controls="uecNavbar"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Меню -->
+        <div class="collapse navbar-collapse" id="uecNavbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link uec-link dropdown-toggle"
+                       href="#"
+                       id="seasonsDropdown"
+                       role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true"
+                       aria-expanded="false">
+                        Seasons
+                    </a>
+                    <div class="dropdown-menu uec-dropdown" aria-labelledby="seasonsDropdown">
+                        <a class="dropdown-item" href="2007-08.html">2007–08</a>
+                        <a class="dropdown-item" href="2008-09.html">2008–09</a>
+                        <a class="dropdown-item" href="2009-10.html">2009–10</a>
+                        <a class="dropdown-item" href="2010-11.html">2010–11</a>
+                        <a class="dropdown-item" href="2011-12.html">2011–12</a>
+                        <a class="dropdown-item" href="2012-13.html">2012–13</a>
+                        <a class="dropdown-item" href="2013-14.html">2013–14</a>
+                        <a class="dropdown-item" href="2014-15.html">2014–15</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>
 
 <div class="container-fluid">
     <section id="season-teams">
         <h1>Eurocups 2015-16</h1>
+        <!-- Добавьте этот код ПОД <h1>Eurocups 2015-16</h1> и НАД <div class="accordion"> -->
+
+        <!-- Season Summary Block -->
+        <div class="season-summary">
+            <div class="summary-header">
+            </div>
+
+            <div class="summary-content">
+                <!-- Строка с названиями команд -->
+                <div class="teams-row">
+                    <div class="team-cell ucl">Shakhtar</div>
+                    <div class="team-cell ucl">Dynamo</div>
+                    <div class="team-cell uel">Dnipro</div>
+                    <div class="team-cell uel">Metalist</div>
+                    <div class="team-cell uel">Vorskla</div>
+                </div>
+
+                <!-- Строка со стадиями -->
+                <div class="stages-row">
+                    <div class="stage-cell">1/8</div>
+                    <div class="stage-cell">GS</div>
+                    <div class="stage-cell">q</div>
+                    <div class="stage-cell">1/16</div>
+                    <div class="stage-cell">Final</div>
+                </div>
+
+            </div>
+        </div>
 
         <div class="accordion team-accordion" id="teamsAccordion2016">
-
             <h2>Champions League</h2>
             <!-- Динамо Киев -->
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingDynamo2016">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseDynamo2016" aria-expanded="false" aria-controls="collapseDynamo2016">
+                    <button class="accordion-button collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseDynamo2016" aria-expanded="false" aria-controls="collapseDynamo2016">
                         Dynamo Kyiv
                     </button>
                 </h2>
                 <div id="collapseDynamo2016" class="accordion-collapse collapse" aria-labelledby="headingDynamo2016"
-                     data-bs-parent="#teamsAccordion2016">
+                     data-parent="#teamsAccordion2016">
                     <div class="accordion-body">
                         <header>Champions League</header>
 
@@ -98,17 +163,17 @@
                     </div>
                 </div>
             </div>
-
+            <h2>Europe League</h2>
             <!-- Шахтер Донецк -->
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingShakhtar2016">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseShakhtar2016" aria-expanded="false" aria-controls="collapseShakhtar2016">
+                    <button class="accordion-button collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseShakhtar2016" aria-expanded="false" aria-controls="collapseShakhtar2016">
                         Shakhtar Donetsk
                     </button>
                 </h2>
                 <div id="collapseShakhtar2016" class="accordion-collapse collapse" aria-labelledby="headingShakhtar2016"
-                     data-bs-parent="#teamsAccordion2016">
+                     data-parent="#teamsAccordion2016">
                     <div class="accordion-body">
                         <header>Champions League</header>
 
@@ -200,13 +265,13 @@
             <!-- Днепр -->
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingDnipro2016">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseDnipro2016" aria-expanded="false" aria-controls="collapseDnipro2016">
+                    <button class="accordion-button collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseDnipro2016" aria-expanded="false" aria-controls="collapseDnipro2016">
                         Dnipro
                     </button>
                 </h2>
                 <div id="collapseDnipro2016" class="accordion-collapse collapse" aria-labelledby="headingDnipro2016"
-                     data-bs-parent="#teamsAccordion2016">
+                     data-parent="#teamsAccordion2016">
                     <div class="accordion-body">
                         <header>Europa League</header>
 

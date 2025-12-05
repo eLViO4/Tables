@@ -62,7 +62,10 @@ h1 {
 h2{
     text-align: center;
     color: darkblue;
+    margin-bottom: 20px;
 }
+
+
 #season-teams {
     width: 95%;
     max-width: 1200px;
@@ -75,8 +78,8 @@ h2{
 }
 
 .team-accordion .accordion-button {
-    background-color: var(--ua-blue);
-    color: var(--ua-yellow);
+    background-color: #0057b7; /* или var(--ua-blue) если есть переменная */
+    color: #eec003; /* или var(--ua-yellow) если есть переменная */
     border: none;
     border-radius: 8px;
     padding: 15px 20px;
@@ -86,7 +89,8 @@ h2{
     min-height: 60px;
     display: flex;
     align-items: center;
-    text-align: left;
+    justify-content: center; /* ← ЭТА СТРОКА центрирует по горизонтали */
+    text-align: center; /* ← Дополнительное выравнивание текста */
 }
 
 .team-accordion .accordion-button:not(.collapsed) {
@@ -119,7 +123,7 @@ h2{
     border-radius: 10px;
     padding: 15px;
     box-shadow: 0 2px 8px var(--shadow);
-    width: 320px;
+    width: 620px;
     flex-shrink: 0;
     border: 2px solid var(--ua-blue);
     margin: 25px auto;
@@ -335,6 +339,307 @@ h2{
 .score-box .score.draw {
     color: var(--nl-black);
 }
+
+
+/*NAVBAR*/
+/* ====== NAVBAR STYLES ====== */
+.uec-navbar {
+    background-color: #0057b7;
+    border-bottom: 3px solid #eec003;
+    padding: 0 25px;
+    height: 68px;
+    margin-bottom: 30px;
+}
+
+.uec-brand, .uec-link {
+    color: #eec003 !important;
+    font-weight: bold;
+    font-size: 1.3em;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 0 15px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+}
+
+.uec-brand:hover, .uec-link:hover {
+    color: #ffffff !important;
+    text-decoration: none;
+}
+
+/* ====== DROPDOWN MENU ====== */
+.uec-dropdown {
+    background: #ffffff !important;
+    border: 2px solid #0057b7 !important;
+    min-width: 180px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 5px !important;
+}
+
+.uec-dropdown .dropdown-item {
+    background: transparent !important;
+    color: #0057b7 !important;
+    font-weight: 600;
+    padding: 10px 15px;
+    transition: all 0.2s ease;
+}
+
+.uec-dropdown .dropdown-item:hover,
+.uec-dropdown .dropdown-item:focus {
+    background: #0057b7 !important;
+    color: #eec003 !important;
+}
+
+.uec-dropdown .dropdown-item.active,
+.uec-dropdown .dropdown-item:active {
+    background: #0057b7 !important;
+    color: #eec003 !important;
+}
+
+/* Стрелка dropdown */
+.navbar .dropdown-toggle::after {
+    margin-left: 8px;
+    color: #eec003;
+    border-top-color: #eec003;
+}
+
+/* ====== BURGER MENU ====== */
+.navbar-toggler {
+    border: none;
+    outline: none;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+}
+
+/* Жёлтый бургер */
+.navbar-toggler-icon {
+    background-image: none !important;
+    position: relative;
+    width: 24px;
+    height: 2px;
+    background-color: #eec003;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background-color: #eec003;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before {
+    top: -7px;
+}
+
+.navbar-toggler-icon::after {
+    top: 7px;
+}
+
+.navbar-toggler:hover .navbar-toggler-icon,
+.navbar-toggler:hover .navbar-toggler-icon::before,
+.navbar-toggler:hover .navbar-toggler-icon::after {
+    background-color: #ffffff;
+}
+
+/* Активное состояние бургера при открытом меню */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    background-color: transparent;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 991px) {
+    .uec-navbar {
+        padding: 0 15px;
+    }
+
+    .uec-brand, .uec-link {
+        font-size: 1.2em;
+        padding: 0 10px;
+    }
+
+    .uec-dropdown {
+        border: 1px solid #0057b7 !important;
+        margin-top: 0 !important;
+        border-radius: 0 0 6px 6px;
+    }
+
+    /* Меню в мобильной версии */
+    #uecNavbar {
+        background-color: #0057b7;
+        padding: 10px;
+        border-top: 1px solid #eec003;
+    }
+}
+
+
+/*STAGE LINE*/
+
+/* Season Summary Block */
+
+/* Season Summary Block */
+.season-summary {
+    background-color: white;
+    border-radius: 20px; /* Уменьшил с 40px до 20px */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px auto 30px;
+    max-width: 900px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.summary-content {
+    padding: 15px 25px; /* Уменьшил верхний/нижний padding */
+}
+
+.teams-row, .stages-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px; /* Уменьшил отступ между строками */
+}
+
+.team-cell, .stage-cell {
+    flex: 1;
+    text-align: center;
+    padding: 5px 5px; /* Уменьшил padding */
+    font-size: 1.05em; /* Немного уменьшил размер шрифта */
+    margin: 0 5px;
+}
+
+/* Цвета текста для турниров - ВСЕ КОМАНДЫ ЧЁРНЫЕ */
+.team-cell.ucl,
+.team-cell.uel,
+.team-cell.uecl {
+    color: #000000; /* Чёрный цвет для всех команд */
+    font-weight: bold;
+}
+
+/* Стадии - все жирные, кроме q */
+.stage-cell {
+    color: #001a66;
+    font-weight: bold; /* Все стадии жирные */
+}
+
+/* Отдельный стиль для q - не жирный и чёрный */
+.stage-cell.q-stage {
+    font-weight: normal;
+    color: #000000;
+    text-transform: lowercase;
+}
+
+/* Легенда */
+.legend {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 15px; /* Уменьшил отступ */
+    padding-top: 15px; /* Уменьшил padding */
+    border-top: 2px dashed #ddd;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.legend-color {
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.legend-color.ucl {
+    background-color: #0057b7;
+}
+
+.legend-color.uel {
+    background-color: #ff8400;
+}
+
+.legend-color.uecl {
+    background-color: #0fa80f;
+}
+
+.legend-text {
+    font-size: 0.85em; /* Уменьшил размер шрифта легенды */
+    color: #555;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .teams-row, .stages-row {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 5px;
+        margin-bottom: 3px;
+    }
+
+    .team-cell, .stage-cell {
+        flex: none;
+        width: 100%;
+        margin: 0;
+        font-size: 0.95em;
+        padding: 3px 2px; /* Уменьшил padding на мобильных */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .legend {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+
+    .summary-content {
+        padding: 10px 15px;
+    }
+
+    .season-summary {
+        border-radius: 15px; /* Меньше на мобильных */
+    }
+}
+
+@media (max-width: 480px) {
+    .teams-row, .stages-row {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 2px;
+    }
+
+    .team-cell, .stage-cell {
+        font-size: 0.8em;
+        padding: 2px 1px;
+    }
+}
+
+
+
+
 
 /* ====== ADAPTIVE ====== */
 @media (max-width: 768px) {
