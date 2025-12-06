@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="UEC.css">
+    <title>Eurocups 2007-08</title>
+    <style>
+        .group.ucl-group tr:nth-child(4) td:first-child::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 6px;
+            background: #ffd84d;
+            border-radius: 2px;
+        }
+        /* Телефон: один под другим */
+        .group-container {
+            display: block;
+        }
+
+        /* ПК: 35% (group) + 65% (matches) */
+        @media (min-width: 768px) {
+            .group-container {
+                display: flex;
+                gap: 20px;
+                align-items: flex-start;
+            }
+
+            .group-container .group {
+                flex: 0 0 35%;
+                max-width: 35%;
+            }
+
+            .group-container .matches {
+                flex: 0 0 65%;
+                max-width: 65%;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg uec-navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand uec-brand" href="../../index.html">Home</a>
+
+        <!-- Бургер-кнопка -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#uecNavbar" aria-controls="uecNavbar"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Меню -->
+        <div class="collapse navbar-collapse" id="uecNavbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link uec-link dropdown-toggle"
+                       href="#"
+                       id="seasonsDropdown"
+                       role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true"
+                       aria-expanded="false">
+                        Seasons
+                    </a>
+                    <div class="dropdown-menu uec-dropdown" aria-labelledby="seasonsDropdown">
+                        <a class="dropdown-item" href="2025-26.html">2025–26</a>
+                        <a class="dropdown-item" href="2024-25.html">2024–25</a>
+                        <a class="dropdown-item" href="2023-24.html">2023–24</a>
+                        <a class="dropdown-item" href="2022-23.html">2022–23</a>
+                        <a class="dropdown-item" href="2021-22.html">2021–22</a>
+                        <a class="dropdown-item" href="2020-21.html">2020–21</a>
+                        <a class="dropdown-item" href="2019-20.html">2019–20</a>
+                        <a class="dropdown-item" href="2018-19.html">2018–19</a>
+                        <a class="dropdown-item" href="2017-18.html">2017–18</a>
+                        <a class="dropdown-item" href="2016-17.html">2016–17</a>
+                        <a class="dropdown-item" href="2015-16.html">2015–16</a>
+                        <a class="dropdown-item" href="2014-15.html">2014–15</a>
+                        <a class="dropdown-item" href="2013-14.html">2013–14</a>
+                        <a class="dropdown-item" href="2012-13.html">2012–13</a>
+                        <a class="dropdown-item" href="2011-12.html">2011–12</a>
+                        <a class="dropdown-item" href="2010-11.html">2010–11</a>
+                        <a class="dropdown-item" href="2009-10.html">2009–10</a>
+                        <a class="dropdown-item" href="2008-09.html">2008–09</a>
+                        <a class="dropdown-item" href="2007-08.html">2007–08</a>
+                        <a class="dropdown-item" href="2006-07.html">2006–07</a>
+                        <a class="dropdown-item" href="2005-06.html">2005–06</a>
+                        <a class="dropdown-item" href="2004-05.html">2004–05</a>
+                        <a class="dropdown-item" href="2003-04.html">2003–04</a>
+                        <a class="dropdown-item" href="2002-03.html">2002–03</a>
+                        <a class="dropdown-item" href="2001-02.html">2001–02</a>
+                        <a class="dropdown-item" href="2000-01.html">2000–01</a>
+                        <a class="dropdown-item" href="1999-00.html">1999–00</a>
+                        <a class="dropdown-item" href="1998-99.html">1998–99</a>
+                        <a class="dropdown-item" href="1997-98.html">1997–98</a>
+                        <a class="dropdown-item" href="1996-97.html">1996–97</a>
+                        <a class="dropdown-item" href="1995-96.html">1995–96</a>
+                        <a class="dropdown-item" href="1994-95.html">1994–95</a>
+                        <a class="dropdown-item" href="1993-94.html">1993–94</a>
+                        <a class="dropdown-item" href="1992-93.html">1992–93</a>
+                        <a class="dropdown-item" href="1991-92.html">1991–92</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <section id="season-teams">
+        <h1>Eurocups 2007-08</h1>
+
+
+        <!-- Season Summary Block -->
+        <div class="season-summary">
+            <div class="summary-header">
+            </div>
+
+            <div class="summary-content">
+                <!-- Строка с названиями команд -->
+                <div class="teams-row">
+                    <div class="team-cell ucl">Dynamo Kyiv</div>
+                    <div class="team-cell uel">Shakhtar Donetsk</div>
+                    <div class="team-cell uel">Metalist</div>
+                    <div class="team-cell uel">Dnipro</div>
+                </div>
+
+                <!-- Строка со стадиями -->
+                <div class="stages-row">
+                    <div class="stage-cell ucl">GS</div>
+                    <div class="stage-cell ucl">GS</div>
+                    <div class="stage-cell uel">1/64</div>
+                    <div class="stage-cell uel">1/64</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion team-accordion" id="teamsAccordion2016">
+            <h2>Champions League</h2>
+
+            <!-- Dynamo Kyiv -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingDynamoKyiv1998">
+                    <button class="accordion-button collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseDynamoKyiv1998" aria-expanded="false" aria-controls="collapseDynamoKyiv1998">
+                        Dynamo Kyiv
+                    </button>
+                </h2>
+
+                <div id="collapseDynamoKyiv1998" class="accordion-collapse collapse"
+                     aria-labelledby="headingDynamoKyiv1998" data-parent="#teamsAccordion2016">
+                    <div class="accordion-body">
+
+                        <header>Champions League Qualification</header>
+
+                        <div class="main">
+
+                            <!-- Qualification matches -->
+                            <div class="matches playoff">
+
+                                <h3>Q4</h3>
+                                <div class="match double-score">
+                                    <div class="team1">Dynamo Kyiv</div>
+                                    <div class="score-box">
+                                        <div class="score win">1-0</div>
+                                        <div class="score win">3-0</div>
+                                    </div>
+                                    <div class="team2">Sarajevo</div>
+                                </div>
+                            </div>
+
+                            <br>
+
+
+                            <header>Champions League</header>
+
+                            <div class="group-container">
+
+                                <!-- GROUP TABLE -->
+                                <div class="group ucl-group">
+                                    <h3>Group Stage</h3>
+                                    <table>
+                                        <tr><th>Team</th><th>Pts</th></tr>
+                                        <tr><td>Manchester United</td><td>16</td></tr>
+                                        <tr><td>Roma</td><td>11</td></tr>
+                                        <tr><td>Sporting CP</td><td>7</td></tr>
+                                        <tr><td class="highlight">Dynamo Kyiv</td><td>0</td></tr>
+                                    </table>
+                                </div>
+
+                                <!-- GROUP MATCHES -->
+                                <div class="matches">
+                                    <h3>Group Matches</h3>
+
+                                    <div class="match">
+                                        <div class="team left">Dynamo Kyiv</div>
+                                        <div class="score lose">0-2</div>
+                                        <div class="team right">Roma</div>
+                                    </div>
+
+                                    <div class="match">
+                                        <div class="team left">Dynamo Kyiv</div>
+                                        <div class="score lose">1-2</div>
+                                        <div class="team right">Sporting CP</div>
+                                    </div>
+
+                                    <div class="match">
+                                        <div class="team left">Dynamo Kyiv</div>
+                                        <div class="score lose">2-4</div>
+                                        <div class="team right">Manchester United</div>
+                                    </div>
+
+                                    <div class="match">
+                                        <div class="team left">Dynamo Kyiv</div>
+                                        <div class="score lose">0-4</div>
+                                        <div class="team right">Manchester United</div>
+                                    </div>
+
+                                    <div class="match">
+                                        <div class="team left">Dynamo Kyiv</div>
+                                        <div class="score lose">1-4</div>
+                                        <div class="team right">Roma</div>
+                                    </div>
+
+                                    <div class="match">
+                                        <div class="team left">Dynamo Kyiv</div>
+                                        <div class="score lose">0-3</div>
+                                        <div class="team right">Sporting CP</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shakhtar -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingShakhtar1999">
+                    <button class="accordion-button collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseShakhtar1999" aria-expanded="false" aria-controls="collapseShakhtar1999">
+                        Shakhtar Donetsk
+                    </button>
+                </h2>
+
+                <div id="collapseShakhtar1999" class="accordion-collapse collapse"
+                     aria-labelledby="headingShakhtar1999" data-parent="#teamsAccordion2016">
+                    <div class="accordion-body">
+
+                        <header>Champions League Qualification</header>
+
+                        <div class="main">
+
+                            <!-- Qualification matches -->
+                            <div class="matches playoff">
+                                <h3>Q3</h3>
+                                <div class="match double-score">
+                                    <div class="team1">Shakhtar Donetsk</div>
+                                    <div class="score-box">
+                                        <div class="score win">2-0</div>
+                                        <div class="score win">2-1</div>
+                                    </div>
+                                    <div class="team2">Pyunik</div>
+                                </div>
+                                <h3>Q4</h3>
+                                <div class="match double-score">
+                                    <div class="team1">Shakhtar Donetsk</div>
+                                    <div class="score-box">
+                                        <div class="score lose">0-1</div>
+                                        <div class="score win">3-1</div>
+                                    </div>
+                                    <div class="team2">RB Salzburg</div>
+                                </div>
+                            </div>
+
+                            <br>
+
+
+                            <header>Champions League</header>
+
+                            <div class="group-container">
+
+                                <!-- GROUP TABLE -->
+                                <div class="group ucl-group">
+                                    <h3>Group Stage</h3>
+                                    <table>
+                                        <tr><th>Team</th><th>Pts</th></tr>
+                                        <tr><td>Milan</td><td>13</td></tr>
+                                        <tr><td>Celtic</td><td>9</td></tr>
+                                        <tr><td>Benfica</td><td>7</td></tr>
+                                        <tr><td class="highlight">Shakhtar Donetsk</td><td>6</td></tr>
+                                    </table>
+                                </div>
+
+                                <!-- GROUP MATCHES -->
+                                <div class="matches">
+                                    <h3>Group Matches</h3>
+
+                                    <div class="match">
+                                        <div class="team left">Shakhtar Donetsk</div>
+                                        <div class="score win">2-0</div>
+                                        <div class="team right">Celtic</div>
+                                    </div>
+
+                                    <div class="match">
+                                        <div class="team left">Shakhtar Donetsk</div>
+                                        <div class="score win">1-0</div>
+                                        <div class="team right">Benfica</div>
+                                    </div>
+
+                                    <div class="match">
+                                        <div class="team left">Shakhtar Donetsk</div>
+                                        <div class="score lose">1-4</div>
+                                        <div class="team right">Milan</div>
+                                    </div>
+
+                                    <div class="match">
+                                        <div class="team left">Shakhtar Donetsk</div>
+                                        <div class="score lose">0-3</div>
+                                        <div class="team right">Milan</div>
+                                    </div>
+
+                                    <div class="match">
+                                        <div class="team left">Shakhtar Donetsk</div>
+                                        <div class="score lose">1-2</div>
+                                        <div class="team right">Celtic</div>
+                                    </div>
+
+                                    <div class="match">
+                                        <div class="team left">Shakhtar Donetsk</div>
+                                        <div class="score lose">1-2</div>
+                                        <div class="team right">Benfica</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Europe League</h2>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingKryvbas1999">
+                    <button class="accordion-button collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseKryvbas1999" aria-expanded="false" aria-controls="collapseKryvbas1999">
+                        Metalist
+                    </button>
+                </h2>
+
+                <div id="collapseKryvbas1999" class="accordion-collapse collapse"
+                     aria-labelledby="headingKryvbas1999" data-parent="#teamsAccordion2016">
+                    <div class="accordion-body">
+
+
+                        <div class="main">
+                            <div class="matches playoff">
+                                <header>Europe League</header>
+                                <h3>1/64</h3>
+                                <div class="match double-score">
+                                    <div class="team1">Metalist</div>
+                                    <div class="score-box">
+                                        <div class="score draw">1-1</div>
+                                        <div class="score lose">2-3</div>
+                                    </div>
+                                    <div class="team2">Everton</div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingKarpaty1999">
+                    <button class="accordion-button collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseKarpaty1999" aria-expanded="false" aria-controls="collapseKarpaty1999">
+                       Dnipro
+                    </button>
+                </h2>
+
+                <div id="collapseKarpaty1999" class="accordion-collapse collapse"
+                     aria-labelledby="headingKarpaty1999" data-parent="#teamsAccordion2016">
+                    <div class="accordion-body">
+                        <header>Europe League Qualification</header>
+
+                        <div class="main">
+                            <div class="matches playoff">
+                                <h3>Q4</h3>
+                                <div class="match double-score">
+                                    <div class="team1">Dnipro</div>
+                                    <div class="score-box">
+                                        <div class="score draw">1-1</div>
+                                        <div class="score win">4-2</div>
+                                    </div>
+                                    <div class="team2">Belchatow</div>
+                                </div>
+
+                                <br>
+                                <header>Europe League</header>
+                                <h3>1/64</h3>
+                                <div class="match double-score">
+                                    <div class="team1">Dnipro</div>
+                                    <div class="score-box">
+                                        <div class="score draw">0-0</div>
+                                        <div class="score draw">1-1</div>
+                                    </div>
+                                    <div class="team2">Aberdeen</div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+</div>
+</body>
+</html>
