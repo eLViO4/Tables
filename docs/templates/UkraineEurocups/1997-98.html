@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="UEC.css">
     <title>Eurocups 1997-98</title>
     <style>
+        .group.ucl-group tr:nth-child(3) td:first-child::before {
+            background: transparent;
+
+        }
 
     </style>
 </head>
@@ -119,12 +123,16 @@
                         Dynamo Kyiv
                     </button>
                 </h2>
-                <div id="collapseDynamoKyiv1998" class="accordion-collapse collapse" aria-labelledby="headingDynamoKyiv1998"
-                     data-parent="#teamsAccordion2016">
+
+                <div id="collapseDynamoKyiv1998" class="accordion-collapse collapse"
+                     aria-labelledby="headingDynamoKyiv1998" data-parent="#teamsAccordion2016">
                     <div class="accordion-body">
+
                         <header>Champions League Qualification</header>
 
                         <div class="main">
+
+                            <!-- Qualification matches -->
                             <div class="matches playoff">
                                 <h3>Q3</h3>
                                 <div class="match double-score">
@@ -135,6 +143,7 @@
                                     </div>
                                     <div class="team2">Barry Town</div>
                                 </div>
+
                                 <h3>Q4</h3>
                                 <div class="match double-score">
                                     <div class="team1">Dynamo Kyiv</div>
@@ -145,8 +154,15 @@
                                     <div class="team2">Brondby</div>
                                 </div>
                             </div>
-                                <br>
-                                <header>Champions League</header>
+
+                            <br>
+
+                            <!-- GROUP + MATCHES (ТО, что нужно расположить в ряд на ПК) -->
+                            <header>Champions League</header>
+
+                            <div class="group-container">
+
+                                <!-- GROUP TABLE -->
                                 <div class="group ucl-group">
                                     <h3>Group Stage</h3>
                                     <table>
@@ -158,57 +174,70 @@
                                     </table>
                                 </div>
 
-                                <!-- Матчи группы -->
+                                <!-- GROUP MATCHES -->
                                 <div class="matches">
                                     <h3>Group Matches</h3>
+
                                     <div class="match">
                                         <div class="team left">Dynamo Kyiv</div>
                                         <div class="score win">3-1</div>
                                         <div class="team right">PSV</div>
                                     </div>
+
                                     <div class="match">
                                         <div class="team left">Dynamo Kyiv</div>
                                         <div class="score draw">2-2</div>
                                         <div class="team right">Newcastle United</div>
                                     </div>
+
                                     <div class="match">
                                         <div class="team left">Dynamo Kyiv</div>
                                         <div class="score win">3-0</div>
                                         <div class="team right">Barcelona</div>
                                     </div>
+
                                     <div class="match">
                                         <div class="team left">Dynamo Kyiv</div>
                                         <div class="score win">4-0</div>
                                         <div class="team right">Barcelona</div>
                                     </div>
+
                                     <div class="match">
                                         <div class="team left">Dynamo Kyiv</div>
                                         <div class="score draw">1-1</div>
                                         <div class="team right">PSV</div>
                                     </div>
+
                                     <div class="match">
                                         <div class="team left">Dynamo Kyiv</div>
                                         <div class="score lose">0-2</div>
                                         <div class="team right">Newcastle United</div>
                                     </div>
                                 </div>
-                                <div class="matches playoff">
-                                    <h3>1/4</h3>
-                                    <div class="match double-score">
-                                        <div class="team1">Dynamo Kyiv</div>
-                                        <div class="score-box">
-                                            <div class="score draw">1-1</div>
-                                            <div class="score lose">1-4</div>
-                                        </div>
-                                        <div class="team2">Juventus</div>
-                                    </div>
-                                </div>
 
+                            </div> <!-- /group-container -->
+
+
+                            <!-- 1/4 Final -->
+                            <div class="matches playoff">
+                                <h3>1/4</h3>
+                                <div class="match double-score">
+                                    <div class="team1">Dynamo Kyiv</div>
+                                    <div class="score-box">
+                                        <div class="score draw">1-1</div>
+                                        <div class="score lose">1-4</div>
+                                    </div>
+                                    <div class="team2">Juventus</div>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
                 </div>
             </div>
+
+
+
             <h2 style="font-size: 25px">Qualification</h2>
 
             <div class="accordion-item">

@@ -11,7 +11,7 @@
     <title>Eurocups 1991-92</title>
     <style>
         .group.ucl-group tr:nth-child(3) td:first-child::before {
-            background: transparent; /* жёлтый */
+            background: transparent;
 
         }
     </style>
@@ -120,60 +120,74 @@
                 <div id="collapseDynamo2016" class="accordion-collapse collapse" aria-labelledby="headingDynamo2016"
                      data-parent="#teamsAccordion2016">
                     <div class="accordion-body">
+
                         <header>Champions League</header>
 
                         <div class="main">
-                            <!-- Групповой этап -->
-                            <div class="group ucl-group">
-                                <h3>Group Stage</h3>
-                                <table>
-                                    <tr><th>Team</th><th>Pts</th></tr>
-                                    <tr><td>Barcelona</td><td>9</td></tr>
-                                    <tr><td>Sparta Praha</td><td>6</td></tr>
-                                    <tr><td>Benfica</td><td>5</td></tr>
-                                    <tr><td class="highlight">Dynamo Kyiv</td><td>4</td></tr>
-                                </table>
-                            </div>
 
-                            <!-- Матчи группы -->
-                            <div class="matches">
-                                <h3>Group Matches</h3>
-                                <div class="match">
-                                    <div class="team left">Dynamo Kyiv</div>
-                                    <div class="score win">1-0</div>
-                                    <div class="team right">Benfica</div>
-                                </div>
-                                <div class="match">
-                                    <div class="team left">Dynamo Kyiv</div>
-                                    <div class="score lose">1-2</div>
-                                    <div class="team right">Sparta Praha</div>
-                                </div>
-                                <div class="match">
-                                    <div class="team left">Dynamo Kyiv</div>
-                                    <div class="score lose">0-2</div>
-                                    <div class="team right">Barcelona</div>
-                                </div>
-                                <div class="match">
-                                    <div class="team left">Dynamo Kyiv</div>
-                                    <div class="score lose">0-3</div>
-                                    <div class="team right">Barcelona</div>
-                                </div>
-                                <div class="match">
-                                    <div class="team left">Dynamo Kyiv</div>
-                                    <div class="score lose">0-5</div>
-                                    <div class="team right">Benfica</div>
-                                </div>
-                                <div class="match">
-                                    <div class="team left">Dynamo Kyiv</div>
-                                    <div class="score win">1-0</div>
-                                    <div class="team right">Sparta Praha</div>
-                                </div>
-                            </div>
+                            <!-- ОБЩИЙ КОНТЕЙНЕР 35% + 65% -->
+                            <div class="group-row">
 
+                                <!-- Левый блок — 35% -->
+                                <div class="group ucl-group">
+                                    <h3>Group Stage</h3>
+                                    <table>
+                                        <tr><th>Team</th><th>Pts</th></tr>
+                                        <tr><td>Barcelona</td><td>9</td></tr>
+                                        <tr><td>Sparta Praha</td><td>6</td></tr>
+                                        <tr><td>Benfica</td><td>5</td></tr>
+                                        <tr><td class="highlight">Dynamo Kyiv</td><td>4</td></tr>
+                                    </table>
+                                </div>
 
+                                <!-- Правый блок — 65% -->
+                                <div class="matches group-matches">
+                                    <h3>Group Matches</h3>
 
-                        </div>
+                                    <div class="match">
+                                        <div class="team left">Dynamo Kyiv</div>
+                                        <div class="score win">1-0</div>
+                                        <div class="team right">Benfica</div>
+                                    </div>
+
+                                    <div class="match">
+                                        <div class="team left">Dynamo Kyiv</div>
+                                        <div class="score lose">1-2</div>
+                                        <div class="team right">Sparta Praha</div>
+                                    </div>
+
+                                    <div class="match">
+                                        <div class="team left">Dynamo Kyiv</div>
+                                        <div class="score lose">0-2</div>
+                                        <div class="team right">Barcelona</div>
+                                    </div>
+
+                                    <div class="match">
+                                        <div class="team left">Dynamo Kyiv</div>
+                                        <div class="score lose">0-3</div>
+                                        <div class="team right">Barcelona</div>
+                                    </div>
+
+                                    <div class="match">
+                                        <div class="team left">Dynamo Kyiv</div>
+                                        <div class="score lose">0-5</div>
+                                        <div class="team right">Benfica</div>
+                                    </div>
+
+                                    <div class="match">
+                                        <div class="team left">Dynamo Kyiv</div>
+                                        <div class="score win">1-0</div>
+                                        <div class="team right">Sparta Praha</div>
+                                    </div>
+
+                                </div>
+
+                            </div><!-- /group-row -->
+
+                        </div><!-- /main -->
+
                     </div>
+
                 </div>
             </div>
 
