@@ -583,25 +583,43 @@ h2 {
 
 /* ЦВЕТА ДЛЯ СТАДИЙ - как у турнира команды сверху */
 .stage-cell.ucl {
-    color: #0057b7; /* Синий как UCL */
+    color: white; /* Синий как UCL */
     font-weight: bold;
+    background-color:#0057b7 ;
+    border-radius: 10px;
 }
 
 .stage-cell.uel {
-    color: #ff8400; /* Оранжевый как UEL */
+    color: white; /* Оранжевый как UEL */
     font-weight: bold;
+    background-color:#ff8400 ;
+    border-radius: 10px;
 }
 
 .stage-cell.uecl {
-    color: #0fa80f; /* Зелёный как UECL */
+    color: white; /* Зелёный как UECL */
     font-weight: bold;
+    background-color:#0fa80f;
+    border-radius: 10px;
 }
 
 /* Отдельный стиль для q - не жирный, но сохраняет цвет турнира */
 .stage-cell.q-stage {
-    font-weight: normal;
+    background-color: white;!important;
+    color: #0fa80f;
+    font-weight: bold;
     text-transform: lowercase;
 }
+/* Уменьшаем ширину цветных квадратиков */
+.stage-cell.ucl,
+.stage-cell.uel,
+.stage-cell.uecl,
+.stage-cell.q-stage {
+    padding: 3px 4px;        /* было 5px 5px → уменьшили */
+    max-width: 60px;         /* ограничение ширины блока */
+    margin: 0 auto;          /* центрируем */
+}
+
 
 /* Адаптивность */
 @media (max-width: 768px) {
