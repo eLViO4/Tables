@@ -174,6 +174,16 @@ h2 {
     background: var(--nl-green);
     border-radius: 2px;
 }
+.group.ucl-group tr:nth-child(4) td:first-child::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 6px;
+    background: #ffd84d;
+    border-radius: 2px;
+}
 
 .highlight {
     background-color: rgba(255, 235, 130, 0.4);
@@ -621,6 +631,109 @@ h2 {
 }
 
 
+/*Legend for League phase*/
+
+.stats-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rank-left, .rank-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Левый блок: 27 (23px красный) + place (15px чёрный) */
+.rank-left .rank-number {
+    color: #bc0303;
+    font-size: 23px;
+    font-weight: bold;
+    margin-left: 40px;
+}
+
+.rank-left .rank-text {
+    color: black;
+    margin: 0 0 0 5px;
+    font-size: 15px;
+}
+
+/* Правый блок: 7 (23px чёрный) + pts (15px чёрный) */
+.rank-right .rank-number {
+    color: black;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.rank-right .rank-text {
+    color: black;
+    margin-left: 5px;
+    font-size: 15px;
+    margin-right: 40px;
+}
+
+/* Телефон: один под другим */
+.group-container {
+    display: block;
+}
+
+/* НОВЫЕ ЦВЕТНЫЕ ПОЛОСКИ ДЛЯ LEAGUE STAGE TABLE (добавить в конец) */
+
+/* Для новых файлов с League Stage используйте класс .league-stage */
+.group.league-stage tr:nth-child(-n+9) td:first-child::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 6px;
+    background: var(--nl-green);
+    border-radius: 2px;
+}
+
+.group.league-stage tr:nth-child(n+10):nth-child(-n+25) td:first-child::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 6px;
+    background: rgba(128, 248, 112, 0.98);
+    border-radius: 2px;
+}
+
+.group.league-stage tr:nth-child(n+26) td:first-child::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 6px;
+    background: var(--nl-red);
+    border-radius: 2px;
+}
+
+/* Чтобы новые полоски перекрывали старые для League Stage таблиц */
+
+/* ПК: 35% (group) + 65% (matches) */
+@media (min-width: 768px) {
+    .group-container {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .group-container .group {
+        flex: 0 0 35%;
+        max-width: 35%;
+    }
+
+    .group-container .matches {
+        flex: 0 0 65%;
+        max-width: 65%;
+    }
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
     .teams-row, .stages-row {
@@ -669,7 +782,6 @@ h2 {
         padding: 2px 1px;
     }
 }
-
 
 /* ====== ADAPTIVE ====== */
 @media (max-width: 768px) {
