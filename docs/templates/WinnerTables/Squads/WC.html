@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>World Cup Squads</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0fff0;
+            color: #1a472a;
+            margin: 0;
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2e8b57;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .grid{
+            max-width:900px;
+            margin:0 auto;
+            padding:20px;
+            display:grid;
+            gap:10px;
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        @media (max-width:600px){
+            .grid{
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .card{
+            background:white;
+            border:1px solid rgba(46,139,34,0.15);
+            border-radius:8px;
+            padding:10px 4px;
+            text-align:center;
+            box-shadow:0 3px 8px rgba(46,139,34,0.08);
+            cursor:pointer;
+            transition:0.2s;
+        }
+        .card:hover{
+            transform:scale(1.05);
+        }
+
+        .year{
+            font-size:26px;
+            font-weight:900;
+            color: #2e8b57;
+            margin-bottom:4px;
+        }
+
+        .team{
+            font-size:13px;
+            font-weight:600;
+            opacity:0.85;
+            color: #1a472a;
+        }
+
+        /* Modal */
+        .modal{
+            display:none;
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.9);
+            justify-content:center;
+            align-items:center;
+            z-index:999;
+        }
+
+        .modal-content{
+            border-radius:8px;
+            max-width:90%;
+            max-height:90%;
+        }
+
+        .modal-content img{
+            max-width:100%;
+            max-height:85vh;
+            display:block;
+            border-radius:8px;
+        }
+
+        .close{
+            font-size:32px;
+            font-weight:bold;
+            cursor:pointer;
+            float:right;
+            margin-bottom:5px;
+            color:white;
+        }
+
+        .navbar-custom {
+            background-color: #e8f5e8;
+            height: 68px;
+            margin-bottom: 30px;
+            font-size: 30px;
+            border-bottom: 2px solid #2e8b57;
+            display:flex;
+            align-items:center;
+            padding-left:20px;
+        }
+        .nav-link {
+            color: #2e8b57;
+            text-decoration: none;
+            font-weight:bold;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar-custom">
+    <a href="../../../index.html" class="nav-link">HOME</a>
+</nav>
+
+<h1>WORLD CUP Squads</h1>
+
+<div class="grid">
+    <div class="card"><div class="year">1930</div><div class="team">Uruguay</div></div>
+    <div class="card"><div class="year">1934</div><div class="team">Italy</div></div>
+    <div class="card"><div class="year">1938</div><div class="team">Italy</div></div>
+    <div class="card"><div class="year">1950</div><div class="team">Uruguay</div></div>
+    <div class="card"><div class="year">1954</div><div class="team">West Germany</div></div>
+    <div class="card"><div class="year">1958</div><div class="team">Brazil</div></div>
+    <div class="card"><div class="year">1962</div><div class="team">Brazil</div></div>
+    <div class="card"><div class="year">1966</div><div class="team">England</div></div>
+    <div class="card"><div class="year">1970</div><div class="team">Brazil</div></div>
+    <div class="card"><div class="year">1974</div><div class="team">West Germany</div></div>
+    <div class="card"><div class="year">1978</div><div class="team">Argentina</div></div>
+    <div class="card"><div class="year">1982</div><div class="team">Italy</div></div>
+    <div class="card"><div class="year">1986</div><div class="team">Argentina</div></div>
+    <div class="card"><div class="year">1990</div><div class="team">West Germany</div></div>
+    <div class="card"><div class="year">1994</div><div class="team">Brazil</div></div>
+    <div class="card"><div class="year">1998</div><div class="team">France</div></div>
+    <div class="card"><div class="year">2002</div><div class="team">Brazil</div></div>
+    <div class="card"><div class="year">2006</div><div class="team">Italy</div></div>
+    <div class="card"><div class="year">2010</div><div class="team">Spain</div></div>
+    <div class="card"><div class="year">2014</div><div class="team">Germany</div></div>
+    <div class="card"><div class="year">2018</div><div class="team">France</div></div>
+    <div class="card"><div class="year">2022</div><div class="team">Argentina</div></div>
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <img id="modal-img" src="" alt="squad">
+    </div>
+</div>
+
+<script>
+    const imageMap = {
+        1930: "../squad_images/uruguay30.png",
+        1934: "../squad_images/italy34.png",
+        1938: "../squad_images/italy38.png",
+        1950: "../squad_images/uruguay50.png",
+        1954: "../squad_images/germany54.png",
+        1958: "../squad_images/brazil58.png",
+        1962: "../squad_images/brazil62.png",
+        1966: "../squad_images/england66.png",
+        1970: "../squad_images/brazil70.png",
+        1974: "../squad_images/germany74.png",
+        1978: "../squad_images/argentina78.png",
+        1982: "../squad_images/italy82.png",
+        1986: "../squad_images/argentina86.png",
+        1990: "../squad_images/germany90.png",
+        1994: "../squad_images/brazil94.png",
+        1998: "../squad_images/france98.png",
+        2002: "../squad_images/brazil02.png",
+        2006: "../squad_images/italy06.png",
+        2010: "../squad_images/spain10.png",
+        2014: "../squad_images/germany14.png",
+        2018: "../squad_images/france18.png",
+        2022: "../squad_images/argentina22.png"
+    };
+
+    const cards = document.querySelectorAll('.card');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const closeBtn = document.querySelector('.close');
+
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            const yearText = card.querySelector('.year').textContent.trim();
+            const year = parseInt(yearText);
+
+            modalImg.src = imageMap[year];
+            modal.style.display = 'flex';
+        });
+    });
+
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', e => {
+        if (e.target === modal) modal.style.display = 'none';
+    });
+</script>
+
+</body>
+</html>

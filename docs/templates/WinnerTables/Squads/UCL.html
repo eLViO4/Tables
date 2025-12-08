@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Champions League Squads</title>
+
+    <style>
+        :root{
+            --bg:#e9f1ff;
+            --accent:#002b5b;
+            --accent2:#003d99;
+            --card:#ffffff;
+            --modal-bg:rgba(0,0,50,0.9);
+        }
+
+        body{
+            margin:0;
+            font-family:Arial, sans-serif;
+            background:var(--bg);
+            color:var(--accent);
+        }
+
+        .navbar{
+            padding:14px 18px;
+            background:var(--bg);
+            border-bottom:2px solid var(--accent2);
+            display:flex;
+            align-items:center;
+        }
+        .nav-link{
+            color:var(--accent2);
+            text-decoration:none;
+            font-size:20px;
+            font-weight:bold;
+        }
+
+        h1{
+            text-align:center;
+            margin:20px 0 10px;
+            color:var(--accent2);
+            text-transform:uppercase;
+        }
+
+        .grid{
+            max-width:900px;
+            margin:0 auto;
+            padding:20px;
+            display:grid;
+            gap:10px;
+            grid-template-columns: repeat(5, 1fr);
+        }
+        @media (max-width:600px){
+            .grid{
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .card{
+            background:var(--card);
+            border:1px solid rgba(0,0,50,0.15);
+            border-radius:8px;
+            padding:10px 4px;
+            text-align:center;
+            box-shadow:0 3px 8px rgba(0,0,50,0.08);
+            cursor:pointer;
+            transition:0.2s;
+        }
+        .card:hover{
+            transform:scale(1.05);
+        }
+
+        .year{
+            font-size:26px;
+            font-weight:900;
+            color:var(--accent2);
+            margin-bottom:4px;
+        }
+
+        .team{
+            font-size:13px;
+            font-weight:600;
+            opacity:0.85;
+            color:var(--accent);
+        }
+
+        /* Modal */
+        .modal{
+            display:none;
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background: var(--modal-bg);
+            backdrop-filter: blur(5px);
+            justify-content:center;
+            align-items:center;
+            z-index:999;
+        }
+
+        .modal-content{
+            border-radius:8px;
+            max-width:90%;
+            max-height:90%;
+        }
+
+        .modal-content img{
+            max-width:100%;
+            max-height:85vh;
+            display:block;
+            border-radius:8px;
+        }
+
+        .close{
+            font-size:32px;
+            font-weight:bold;
+            cursor:pointer;
+            float:right;
+            margin-bottom:5px;
+            color:white;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="../../../index.html" class="nav-link">HOME</a>
+</nav>
+
+<h1>Champions League Squads</h1>
+
+<div class="grid">
+    <!-- Карточки победителей -->
+    <div class="card"><div class="year">1956</div><div class="team">Real Madrid</div></div>
+    <div class="card"><div class="year">1957</div><div class="team">Real Madrid</div></div>
+    <div class="card"><div class="year">1958</div><div class="team">Real Madrid</div></div>
+    <div class="card"><div class="year">1959</div><div class="team">Real Madrid</div></div>
+    <div class="card"><div class="year">1960</div><div class="team">Real Madrid</div></div>
+    <div class="card"><div class="year">1961</div><div class="team">Benfica</div></div>
+    <div class="card"><div class="year">1962</div><div class="team">Benfica</div></div>
+    <div class="card"><div class="year">1963</div><div class="team">AC Milan</div></div>
+    <div class="card"><div class="year">1964</div><div class="team">Inter Milan</div></div>
+    <div class="card"><div class="year">1965</div><div class="team">Inter Milan</div></div>
+    <div class="card"><div class="year">1966</div><div class="team">Real Madrid</div></div>
+    <div class="card"><div class="year">1967</div><div class="team">Celtic</div></div>
+    <div class="card"><div class="year">1968</div><div class="team">Manchester United</div></div>
+    <div class="card"><div class="year">1969</div><div class="team">AC Milan</div></div>
+    <div class="card"><div class="year">1970</div><div class="team">Feyenoord</div></div>
+    <div class="card"><div class="year">1971</div><div class="team">Ajax</div></div>
+    <div class="card"><div class="year">1972</div><div class="team">Ajax</div></div>
+    <div class="card"><div class="year">1973</div><div class="team">Ajax</div></div>
+    <div class="card"><div class="year">1974</div><div class="team">Bayern Munich</div></div>
+    <div class="card"><div class="year">1975</div><div class="team">Bayern Munich</div></div>
+    <div class="card"><div class="year">1976</div><div class="team">Bayern Munich</div></div>
+    <div class="card"><div class="year">1977</div><div class="team">Liverpool</div></div>
+    <div class="card"><div class="year">1978</div><div class="team">Liverpool</div></div>
+    <div class="card"><div class="year">1979</div><div class="team">Nottingham Forest</div></div>
+    <div class="card"><div class="year">1980</div><div class="team">Nottingham Forest</div></div>
+    <!-- Продолжай добавлять все годы до 2024 -->
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <img id="modal-img" src="" alt="squad">
+    </div>
+</div>
+
+<script>
+    const imageMap = {
+        1956:"../squad_images/realmadrid56.png",
+        1957:"../squad_images/realmadrid57.png",
+        1958:"../squad_images/realmadrid58.png",
+        1959:"../squad_images/realmadrid59.png",
+        1960:"../squad_images/realmadrid60.png",
+        1961:"../squad_images/benfica61.png",
+        1962:"../squad_images/benfica62.png",
+        1963:"../squad_images/acmilan63.png",
+        1964:"../squad_images/inter64.png",
+        1965:"../squad_images/inter65.png",
+        1966:"../squad_images/realmadrid66.png",
+        1967:"../squad_images/celtic67.png",
+        1968:"../squad_images/manutd68.png",
+        1969:"../squad_images/acmilan69.png",
+        1970:"../squad_images/feyenoord70.png",
+        1971:"../squad_images/ajax71.png",
+        1972:"../squad_images/ajax72.png",
+        1973:"../squad_images/ajax73.png",
+        1974:"../squad_images/bayern74.png",
+        1975:"../squad_images/bayern75.png",
+        1976:"../squad_images/bayern76.png",
+        1977:"../squad_images/liverpool77.png",
+        1978:"../squad_images/liverpool78.png",
+        1979:"../squad_images/nforest79.png",
+        1980:"../squad_images/nforest80.png"
+        // Добавляй остальные годы до 2024 по тому же шаблону
+    };
+
+    const cards = document.querySelectorAll('.card');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const closeBtn = document.querySelector('.close');
+
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            const yearText = card.querySelector('.year').textContent.trim();
+            const year = parseInt(yearText);
+            modalImg.src = imageMap[year] || "";
+            modal.style.display = 'flex';
+        });
+    });
+
+    closeBtn.addEventListener('click', ()=> modal.style.display='none');
+    window.addEventListener('click', e => { if(e.target===modal) modal.style.display='none'; });
+</script>
+
+</body>
+</html>

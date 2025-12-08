@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Euro Squads</title>
+
+    <style>
+        :root{
+            --bg:#fff0f0;
+            --accent:#8b0000;
+            --accent2:#b22222;
+            --gold:#ffd700;
+            --card:#ffffff;
+        }
+        body{
+            margin:0;
+            font-family:Arial, sans-serif;
+            background:var(--bg);
+            color:var(--accent);
+        }
+
+        .navbar{
+            padding:14px 18px;
+            background:linear-gradient(135deg, var(--gold), var(--accent2));
+            border-bottom:2px solid var(--accent2);
+            display:flex;
+            align-items:center;
+        }
+        .nav-link{
+            color:darkred;
+            text-decoration:none;
+            font-size:20px;
+            font-weight:bold;
+        }
+
+        h1{
+            text-align:center;
+            margin:20px 0 10px;
+            color:var(--accent2);
+            text-transform:uppercase;
+            text-shadow:1px 1px 2px var(--gold);
+        }
+
+        .grid{
+            max-width:900px;
+            margin:0 auto;
+            padding:20px;
+            display:grid;
+            gap:10px;
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        @media (max-width:600px){
+            .grid{
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .card{
+            background:var(--card);
+            border:1px solid rgba(178,34,34,0.15);
+            border-radius:8px;
+            padding:10px 4px;
+            text-align:center;
+            box-shadow:0 3px 8px rgba(0,0,0,0.08);
+            cursor:pointer;
+            transition:0.2s;
+        }
+        .card:hover{
+            transform:scale(1.05);
+        }
+
+        .year{
+            font-size:26px;
+            font-weight:900;
+            color:var(--accent2);
+            margin-bottom:4px;
+        }
+
+        .team{
+            font-size:13px;
+            font-weight:600;
+            opacity:0.85;
+            color:var(--accent);
+        }
+
+        /* Modal */
+        .modal{
+            display:none;
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.7);
+            justify-content:center;
+            align-items:center;
+            z-index:999;
+        }
+
+        .modal-content{
+            border-radius:8px;
+            max-width:90%;
+            max-height:90%;
+        }
+
+        .modal-content img{
+            max-width:100%;
+            max-height:85vh;
+            display:block;
+            border-radius:8px;
+        }
+
+        .close{
+            font-size:32px;
+            font-weight:bold;
+            cursor:pointer;
+            float:right;
+            margin-bottom:5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="../../../index.html" class="nav-link">HOME</a>
+</nav>
+
+<h1>EURO Squads</h1>
+
+<div class="grid">
+    <div class="card"><div class="year">1960</div><div class="team">USSR</div></div>
+    <div class="card"><div class="year">1964</div><div class="team">Spain</div></div>
+    <div class="card"><div class="year">1968</div><div class="team">Italy</div></div>
+    <div class="card"><div class="year">1972</div><div class="team">West Germany</div></div>
+    <div class="card"><div class="year">1976</div><div class="team">Czechoslovakia</div></div>
+    <div class="card"><div class="year">1980</div><div class="team">West Germany</div></div>
+    <div class="card"><div class="year">1984</div><div class="team">France</div></div>
+    <div class="card"><div class="year">1988</div><div class="team">Netherlands</div></div>
+    <div class="card"><div class="year">1992</div><div class="team">Denmark</div></div>
+    <div class="card"><div class="year">1996</div><div class="team">Germany</div></div>
+    <div class="card"><div class="year">2000</div><div class="team">France</div></div>
+    <div class="card"><div class="year">2004</div><div class="team">Greece</div></div>
+    <div class="card"><div class="year">2008</div><div class="team">Spain</div></div>
+    <div class="card"><div class="year">2012</div><div class="team">Spain</div></div>
+    <div class="card"><div class="year">2016</div><div class="team">Portugal</div></div>
+    <div class="card"><div class="year">2020</div><div class="team">Italy</div></div>
+    <div class="card"><div class="year">2024</div><div class="team">Spain</div></div>
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <img id="modal-img" src="" alt="squad">
+    </div>
+</div>
+
+<script>
+
+    const imageMap = {
+        1960: "../squad_images/ussr60.png",
+        1964: "../squad_images/spain64.png",
+        1968: "../squad_images/italy68.png",
+        1972: "../squad_images/germany72.png",
+        1976: "../squad_images/czechoslovakia76.png",
+        1980: "../squad_images/germany80.png",
+        1984: "../squad_images/france84.png",
+        1988: "../squad_images/netherlands88.png",
+        1992: "../squad_images/denmark92.png",
+        1996: "../squad_images/germany96.png",
+        2000: "../squad_images/france00.png",
+        2004: "../squad_images/greece04.png",
+        2008: "../squad_images/spain08.png",
+        2012: "../squad_images/spain12.png",
+        2016: "../squad_images/portugal16.png",
+        2020: "../squad_images/italy20.png",
+        2024: "../squad_images/spain24.png"
+    };
+
+
+    const cards = document.querySelectorAll('.card');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const closeBtn = document.querySelector('.close');
+
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            const yearText = card.querySelector('.year').textContent.trim();
+            const year = parseInt(yearText);   // ← ключ к успеху
+
+            modalImg.src = imageMap[year];     // теперь работает всегда
+            modal.style.display = 'flex';
+        });
+    });
+
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', e => {
+        if (e.target === modal) modal.style.display = 'none';
+    });
+
+</script>
+
+</body>
+</html>
