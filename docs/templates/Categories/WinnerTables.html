@@ -39,9 +39,8 @@
             min-height: 100vh;
             line-height: 1.6;
             padding-bottom: 20px;
-            overflow-y: auto; /* разрешаем прокрутку */
+            overflow-y: auto;
         }
-
 
         .navbar-custom {
             background: linear-gradient(135deg, #ca6e04 0%, #f5f3f1 100%);
@@ -51,7 +50,7 @@
             font-size: 30px;
             border-bottom: 3px solid #db7c0e;
             border-radius: 0;
-            width: 100vw; /* растянуть до краёв экрана */
+            width: 100vw;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             display: flex;
             align-items: center;
@@ -59,9 +58,8 @@
             z-index: 100;
         }
 
-        /* Navbar links */
         .navbar-custom .nav-link {
-            color: #ffffff !important; /* белый цвет текста */
+            color: #ffffff !important;
             text-decoration: none;
             font-weight: 700;
             padding: 10px 15px;
@@ -69,21 +67,19 @@
         }
 
         .navbar-custom .nav-link:hover {
-            color: #000000 !important; /* цвет при наведении */
+            color: #000000 !important;
             border-radius: 6px;
         }
 
-
         .container {
             display: flex;
-            flex-direction: row; /* расположение блоков в ряд */
+            flex-direction: row;
             justify-content: space-between;
             align-items: flex-start;
             max-width: 1200px;
             margin: 0 auto 100px;
             gap: 30px;
         }
-
 
         .page-title {
             text-align: center;
@@ -204,32 +200,47 @@
             box-shadow: 0 6px 20px rgba(217, 119, 6, 0.3);
         }
 
-        /* Адаптивность */
-        @media (max-width: 1200px) {
+        /* Адаптивность для планшетов (768px - 1200px) */
+        @media (max-width: 1200px) and (min-width: 768px) {
             .container {
-                flex-direction: column; /* при маленьком экране — снова колонкой */
-                gap: 15px;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
                 height: auto;
-                overflow-y: auto;
-                align-items: center;
+                align-items: stretch;
             }
 
-
             .table-section {
+                flex: 1 1 45%;
+                min-width: 300px;
                 height: auto;
-                min-height: 400px;
+                min-height: 500px;
+                margin-bottom: 20px;
             }
 
             .page-title {
                 font-size: 2em;
             }
-
-            body {
-                overflow-y: auto;
-            }
         }
 
-        @media (max-width: 768px) {
+        /* Адаптивность для мобильных (до 767px) */
+        @media (max-width: 767px) {
+            .container {
+                flex-direction: column;
+                gap: 15px;
+                width: 95%;
+                margin: 0 auto 30px;
+                align-items: center;
+            }
+
+            .table-section {
+                width: 100%;
+                height: auto;
+                min-height: 400px;
+                margin-bottom: 15px;
+            }
+
             .section-title {
                 font-size: 1.5em;
             }
@@ -249,11 +260,12 @@
                 font-size: 20px;
             }
 
-            .nav-link {
+            .navbar-custom .nav-link {
                 padding: 12px;
             }
         }
 
+        /* Для маленьких экранов по высоте */
         @media (max-height: 800px) {
             .main-table a {
                 font-size: 1em;
@@ -274,18 +286,17 @@
 
         /* Темнее заголовок страницы */
         .page-title {
-            background: linear-gradient(135deg, #b45309, #78350f); /* более тёмный золотисто-коричневый градиент */
+            background: linear-gradient(135deg, #b45309, #78350f);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* Темнее заголовок секции Countries */
+        /* Темнее заголовок секции */
         .section-title {
-            background: linear-gradient(135deg, #a16207, #854d0e); /* тёплый тёмно-золотой */
+            background: linear-gradient(135deg, #a16207, #854d0e);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
     </style>
 </head>
 <body>

@@ -850,3 +850,122 @@ h2 {
         font-size: 0.9em;
     }
 }
+
+/* Исправление для телефонов - чтобы команды в блоке со стадиями не съезжали */
+/* Исправляем для мобильных устройств */
+@media (max-width: 768px) {
+    .teams-row, .stages-row {
+        display: flex !important; /* Важно: используем flex вместо grid */
+        justify-content: space-between !important; /* Равномерное распределение */
+        gap: 0 !important; /* Убираем gap, чтобы не мешал */
+        margin-bottom: 3px;
+        width: 100%;
+    }
+
+    .team-cell, .stage-cell {
+        flex: 1 !important; /* Все ячейки занимают равную ширину */
+        margin: 0 !important; /* Убираем margin */
+        font-size: 0.95em;
+        padding: 3px 1px !important; /* Минимальные отступы */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        min-width: 0 !important; /* Важно: разрешаем уменьшение */
+        max-width: 100%; /* Ограничиваем максимальную ширину */
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Особенно для ячеек с картинками */
+    .team-cell {
+        padding: 2px !important;
+    }
+
+    .team-cell img {
+        max-height: 35px;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    /* Для стадий (кружков) */
+    .stage-cell {
+        min-height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .stage-cell.ucl,
+    .stage-cell.uel,
+    .stage-cell.uecl {
+        padding: 3px 2px !important;
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Основные стили для равномерного распределения */
+    .teams-row, .stages-row {
+        display: flex !important;
+        justify-content: space-between !important;
+        width: 100%;
+        margin-bottom: 0 !important; /* Убираем отступ между строками */
+    }
+
+    .summary-content {
+        gap: 2px !important; /* Минимальное расстояние между строками */
+        padding: 10px !important;
+    }
+
+    /* Делаем ячейки одинаковой ширины */
+    .team-cell, .stage-cell {
+        flex: 1 !important;
+        min-width: 0 !important;
+        max-width: 100%;
+        margin: 0 !important;
+        padding: 0 1px !important; /* Минимальные горизонтальные отступы */
+        box-sizing: border-box;
+    }
+
+    /* Эмблемы команд */
+    .team-cell {
+        padding-bottom: 3px !important; /* Отступ снизу к стадиям */
+    }
+
+    .team-cell img {
+        max-height: 30px;
+        width: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* Стадии - прижимаем к эмблемам */
+    .stage-cell {
+        padding-top: 2px !important; /* Отступ сверху от эмблем */
+    }
+
+    .stage-cell.ucl,
+    .stage-cell.uel,
+    .stage-cell.uecl,
+    .stage-cell.q-stage {
+        padding: 2px 1px !important;
+        max-width: 50px;
+        margin: 0 auto !important;
+        min-height: 20px;
+        font-size: 0.8em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Убираем все лишние отступы */
+    .season-summary {
+        margin: 10px auto !important;
+        border-radius: 15px !important;
+    }
+}
+
+
