@@ -71,9 +71,23 @@ body {
 }
 
 /* Телефоны — 1 в ряд */
+/* Телефоны — 1 в ряд */
 @media (max-width: 600px) {
+    .tables-container {
+        margin: 20px 0;
+        padding: 0 15px; /* Добавляем отступы по бокам */
+    }
+
+    .tables-row {
+        flex-direction: column;
+        gap: 15px;
+        margin: 0; /* Убираем возможные отступы */
+    }
+
     .mini-table {
-        flex: 0 0 100%;
+        width: 100%;
+        margin: 0; /* Убираем margin */
+        box-sizing: border-box; /* Уже есть, но для надежности */
     }
 }
 
@@ -115,6 +129,24 @@ body {
 .dropdown-item:hover {
     background-color: #4010a7;
     color: #fff;
+}
+
+.header-inline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.header-inline h1 {
+    margin: 0;
+    font-size: 40px;
+}
+
+.header-inline img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
 }
 
 /* Чуть меньше шрифт на мобильных */

@@ -3,78 +3,319 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top4</title>
-    <!--Table-->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <!--JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!--Fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!--CSS-->
-    <link rel="stylesheet" href="categories.css">
+    <title>Top 4</title>
 
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-light: #f8f9fa;
+            --text-dark: #2d3748;
+            --accent: #db7c0e;
+            --accent-light: #f5f3f1;
+            --accent-dark: #fed7aa;
+            --border: #e2e8f0;
+            --shadow: rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            min-height: 100vh;
+            line-height: 1.6;
+            padding-bottom: 20px;
+            overflow-y: auto;
+        }
+
+        .navbar-custom {
+            background: linear-gradient(135deg, #ca6e04 0%, #f5f3f1 100%);
+            backdrop-filter: blur(10px);
+            height: 68px;
+            margin-bottom: 30px;
+            font-size: 30px;
+            border-bottom: 3px solid #db7c0e;
+            border-radius: 0;
+            width: 100vw;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 100;
+        }
+
+        .navbar-custom .nav-link {
+            color: #ffffff !important;
+            text-decoration: none;
+            font-weight: 700;
+            padding: 10px 15px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #000000 !important;
+            border-radius: 6px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 2.4em;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #b45309, #78350f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            margin-bottom: 50px;
+            width: 100%;
+        }
+
+        .page-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, #b45309, #78350f);
+            border-radius: 2px;
+        }
+
+        /* КОНТЕЙНЕР ДЛЯ КВАДРАТОВ */
+        .squares-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            width: 100%;
+        }
+
+        /* СТИЛЬ КВАДРАТА */
+        .square-box {
+            flex: 0 0 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #ffffff 0%, #fff7ed 100%);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px var(--shadow);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .square-box:hover {
+            transform: translateY(-5px) scale(1.03);
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: black;
+            box-shadow: 0 12px 30px rgba(217, 119, 6, 0.3);
+        }
+
+        /* ИКОНКИ ДЛЯ КВАДРАТОВ */
+        .square-icon {
+            width: 90px;
+            height: 90px;
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+
+        .square-title {
+            font-size: 1.4em;
+            font-weight: 700;
+        }
+
+        .square-subtitle {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* ЗАГОЛОВОК СЕКЦИИ */
+        .section-title {
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* АДАПТИВНОСТЬ */
+        @media (min-width: 1024px) {
+            .squares-container {
+                gap: 30px;
+            }
+
+            .square-box {
+                flex: 0 0 200px;
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 1023px) and (min-width: 768px) {
+            .squares-container {
+                gap: 20px;
+            }
+
+            /* 3 в ряд на планшетах */
+            .square-box {
+                flex: 0 0 calc(33.333% - 20px);
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .page-title {
+                font-size: 1.8em;
+                margin-bottom: 30px;
+            }
+
+            .navbar-custom {
+                height: 50px;
+                font-size: 20px;
+            }
+
+            .navbar-custom .nav-link {
+                padding: 12px;
+            }
+
+            .section-title {
+                font-size: 1.5em;
+                margin-bottom: 20px;
+            }
+
+            .squares-container {
+                gap: 15px;
+            }
+
+            /* 2 в ряд на мобильных */
+            .square-box {
+                flex: 0 0 calc(50% - 15px);
+                height: 180px;
+                min-width: 150px;
+            }
+
+            .square-icon {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 15px;
+            }
+
+            .square-title {
+                font-size: 1.3em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .squares-container {
+                gap: 12px;
+            }
+
+            .square-box {
+                flex: 0 0 calc(50% - 12px);
+                height: 160px;
+            }
+
+            .square-icon {
+                width: 50px;
+                height: 50px;
+                margin-bottom: 12px;
+            }
+
+            .square-title {
+                font-size: 1.1em;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .squares-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .square-box {
+                width: 90%;
+                max-width: 250px;
+                height: 140px;
+                flex: none;
+            }
+        }
+    </style>
 </head>
 <body>
 
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-custom">
     <a href="../../index.html" class="nav-link">HOME</a>
 </nav>
 
+<!-- Main content -->
 <div class="container">
-    <h1 class="page-title">Top4</h1>
-    <div class="table-section">
-        <div class="section-title">Countries</div>
-        <table class="main-table">
-            <tbody>
-            <tr>
-                <td><a href="../Top4/England.html">England</a></td>
-            </tr>
-            <tr>
-                <td><a href="../Top4/Spain.html">Spain</a></td>
-            </tr>
-            <tr>
-                <td><a href="../Top4/Italy.html">Italy</a></td>
-            </tr>
-            <tr>
-                <td><a href="../Top4/Germany.html">Germany</a></td>
-            </tr>
-            <tr>
-                <td><a href="../Top4/France.html">France</a></td>
-            </tr>
-            </tbody>
-        </table>
+    <h1 class="page-title">Top 4</h1>
+
+    <!-- <div class="section-title">Countries</div>-->
+
+    <div class="squares-container">
+        <a href="../Top4/England.html" class="square-box">
+            <img src="../Top4/images/epl.png" alt="England" class="square-icon">
+            <div class="square-title">England</div>
+            <div class="square-subtitle">Premier League</div>
+        </a>
+
+        <a href="../Top4/Spain.html" class="square-box">
+            <img src="../Top4/images/laliga.png" alt="Spain" class="square-icon">
+            <div class="square-title">Spain</div>
+            <div class="square-subtitle">La Liga</div>
+        </a>
+
+        <a href="../Top4/Italy.html" class="square-box">
+            <img src="../Top4/images/seriea.png" alt="Italy" class="square-icon">
+            <div class="square-title">Italy</div>
+            <div class="square-subtitle">Serie A</div>
+        </a>
+
+        <a href="../Top4/Germany.html" class="square-box">
+            <img src="../Top4/images/bundesliga.png" alt="Germany" class="square-icon">
+            <div class="square-title">Germany</div>
+            <div class="square-subtitle">Bundesliga</div>
+        </a>
+
+        <a href="../Top4/France.html" class="square-box">
+            <img src="../Top4/images/ligue1_bl.png" alt="France" class="square-icon">
+            <div class="square-title">France</div>
+            <div class="square-subtitle">Ligue 1</div>
+        </a>
     </div>
 </div>
-
-<script>
-    // Автоматическая подстройка высоты под экран
-    function adjustLayout() {
-        const container = document.querySelector('.container');
-        const navHeight = document.querySelector('.navbar-custom').offsetHeight;
-        const titleHeight = document.querySelector('.page-title').offsetHeight;
-        const availableHeight = window.innerHeight - navHeight - titleHeight - 40;
-
-        container.style.height = availableHeight + 'px';
-    }
-
-    window.addEventListener('load', adjustLayout);
-    window.addEventListener('resize', adjustLayout);
-
-    // Анимация появления элементов
-    document.addEventListener('DOMContentLoaded', function() {
-        const links = document.querySelectorAll('.main-table a');
-        links.forEach((link, index) => {
-            link.style.opacity = '0';
-            link.style.transform = 'translateX(-20px)';
-
-            setTimeout(() => {
-                link.style.transition = 'all 0.4s ease';
-                link.style.opacity = '1';
-                link.style.transform = 'translateX(0)';
-            }, index * 100);
-        });
-    });
-</script>
 
 </body>
 </html>

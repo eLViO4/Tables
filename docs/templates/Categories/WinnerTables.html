@@ -71,11 +71,12 @@
             border-radius: 6px;
         }
 
+        /* ИЗМЕНЕНО: растягиваем колонки по высоте */
         .container {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: stretch; /* Вместо flex-start */
             max-width: 1200px;
             margin: 0 auto 100px;
             gap: 30px;
@@ -106,17 +107,18 @@
             border-radius: 2px;
         }
 
+        /* ИЗМЕНЕНО: добавляем flex: 1 для растягивания */
         .table-section {
             width: 100%;
             background: linear-gradient(135deg, #ffffff 0%, #fff7ed 100%);
             border-radius: 15px;
             padding: 20px;
             box-shadow: 0 8px 25px var(--shadow);
-            height: 100%;
             display: flex;
             flex-direction: column;
             border: 1px solid var(--border);
             border-left: 4px solid var(--accent);
+            flex: 1; /* Это заставит колонки быть одинаковой высоты */
         }
 
         .section-title {
@@ -135,12 +137,14 @@
             padding-bottom: 10px;
         }
 
+        /* ИЗМЕНЕНО: улучшено растягивание таблицы */
         .main-table {
             width: 100%;
             border-collapse: collapse;
             flex: 1;
             display: flex;
             flex-direction: column;
+            min-height: 0; /* Важно для flex-контейнеров */
         }
 
         .main-table tbody {
@@ -148,14 +152,17 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            min-height: 0;
         }
 
+        /* ИЗМЕНЕНО: строки равномерно заполняют пространство */
         .main-table tr {
             transition: all 0.3s ease;
             border-radius: 8px;
             margin-bottom: 8px;
             display: flex;
             flex: 1;
+            min-height: 60px; /* Минимальная высота для строк */
         }
 
         .main-table tr:hover {
@@ -174,6 +181,7 @@
             flex: 1;
         }
 
+        /* ИЗМЕНЕНО: ссылки растягиваются на всю высоту ячейки */
         .main-table a {
             text-decoration: none;
             color: var(--text-dark);
@@ -200,6 +208,26 @@
             box-shadow: 0 6px 20px rgba(217, 119, 6, 0.3);
         }
 
+        /* ДОБАВЛЕНО: фикс для равномерного распределения на компьютерах */
+        @media (min-width: 768px) {
+            .main-table tbody {
+                justify-content: flex-start;
+            }
+
+            .main-table tr {
+                flex-grow: 1;
+            }
+
+            /* Если в колонке меньше строк, они растянутся равномерно */
+            .table-section:has(.main-table tr:nth-child(5)) .main-table tr {
+                flex: 1;
+            }
+
+            .table-section:has(.main-table tr:nth-child(10)) .main-table tr {
+                flex: 1;
+            }
+        }
+
         /* Адаптивность для планшетов (768px - 1200px) */
         @media (max-width: 1200px) and (min-width: 768px) {
             .container {
@@ -207,15 +235,12 @@
                 flex-wrap: wrap;
                 gap: 20px;
                 justify-content: center;
-                height: auto;
                 align-items: stretch;
             }
 
             .table-section {
                 flex: 1 1 45%;
                 min-width: 300px;
-                height: auto;
-                min-height: 500px;
                 margin-bottom: 20px;
             }
 
@@ -231,14 +256,13 @@
                 gap: 15px;
                 width: 95%;
                 margin: 0 auto 30px;
-                align-items: center;
+                align-items: stretch;
             }
 
             .table-section {
                 width: 100%;
-                height: auto;
-                min-height: 400px;
                 margin-bottom: 15px;
+                flex: none;
             }
 
             .section-title {
@@ -262,6 +286,10 @@
 
             .navbar-custom .nav-link {
                 padding: 12px;
+            }
+
+            .main-table tr {
+                min-height: 50px;
             }
         }
 

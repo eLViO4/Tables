@@ -47,7 +47,7 @@
             font-size: 30px;
             border-bottom: 3px solid #db7c0e;
             border-radius: 0;
-            width: 100vw; /* растянуть до краёв экрана */
+            width: 100vw;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             display: flex;
             align-items: center;
@@ -55,9 +55,8 @@
             z-index: 100;
         }
 
-        /* Navbar links */
         .navbar-custom .nav-link {
-            color: #ffffff !important; /* белый цвет текста */
+            color: #ffffff !important;
             text-decoration: none;
             font-weight: 700;
             padding: 10px 15px;
@@ -65,19 +64,17 @@
         }
 
         .navbar-custom .nav-link:hover {
-            color: #000000 !important; /* цвет при наведении */
+            color: #000000 !important;
             border-radius: 6px;
         }
-
 
         .container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
-            gap: 20px;
-            padding-bottom: 60px; /* небольшой запас внизу */
+            padding: 20px;
         }
 
         .page-title {
@@ -90,7 +87,8 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             position: relative;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+            width: 100%;
         }
 
         .page-title::after {
@@ -105,61 +103,82 @@
             border-radius: 2px;
         }
 
-        .table-section {
+        /* КОНТЕЙНЕР ДЛЯ КВАДРАТОВ */
+        .squares-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
             width: 100%;
+        }
+
+        /* СТИЛЬ КВАДРАТА */
+        .square-box {
+            flex: 0 0 220px;
+            height: 220px;
             background: linear-gradient(135deg, #ffffff 0%, #fff7ed 100%);
             border-radius: 15px;
-            padding: 20px;
             box-shadow: 0 8px 25px var(--shadow);
             border: 1px solid var(--border);
             border-left: 4px solid var(--accent);
-        }
-
-        .main-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .main-table tr {
-            transition: all 0.3s ease;
-        }
-
-        .main-table tr:hover {
-            background: var(--accent-light);
-            transform: translateX(5px);
-        }
-
-        .main-table td {
-            padding: 12px;
-            text-align: center;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .main-table a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-decoration: none;
             color: var(--text-dark);
-            font-size: 1.1em;
-            font-weight: 500;
-            display: block;
-            padding: 12px;
-            border-radius: 8px;
             transition: all 0.3s ease;
-            background: linear-gradient(135deg, #ffffff 0%, #fff7ed 100%);
-            box-shadow: 0 2px 8px var(--shadow);
-            border: 1px solid var(--accent-light);
+            padding: 15px;
+            text-align: center;
         }
 
-        .main-table a:hover {
+        .square-box:hover {
+            transform: translateY(-5px) scale(1.03);
             background: linear-gradient(135deg, var(--accent), var(--accent-dark));
             color: black;
-            transform: scale(1.03);
-            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.3);
+            box-shadow: 0 12px 30px rgba(217, 119, 6, 0.3);
         }
 
-        /* адаптивность */
-        @media (max-width: 768px) {
+        /* ИКОНКИ ДЛЯ КВАДРАТОВ */
+        .square-icon {
+            width: 130px;
+            height: 130px;
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+
+        /*.square-title {
+            font-size: 20px;
+            font-weight: 700;
+        }*/
+
+        /* АДАПТИВНОСТЬ */
+        @media (min-width: 1024px) {
+            .squares-container {
+                gap: 30px;
+            }
+
+            .square-box {
+                flex: 0 0 220px;
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 1023px) and (min-width: 768px) {
+            .squares-container {
+                gap: 20px;
+            }
+
+            .square-box {
+                flex: 0 0 calc(25% - 20px);
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 767px) {
             .page-title {
                 font-size: 1.8em;
+                margin-bottom: 30px;
             }
 
             .navbar-custom {
@@ -167,13 +186,63 @@
                 font-size: 20px;
             }
 
-            .nav-link {
+            .navbar-custom .nav-link {
                 padding: 12px;
             }
 
-            .main-table a {
-                font-size: 1em;
-                padding: 10px;
+            .squares-container {
+                gap: 15px;
+            }
+
+            .square-box {
+                flex: 0 0 calc(50% - 15px);
+                height: 180px;
+                min-width: 150px;
+            }
+
+            .square-icon {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 15px;
+            }
+
+            .square-title {
+                font-size: 1.3em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .squares-container {
+                gap: 12px;
+            }
+
+            .square-box {
+                flex: 0 0 calc(50% - 12px);
+                height: 160px;
+            }
+
+            .square-icon {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 12px;
+            }
+
+            .square-title {
+                font-size: 1.1em;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .squares-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .square-box {
+                width: 90%;
+                max-width: 250px;
+                height: 140px;
+                flex: none;
             }
         }
     </style>
@@ -187,23 +256,26 @@
 <div class="container">
     <h1 class="page-title">Eurocups</h1>
 
-    <div class="table-section">
-        <table class="main-table">
-            <tbody>
-            <tr>
-                <td><a href="../Eurocups/UCL/2024-25.html">Champions League</a></td>
-            </tr>
-            <tr>
-                <td><a href="../Eurocups/UEL/2024-25.html">Europe League</a></td>
-            </tr>
-            <tr>
-                <td><a href="../Eurocups/UECL/2024-25.html">Conference League</a></td>
-            </tr>
-            <tr>
-                <td><a href="../Eurocups/CWC/2025.html">Club World Cup</a></td>
-            </tr>
-            </tbody>
-        </table>
+    <div class="squares-container">
+        <a href="../Eurocups/UCL/2024-25.html" class="square-box">
+            <img src="../Categories/images/ucl.png" alt="Champions League" class="square-icon">
+            <!--<div class="square-title">Champions League</div>-->
+        </a>
+
+        <a href="../Eurocups/UEL/2024-25.html" class="square-box">
+            <img src="../Categories/images/uel.png" alt="Europe League" class="square-icon">
+          <!--  <div class="square-title">Europe League</div>-->
+        </a>
+
+        <a href="../Eurocups/UECL/2024-25.html" class="square-box">
+            <img src="../Categories/images/uecl.png" alt="Conference League" class="square-icon">
+          <!--  <div class="square-title">Conference League</div>-->
+        </a>
+
+        <a href="../Eurocups/CWC/2025.html" class="square-box">
+            <img src="../Categories/images/cwc.png" alt="Club World Cup" class="square-icon">
+           <!-- <div class="square-title">Club World Cup</div>-->
+        </a>
     </div>
 </div>
 
