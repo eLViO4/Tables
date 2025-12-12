@@ -246,6 +246,22 @@
                 flex: none;
             }
         }
+        /* УБИРАЕМ ПОДЧЕРКИВАНИЕ У КВАДРАТОВ */
+        .square-box {
+            text-decoration: none !important;
+        }
+
+        /* ИЛИ более конкретно: */
+        .square-title,
+        .square-subtitle {
+            text-decoration: none !important;
+        }
+
+        /* Или отключаем наследование: */
+        .square-box,
+        .square-box * {
+            text-decoration: none !important;
+        }
     </style>
 </head>
 <body>

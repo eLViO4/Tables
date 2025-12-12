@@ -1,5 +1,5 @@
 body {
-    background-color: #53cbf9;
+    background-color: #05f1ff;
     font-family: Arial, sans-serif;
 }
 
@@ -22,7 +22,7 @@ body {
     text-align: center;
     font-size: 40px; /* больше шрифт */
     color: white;
-    background-color:#4816b5 ;
+    background-color:#38003d ;
 }
 
 .mini-table table {
@@ -46,7 +46,7 @@ body {
 
 /* Заголовки */
 .mini-table th {
-    background-color: #4816b5;
+    background-color: #38003d;
     color: #fff;
     font-weight: bold;
 }
@@ -95,7 +95,7 @@ body {
 
 /* Navbar для LEG */
 .navbar {
-    background-color: #4816b5; /* фиолетовый фон */
+    background-color: #38003d; /* фиолетовый фон */
     padding: 12px 20px;
     font-family: Arial, sans-serif;
     display: flex;
@@ -161,7 +161,7 @@ body {
 
 /* Ссылки внутри dropdown */
 .navbar .dropdown-item {
-    color: #4816b5;
+    color: #38003d;
     font-weight: 500;
     padding: 8px 15px;
     text-decoration: none;
@@ -170,7 +170,7 @@ body {
 
 /* Hover для элементов dropdown */
 .navbar .dropdown-item:hover {
-    background-color: #4816b5;
+    background-color: #38003d;
     color: #ffffff;
 }
 

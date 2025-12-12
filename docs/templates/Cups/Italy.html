@@ -13,6 +13,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Emblema+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styleCup.css">
     <title>Coppa Italia</title>
+    <style>
+        .dropdown-item:hover {
+            background: #8F0700;
+            color: white;
+        }
+        .recent-table th {
+            background: #8F0700;
+        }
+        h1 {
+            color: #8F0700;
+        }
+
+        h2 {
+            color: #8F0700;
+        }
+
+        .navbar-custom {
+            background-color: #8F0700;
+
+        }
+        .navbar-custom .dropdown-item:hover {
+            background: #8F0700;
+            color: white;
+        }
+        .recent-table th {
+            color: #ffffff;
+            background-color: #8F0700;
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-custom">
@@ -36,7 +65,10 @@
 
 <div class="container">
     <section id="cups">
-        <h1>Cups</h1>
+        <div class="title-container">
+            <img src="../Cups/images/coppaitalia.png"  style="width: 60px">
+            <h1>Coppa Italia</h1>
+        </div>
         <div class="d-flex justify-content-between">
             <div class="winners-list" style="width:40%;">
                 <h2>All winners</h2>
@@ -87,7 +119,10 @@
 
     <!-- Supercups -->
     <section id="supercups" style="margin-top:50px;">
-        <h1>Supercups</h1>
+        <div class="title-container">
+            <img src="../Cups/images/supercoppaitaliana.png" style="width: 70px">
+            <h1>Superoppa Italiana</h1>
+        </div>
         <div class="d-flex justify-content-between">
             <div class="winners-list" style="width:40%;">
                 <h2>All winners</h2>

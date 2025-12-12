@@ -12,7 +12,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Emblema+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styleCup.css">
     <title>FA Cup</title>
+    <style>
+        .dropdown-item:hover {
+            background: #D21A28;
+            color: white;
+        }
+        .recent-table th {
+            background: #D21A28;
+        }
+        h1 {
+            color: #D21A28;
+        }
 
+        h2 {
+            color: #D21A28;
+        }
+
+        .navbar-custom {
+            background-color: #D21A28;
+        }
+        .navbar-custom .dropdown-item:hover {
+            background: #D21A28;
+            color: white;
+        }
+        .recent-table th {
+            color: #ffffff;
+            background-color: #D21A28;
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-custom">
@@ -36,7 +63,11 @@
 
 <div class="container">
     <section id="cups">
-        <h1>Cups</h1>
+
+        <div class="title-container">
+            <img src="../Cups/images/facup.png">
+            <h1>FA Cup</h1>
+        </div>
         <div class="d-flex justify-content-between">
             <div class="winners-list" style="width:40%;">
                 <h2>All winners</h2>
@@ -111,9 +142,12 @@
             </div>
         </div>
         </section>
-
+    <br><br>
     <section id="supercups" style="margin-top:50px;">
-        <h1>Supercups</h1>
+        <div class="title-container">
+            <img src="../Cups/images/communityshield.png" style="width: 100px">
+            <h1>Community Shield</h1>
+        </div>
         <div class="d-flex justify-content-between">
             <div class="winners-list" style="width:40%;">
                 <h2>All winners</h2>

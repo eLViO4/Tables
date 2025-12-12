@@ -8,6 +8,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Emblema+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styleCup.css">
     <title>DFB-Pokal</title>
+    <style>
+        .dropdown-item:hover {
+            background: #01975A;
+            color: white;
+        }
+        .recent-table th {
+            background: #01975A;
+        }
+        h1 {
+            color: #01975A;
+        }
+
+        h2 {
+            color: #01975A;
+        }
+
+        .navbar-custom {
+            background-color: #01975A;
+
+        }
+        .navbar-custom .dropdown-item:hover {
+            background: #01975A;
+            color: white;
+        }
+        .recent-table th {
+            color: #ffffff;
+            background-color: #01975A;
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-custom">
@@ -32,7 +61,10 @@
 
 <div class="container">
     <section id="cups">
-        <h1>Cups</h1>
+        <div class="title-container">
+            <img src="../Cups/images/dfbpokal.svg">
+            <h1>DFB Pokal</h1>
+        </div>
         <div class="d-flex justify-content-between">
             <div class="winners-list" style="width:40%;">
                 <h2>All winners</h2>
@@ -93,7 +125,10 @@
 
     <!-- Supercups -->
     <section id="supercups" style="margin-top:50px;">
-        <h1>Supercups</h1>
+        <div class="title-container">
+            <img src="../Cups/images/dflsupercup.png" >
+            <h1>DFL Supercup</h1>
+        </div>
         <div class="d-flex justify-content-between">
             <div class="winners-list" style="width:40%;">
                 <h2>All winners</h2>

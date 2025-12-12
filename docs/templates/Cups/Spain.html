@@ -13,6 +13,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Emblema+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styleCup.css">
     <title>Copa del Rey</title>
+    <style>
+        .dropdown-item:hover {
+            background: #FE0136;
+            color: white;
+        }
+        .recent-table th {
+            background: #FE0136;
+        }
+        h1 {
+            color: #FE0136;
+        }
+
+        h2 {
+            color: #FE0136;
+        }
+
+        .navbar-custom {
+            background-color: #FE0136;
+
+        }
+        .navbar-custom .dropdown-item:hover {
+            background: #FE0136;
+            color: white;
+        }
+        .recent-table th {
+            color: #ffffff;
+            background-color: #FE0136;
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-custom">
@@ -36,7 +65,10 @@
 
 <div class="container">
     <section id="cups">
-        <h1>Cups</h1>
+        <div class="title-container">
+            <img src="../Cups/images/copadelrey.png"  style="width: 70px">
+            <h1>Copa del Rey</h1>
+        </div>
         <div class="d-flex justify-content-between">
             <div class="winners-list" style="width:40%;">
                 <h2>All winners</h2>
@@ -88,7 +120,10 @@
 
     <!-- Supercups -->
     <section id="supercups" style="margin-top:50px;">
-        <h1>Supercups</h1>
+        <div class="title-container">
+            <img src="../Cups/images/supercopadeespana.png"  style="width: 100px">
+            <h1>Supercopa de Espana</h1>
+        </div>
         <div class="d-flex justify-content-between">
             <div class="winners-list" style="width:40%;">
                 <h2>All winners</h2>
