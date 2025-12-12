@@ -47,7 +47,7 @@
             font-size: 30px;
             border-bottom: 3px solid #db7c0e;
             border-radius: 0;
-            width: 100vw; /* растянуть до краёв экрана */
+            width: 100vw;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             display: flex;
             align-items: center;
@@ -55,9 +55,8 @@
             z-index: 100;
         }
 
-        /* Navbar links */
         .navbar-custom .nav-link {
-            color: #ffffff !important; /* белый цвет текста */
+            color: #ffffff !important;
             text-decoration: none;
             font-weight: 700;
             padding: 10px 15px;
@@ -65,19 +64,17 @@
         }
 
         .navbar-custom .nav-link:hover {
-            color: #000000 !important; /* цвет при наведении */
+            color: #000000 !important;
             border-radius: 6px;
         }
-
 
         .container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
-            gap: 20px;
-            padding-bottom: 60px; /* небольшой запас внизу */
+            padding: 20px;
         }
 
         .page-title {
@@ -90,7 +87,8 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             position: relative;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+            width: 100%;
         }
 
         .page-title::after {
@@ -105,61 +103,85 @@
             border-radius: 2px;
         }
 
-        .table-section {
+        /* КОНТЕЙНЕР ДЛЯ КВАДРАТОВ */
+        .squares-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
             width: 100%;
+            flex-wrap: wrap;
+        }
+
+        /* СТИЛЬ КВАДРАТА */
+        .square-box {
+            flex: 0 0 300px; /* Фиксированная ширина для квадрата */
+            height: 300px; /* Такая же высота для квадрата */
             background: linear-gradient(135deg, #ffffff 0%, #fff7ed 100%);
             border-radius: 15px;
-            padding: 20px;
             box-shadow: 0 8px 25px var(--shadow);
             border: 1px solid var(--border);
             border-left: 4px solid var(--accent);
-        }
-
-        .main-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .main-table tr {
-            transition: all 0.3s ease;
-        }
-
-        .main-table tr:hover {
-            background: var(--accent-light);
-            transform: translateX(5px);
-        }
-
-        .main-table td {
-            padding: 12px;
-            text-align: center;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .main-table a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-decoration: none;
             color: var(--text-dark);
-            font-size: 1.1em;
-            font-weight: 500;
-            display: block;
-            padding: 12px;
-            border-radius: 8px;
             transition: all 0.3s ease;
-            background: linear-gradient(135deg, #ffffff 0%, #fff7ed 100%);
-            box-shadow: 0 2px 8px var(--shadow);
-            border: 1px solid var(--accent-light);
+            padding: 20px;
+            text-align: center;
         }
 
-        .main-table a:hover {
+        .square-box:hover {
+            transform: translateY(-5px) scale(1.03);
             background: linear-gradient(135deg, var(--accent), var(--accent-dark));
             color: black;
-            transform: scale(1.03);
-            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.3);
+            box-shadow: 0 12px 30px rgba(217, 119, 6, 0.3);
         }
 
-        /* адаптивность */
+        /* ИКОНКИ ДЛЯ КВАДРАТОВ */
+        .square-icon {
+            width: 130px;
+            height: 130px;
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+
+        .square-title {
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        /* АДАПТИВНОСТЬ */
+        @media (max-width: 1000px) {
+            .squares-container {
+                gap: 20px;
+            }
+
+            .square-box {
+                flex: 0 0 280px;
+                height: 280px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .squares-container {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .square-box {
+                flex: 0 0 250px;
+                height: 250px;
+            }
+        }
+
         @media (max-width: 768px) {
             .page-title {
                 font-size: 1.8em;
+                margin-bottom: 30px;
             }
 
             .navbar-custom {
@@ -167,14 +189,78 @@
                 font-size: 20px;
             }
 
-            .nav-link {
+            .navbar-custom .nav-link {
                 padding: 12px;
             }
 
-            .main-table a {
-                font-size: 1em;
-                padding: 10px;
+            .squares-container {
+                flex-direction: row;
+                gap: 15px;
             }
+
+            .square-box {
+                flex: 0 0 calc(33.333% - 20px);
+                height: 200px;
+                min-width: 150px;
+            }
+
+            .square-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .square-title {
+                font-size: 1.4em;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .squares-container {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .square-box {
+                flex: 0 0 calc(50% - 15px);
+                height: 180px;
+                min-width: 140px;
+            }
+
+            .square-title {
+                font-size: 1.3em;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .squares-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .square-box {
+                width: 90%;
+                max-width: 300px;
+                height: 150px;
+                flex: none;
+            }
+        }
+        /* УБИРАЕМ ПОДЧЕРКИВАНИЕ У КВАДРАТОВ */
+        .square-box {
+            text-decoration: none !important;
+        }
+
+        /* ИЛИ более конкретно: */
+        .square-title,
+        .square-subtitle {
+            text-decoration: none !important;
+        }
+
+        /* Или отключаем наследование: */
+        .square-box,
+        .square-box * {
+            text-decoration: none !important;
         }
     </style>
 </head>
@@ -187,17 +273,16 @@
 <div class="container">
     <h1 class="page-title">Futsal</h1>
 
-    <div class="table-section">
-        <table class="main-table">
-            <tbody>
-            <tr>
-                <td><a href="../Futsal/World/World.html">World Futsal</a></td>
-            </tr>
-            <tr>
-                <td><a href="../Futsal/Ukraine/AllUkraine.html">Ukrainian Futsal</a></td>
-            </tr>
-            </tbody>
-        </table>
+    <div class="squares-container">
+        <a href="../Futsal/World/World.html" class="square-box">
+            <img src="../Futsal/images/world.png" alt="World Cup" class="square-icon">
+            <div class="square-title">World Futsal</div>
+        </a>
+
+        <a href="../Futsal/Ukraine/AllUkraine.html" class="square-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/197/197572.png" alt="Euro" class="square-icon">
+            <div class="square-title">Ukrainian futsal</div>
+        </a>
     </div>
 </div>
 

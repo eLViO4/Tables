@@ -4,15 +4,264 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World Futsal</title>
-    <!--Table-->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <!--JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!--Fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!--CSS-->
-    <link rel="stylesheet" href="../FutsalCategories.css">
 
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Emblema+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-light: #f8f9fa;
+            --text-dark: #2d3748;
+            --accent: #db7c0e;
+            --accent-light: #f5f3f1;
+            --accent-dark: #fed7aa;
+            --border: #e2e8f0;
+            --shadow: rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            min-height: 100vh;
+            line-height: 1.6;
+            padding-bottom: 20px;
+            overflow-y: auto;
+        }
+
+        .navbar-custom {
+            background: linear-gradient(135deg, #ca6e04 0%, #f5f3f1 100%);
+            backdrop-filter: blur(10px);
+            height: 68px;
+            margin-bottom: 30px;
+            font-size: 30px;
+            border-bottom: 3px solid #db7c0e;
+            border-radius: 0;
+            width: 100vw;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 100;
+        }
+
+        .navbar-custom .nav-link {
+            color: #ffffff !important;
+            text-decoration: none;
+            font-weight: 700;
+            padding: 10px 15px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #000000 !important;
+            border-radius: 6px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 2.4em;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #b45309, #78350f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            margin-bottom: 50px;
+            width: 100%;
+        }
+
+        .page-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, #b45309, #78350f);
+            border-radius: 2px;
+        }
+
+        /* КОНТЕЙНЕР ДЛЯ КВАДРАТОВ */
+        .squares-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            width: 100%;
+        }
+
+        /* СТИЛЬ КВАДРАТА */
+        .square-box {
+            flex: 0 0 220px;
+            height: 220px;
+            background: linear-gradient(135deg, #ffffff 0%, #fff7ed 100%);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px var(--shadow);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .square-box:hover {
+            transform: translateY(-5px) scale(1.03);
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: black;
+            box-shadow: 0 12px 30px rgba(217, 119, 6, 0.3);
+        }
+
+        /* ИКОНКИ ДЛЯ КВАДРАТОВ */
+        .square-icon {
+            width: 130px;
+            height: 130px;
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+
+        /*.square-title {
+            font-size: 20px;
+            font-weight: 700;
+        }*/
+
+        /* АДАПТИВНОСТЬ */
+        @media (min-width: 1024px) {
+            .squares-container {
+                gap: 30px;
+            }
+
+            .square-box {
+                flex: 0 0 220px;
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 1023px) and (min-width: 768px) {
+            .squares-container {
+                gap: 20px;
+            }
+
+            .square-box {
+                flex: 0 0 calc(25% - 20px);
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .page-title {
+                font-size: 1.8em;
+                margin-bottom: 30px;
+            }
+
+            .navbar-custom {
+                height: 50px;
+                font-size: 20px;
+            }
+
+            .navbar-custom .nav-link {
+                padding: 12px;
+            }
+
+            .squares-container {
+                gap: 15px;
+            }
+
+            .square-box {
+                flex: 0 0 calc(50% - 15px);
+                height: 180px;
+                min-width: 150px;
+            }
+
+            .square-icon {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 15px;
+            }
+
+            .square-title {
+                font-size: 1.3em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .squares-container {
+                gap: 12px;
+            }
+
+            .square-box {
+                flex: 0 0 calc(50% - 12px);
+                height: 160px;
+            }
+
+            .square-icon {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 12px;
+            }
+
+            .square-title {
+                font-size: 1.1em;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .squares-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .square-box {
+                width: 90%;
+                max-width: 250px;
+                height: 140px;
+                flex: none;
+            }
+        }
+        /* УБИРАЕМ ПОДЧЕРКИВАНИЕ У КВАДРАТОВ */
+        .square-box {
+            text-decoration: none !important;
+        }
+
+        /* ИЛИ более конкретно: */
+        .square-title,
+        .square-subtitle {
+            text-decoration: none !important;
+        }
+
+        /* Или отключаем наследование: */
+        .square-box,
+        .square-box * {
+            text-decoration: none !important;
+        }
+    </style>
 </head>
 <body>
 
@@ -21,57 +270,30 @@
 </nav>
 
 <div class="container">
-    <h1>World Futsal</h1>
-    <div class="table-section">
-        <div class="section-title"></div>
-        <table class="main-table">
-            <tbody>
-            <tr>
-                <td><a href=../World/WorldCup.html>World Cup</a></td>
-            </tr>
-            <tr>
-                <td><a href=../World/Euro.html>Euro</a></td>
-            </tr>
-            <tr>
-                <td><a href=../World/ChampionsLeague.html>Champions League</a></td>
-            </tr>
-            <tr>
-                <td><a href="../World/Winners.html">Archives</a></td>
-            </tr>
-            </tbody>
-        </table>
+    <h1 class="page-title">Tournaments</h1>
+
+    <div class="squares-container">
+        <a href="../World/WorldCup.html" class="square-box">
+            <img src="../images/worldcup.png" alt="World Cup" class="square-icon">
+            <div class="square-title">World Cup</div>
+        </a>
+
+        <a href="../World/Euro.html" class="square-box">
+            <img src="../images/euro.png" alt="Euro" class="square-icon">
+              <div class="square-title">Euro</div>
+        </a>
+
+        <a href="../World/ChampionsLeague.html" class="square-box">
+            <img src="../../../images/Futsal.png" alt="Champions League" class="square-icon">
+              <div class="square-title">Champions League</div>
+        </a>
+
+        <a href="../World/Winners.html" class="square-box">
+            <img src="../../../images/statistics.png" alt="Statistics" class="square-icon">
+             <div class="square-title">Statistics</div>
+        </a>
     </div>
 </div>
-
-<script>
-    // Автоматическая подстройка высоты под экран
-    function adjustLayout() {
-        const container = document.querySelector('.container');
-        const navHeight = document.querySelector('.navbar-custom').offsetHeight;
-        const titleHeight = document.querySelector('h1').offsetHeight;
-        const availableHeight = window.innerHeight - navHeight - titleHeight - 40;
-
-        container.style.height = availableHeight + 'px';
-    }
-
-    window.addEventListener('load', adjustLayout);
-    window.addEventListener('resize', adjustLayout);
-
-    // Анимация появления элементов
-    document.addEventListener('DOMContentLoaded', function() {
-        const links = document.querySelectorAll('.main-table a');
-        links.forEach((link, index) => {
-            link.style.opacity = '0';
-            link.style.transform = 'translateX(-20px)';
-
-            setTimeout(() => {
-                link.style.transition = 'all 0.4s ease';
-                link.style.opacity = '1';
-                link.style.transform = 'translateX(0)';
-            }, index * 100);
-        });
-    });
-</script>
 
 </body>
 </html>
