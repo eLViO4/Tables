@@ -4,15 +4,286 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ukraine Club Futsal</title>
-    <!--Table-->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <!--JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!--Fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!--CSS-->
-    <link rel="stylesheet" href="../../FutsalCategories.css">
 
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Emblema+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #213bb8;
+            color: #2d3748;
+            min-height: 100vh;
+            line-height: 1.6;
+            padding-bottom: 20px;
+            overflow-y: auto;
+        }
+
+        .navbar-custom {
+            background: linear-gradient(135deg, #1a2f9e 0%, #15267a 100%);
+            backdrop-filter: blur(10px);
+            height: 68px;
+            margin-bottom: 30px;
+            font-size: 30px;
+            border-bottom: 3px solid #ffffff;
+            border-radius: 0;
+            width: 100vw;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 100;
+        }
+
+        .navbar-custom .nav-link {
+            color: #ffffff !important;
+            text-decoration: none;
+            font-weight: 700;
+            padding: 10px 15px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #ffffff !important;
+            border-radius: 6px;
+            opacity: 0.8;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 2.4em;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #ffffff, #e6e6e6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            margin-bottom: 50px;
+            width: 100%;
+        }
+
+        .page-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, #ffffff, #e6e6e6);
+            border-radius: 2px;
+        }
+
+        /* КОНТЕЙНЕР ДЛЯ КВАДРАТОВ */
+        .squares-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
+            flex-wrap: wrap;
+            max-width: 800px; /* Ограничиваем максимальную ширину контейнера */
+            margin: 0 auto; /* Центрируем контейнер */
+        }
+
+        /* СТИЛЬ КВАДРАТА */
+        .square-box {
+            flex: 0 0 calc(33.333% - 20px); /* 3 в ряд с учетом отступов */
+            height: 200px; /* Фиксированная высота */
+            background: linear-gradient(135deg, #ffffff 0%, #f0f4ff 100%);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid #1a2f9e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #2d3748;
+            transition: all 0.3s ease;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px; /* Отступ снизу для переноса строк */
+        }
+
+        .square-box:hover {
+            transform: translateY(-5px) scale(1.03);
+            background: linear-gradient(135deg, #1a2f9e, #213bb8);
+            color: #ffffff;
+            box-shadow: 0 12px 30px rgba(26, 47, 158, 0.3);
+        }
+
+        /* ИКОНКИ ДЛЯ КВАДРАТОВ */
+        .square-icon {
+            width: 110px;
+            height: 110px;
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+
+        .square-title {
+            font-size: 1em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        /* АДАПТИВНОСТЬ */
+        /* АДАПТИВНОСТЬ */
+        @media (max-width: 1000px) {
+            .squares-container {
+                gap: 20px;
+            }
+
+            .square-box {
+                flex: 0 0 200px;
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .squares-container {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .square-box {
+                flex: 0 0 200px;
+                height: 200px;
+            }
+        }
+
+        /* Убираем фиксированные размеры для десктопов */
+        @media (min-width: 769px) {
+            .squares-container {
+                gap: 20px;
+                max-width: 800px;
+            }
+
+            .square-box {
+                flex: 0 0 calc(33.333% - 20px);
+                height: 200px;
+                margin-bottom: 20px;
+            }
+
+            .square-icon {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 15px;
+            }
+
+            .square-title {
+                font-size: 1.1em;
+            }
+        }
+
+        /* Планшет (768px - 1023px) - тоже 3 в ряд */
+        @media (max-width: 768px) and (min-width: 481px) {
+            .page-title {
+                font-size: 2em;
+                margin-bottom: 30px;
+            }
+
+            .navbar-custom {
+                height: 60px;
+                font-size: 24px;
+            }
+
+            .squares-container {
+                gap: 15px;
+                max-width: 700px;
+            }
+
+            .square-box {
+                flex: 0 0 calc(33.333% - 15px);
+                height: 180px;
+            }
+
+            .square-icon {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 15px;
+            }
+
+            .square-title {
+                font-size: 1em;
+            }
+        }
+
+        /* Мобильные (до 480px) - 2 в ряд */
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 1.6em;
+                margin-bottom: 20px;
+            }
+
+            .navbar-custom {
+                height: 50px;
+                font-size: 20px;
+            }
+
+            .squares-container {
+                gap: 10px;
+                max-width: 400px;
+            }
+
+            .square-box {
+                flex: 0 0 calc(50% - 10px);
+                aspect-ratio: 1/1;
+                min-width: 0;
+                margin-bottom: 10px;
+            }
+
+            .square-icon {
+                width: 70px;
+                height: 70px;
+                margin-bottom: 10px;
+            }
+
+            .square-title {
+                font-size: 0.9em;
+            }
+        }
+
+
+
+        /* УБИРАЕМ ПОДЧЕРКИВАНИЕ У КВАДРАТОВ */
+        .square-box {
+            text-decoration: none !important;
+        }
+
+        /* ИЛИ более конкретно: */
+        .square-title,
+        .square-subtitle {
+            text-decoration: none !important;
+        }
+
+        /* Или отключаем наследование: */
+        .square-box,
+        .square-box * {
+            text-decoration: none !important;
+        }
+    </style>
 </head>
 <body>
 
@@ -21,63 +292,41 @@
 </nav>
 
 <div class="container">
-    <h1>Ukraine Club Futsal</h1>
-    <div class="table-section">
-        <div class="section-title"></div>
-        <table class="main-table">
-            <tbody>
-            <tr>
-                <td><a href="ExtraLeague/2024-25.html">League Seasons</a></td>
-            </tr>
-            <tr>
-                <td><a href="ExtraLeague.html">League Results</a></td>
-            </tr>
-            <tr>
-                <td><a href="Cup.html">Cup</a></td>
-            </tr>
-            <tr>
-                <td><a href="Supercup.html">Supercup</a></td>
-            </tr>
-            <tr>
-                <td><a href="UCL.html">Champions League</a></td>
-            </tr>
-            <tr>
-                <td><a href="Winners.html">Archives</a></td>
-            </tr>
-            </tbody>
-        </table>
+    <h1 class="page-title">Ukraine Club Futsal</h1>
+
+    <div class="squares-container">
+        <a href="ExtraLeague/2024-25.html" class="square-box">
+            <img src="../../../Futsal/images/extraliga.png" alt="World Cup" class="square-icon">
+            <div class="square-title">Extra League</div>
+        </a>
+
+        <a href="ExtraLeague.html" class="square-box">
+            <img src="../../../Futsal/images/afu.png" alt="World Cup" class="square-icon">
+            <div class="square-title">Results League</div>
+        </a>
+
+        <a href="Cup.html" class="square-box">
+            <img src="../../../UkraineTables/images/trophy.webp" alt="World Cup" class="square-icon">
+            <div class="square-title">Cup</div>
+        </a>
+
+        <a href="Supercup.html" class="square-box">
+            <img src="../../../UkraineTables/images/trophy2.png" alt="World Cup" class="square-icon">
+            <div class="square-title">Supercup</div>
+        </a>
+
+        <a href="UCL.html" class="square-box">
+            <img src="../../../../images/Futsal.png" alt="World Cup" class="square-icon">
+            <div class="square-title">Champions League</div>
+        </a>
+
+        <a href="Winners.html" class="square-box">
+            <img src="../../../../images/statistics.png" alt="World Cup" class="square-icon">
+            <div class="square-title">Statistics</div>
+        </a>
+
     </div>
 </div>
-
-<script>
-    // Автоматическая подстройка высоты под экран
-    function adjustLayout() {
-        const container = document.querySelector('.container');
-        const navHeight = document.querySelector('.navbar-custom').offsetHeight;
-        const titleHeight = document.querySelector('h1').offsetHeight;
-        const availableHeight = window.innerHeight - navHeight - titleHeight - 40;
-
-        container.style.height = availableHeight + 'px';
-    }
-
-    window.addEventListener('load', adjustLayout);
-    window.addEventListener('resize', adjustLayout);
-
-    // Анимация появления элементов
-    document.addEventListener('DOMContentLoaded', function() {
-        const links = document.querySelectorAll('.main-table a');
-        links.forEach((link, index) => {
-            link.style.opacity = '0';
-            link.style.transform = 'translateX(-20px)';
-
-            setTimeout(() => {
-                link.style.transition = 'all 0.4s ease';
-                link.style.opacity = '1';
-                link.style.transform = 'translateX(0)';
-            }, index * 100);
-        });
-    });
-</script>
 
 </body>
 </html>

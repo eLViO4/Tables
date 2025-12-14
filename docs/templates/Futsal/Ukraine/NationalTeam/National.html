@@ -4,15 +4,277 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ukraine National Team</title>
-    <!--Table-->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <!--JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!--Fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!--CSS-->
-    <link rel="stylesheet" href="../../FutsalCategories.css">
 
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Emblema+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #213bb8;
+            color: #2d3748;
+            min-height: 100vh;
+            line-height: 1.6;
+            padding-bottom: 20px;
+            overflow-y: auto;
+        }
+
+        .navbar-custom {
+            background: linear-gradient(135deg, #1a2f9e 0%, #15267a 100%);
+            backdrop-filter: blur(10px);
+            height: 68px;
+            margin-bottom: 30px;
+            font-size: 30px;
+            border-bottom: 3px solid #ffffff;
+            border-radius: 0;
+            width: 100vw;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 100;
+        }
+
+        .navbar-custom .nav-link {
+            color: #ffffff !important;
+            text-decoration: none;
+            font-weight: 700;
+            padding: 10px 15px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #ffffff !important;
+            border-radius: 6px;
+            opacity: 0.8;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 2.4em;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #ffffff, #e6e6e6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            margin-bottom: 50px;
+            width: 100%;
+        }
+
+        .page-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, #ffffff, #e6e6e6);
+            border-radius: 2px;
+        }
+
+        /* КОНТЕЙНЕР ДЛЯ КВАДРАТОВ */
+        .squares-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        /* СТИЛЬ КВАДРАТА */
+        .square-box {
+            flex: 0 0 200px; /* Фиксированная ширина для квадрата */
+            height: 200px; /* Такая же высота для квадрата */
+            background: linear-gradient(135deg, #ffffff 0%, #f0f4ff 100%);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid #1a2f9e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #2d3748;
+            transition: all 0.3s ease;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .square-box:hover {
+            transform: translateY(-5px) scale(1.03);
+            background: linear-gradient(135deg, #1a2f9e, #213bb8);
+            color: #ffffff;
+            box-shadow: 0 12px 30px rgba(26, 47, 158, 0.3);
+        }
+
+        /* ИКОНКИ ДЛЯ КВАДРАТОВ */
+        .square-icon {
+            width: 110px;
+            height: 110px;
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+
+        .square-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        /* АДАПТИВНОСТЬ */
+        /* АДАПТИВНОСТЬ */
+        @media (max-width: 1000px) {
+            .squares-container {
+                gap: 20px;
+            }
+
+            .square-box {
+                flex: 0 0 200px;
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .squares-container {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .square-box {
+                flex: 0 0 200px;
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 1.8em;
+                margin-bottom: 30px;
+            }
+
+            .navbar-custom {
+                height: 50px;
+                font-size: 20px;
+            }
+
+            .navbar-custom .nav-link {
+                padding: 12px;
+            }
+
+            .squares-container {
+                flex-direction: row;
+                gap: 15px;
+            }
+
+            .square-box {
+                flex: 0 0 calc(33.333% - 15px);
+                aspect-ratio: 1/1;
+                min-width: 0;
+            }
+
+            .square-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .square-title {
+                font-size: 1.1em;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .squares-container {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            .square-box {
+                flex: 0 0 calc(50% - 12px);
+                aspect-ratio: 1/1;
+                min-width: 0;
+            }
+
+            .square-icon {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 12px;
+            }
+
+            .square-title {
+                font-size: 0.9em;
+                margin-bottom: 5px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .squares-container {
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .square-box {
+                width: calc(50% - 10px);
+                aspect-ratio: 1/1;
+                flex: none;
+                padding: 10px;
+            }
+
+            .square-icon {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 8px;
+            }
+
+            .square-title {
+                font-size: 0.8em;
+            }
+        }
+
+        /* УБИРАЕМ ПОДЧЕРКИВАНИЕ У КВАДРАТОВ */
+        .square-box {
+            text-decoration: none !important;
+        }
+
+        /* ИЛИ более конкретно: */
+        .square-title,
+        .square-subtitle {
+            text-decoration: none !important;
+        }
+
+        /* Или отключаем наследование: */
+        .square-box,
+        .square-box * {
+            text-decoration: none !important;
+        }
+    </style>
 </head>
 <body>
 
@@ -21,54 +283,26 @@
 </nav>
 
 <div class="container">
-    <h1>Ukraine National Team</h1>
-    <div class="table-section">
-        <div class="section-title"></div>
-        <table class="main-table">
-            <tbody>
-            <tr>
-                <td><a href="WorldCup/2024.html">World Cup</a></td>
-            </tr>
-            <tr>
-                <td><a href="Euro/2022.html">Euro</a></td>
-            </tr>
-            <tr>
-                <td><a href="Results.html">Results</a></td>
-            </tr>
-            </tbody>
-        </table>
+    <h1 class="page-title">Ukraine National Team</h1>
+
+    <div class="squares-container">
+        <a href="WorldCup/2024.html" class="square-box">
+            <img src="../../../Futsal/images/worldcup.png" alt="World Cup" class="square-icon">
+            <div class="square-title">World Cup</div>
+        </a>
+
+        <a href="Euro/2022.html" class="square-box">
+            <img src="../../../Futsal/images/euro.png" alt="Euro" class="square-icon">
+            <div class="square-title">Euro</div>
+        </a>
+
+        <a href="Results.html" class="square-box">
+            <img src="../../../../images/statistics.png" alt="Euro" class="square-icon">
+            <div class="square-title">Results</div>
+        </a>
+
     </div>
 </div>
-
-<script>
-    // Автоматическая подстройка высоты под экран
-    function adjustLayout() {
-        const container = document.querySelector('.container');
-        const navHeight = document.querySelector('.navbar-custom').offsetHeight;
-        const titleHeight = document.querySelector('h1').offsetHeight;
-        const availableHeight = window.innerHeight - navHeight - titleHeight - 40;
-
-        container.style.height = availableHeight + 'px';
-    }
-
-    window.addEventListener('load', adjustLayout);
-    window.addEventListener('resize', adjustLayout);
-
-    // Анимация появления элементов
-    document.addEventListener('DOMContentLoaded', function() {
-        const links = document.querySelectorAll('.main-table a');
-        links.forEach((link, index) => {
-            link.style.opacity = '0';
-            link.style.transform = 'translateX(-20px)';
-
-            setTimeout(() => {
-                link.style.transition = 'all 0.4s ease';
-                link.style.opacity = '1';
-                link.style.transform = 'translateX(0)';
-            }, index * 100);
-        });
-    });
-</script>
 
 </body>
 </html>
