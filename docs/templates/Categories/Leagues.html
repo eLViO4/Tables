@@ -130,6 +130,7 @@
             transition: all 0.3s ease;
             padding: 15px;
             text-align: center;
+            aspect-ratio: 1 / 1;
         }
 
         .square-box:hover {
@@ -193,82 +194,88 @@
             }
         }
 
-        @media (max-width: 767px) {
-            .page-title {
+        @media (max-width: 768px) {
+
+            .page-title{
                 font-size: 1.8em;
                 margin-bottom: 30px;
             }
 
-            .navbar-custom {
+            .navbar-custom{
                 height: 50px;
                 font-size: 20px;
             }
 
-            .navbar-custom .nav-link {
+            .navbar-custom .nav-link{
                 padding: 12px;
             }
 
-            .section-title {
-                font-size: 1.5em;
-                margin-bottom: 20px;
+            .squares-container{
+                gap: 14px;
             }
 
-            .squares-container {
-                gap: 15px;
+            .square-box{
+                flex: 0 0 calc(33.333% - 14px);
+                padding: 14px;
+                /* height УБРАНО */
             }
 
-            /* 2 в ряд на мобильных */
-            .square-box {
-                flex: 0 0 calc(50% - 15px);
-                height: 180px;
-                min-width: 150px;
+            .square-icon{
+                width: 64px;
+                height: 64px;
+                margin-bottom: 8px;
             }
 
-            .square-icon {
-                width: 60px;
-                height: 60px;
-                margin-bottom: 15px;
-            }
-
-            .square-title {
-                font-size: 1.3em;
+            .square-title{
+                font-size: clamp(0.75rem, 2.6vw, 0.95rem);
             }
         }
+        @media (max-width: 600px){
 
-        @media (max-width: 480px) {
-            .squares-container {
+            .squares-container{
                 gap: 12px;
             }
 
-            .square-box {
+            .square-box{
                 flex: 0 0 calc(50% - 12px);
-                height: 160px;
+                padding: 12px;
+                /* height УБРАНО */
             }
 
-            .square-icon {
-                width: 50px;
-                height: 50px;
-                margin-bottom: 12px;
+            .square-icon{
+                width: 56px;
+                height: 56px;
             }
 
-            .square-title {
-                font-size: 1.1em;
+            .square-title{
+                font-size: clamp(0.7rem, 3vw, 0.9rem);
             }
         }
 
-        @media (max-width: 360px) {
-            .squares-container {
-                flex-direction: column;
-                align-items: center;
+
+        @media (max-width: 400px){
+
+            .squares-container{
+                gap: 10px;
             }
 
-            .square-box {
-                width: 90%;
-                max-width: 250px;
-                height: 140px;
-                flex: none;
+            .square-box{
+                flex: 0 0 90%;
+                max-width: 260px;
+                padding: 12px;
+                /* height УБРАНО */
+            }
+
+            .square-icon{
+                width: 52px;
+                height: 52px;
+            }
+
+            .square-title{
+                font-size: 0.8rem;
             }
         }
+
         /* УБИРАЕМ ПОДЧЕРКИВАНИЕ У КВАДРАТОВ */
         .square-box {
             text-decoration: none !important;
