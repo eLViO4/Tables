@@ -13,33 +13,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Emblema+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
     <style>
-        .custom-button img {
-            height: 40px; /* одинаковая высота для всех */
-            width: auto; /* чтобы не искажалось */
-            object-fit: contain;
-            margin-right: 12px;
-            vertical-align: middle;
-            display: inline-block;
-            position: relative;
-            top: -2px; /* чуть подровнять по тексту */
-        }
-        .custom-button {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start; /* выравнивание по левому краю */
-            gap: 10px;
-        }
-
         :root {
             --bg-light: #f8f9fa;
             --text-dark: #2d3748;
-            --blue-primary: #0057b7; /* синий цвет украинского флага */
-            --yellow-primary: #ffd700; /* желтый цвет украинского флага */
-            --blue-light: #e6f0ff;
-            --yellow-light: #fff9e6;
-            --blue-dark: #003d82;
-            --border: #e2e8f0;
-            --shadow: rgba(0, 0, 0, 0.08);
+            --yellow-primary: #ffd700;
+            --shadow: rgba(0,0,0,0.08);
         }
 
         * {
@@ -53,167 +31,128 @@
             background: rgba(7, 121, 7, 0.9);
             color: var(--text-dark);
             min-height: 100vh;
-            line-height: 1.6;
             padding-bottom: 20px;
-            overflow-y: auto;
         }
 
         .navbar-custom {
             background: rgb(4, 82, 16);
-            backdrop-filter: blur(10px);
             height: 68px;
             margin-bottom: 30px;
-            font-size: 30px;
             border-bottom: 3px solid var(--yellow-primary);
-            border-radius: 0;
-            width: 100vw;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             display: flex;
             align-items: center;
             padding: 0 20px;
-            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
-        /* Navbar links */
         .navbar-custom .nav-link {
             color: #ffdd07 !important;
-            text-decoration: none;
             font-weight: 700;
-            padding: 10px 15px;
-            transition: all 0.3s ease;
+            text-decoration: none;
         }
 
         .navbar-custom .nav-link:hover {
             color: var(--yellow-primary) !important;
-            border-radius: 6px;
         }
 
         .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            max-width: 900px;
-            margin: 0 auto;
-            gap: 20px;
-            padding-bottom: 60px;
         }
 
         .page-title {
             text-align: center;
             font-size: 2.8em;
             font-weight: 800;
-            text-transform: uppercase;
             letter-spacing: 2px;
-            background: white;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            position: relative;
+            color: #fff;
             margin-bottom: 40px;
-            padding: 0 20px;
         }
 
         .page-title::after {
             content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
+            display: block;
+            margin: 8px auto 0;
             width: 120px;
             height: 4px;
             background: var(--yellow-primary);
             border-radius: 2px;
         }
 
+        /* Сетка квадратов */
         .buttons-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 45px;
             width: 100%;
+            justify-items: center;
+        }
+
+        /* Квадратные кнопки */
+        .square-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--yellow-primary);
+            border-radius: 12px;
+            width: 190px;           /* увеличиваем ширину */
+            aspect-ratio: 1/1;      /* сохраняем квадрат */
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 25px;
-            padding: 0 20px;
-        }
-
-        .custom-button {
-            display: block;
-            width: 100%;
-            max-width: 600px;
-            text-decoration: none;
-            color: var(--yellow-light);
-            font-size: 1.5em;
+            justify-content: center;
+            padding: 15px;
+            text-decoration: none;   /* убираем подчёркивание */
+            color: var(--yellow-primary); /* цвет текста жёлтый */
             font-weight: 700;
-            padding: 20px 30px;
-            border-radius: 12px;
-            transition: all 0.4s ease;
-            background: transparent;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            border: 1px solid var(--yellow-primary);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
+            transition: all 0.3s ease;
         }
 
-        .custom-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 100%;
-            background: #022f09;
-            transition: all 0.4s ease;
-            z-index: -1;
-        }
-
-        .custom-button:hover {
-            color: #FFD700FF;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 87, 183, 0.3);
-        }
-
-        .custom-button:hover::before {
-            width: 100%;
-        }
-
-        .custom-button:active {
-            transform: translateY(-2px);
-        }
-
-        a:hover {
+        .square-box:hover {
+            background: rgba(255, 215, 0, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px var(--shadow);
             text-decoration: none;
+            color: var(--yellow-primary);
         }
 
-        /* адаптивность */
+        .square-box img {
+            width: 60%;   /* можно немного увеличить иконку */
+            height: 60%;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+
+        /* Текст */
+        .square-title {
+            font-size: 0.9em;
+            text-align: center;
+        }
+
+        /* Адаптив */
         @media (max-width: 768px) {
-            .page-title {
-                font-size: 2.2em;
+            .square-box {
+                width: 140px;
             }
-
-            .navbar-custom {
-                height: 50px;
-                font-size: 20px;
-            }
-
-            .nav-link {
-                padding: 12px;
-            }
-
-            .custom-button {
-                font-size: 1.3em;
-                padding: 18px 25px;
+            .square-box img {
+                width: 65%;
+                height: 65%;
             }
         }
 
         @media (max-width: 480px) {
-            .page-title {
-                font-size: 1.8em;
+            .square-box {
+                width: 120px;
             }
-
-            .custom-button {
-                font-size: 1.2em;
-                padding: 16px 20px;
+            .square-box img {
+                width: 70%;
+                height: 70%;
             }
         }
+
     </style>
 </head>
 <body>
@@ -223,15 +162,29 @@
 </nav>
 
 <div class="container">
-    <h1 class="page-title">Kharkiv Clubs  Archives</h1>
+    <h1 class="page-title">Kharkiv Clubs Archives</h1>
 
     <div class="buttons-container">
-        <a href="../../Metalist/MetalistArchives.html" class="custom-button"><img src="../images/Metalist.png" width="50">Metalist</a>
-        <a href="../KharkivClubs/Metalist1925.html" class="custom-button"><img src="../images/M1925.png" width="50">Metalist 1925</a>
-        <a href="../KharkivClubs/FC_Kharkiv.html" class="custom-button"><img src="../images/FC_Kharkiv.png" width="50">FC Kharkiv</a>
-        <a href="../KharkivClubs/Arsenal.html" class="custom-button"><img src="../images/Arsenal.png" width="50">Arsenal</a>
-        <a href="../KharkivClubs/Gelios.html" class="custom-button"><img src="../images/Gelios.png" width="50">Gelios</a>
-
+        <a href="../../Metalist/MetalistArchives.html" class="square-box">
+            <img src="../images/Metalist.png" alt="Metalist">
+            <div class="square-title">Metalist</div>
+        </a>
+        <a href="../KharkivClubs/Metalist1925.html" class="square-box">
+            <img src="../images/M1925.png" alt="Metalist 1925">
+            <div class="square-title">Metalist 1925</div>
+        </a>
+        <a href="../KharkivClubs/FC_Kharkiv.html" class="square-box">
+            <img src="../images/FC_Kharkiv.png" alt="FC Kharkiv">
+            <div class="square-title">FC Kharkiv</div>
+        </a>
+        <a href="../KharkivClubs/Arsenal.html" class="square-box">
+            <img src="../images/Arsenal.png" alt="Arsenal">
+            <div class="square-title">Arsenal</div>
+        </a>
+        <a href="../KharkivClubs/Gelios.html" class="square-box">
+            <img src="../images/Gelios.png" alt="Gelios">
+            <div class="square-title">Gelios</div>
+        </a>
     </div>
 </div>
 
