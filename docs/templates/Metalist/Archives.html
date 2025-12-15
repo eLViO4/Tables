@@ -120,24 +120,33 @@
         @media (max-width: 480px) {
 
             .page-wrapper {
-                padding: 0 18px;
+                padding: 0 16px; /* нормальные края */
+            }
+
+            .buttons-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+                justify-items: center;
             }
 
             .square-box {
-                justify-content: center; /* ⬅ обратно */
+                width: 100%;          /* ⬅ КЛЮЧ */
+                max-width: 160px;     /* ⬅ ограничение */
+                justify-content: center;
             }
 
             .square-icon {
-                width: 90px;            /* ⬅ меньше */
-                height: 90px;
-                margin-top: 12px;       /* ⬅ воздух сверху */
-                margin-bottom: 14px;    /* ⬅ воздух снизу */
+                width: 88px;
+                height: 88px;
+                margin-top: 10px;
+                margin-bottom: 12px;
             }
 
             .square-title {
-                font-size: 0.95em;
+                font-size: 0.9em;
             }
         }
+
 
 
 
