@@ -36,42 +36,32 @@
             min-height: 100vh;
             line-height: 1.6;
             padding-bottom: 20px;
-            overflow-y: auto;
         }
+
+        /* ================= NAVBAR ================= */
 
         .navbar-custom {
             background: linear-gradient(135deg, #ca6e04 0%, #f5f3f1 100%);
-            backdrop-filter: blur(10px);
             height: 68px;
             margin-bottom: 30px;
             font-size: 30px;
             border-bottom: 3px solid #db7c0e;
-            border-radius: 0;
-            width: 100vw;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            width: 100%;
             display: flex;
             align-items: center;
             padding: 0 20px;
-            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
         .navbar-custom .nav-link {
-            color: #ffffff !important;
-            text-decoration: none;
+            color: #fff !important;
             font-weight: 700;
-            padding: 10px 15px;
-            transition: all 0.3s ease;
+            text-decoration: none;
         }
 
-        .navbar-custom .nav-link:hover {
-            color: #000000 !important;
-            border-radius: 6px;
-        }
+        /* ================= LAYOUT ================= */
 
         .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
@@ -86,36 +76,22 @@
             background: linear-gradient(135deg, #b45309, #78350f);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            position: relative;
-            margin-bottom: 50px;
-            width: 100%;
+            margin-bottom: 40px;
         }
 
-        .page-title::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px;
-            height: 4px;
-            background: linear-gradient(90deg, #b45309, #78350f);
-            border-radius: 2px;
-        }
+        /* ================= GRID ================= */
 
-        /* КОНТЕЙНЕР ДЛЯ КВАДРАТОВ */
         .squares-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 25px;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* ПК */
+            gap: 30px;
             width: 100%;
         }
 
-        /* СТИЛЬ КВАДРАТА */
+        /* ================= CARD ================= */
+
         .square-box {
-            flex: 0 0 200px;
-            height: 200px;
+            aspect-ratio: 1 / 1;
             background: linear-gradient(135deg, #ffffff 0%, #fff7ed 100%);
             border-radius: 15px;
             box-shadow: 0 8px 25px var(--shadow);
@@ -125,153 +101,83 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            text-decoration: none;
+            text-align: center;
+            text-decoration: none !important;
             color: var(--text-dark);
             transition: all 0.3s ease;
             padding: 15px;
-            text-align: center;
-            aspect-ratio: 1 / 1;
         }
 
         .square-box:hover {
             transform: translateY(-5px) scale(1.03);
             background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-            color: black;
-            box-shadow: 0 12px 30px rgba(217, 119, 6, 0.3);
+            color: #000;
         }
 
-        /* ИКОНКИ ДЛЯ КВАДРАТОВ */
+        /* ================= CONTENT ================= */
+
         .square-icon {
             width: 90px;
             height: 90px;
-            margin-bottom: 20px;
             object-fit: contain;
+            margin-bottom: 15px;
         }
 
         .square-title {
-            font-size: 1.4em;
+            font-size: 1.3em;
             font-weight: 700;
         }
 
         .square-subtitle {
             font-size: 0.9em;
-            color: #666;
-            margin-top: 5px;
+            opacity: 0.7;
         }
 
-        /* ЗАГОЛОВОК СЕКЦИИ */
-        .section-title {
-            text-align: center;
-            font-size: 1.8em;
-            font-weight: 700;
-            margin-bottom: 30px;
-            color: var(--text-dark);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        /* ================= ADAPTIVE ================= */
 
-        /* АДАПТИВНОСТЬ */
-        @media (min-width: 1024px) {
+        /* планшет */
+        @media (max-width: 1024px) {
             .squares-container {
-                gap: 30px;
-            }
-
-            .square-box {
-                flex: 0 0 200px;
-                height: 200px;
-            }
-        }
-
-        @media (max-width: 1023px) and (min-width: 768px) {
-            .squares-container {
+                grid-template-columns: repeat(3, 1fr);
                 gap: 20px;
             }
-
-            /* 3 в ряд на планшетах */
-            .square-box {
-                flex: 0 0 calc(33.333% - 20px);
-                height: 200px;
-            }
         }
 
-        @media (max-width: 768px) {
-
-            .page-title{
-                font-size: 1.8em;
-                margin-bottom: 30px;
-            }
-
-            .navbar-custom{
-                height: 50px;
-                font-size: 20px;
-            }
-
-            .navbar-custom .nav-link{
-                padding: 12px;
-            }
-
-            .squares-container{
-                gap: 14px;
-            }
-
-            .square-box{
-                flex: 0 0 calc(33.333% - 14px);
-                padding: 14px;
-                /* height УБРАНО */
-            }
-
-            .square-icon{
-                width: 64px;
-                height: 64px;
-                margin-bottom: 8px;
-            }
-
-            .square-title{
-                font-size: clamp(0.75rem, 2.6vw, 0.95rem);
-            }
-        }
-        @media (max-width: 600px){
-
-            .squares-container{
+        /* телефон — ВСЕГДА 2 В РЯД */
+        @media (max-width: 600px) {
+            .squares-container {
+                grid-template-columns: repeat(2, 1fr);
                 gap: 12px;
             }
 
-            .square-box{
-                flex: 0 0 calc(50% - 12px);
-                padding: 12px;
-                /* height УБРАНО */
-            }
-
-            .square-icon{
+            .square-icon {
                 width: 56px;
                 height: 56px;
+                margin-bottom: 8px;
             }
 
-            .square-title{
-                font-size: clamp(0.7rem, 3vw, 0.9rem);
+            .square-title {
+                font-size: 0.9rem;
+            }
+
+            .square-subtitle {
+                font-size: 0.75rem;
+            }
+
+            .navbar-custom {
+                height: 50px;
+                font-size: 20px;
             }
         }
 
-
-
-
-        /* УБИРАЕМ ПОДЧЕРКИВАНИЕ У КВАДРАТОВ */
-        .square-box {
-            text-decoration: none !important;
-        }
-
-        /* ИЛИ более конкретно: */
-        .square-title,
-        .square-subtitle {
-            text-decoration: none !important;
-        }
-
-        /* Или отключаем наследование: */
-        .square-box,
-        .square-box * {
-            text-decoration: none !important;
+        /* маленькие экраны */
+        @media (max-width: 360px) {
+            .squares-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
+
 </head>
 <body>
 
