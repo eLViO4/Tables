@@ -153,6 +153,17 @@ body {
     }
 }
 
+/* Планшеты — добавляем отступы по краям */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .tables-container {
+        padding: 0 30px;
+    }
+}
+.tables-row {
+    justify-content: space-evenly;
+}
+
+
 /* фикс dropdown */
 .navbar-nav .dropdown-menu {
     position: absolute;
