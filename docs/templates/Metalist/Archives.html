@@ -117,16 +117,31 @@
             }
         }
 
-        /* PHONE — ВСЕГДА 2 В РЯД */
         @media (max-width: 480px) {
+
             .page-wrapper {
-                padding: 0 18px; /* 👈 больше воздуха */
+                padding: 0 18px;
             }
 
             .square-box {
-                width: 160px;
+                justify-content: center; /* ⬅ обратно */
+            }
+
+            .square-icon {
+                width: 90px;            /* ⬅ меньше */
+                height: 90px;
+                margin-top: 12px;       /* ⬅ воздух сверху */
+                margin-bottom: 14px;    /* ⬅ воздух снизу */
+            }
+
+            .square-title {
+                font-size: 0.95em;
             }
         }
+
+
+
+
     </style>
 
 </head>
