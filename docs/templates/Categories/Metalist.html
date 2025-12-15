@@ -51,9 +51,10 @@
         }
 
         /* ================= PAGE ================= */
-        .container {
+        .page-container {
             max-width: 900px;
             margin: 0 auto;
+            padding: 0 15px;          /* симметрично */
             text-align: center;
         }
 
@@ -71,7 +72,8 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr); /* ПК */
             gap: 30px;
-            justify-items: center;
+            justify-content: center; /* центр всей сетки */
+            justify-items: center;   /* центр карточек */
         }
 
         /* ================= CARD ================= */
@@ -89,7 +91,6 @@
             text-decoration: none;
             color: var(--blue-primary);
             transition: transform 0.35s, box-shadow 0.35s;
-            position: relative;
         }
 
         .square-box:hover {
@@ -119,9 +120,11 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 20px;
             }
+
             .square-box {
                 width: 180px;
             }
+
             .square-icon {
                 width: 70px;
                 height: 70px;
@@ -131,16 +134,19 @@
         /* Телефон */
         @media (max-width: 600px) {
             .buttons-container {
-                grid-template-columns: repeat(2, 1fr); /* ВСЕГДА 2 в ряд */
+                grid-template-columns: repeat(2, 1fr);
                 gap: 12px;
             }
+
             .square-box {
                 width: 160px;
             }
+
             .square-icon {
                 width: 56px;
                 height: 56px;
             }
+
             .square-title {
                 font-size: 0.9rem;
             }
@@ -151,11 +157,13 @@
             .buttons-container {
                 grid-template-columns: 1fr;
             }
+
             .square-box {
                 width: 140px;
             }
         }
     </style>
+
 
 </head>
 
@@ -165,7 +173,8 @@
     <a href="../../index.html" class="nav-link">HOME</a>
 </nav>
 
-<div class="container">
+<div class="page-container">
+
     <h1 class="page-title">Metalist</h1>
 
     <div class="buttons-container">
