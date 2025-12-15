@@ -33,7 +33,7 @@
             padding-bottom: 40px;
         }
 
-        /* NAVBAR */
+        /* ================= NAVBAR ================= */
         .navbar-custom {
             background: linear-gradient(135deg, var(--blue-primary), var(--blue-dark));
             height: 68px;
@@ -50,7 +50,7 @@
             text-decoration: none;
         }
 
-        /* PAGE */
+        /* ================= PAGE ================= */
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -66,50 +66,30 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* GRID */
+        /* ================= GRID ================= */
         .buttons-container {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(4, 1fr); /* ПК */
             gap: 30px;
             justify-items: center;
         }
 
-
-        /* SQUARE */
+        /* ================= CARD ================= */
         .square-box {
             width: 220px;
             aspect-ratio: 1 / 1;
-
             background: linear-gradient(135deg, #ffffff, #fff7ed);
             border-radius: 16px;
             border: 3px solid var(--blue-primary);
             box-shadow: 0 8px 20px var(--shadow);
-
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-
             text-decoration: none;
             color: var(--blue-primary);
-            transition: 0.35s;
+            transition: transform 0.35s, box-shadow 0.35s;
             position: relative;
-            overflow: hidden;
-        }
-
-        .square-box::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, var(--blue-primary), var(--blue-dark));
-            transform: scaleY(0);
-            transform-origin: bottom;
-            transition: 0.35s;
-            z-index: 0;
-        }
-
-        .square-box:hover::before {
-            transform: scaleY(1);
         }
 
         .square-box:hover {
@@ -123,53 +103,60 @@
             height: 90px;
             object-fit: contain;
             margin-bottom: 15px;
-            z-index: 1;
         }
 
         /* TEXT */
         .square-title {
             font-size: 1.2em;
             font-weight: 800;
-            z-index: 1;
         }
 
-        .square-box:hover .square-title {
-            color: #ffd700;
-        }
+        /* ================= ADAPTIVE ================= */
 
-
+        /* Планшет */
         @media (max-width: 900px) {
             .buttons-container {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .page-title {
-                font-size: 2.2em;
-            }
-
             .square-box {
                 width: 180px;
             }
-
             .square-icon {
                 width: 70px;
                 height: 70px;
             }
         }
 
-        @media (max-width: 480px) {
+        /* Телефон */
+        @media (max-width: 600px) {
+            .buttons-container {
+                grid-template-columns: repeat(2, 1fr); /* ВСЕГДА 2 в ряд */
+                gap: 12px;
+            }
+            .square-box {
+                width: 160px;
+            }
+            .square-icon {
+                width: 56px;
+                height: 56px;
+            }
+            .square-title {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Маленький экран */
+        @media (max-width: 360px) {
             .buttons-container {
                 grid-template-columns: 1fr;
             }
-
             .square-box {
-                width: 200px;
+                width: 140px;
             }
         }
     </style>
+
 </head>
 
 <body>
@@ -179,7 +166,7 @@
 </nav>
 
 <div class="container">
-    <h1 class="page-title">Metalist</h1>
+    <h1 class="page-title">Metalist1</h1>
 
     <div class="buttons-container">
         <a href="../Metalist/League/2024-25.html" class="square-box">
