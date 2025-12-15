@@ -14,13 +14,11 @@
 
     <style>
         :root {
-            --bg-light: #f8f9fa;
-            --text-dark: #2d3748;
             --blue-primary: #0057b7;
             --yellow-primary: #ffd700;
             --blue-dark: #003d82;
             --border: #e2e8f0;
-            --shadow: rgba(0, 0, 0, 0.08);
+            --shadow: rgba(0,0,0,0.08);
         }
 
         * {
@@ -32,135 +30,105 @@
         body {
             font-family: 'Inter', sans-serif;
             background: #eec003;
-            color: var(--text-dark);
             min-height: 100vh;
-            line-height: 1.6;
-            padding-bottom: 20px;
+            padding-bottom: 40px;
         }
 
+        /* NAVBAR */
         .navbar-custom {
-            background: linear-gradient(135deg, var(--blue-primary) 0%, var(--blue-dark) 100%);
+            background: linear-gradient(135deg, var(--blue-primary), var(--blue-dark));
             height: 68px;
             border-bottom: 3px solid var(--yellow-primary);
-            width: 100%;
             display: flex;
             align-items: center;
             padding: 0 20px;
-            z-index: 100;
         }
 
-        .navbar-custom .nav-link {
+        .nav-link {
             color: #ffdd07 !important;
-            text-decoration: none;
-            font-weight: 700;
             font-size: 28px;
-            padding: 10px 15px;
-            transition: all 0.3s ease;
+            font-weight: 800;
+            text-decoration: none;
         }
 
-        .navbar-custom .nav-link:hover {
-            color: var(--yellow-primary) !important;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        /* PAGE */
+        .page-wrapper {
             max-width: 900px;
             margin: 0 auto;
-            gap: 30px;
-            padding-bottom: 60px;
+            padding: 0 24px; /* ← КЛЮЧ: нормальные отступы */
+            text-align: center;
         }
 
         .page-title {
-            text-align: center;
             font-size: 2.8em;
             font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            margin: 40px 0;
             background: linear-gradient(135deg, var(--blue-primary), var(--blue-dark));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            position: relative;
-            margin-bottom: 40px;
-            padding: 0 20px;
         }
 
-        .page-title::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--blue-primary), var(--yellow-primary));
-            border-radius: 2px;
-        }
-
-        /* GRID ДЛЯ КВАДРАТОВ */
+        /* GRID */
         .buttons-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 20px;
-            justify-content: center; /* центрируем сетку */
-            width: 100%;
-            padding: 0 10px; /* добавляем отступы слева и справа */
-            box-sizing: border-box;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            justify-items: center;
         }
 
+        /* CARD */
         .square-box {
-            width: 100%;
-            max-width: 250px;
+            width: 220px;
             aspect-ratio: 1 / 1;
-            background: linear-gradient(135deg, #ffffff 0%, #fff7ed 100%);
-            border-radius: 15px;
-            border: 1px solid var(--border);
-            border-left: 4px solid var(--blue-primary);
-            box-shadow: 0 8px 25px var(--shadow);
+            background: linear-gradient(135deg, #ffffff, #fff7ed);
+            border-radius: 16px;
+            border: 3px solid var(--blue-primary);
+            box-shadow: 0 8px 20px var(--shadow);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            color: var(--text-dark);
-            transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-            padding: 15px;
-            text-align: center;
+            color: var(--blue-primary);
+            transition: 0.3s;
         }
 
         .square-box:hover {
-            transform: translateY(-5px) scale(1.03);
-            background: linear-gradient(135deg, var(--blue-primary), var(--blue-dark));
-            color: #FFD700;
-            box-shadow: 0 12px 30px rgba(0, 87, 183, 0.3);
+            transform: translateY(-5px) scale(1.04);
+            box-shadow: 0 14px 35px rgba(0,87,183,0.35);
         }
 
         .square-icon {
-            width: 60%;
-            height: 60%;
+            width: 120px;
+            height: 120px;
             object-fit: contain;
-            margin-bottom: 20px;
+            margin-bottom: 32px;
         }
 
         .square-title {
-            font-size: 1em;
-            font-weight: 700;
+            font-size: 1.05em;
+            font-weight: 800;
         }
 
-        /* Адаптивность */
+        /* TABLET */
         @media (max-width: 768px) {
-            .buttons-container {
-                grid-template-columns: repeat(2, 1fr); /* 2 квадрата в ряд */
+            .square-box {
+                width: 180px;
             }
         }
 
+        /* PHONE — ВСЕГДА 2 В РЯД */
         @media (max-width: 480px) {
-            .buttons-container {
-                grid-template-columns: repeat(2, 1fr); /* тоже 2 квадрата */
+            .page-wrapper {
+                padding: 0 18px; /* 👈 больше воздуха */
+            }
+
+            .square-box {
+                width: 160px;
             }
         }
     </style>
+
 </head>
 <body>
 
@@ -168,20 +136,22 @@
     <a href="../../index.html" class="nav-link">HOME</a>
 </nav>
 
-<div class="container">
+<div class="page-wrapper">
     <h1 class="page-title">Metalist Archives</h1>
 
     <div class="buttons-container">
         <a href="../Metalist/MetalistArchives.html" class="square-box">
-            <img src="../Metalist/images/Metalist.png" alt="Metalist Archives" class="square-icon">
+            <img src="../Metalist/images/Metalist.png" class="square-icon">
             <div class="square-title">Metalist Season Results</div>
         </a>
+
         <a href="../Metalist/KharkivClubs/KharkivClubs.html" class="square-box">
-            <img src="../Metalist/images/Kharkiv.svg" alt="Kharkiv Clubs Archives" class="square-icon">
+            <img src="../Metalist/images/Kharkiv.svg" class="square-icon">
             <div class="square-title">Kharkiv Clubs Archives</div>
         </a>
     </div>
 </div>
+
 
 </body>
 </html>
