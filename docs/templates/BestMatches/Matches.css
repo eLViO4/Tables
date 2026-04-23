@@ -1,0 +1,218 @@
+:root {
+    --bg: #f8f9fa;
+    --text: #020601;
+    --accent: #db7c0e;
+    --border: #e2e8f0;
+    --shadow: rgba(0,0,0,0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background-image: url("images/wood.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* MATCH ROW */
+.match-row {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px var(--shadow);
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+/* HEADER */
+/* BASE HEADER */
+.match-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--border);
+}
+
+/* LEFT */
+.stage {
+    text-align: left;
+    font-weight: 500;
+}
+
+/* CENTER */
+.tournament {
+    text-align: center;
+    font-weight: 600;
+}
+
+/* RIGHT */
+.date {
+    text-align: right;
+    opacity: 0.9;
+}
+
+/* UCL */
+.match-header.ucl {
+    background: #0b3d91;
+    color: white;
+}
+
+/* UEL */
+.match-header.uel {
+    background: #ff6a00;
+    color: white;
+}
+
+/* UECL */
+.match-header.uecl {
+    background: #1f7a3a;
+    color: white;
+}
+
+/* World Cup */
+.match-header.wc {
+    background: #7a0f1d;
+    color: white;
+}
+
+/* текст внутри */
+
+/* MAIN CONTENT */
+.match-content {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+/* LEFT (30%) */
+.teams {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 700;
+}
+
+.main-score {
+    font-size: 18px;
+}
+
+.pen-score {
+    font-size: 12px;
+    font-weight: 500;
+
+    margin-top: 2px;
+}
+
+/* CENTER */
+.goals {
+    width: 40%;
+    display: flex;
+    justify-content: center; /* центрируем обе колонки */
+    gap: 20px; /* вот тут регулируешь расстояние */
+    font-size: 14px;
+}
+
+.goals-col {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* RIGHT */
+.highlights {
+    width: 30%;
+    text-align: right;
+}
+
+.highlights a {
+    background: var(--accent);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.highlights a:hover {
+    background: #b45309;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .match-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .teams, .goals, .highlights {
+        width: 100%;
+        text-align: center;
+    }
+
+    .highlights {
+        text-align: center;
+    }
+}
+
+.navbar-custom {
+    background: linear-gradient(135deg, #060300 0%, #7c430a 100%);
+    backdrop-filter: blur(10px);
+    height: 68px;
+    margin-bottom: 30px;
+    font-size: 30px;
+    border-bottom: 3px solid #db7c0e;
+    border-radius: 0;
+    width: 100vw;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 100;
+}
+
+.navbar-custom .nav-link {
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover {
+    color: #ffffff !important;
+    border-radius: 6px;
+}
