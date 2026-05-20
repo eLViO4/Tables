@@ -89,6 +89,12 @@ h1 {
     color: white;
 }
 
+/* EPL */
+.match-header.epl {
+    background: #05f1ff;
+    color: #38003d;
+}
+
 /* World Cup */
 .match-header.wc {
     background: #7a0f1d;
