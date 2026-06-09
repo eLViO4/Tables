@@ -45,7 +45,7 @@ header {
 }
 
 /* === PLAYOFF STAGE === */
-.playoff-bracket {
+/*.playoff-bracket {
     display: flex;
     justify-content: flex-start;
     gap: 18px;
@@ -54,6 +54,42 @@ header {
     overflow-x: auto;
     min-width: 0;
     flex: 1;
+}*/
+/* === PLAYOFF STAGE === */
+.playoff-bracket {
+    display: flex;
+    justify-content: flex-start;
+    gap: 18px;
+    padding: 22px 0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden; /* Обязательно: отключает захват вертикального скролла */
+    -webkit-overflow-scrolling: touch; /* Делает скролл на iPhone плавным */
+    min-width: 0;
+    flex: 1;
+}
+/* === RESPONSIVE ADJUSTMENTS === */
+@media (max-width: 991px) {
+    .main-container {
+        flex-direction: column; /* Элементы встают друг под друга */
+        align-items: stretch;
+    }
+
+    .league-phase {
+        width: 100%; /* Таблицы занимают всю ширину */
+        margin-bottom: 20px;
+    }
+
+    .playoff-bracket {
+        width: 100%; /* Плей-офф занимает всю ширину экрана телефона */
+    }
+
+    /* Корректировка финала для мобилок, чтобы огромный масштаб не ломал экран */
+    .match.final {
+        transform: scale(1.1);
+        margin-left: 0;
+        margin-top: 15px;
+    }
 }
 
 .stage {
