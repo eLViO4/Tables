@@ -474,7 +474,7 @@ header {
 }
 
 /* === MOBILE SCROLL FIX === */
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
     html, body {
         overflow-x: hidden !important;
         overscroll-behavior-x: none;
@@ -538,7 +538,7 @@ header {
         margin-left: 0;
         margin-top: 20px;
     }
-}
+}*/
 
 /* === TABLE STYLES FOR HISTORY PAGES === */
 table {
