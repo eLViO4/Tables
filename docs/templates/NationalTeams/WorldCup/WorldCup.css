@@ -376,8 +376,12 @@ footer {
     bottom: 2px;
     width: 8px;
     border-radius: 3px;
-   /* background-color: #e9bb06;*/
+    background-color: transparent;
     pointer-events: none;
+}
+
+.group.qualified tbody tr:nth-child(4) td:first-child::before {
+    background-color: var(--wc-green) ;
 }
 
 .match.bronze {
