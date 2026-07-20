@@ -161,24 +161,54 @@
             text-shadow: 1px 1px 2px #ffffff;
         }
 
-
-        .champion-logo img {
-            width: 250px;       /* фиксируем ширину */
+        .champion-logo {
+            transform: translateY(-400px) !important; /* Поднимает герб вверх на 400px */
         }
-        /*.group tbody tr:nth-child(4) td:first-child::before {
-            background-color: #e9bb06;
-        }*/
-        /* === Fix horizontal scroll on small screens === */
-        @media (max-width: 992px) {
-            .main-container {
-                display: block;
-                overflow-x: auto;      /* ✅ даём возможность прокрутки */
-                -webkit-overflow-scrolling: touch;
-                width: 100%;
+
+        /* При необходимости подгоните ширину картинки */
+        .champion-logo img {
+            width: 180px !important;
+        }
+
+        /* === MOBILE === */
+        @media (max-width: 768px) {
+            .navbar-collapse {
+                background-color: #5c001a;
+                border-top: 1px solid #ffffff;
             }
 
+            .dropdown-menu {
+                background-color: #7d0022;
+            }
+        }
+
+
+        /* === Fix horizontal scroll on small screens === */
+        @media (max-width: 992px) {
+            /* Родительский контейнер скролла */
+            .main-container {
+                display: block;
+                width: 100%;
+                overflow-x: auto !important;             /* Принудительный скролл по X */
+                overflow-y: hidden;
+                -webkit-overflow-scrolling: touch;      /* Плавный (инерционный) скролл на iOS */
+                touch-action: pan-x pan-y;              /* Явное разрешение жестов скролла */
+            }
+
+            /* Само дерево плей-офф */
             .playoff-bracket {
-                min-width: 850px;      /* ✅ ширина больше экрана, чтобы появлялся скролл */
+                display: flex;                          /* Разворачиваем стадии в один ряд */
+                flex-direction: row;
+                width: max-content;                     /* Ширина подстраивается под контент */
+                min-width: 100%;
+                padding-bottom: 15px;                   /* Место под ползунок скролла */
+            }
+
+            /* Фиксируем ширину каждой стадии, чтобы они не сжимались */
+            .playoff-bracket .stage {
+                min-width: 220px;                       /* Ширина каждой колонки (Round of 32, etc.) */
+                flex-shrink: 0;                         /* Запрещаем сжатие колонок */
+                    /* Отступ между стадиями */
             }
         }
     </style>
@@ -876,13 +906,13 @@
                 <div class="team winner">
                     <div class="team-name"><span class="flag">🇪🇸󠁥󠁮</span> SPAIN</div>
                     <div class="scores">
-                        <div class="score"></div>
+                        <div class="score">1</div>
                     </div>
                 </div>
                 <div class="team">
                     <div class="team-name"><span class="flag">󠁥󠁮󠁧󠁿🇦🇷</span> ARGENTINA</div>
                     <div class="scores">
-                        <div class="score"></div>
+                        <div class="score">0</div>
                     </div>
                 </div>
             </div>
@@ -892,21 +922,21 @@
 
             <div class="match bronze">
                 <div class="team winner">
-                    <div class="team-name"><span class="flag">🇲🇫</span> France</div>
+                    <div class="team-name"><span class="flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span> England</div>
                     <div class="scores">
-                        <div class="score"></div>
+                        <div class="score">6</div>
                     </div>
                 </div>
                 <div class="team">
-                    <div class="team-name"><span class="flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span> England</div>
+                    <div class="team-name"><span class="flag">🇲🇫</span> France</div>
                     <div class="scores">
-                        <div class="score"></div>
+                        <div class="score">4</div>
                     </div>
                 </div>
             </div>
 
             <div class="champion-logo">
-               <!-- <img src="images/Argentina.png" alt="France Champion">-->
+                <img src="images/Spain.png">
             </div>
         </div>
     </section>
