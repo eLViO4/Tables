@@ -184,39 +184,29 @@
 
 
         /* === Fix horizontal scroll on small screens === */
-        @media (max-width: 992px) {
-            /* Родительский контейнер скролла */
+        /* Переопределяем правила для планшетов (iPad / 769px - 992px) */
+        @media (max-width: 992px) and (min-width: 769px) {
             .main-container {
-                display: block;
-                width: 100%;
-                overflow-x: auto !important;             /* Принудительный скролл по X */
-                overflow-y: hidden;
-                -webkit-overflow-scrolling: touch;      /* Плавный (инерционный) скролл на iOS */
-                touch-action: pan-x pan-y;              /* Явное разрешение жестов скролла */
+                flex-direction: column !important;
+                gap: 30px !important;
             }
 
-            /* Само дерево плей-офф */
-            .playoff-bracket {
-                display: flex;                          /* Разворачиваем стадии в один ряд */
-                flex-direction: row;
-                width: max-content;                     /* Ширина подстраивается под контент */
-                min-width: 100%;
-                padding-bottom: 15px;                   /* Место под ползунок скролла */
-            }
-
-            /* Фиксируем ширину каждой стадии, чтобы они не сжимались */
-            .playoff-bracket .stage {
-                min-width: 220px;                       /* Ширина каждой колонки (Round of 32, etc.) */
-                flex-shrink: 0;                         /* Запрещаем сжатие колонок */
-                    /* Отступ между стадиями */
-            }
-        }
-        @media (max-width: 992px) {
             .groups-container {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 10px;
+                order: 1 !important; /* Ставим группы ПЕРВЫМИ (наверх) */
+                width: 100% !important;
+                max-width: 100% !important;
+                grid-template-columns: repeat(4, 1fr) !important; /* Ровно 4 группы в ряд (4-4-4) */
+                gap: 12px !important;
+            }
+
+            .playoff-bracket {
+                order: 2 !important; /* Ставим плей-офф ВТОРЫМ (вниз) */
+                width: 100% !important;
+                justify-content: flex-start !important;
+                overflow-x: auto !important; /* Включаем горизонтальный скролл сетки */
             }
         }
+
     </style>
 </head>
 <body>
