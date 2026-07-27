@@ -183,29 +183,44 @@
         }
 
 
-        /* === Fix horizontal scroll on small screens === */
-        /* Переопределяем правила для планшетов (iPad / 769px - 992px) */
-        @media (max-width: 992px) and (min-width: 769px) {
-            .main-container {
+        /* === FIX FOR TABLETS & SMALL SCREENS (GROUPS ABOVE PLAYOFF) === */
+        @media (max-width: 1250px) {
+            /* 1. Главный контейнер переводим в колонку */
+            .main-container,
+            div.main-container {
+                display: flex !important;
                 flex-direction: column !important;
-                gap: 30px !important;
+                width: 100% !important;
+                overflow-x: visible !important;
             }
 
-            .groups-container {
-                order: 1 !important; /* Ставим группы ПЕРВЫМИ (наверх) */
+            /* 2. Группы ставим НАВЕРХ и разбиваем ровно по 4 в ряд (3 ряда) */
+            .groups-container,
+            section.groups-container {
+                order: 1 !important;
+                display: grid !important;
+                grid-template-columns: repeat(4, 1fr) !important;
                 width: 100% !important;
                 max-width: 100% !important;
-                grid-template-columns: repeat(4, 1fr) !important; /* Ровно 4 группы в ряд (4-4-4) */
-                gap: 12px !important;
+                gap: 10px !important;
+                margin-bottom: 30px !important;
             }
 
-            .playoff-bracket {
-                order: 2 !important; /* Ставим плей-офф ВТОРЫМ (вниз) */
+            /* 3. Плей-офф ставим ВНИЗ на всю ширину с горизонтальной прокруткой */
+            .playoff-bracket,
+            section.playoff-bracket {
+                order: 2 !important;
+                display: flex !important;
                 width: 100% !important;
+                min-width: 100% !important;
                 justify-content: flex-start !important;
-                overflow-x: auto !important; /* Включаем горизонтальный скролл сетки */
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch !important;
             }
         }
+
+        /* На совсем узких смартфонах (меньше 576px) делаем по 2 группы в ряд */
+
 
     </style>
 </head>
