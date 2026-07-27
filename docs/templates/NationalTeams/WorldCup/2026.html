@@ -169,6 +169,30 @@
         .champion-logo img {
             width: 180px !important;
         }
+        /* Фикс плавного и полного скролла для плей-офф 2026 */
+        .playoff-bracket {
+            display: flex !important;
+            overflow-x: auto !important;
+            overflow-y: hidden !important;
+            -webkit-overflow-scrolling: touch !important; /* Включает инерционный скролл на iOS */
+            scroll-snap-type: none !important;            /* Отключает залипание/остановки при скролле */
+            touch-action: pan-x pan-y !important;         /* Разрешает свободный жест пальцем */
+            white-space: nowrap !important;
+            width: 100% !important;
+        }
+
+        /* Гарантируем, что колонки стадий не сжимаются и дают нужную ширину */
+        .playoff-bracket .stage {
+            flex-shrink: 0 !important;                     /* Запрещает сжимать колонки */
+        }
+
+        /* Отступ справа, чтобы последняя стадия (Финал) не прилипала к краю и докручивалась до конца */
+        .playoff-bracket::after {
+            content: '';
+            display: block;
+            width: 40px;
+            flex-shrink: 0;
+        }
 
         /* === MOBILE === */
         @media (max-width: 768px) {
@@ -184,7 +208,7 @@
 
 
         /* === FIX FOR TABLETS & SMALL SCREENS (GROUPS ABOVE PLAYOFF) === */
-        @media (max-width: 1400px) {
+        @media (max-width: 1400px)and (min-width: 769px) {
             /* 1. Главный контейнер переводим в колонку */
             .main-container,
             div.main-container {
