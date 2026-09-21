@@ -15,11 +15,11 @@
 body {
     font-family: 'Inter', sans-serif;
     color: var(--text);
+    background-color: #3a2416;        /* тон дерева — не будет белой вспышки при загрузке */
     background-image: url("images/wood.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-repeat: repeat;         /* повторяем плитку */
+    background-size: 700px;            /* размер плитки, НЕ cover */
+    background-position: top left;
 }
 
 .container {
