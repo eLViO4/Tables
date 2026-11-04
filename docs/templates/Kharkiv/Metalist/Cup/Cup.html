@@ -46,7 +46,8 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            width: 35%;
+            width: 70%;
+            max-width: 1100px;
             margin: 0 auto;
             gap: 15px;
         }
@@ -83,6 +84,7 @@
 
         .matches {
             flex: 1;
+            min-width: 0;
             display: flex;
             flex-direction: column;
             gap: 6px;
@@ -100,14 +102,19 @@
             font-weight: 600;
             font-size: 1.1em;
             width: 100%;
+            min-width: 0;
             box-sizing: border-box;
+            gap: 20px;
         }
 
         .team1, .team2 {
-            width: 40%;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            flex: 1 1 0;
+            width: auto;
+            min-width: 0;
+            white-space: normal;
+            overflow: visible;
+            text-overflow: clip;
+            overflow-wrap: anywhere;
         }
 
         .team1 {
@@ -124,6 +131,10 @@
             font-weight: 700;
         }
 
+        .match:not(.double-score) > .score {
+            flex: 0 0 70px;
+        }
+
         .score.win { color: green; }
         .score.lose { color: red; }
         .score.draw { color: black; }
@@ -138,7 +149,6 @@
             letter-spacing: 1px;
         }
 
-
         /* двойной матч в одном блоке */
         .match.double-score {
             display: flex;
@@ -152,10 +162,12 @@
             font-weight: 600;
             font-size: 1.1em;
             width: 100%;
+            min-width: 0;
             box-sizing: border-box;
         }
 
         .score-box {
+            flex: 0 0 70px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -176,11 +188,11 @@
             margin: 20px 0;
         }
 
-
         /* Мобильные устройства */
         @media (max-width: 768px) {
             .container {
-                width: 70% !important;
+                width: 95% !important;
+                max-width: none;
                 margin: 0 auto;
             }
 
@@ -211,7 +223,7 @@
         /* Очень маленькие экраны */
         @media (max-width: 480px) {
             .container {
-                width: 85% !important;
+                width: 95% !important;
             }
 
             .season-year {
@@ -231,6 +243,7 @@
             .page-title {
                 font-size: 1.8em;
             }
+
         }
     </style>
 
