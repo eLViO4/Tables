@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Australian Open</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1891d0;
+            color: white;
+            margin: 0;
+            padding-bottom: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px rgba(0, 145, 210, 0.5);
+        }
+
+        h2 {
+            color: white;
+            text-transform: uppercase;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 22px;
+            text-shadow: 0 0 8px rgba(0, 145, 210, 0.4);
+        }
+
+        .navbar-custom {
+            background-color: #005b8f;
+            height: 68px;
+            margin-bottom: 30px;
+            font-size: 30px;
+            border-bottom: 2px solid #0091d2;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            display: inline-block;
+        }
+
+        .nav-link:hover {
+            color: #fff;
+        }
+
+        .content-wrapper {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+        }
+
+        .winners-list {
+            width: 34%;
+            background: white;
+            border-radius: 8px;
+            padding: 20px 25px;
+            box-shadow: 0 0 15px rgba(0, 145, 210, 0.35);
+            box-sizing: border-box;
+        }
+
+        .winners-list h2 {
+            text-align: center;
+            border-bottom: 2px solid #005b8f;
+            padding-bottom: 10px;
+            text-shadow: none;
+        }
+
+        .winners-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .winners-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 4px;
+            color: black;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .winners-list li span {
+            color: #0091d2;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .winners-list li.divider {
+            border-bottom: 2px solid #005b8f;
+            margin: 8px 0;
+            padding: 0;
+        }
+
+        .table-section {
+            width: 63%;
+        }
+
+        .table-section h2 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 0 15px rgba(0, 145, 210, 0.35);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        thead {
+            background-color: #005b8f;
+            color: white;
+            border-bottom: 2px solid black;
+        }
+
+        th, td {
+            padding: 10px 15px;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+
+        tbody tr:hover {
+            background-color: #d6eef9;
+        }
+
+        th {
+            font-size: 16px;
+        }
+
+        td {
+            font-size: 15px;
+        }
+
+        .year {
+            color: black;
+            font-weight: bold;
+        }
+
+        .winner {
+            color: #0077b6;
+            font-weight: bold;
+        }
+
+        .country {
+            color: black;
+        }
+
+        @media (max-width: 900px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            .winners-list,
+            .table-section {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar-custom">
+    <a href="../../../index.html" class="nav-link">HOME</a>
+</nav>
+<h1>Australian Open Champions</h1>
+
+<div class="content-wrapper">
+    <div class="winners-list">
+        <h2>All Winners</h2>
+        <ul>
+            <li>Novak Djokovic <span>10</span></li>
+            <li class="divider"></li>
+            <li>Roger Federer <span>6</span></li>
+            <li class="divider"></li>
+            <li>Andre Agassi <span>4</span></li>
+            <li class="divider"></li>
+            <li>Mats Wilander <span>3</span></li>
+            <li class="divider"></li>
+            <li>Jannik Sinner <span>2</span></li>
+            <li>Rafael Nadal <span>2</span></li>
+            <li>Pete Sampras <span>2</span></li>
+            <li>Boris Becker <span>2</span></li>
+            <li>Jim Courier <span>2</span></li>
+            <li>Ivan Lendl <span>2</span></li>
+            <li>Stefan Edberg <span>2</span></li>
+            <li>Johan Kriek <span>2</span></li>
+            <li>Guillermo Vilas <span>2</span></li>
+            <li>John Newcombe <span>2</span></li>
+            <li>Ken Rosewall <span>2</span></li>
+            <li class="divider"></li>
+            <li>Carlos Alcaraz <span>1</span></li>
+            <li>Stan Wawrinka <span>1</span></li>
+            <li>Marat Safin <span>1</span></li>
+            <li>Thomas Johansson <span>1</span></li>
+            <li>Yevgeny Kafelnikov <span>1</span></li>
+            <li>Petr Korda <span>1</span></li>
+            <li>Brian Teacher <span>1</span></li>
+            <li>Vitas Gerulaitis <span>1</span></li>
+            <li>Roscoe Tanner <span>1</span></li>
+            <li>Mark Edmondson <span>1</span></li>
+            <li>Jimmy Connors <span>1</span></li>
+            <li>Arthur Ashe <span>1</span></li>
+            <li>Rod Laver <span>1</span></li>
+        </ul>
+    </div>
+
+    <div class="table-section">
+        <table>
+            <thead>
+            <tr>
+                <th>Year</th>
+                <th>Winner</th>
+                <th>Country</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><td class="year">2026</td><td class="winner">Carlos Alcaraz</td><td class="country">Spain</td></tr>
+            <tr><td class="year">2025</td><td class="winner">Jannik Sinner</td><td class="country">Italy</td></tr>
+            <tr><td class="year">2024</td><td class="winner">Jannik Sinner</td><td class="country">Italy</td></tr>
+            <tr><td class="year">2023</td><td class="winner">Novak Djokovic</td><td class="country">Serbia</td></tr>
+            <tr><td class="year">2022</td><td class="winner">Rafael Nadal</td><td class="country">Spain</td></tr>
+            <tr><td class="year">2021</td><td class="winner">Novak Djokovic</td><td class="country">Serbia</td></tr>
+            <tr><td class="year">2020</td><td class="winner">Novak Djokovic</td><td class="country">Serbia</td></tr>
+            <tr><td class="year">2019</td><td class="winner">Novak Djokovic</td><td class="country">Serbia</td></tr>
+            <tr><td class="year">2018</td><td class="winner">Roger Federer</td><td class="country">Switzerland</td></tr>
+            <tr><td class="year">2017</td><td class="winner">Roger Federer</td><td class="country">Switzerland</td></tr>
+            <tr><td class="year">2016</td><td class="winner">Novak Djokovic</td><td class="country">Serbia</td></tr>
+            <tr><td class="year">2015</td><td class="winner">Novak Djokovic</td><td class="country">Serbia</td></tr>
+            <tr><td class="year">2014</td><td class="winner">Stan Wawrinka</td><td class="country">Switzerland</td></tr>
+            <tr><td class="year">2013</td><td class="winner">Novak Djokovic</td><td class="country">Serbia</td></tr>
+            <tr><td class="year">2012</td><td class="winner">Novak Djokovic</td><td class="country">Serbia</td></tr>
+            <tr><td class="year">2011</td><td class="winner">Novak Djokovic</td><td class="country">Serbia</td></tr>
+            <tr><td class="year">2010</td><td class="winner">Roger Federer</td><td class="country">Switzerland</td></tr>
+            <tr><td class="year">2009</td><td class="winner">Rafael Nadal</td><td class="country">Spain</td></tr>
+            <tr><td class="year">2008</td><td class="winner">Novak Djokovic</td><td class="country">Serbia</td></tr>
+            <tr><td class="year">2007</td><td class="winner">Roger Federer</td><td class="country">Switzerland</td></tr>
+            <tr><td class="year">2006</td><td class="winner">Roger Federer</td><td class="country">Switzerland</td></tr>
+            <tr><td class="year">2005</td><td class="winner">Marat Safin</td><td class="country">Russia</td></tr>
+            <tr><td class="year">2004</td><td class="winner">Roger Federer</td><td class="country">Switzerland</td></tr>
+            <tr><td class="year">2003</td><td class="winner">Andre Agassi</td><td class="country">United States</td></tr>
+            <tr><td class="year">2002</td><td class="winner">Thomas Johansson</td><td class="country">Sweden</td></tr>
+            <tr><td class="year">2001</td><td class="winner">Andre Agassi</td><td class="country">United States</td></tr>
+            <tr><td class="year">2000</td><td class="winner">Andre Agassi</td><td class="country">United States</td></tr>
+            <tr><td class="year">1999</td><td class="winner">Yevgeny Kafelnikov</td><td class="country">Russia</td></tr>
+            <tr><td class="year">1998</td><td class="winner">Petr Korda</td><td class="country">Czech Republic</td></tr>
+            <tr><td class="year">1997</td><td class="winner">Pete Sampras</td><td class="country">United States</td></tr>
+            <tr><td class="year">1996</td><td class="winner">Boris Becker</td><td class="country">Germany</td></tr>
+            <tr><td class="year">1995</td><td class="winner">Andre Agassi</td><td class="country">United States</td></tr>
+            <tr><td class="year">1994</td><td class="winner">Pete Sampras</td><td class="country">United States</td></tr>
+            <tr><td class="year">1993</td><td class="winner">Jim Courier</td><td class="country">United States</td></tr>
+            <tr><td class="year">1992</td><td class="winner">Jim Courier</td><td class="country">United States</td></tr>
+            <tr><td class="year">1991</td><td class="winner">Boris Becker</td><td class="country">Germany</td></tr>
+            <tr><td class="year">1990</td><td class="winner">Ivan Lendl</td><td class="country">Czechoslovakia</td></tr>
+            <tr><td class="year">1989</td><td class="winner">Ivan Lendl</td><td class="country">Czechoslovakia</td></tr>
+            <tr><td class="year">1988</td><td class="winner">Mats Wilander</td><td class="country">Sweden</td></tr>
+            <tr><td class="year">1987</td><td class="winner">Stefan Edberg</td><td class="country">Sweden</td></tr>
+            <tr><td class="year">1985</td><td class="winner">Stefan Edberg</td><td class="country">Sweden</td></tr>
+            <tr><td class="year">1984</td><td class="winner">Mats Wilander</td><td class="country">Sweden</td></tr>
+            <tr><td class="year">1983</td><td class="winner">Mats Wilander</td><td class="country">Sweden</td></tr>
+            <tr><td class="year">1982</td><td class="winner">Johan Kriek</td><td class="country">United States</td></tr>
+            <tr><td class="year">1981</td><td class="winner">Johan Kriek</td><td class="country">South Africa</td></tr>
+            <tr><td class="year">1980</td><td class="winner">Brian Teacher</td><td class="country">United States</td></tr>
+            <tr><td class="year">1979</td><td class="winner">Guillermo Vilas</td><td class="country">Argentina</td></tr>
+            <tr><td class="year">1978</td><td class="winner">Guillermo Vilas</td><td class="country">Argentina</td></tr>
+            <tr><td class="year">1977</td><td class="winner">Vitas Gerulaitis (Dec)</td><td class="country">United States</td></tr>
+            <tr><td class="year">1977</td><td class="winner">Roscoe Tanner (Jan)</td><td class="country">United States</td></tr>
+            <tr><td class="year">1976</td><td class="winner">Mark Edmondson</td><td class="country">Australia</td></tr>
+            <tr><td class="year">1975</td><td class="winner">John Newcombe</td><td class="country">Australia</td></tr>
+            <tr><td class="year">1974</td><td class="winner">Jimmy Connors</td><td class="country">United States</td></tr>
+            <tr><td class="year">1973</td><td class="winner">John Newcombe</td><td class="country">Australia</td></tr>
+            <tr><td class="year">1972</td><td class="winner">Ken Rosewall</td><td class="country">Australia</td></tr>
+            <tr><td class="year">1971</td><td class="winner">Ken Rosewall</td><td class="country">Australia</td></tr>
+            <tr><td class="year">1970</td><td class="winner">Arthur Ashe</td><td class="country">United States</td></tr>
+            <tr><td class="year">1969</td><td class="winner">Rod Laver</td><td class="country">Australia</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

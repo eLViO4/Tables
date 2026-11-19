@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula 1 World Drivers Champions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #e10600;
+            margin: 0;
+            padding-bottom: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #e10600;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px rgba(225, 6, 0, 0.5);
+        }
+
+        h2 {
+            color: #e10600;
+            text-transform: uppercase;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 22px;
+            text-shadow: 0 0 8px rgba(225, 6, 0, 0.4);
+        }
+
+        .navbar-custom {
+            background-color: #000;
+            height: 68px;
+            margin-bottom: 30px;
+            font-size: 30px;
+            border-bottom: 2px solid #e10600;
+        }
+
+        .nav-link {
+            color: #e10600;
+            text-decoration: none;
+            padding: 15px;
+            display: inline-block;
+        }
+
+        .nav-link:hover {
+            color: #fff;
+        }
+
+        .content-wrapper {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+        }
+
+        .winners-list {
+            width: 32%;
+            background: white;
+            border-radius: 8px;
+            padding: 20px 25px;
+            box-shadow: 0 0 15px rgba(225, 6, 0, 0.3);
+            box-sizing: border-box;
+        }
+
+        .winners-list h2 {
+            text-align: center;
+            border-bottom: 2px solid #790f0c;
+            padding-bottom: 10px;
+            text-shadow: none;
+        }
+
+        .winners-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .winners-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 4px;
+            color: black;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .winners-list li span {
+            color: #e10600;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .winners-list li.divider {
+            border-bottom: 2px solid #790f0c;
+            margin: 8px 0;
+            padding: 0;
+        }
+
+        .table-section {
+            width: 65%;
+        }
+
+        .table-section h2 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 0 15px rgba(225, 6, 0, 0.3);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        thead {
+            background-color: #790f0c;
+            color: white;
+            border-bottom: 2px solid black;
+        }
+
+        th, td {
+            padding: 10px 15px;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+
+        tbody tr:hover {
+            background-color: #cbc1c1;
+        }
+
+        th {
+            font-size: 16px;
+        }
+
+        td {
+            font-size: 15px;
+        }
+
+        .year {
+            color: black;
+            font-weight: bold;
+        }
+
+        .winner {
+            color: #e10600;
+            font-weight: bold;
+        }
+
+        .country {
+            color: black;
+        }
+
+        .team {
+            color: #e10600;
+            font-weight: bold;
+        }
+
+        @media (max-width: 900px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            .winners-list,
+            .table-section {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar-custom">
+    <a href="../../../index.html" class="nav-link">HOME</a>
+</nav>
+<h1>Formula 1 World Drivers Champions</h1>
+
+<div class="content-wrapper">
+    <div class="winners-list">
+        <h2>All Winners</h2>
+        <ul>
+            <li>Lewis Hamilton <span>7</span></li>
+            <li>Michael Schumacher <span>7</span></li>
+            <li class="divider"></li>
+            <li>Juan Manuel Fangio <span>5</span></li>
+            <li class="divider"></li>
+            <li>Max Verstappen <span>4</span></li>
+            <li>Sebastian Vettel <span>4</span></li>
+            <li>Alain Prost <span>4</span></li>
+            <li class="divider"></li>
+            <li>Ayrton Senna <span>3</span></li>
+            <li>Nelson Piquet <span>3</span></li>
+            <li>Niki Lauda <span>3</span></li>
+            <li>Jackie Stewart <span>3</span></li>
+            <li>Jack Brabham <span>3</span></li>
+            <li class="divider"></li>
+            <li>Fernando Alonso <span>2</span></li>
+            <li>Mika Häkkinen <span>2</span></li>
+            <li>Emerson Fittipaldi <span>2</span></li>
+            <li>Graham Hill <span>2</span></li>
+            <li>Jim Clark <span>2</span></li>
+            <li>Alberto Ascari <span>2</span></li>
+            <li class="divider"></li>
+            <li>Kimi Antonelli <span>1</span></li>
+            <li>Lando Norris <span>1</span></li>
+            <li>Nico Rosberg <span>1</span></li>
+            <li>Jenson Button <span>1</span></li>
+            <li>Kimi Räikkönen <span>1</span></li>
+            <li>Jacques Villeneuve <span>1</span></li>
+            <li>Damon Hill <span>1</span></li>
+            <li>Nigel Mansell <span>1</span></li>
+            <li>Keke Rosberg <span>1</span></li>
+            <li>Alan Jones <span>1</span></li>
+            <li>Jody Scheckter <span>1</span></li>
+            <li>Mario Andretti <span>1</span></li>
+            <li>James Hunt <span>1</span></li>
+            <li>Jochen Rindt <span>1</span></li>
+            <li>Denny Hulme <span>1</span></li>
+            <li>John Surtees <span>1</span></li>
+            <li>Phil Hill <span>1</span></li>
+            <li>Mike Hawthorn <span>1</span></li>
+            <li>Giuseppe Farina <span>1</span></li>
+        </ul>
+    </div>
+
+    <div class="table-section">
+        <h2>Champions by Year</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Year</th>
+                <th>Winner</th>
+                <th>Country</th>
+                <th>Team</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><td class="year">2026</td><td class="winner">Kimi Antonelli</td><td class="country">Italy</td><td class="team">Mercedes</td></tr>
+            <tr><td class="year">2025</td><td class="winner">Lando Norris</td><td class="country">United Kingdom</td><td class="team">McLaren</td></tr>
+            <tr><td class="year">2024</td><td class="winner">Max Verstappen</td><td class="country">Netherlands</td><td class="team">Red Bull Racing</td></tr>
+            <tr><td class="year">2023</td><td class="winner">Max Verstappen</td><td class="country">Netherlands</td><td class="team">Red Bull Racing</td></tr>
+            <tr><td class="year">2022</td><td class="winner">Max Verstappen</td><td class="country">Netherlands</td><td class="team">Red Bull Racing</td></tr>
+            <tr><td class="year">2021</td><td class="winner">Max Verstappen</td><td class="country">Netherlands</td><td class="team">Red Bull Racing</td></tr>
+            <tr><td class="year">2020</td><td class="winner">Lewis Hamilton</td><td class="country">United Kingdom</td><td class="team">Mercedes</td></tr>
+            <tr><td class="year">2019</td><td class="winner">Lewis Hamilton</td><td class="country">United Kingdom</td><td class="team">Mercedes</td></tr>
+            <tr><td class="year">2018</td><td class="winner">Lewis Hamilton</td><td class="country">United Kingdom</td><td class="team">Mercedes</td></tr>
+            <tr><td class="year">2017</td><td class="winner">Lewis Hamilton</td><td class="country">United Kingdom</td><td class="team">Mercedes</td></tr>
+            <tr><td class="year">2016</td><td class="winner">Nico Rosberg</td><td class="country">Germany</td><td class="team">Mercedes</td></tr>
+            <tr><td class="year">2015</td><td class="winner">Lewis Hamilton</td><td class="country">United Kingdom</td><td class="team">Mercedes</td></tr>
+            <tr><td class="year">2014</td><td class="winner">Lewis Hamilton</td><td class="country">United Kingdom</td><td class="team">Mercedes</td></tr>
+            <tr><td class="year">2013</td><td class="winner">Sebastian Vettel</td><td class="country">Germany</td><td class="team">Red Bull Racing</td></tr>
+            <tr><td class="year">2012</td><td class="winner">Sebastian Vettel</td><td class="country">Germany</td><td class="team">Red Bull Racing</td></tr>
+            <tr><td class="year">2011</td><td class="winner">Sebastian Vettel</td><td class="country">Germany</td><td class="team">Red Bull Racing</td></tr>
+            <tr><td class="year">2010</td><td class="winner">Sebastian Vettel</td><td class="country">Germany</td><td class="team">Red Bull Racing</td></tr>
+            <tr><td class="year">2009</td><td class="winner">Jenson Button</td><td class="country">United Kingdom</td><td class="team">Brawn GP</td></tr>
+            <tr><td class="year">2008</td><td class="winner">Lewis Hamilton</td><td class="country">United Kingdom</td><td class="team">McLaren</td></tr>
+            <tr><td class="year">2007</td><td class="winner">Kimi Räikkönen</td><td class="country">Finland</td><td class="team">Ferrari</td></tr>
+            <tr><td class="year">2006</td><td class="winner">Fernando Alonso</td><td class="country">Spain</td><td class="team">Renault</td></tr>
+            <tr><td class="year">2005</td><td class="winner">Fernando Alonso</td><td class="country">Spain</td><td class="team">Renault</td></tr>
+            <tr><td class="year">2004</td><td class="winner">Michael Schumacher</td><td class="country">Germany</td><td class="team">Ferrari</td></tr>
+            <tr><td class="year">2003</td><td class="winner">Michael Schumacher</td><td class="country">Germany</td><td class="team">Ferrari</td></tr>
+            <tr><td class="year">2002</td><td class="winner">Michael Schumacher</td><td class="country">Germany</td><td class="team">Ferrari</td></tr>
+            <tr><td class="year">2001</td><td class="winner">Michael Schumacher</td><td class="country">Germany</td><td class="team">Ferrari</td></tr>
+            <tr><td class="year">2000</td><td class="winner">Michael Schumacher</td><td class="country">Germany</td><td class="team">Ferrari</td></tr>
+            <tr><td class="year">1999</td><td class="winner">Mika Häkkinen</td><td class="country">Finland</td><td class="team">McLaren</td></tr>
+            <tr><td class="year">1998</td><td class="winner">Mika Häkkinen</td><td class="country">Finland</td><td class="team">McLaren</td></tr>
+            <tr><td class="year">1997</td><td class="winner">Jacques Villeneuve</td><td class="country">Canada</td><td class="team">Williams</td></tr>
+            <tr><td class="year">1996</td><td class="winner">Damon Hill</td><td class="country">United Kingdom</td><td class="team">Williams</td></tr>
+            <tr><td class="year">1995</td><td class="winner">Michael Schumacher</td><td class="country">Germany</td><td class="team">Benetton</td></tr>
+            <tr><td class="year">1994</td><td class="winner">Michael Schumacher</td><td class="country">Germany</td><td class="team">Benetton</td></tr>
+            <tr><td class="year">1993</td><td class="winner">Alain Prost</td><td class="country">France</td><td class="team">Williams</td></tr>
+            <tr><td class="year">1992</td><td class="winner">Nigel Mansell</td><td class="country">United Kingdom</td><td class="team">Williams</td></tr>
+            <tr><td class="year">1991</td><td class="winner">Ayrton Senna</td><td class="country">Brazil</td><td class="team">McLaren</td></tr>
+            <tr><td class="year">1990</td><td class="winner">Ayrton Senna</td><td class="country">Brazil</td><td class="team">McLaren</td></tr>
+            <tr><td class="year">1989</td><td class="winner">Alain Prost</td><td class="country">France</td><td class="team">McLaren</td></tr>
+            <tr><td class="year">1988</td><td class="winner">Ayrton Senna</td><td class="country">Brazil</td><td class="team">McLaren</td></tr>
+            <tr><td class="year">1987</td><td class="winner">Nelson Piquet</td><td class="country">Brazil</td><td class="team">Williams</td></tr>
+            <tr><td class="year">1986</td><td class="winner">Alain Prost</td><td class="country">France</td><td class="team">McLaren</td></tr>
+            <tr><td class="year">1985</td><td class="winner">Alain Prost</td><td class="country">France</td><td class="team">McLaren</td></tr>
+            <tr><td class="year">1984</td><td class="winner">Niki Lauda</td><td class="country">Austria</td><td class="team">McLaren</td></tr>
+            <tr><td class="year">1983</td><td class="winner">Nelson Piquet</td><td class="country">Brazil</td><td class="team">Brabham</td></tr>
+            <tr><td class="year">1982</td><td class="winner">Keke Rosberg</td><td class="country">Finland</td><td class="team">Williams</td></tr>
+            <tr><td class="year">1981</td><td class="winner">Nelson Piquet</td><td class="country">Brazil</td><td class="team">Brabham</td></tr>
+            <tr><td class="year">1980</td><td class="winner">Alan Jones</td><td class="country">Australia</td><td class="team">Williams</td></tr>
+            <tr><td class="year">1979</td><td class="winner">Jody Scheckter</td><td class="country">South Africa</td><td class="team">Ferrari</td></tr>
+            <tr><td class="year">1978</td><td class="winner">Mario Andretti</td><td class="country">United States</td><td class="team">Lotus</td></tr>
+            <tr><td class="year">1977</td><td class="winner">Niki Lauda</td><td class="country">Austria</td><td class="team">Ferrari</td></tr>
+            <tr><td class="year">1976</td><td class="winner">James Hunt</td><td class="country">United Kingdom</td><td class="team">McLaren</td></tr>
+            <tr><td class="year">1975</td><td class="winner">Niki Lauda</td><td class="country">Austria</td><td class="team">Ferrari</td></tr>
+            <tr><td class="year">1974</td><td class="winner">Emerson Fittipaldi</td><td class="country">Brazil</td><td class="team">McLaren</td></tr>
+            <tr><td class="year">1973</td><td class="winner">Jackie Stewart</td><td class="country">United Kingdom</td><td class="team">Tyrrell</td></tr>
+            <tr><td class="year">1972</td><td class="winner">Emerson Fittipaldi</td><td class="country">Brazil</td><td class="team">Lotus</td></tr>
+            <tr><td class="year">1971</td><td class="winner">Jackie Stewart</td><td class="country">United Kingdom</td><td class="team">Tyrrell</td></tr>
+            <tr><td class="year">1970</td><td class="winner">Jochen Rindt</td><td class="country">Austria</td><td class="team">Lotus</td></tr>
+            <tr><td class="year">1969</td><td class="winner">Jackie Stewart</td><td class="country">United Kingdom</td><td class="team">Matra</td></tr>
+            <tr><td class="year">1968</td><td class="winner">Graham Hill</td><td class="country">United Kingdom</td><td class="team">Lotus</td></tr>
+            <tr><td class="year">1967</td><td class="winner">Denny Hulme</td><td class="country">New Zealand</td><td class="team">Brabham</td></tr>
+            <tr><td class="year">1966</td><td class="winner">Jack Brabham</td><td class="country">Australia</td><td class="team">Brabham</td></tr>
+            <tr><td class="year">1965</td><td class="winner">Jim Clark</td><td class="country">United Kingdom</td><td class="team">Lotus</td></tr>
+            <tr><td class="year">1964</td><td class="winner">John Surtees</td><td class="country">United Kingdom</td><td class="team">Ferrari</td></tr>
+            <tr><td class="year">1963</td><td class="winner">Jim Clark</td><td class="country">United Kingdom</td><td class="team">Lotus</td></tr>
+            <tr><td class="year">1962</td><td class="winner">Graham Hill</td><td class="country">United Kingdom</td><td class="team">BRM</td></tr>
+            <tr><td class="year">1961</td><td class="winner">Phil Hill</td><td class="country">United States</td><td class="team">Ferrari</td></tr>
+            <tr><td class="year">1960</td><td class="winner">Jack Brabham</td><td class="country">Australia</td><td class="team">Cooper</td></tr>
+            <tr><td class="year">1959</td><td class="winner">Jack Brabham</td><td class="country">Australia</td><td class="team">Cooper</td></tr>
+            <tr><td class="year">1958</td><td class="winner">Mike Hawthorn</td><td class="country">United Kingdom</td><td class="team">Ferrari</td></tr>
+            <tr><td class="year">1957</td><td class="winner">Juan Manuel Fangio</td><td class="country">Argentina</td><td class="team">Maserati</td></tr>
+            <tr><td class="year">1956</td><td class="winner">Juan Manuel Fangio</td><td class="country">Argentina</td><td class="team">Ferrari</td></tr>
+            <tr><td class="year">1955</td><td class="winner">Juan Manuel Fangio</td><td class="country">Argentina</td><td class="team">Mercedes</td></tr>
+            <tr><td class="year">1954</td><td class="winner">Juan Manuel Fangio</td><td class="country">Argentina</td><td class="team">Maserati / Mercedes</td></tr>
+            <tr><td class="year">1953</td><td class="winner">Alberto Ascari</td><td class="country">Italy</td><td class="team">Ferrari</td></tr>
+            <tr><td class="year">1952</td><td class="winner">Alberto Ascari</td><td class="country">Italy</td><td class="team">Ferrari</td></tr>
+            <tr><td class="year">1951</td><td class="winner">Juan Manuel Fangio</td><td class="country">Argentina</td><td class="team">Alfa Romeo</td></tr>
+            <tr><td class="year">1950</td><td class="winner">Giuseppe Farina</td><td class="country">Italy</td><td class="team">Alfa Romeo</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
